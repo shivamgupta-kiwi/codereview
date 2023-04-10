@@ -1,0 +1,333 @@
+﻿@{
+  ViewBag.Title = BCMStrategy.Resources.Resource.LblWebLinkManagement;
+  ViewBag.ModuleName = BCMStrategy.Resources.Enums.ModuleName.WEBLINKMANAGMENT;
+  Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+.list-group{
+    max-height: 165px;
+    /*margin-bottom: 10px;*/
+    overflow:scroll;
+    line-height: 13px;
+    /*-webkit-overflow-scrolling: touch;*/
+}
+
+    .ui-autocomplete li div {
+        word-wrap: break-word;
+    }
+
+    .ui-autocomplete {
+        max-height: 250px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        z-index: 1000 !important;
+    }
+
+    .k-grid .k-grid-header .k-header .k-link {
+        height: auto;
+    }
+
+    .k-grid .k-grid-header .k-header {
+        white-space: normal;
+    }
+    #myModal .k-pager-wrap .k-label {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+	/*#myModal	.k-pager-refresh{
+		display:none;
+	}*/
+	#myModal .card-body {
+		padding:0;
+	}
+    .error {
+        color: red;
+    }
+
+    .modal-800 {
+        width: 800px;
+        margin: 30px auto;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .input-group.input-group-unstyled input.form-control {
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+    }
+
+    .input-group-unstyled .input-group-addon {
+        border-radius: 4px;
+        border: 0px;
+        background-color: transparent;
+    }
+    .bootstrap-tagsinput .tag [data-role="remove"] {
+        display: none;
+    }
+</style>
+<form id="webLinkForm">
+    <div class="container-fluid">
+        <!-- Collapse buttons -->
+        <div>
+            @*<a class="btn blue" data-toggle="collapse" href="#collapseExample" id="BtnAddNew" aria-expanded="false" aria-controls="collapseExample">
+                <i class="fa fa-plus"></i> @BCMStrategy.Resources.Resource.LblAddNew @BCMStrategy.Resources.Resource.LblWebLink
+            </a>*@
+            <a class="btn btn-default" id="clearFilters">
+                @BCMStrategy.Resources.Resource.LblClearFilter
+            </a>
+        </div>
+        <!-- / Collapse buttons -->
+        <!-- Collapsible element -->
+        <div class="collapse" id="collapseExample">
+            <div class="mt-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+
+                            <div class="form-group col-md-4">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblWebsiteTypes</label> <span class="text-danger">*</span>
+                                <select class="form-control" id="webSiteType" name="webSiteTypeHashId" onchange="webSiteTypeChange(false)">
+                                    <option selected="selected" value="">@BCMStrategy.Resources.Resource.SelectWebsiteType_String</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblWebLinkUrl</label> <span class="text-danger">*</span>
+                                <input type="text" class="form-control" id="webLinkUrl" name="webLinkUrl" data-bind="value: WebLinkUrl" />
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblIsHardCoded</label> <span class="text-danger">*</span>
+                                <div id="input-type" class="row">
+                                    <div class="col-md-3">
+                                        <label class="radio-inline">
+                                            <input name="isBlocked" id="blockedTrue" value="true" type="radio">@BCMStrategy.Resources.Resource.LblYes
+                                        </label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="radio-inline">
+                                            <input name="isBlocked" id="blockedFalse" checked value="false" type="radio">@BCMStrategy.Resources.Resource.LblNo
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-4 proprierityTagDiv">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblActionType</label> <span class="text-danger">*</span>
+                                <select class="form-control multipleSelect" multiple id="metaDataProprietaryTag" name="metaDataProprietaryTag"></select>
+                            </div>
+                            <div class="form-group col-md-4 activityTypeDiv">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblActivityType</label> <span class="text-danger"></span>
+                                <select class="form-control multipleSelect" multiple id="activityType" name="activityType"></select>
+                            </div>
+                            <div class="form-group col-md-4 activityTypeDisabledDiv" style="display:none;">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblActivityType</label> <span class="text-danger"></span>
+                                <select disabled class="form-control" id="activityTypeDisabled" name="activityTypeDisabled">
+                                    <option>Through NLP</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4 entityFullNameDiv">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblEntityName</label> <span class="text-danger"></span>
+                                <input class="form-control" placeholder="Type to search Entity Name" id="entityFullName" />
+                            </div>
+                            <div class="form-group col-md-4 entityFullNameDisabledDiv" style="display:none">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblEntityName</label> <span class="text-danger"></span>
+                                <input class="form-control" placeholder="Through NLP" id="entityFullNameDisabled" disabled />
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-4 entitysIndividualNameDiv">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblEntitysIndividualName</label> <span class="text-danger"></span>
+                                <div class="input-group">
+                                    <input type="text" placeholder="@BCMStrategy.Resources.Resource.LblAdd @BCMStrategy.Resources.Resource.LblEntitysIndividualName" class="form-control" style="padding-top: 8px;" id="individualPerson" disabled>
+                                    <div id="entitysIndividualName" class="input-group-append" onclick="ToggelPersonModel()" style="cursor:pointer;z-index:1">
+                                        <span class="input-group-text"><b>+</b></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-4 entitysIndividualNameDisabledDiv" style="display:none">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblEntitysIndividualName</label> <span class="text-danger"></span>
+                                <div class="input-group">
+                                    <input type="text" placeholder="Through NLP" class="form-control" style="padding-top: 8px;" id="individualPersonDisabled" disabled>
+                                    <div id="entitysIndividualNameDisabled" class="input-group-append" style="z-index:1">
+                                        <span class="input-group-text"><b>+</b></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-4 entityTypeDiv">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblEntityType</label> <span class="text-danger"></span>
+                                <select class="form-control" id="entityType" name="entityType">
+                                    <option selected="selected" value="">@BCMStrategy.Resources.Resource.SelectEntityType</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4 entityTypeDivDisabled" style="display:none">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblEntityType</label> <span class="text-danger"></span>
+                                <select class="form-control" id="entityTypeDisabled" name="entityTypeDisabled" disabled>
+                                    <option selected="selected" value="">Through NLP</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4 sectorDiv">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblSector</label> <span class="text-danger"></span>
+                                <select class="form-control multipleSelect" multiple id="sector" name="sector"></select>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-4 countryDiv">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblCountry</label> <span class="text-danger"></span>
+                                <select class="form-control" id="countryMasterHashId" name="countryHashId" data-bind="value: CountryMasterHashId">
+                                    <option selected="selected" value="">@BCMStrategy.Resources.Resource.SelectCountryName_String</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4 countryDivDisabled" style="display:none">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblCountry</label> <span class="text-danger"></span>
+                                <select class="form-control" id="countryMasterHashIdDisabled" name="countryHashIdDisabled" disabled>
+                                    <option selected="selected" value="">Through NLP</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-4" style="display:none">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblPageType</label> <span class="text-danger">*</span>
+                                <select class="form-control" id="pageType" name="pageTypeHashId" onchange="onChnagePageType()">
+                                    <option selected="selected" value="">@BCMStrategy.Resources.Resource.SelectPageType_String</option>
+                                </select>
+                            </div>
+                            @*<div class=" form-group col-md-4 searchFunctionality" style="display:none;" >
+                                    <label class="control-label">@BCMStrategy.Resources.Resource.LblSearchKeyWord</label> <span class="text-danger">*</span>
+                                    <input type="text" class="form-control" id="searchKeyWord" name="searchKeyWord" data-role="tagsinput" />
+                                </div>*@
+                            @*<div class="form-group col-md-4 RSSFeeds">
+                                    <label class="control-label">@BCMStrategy.Resources.Resource.LblRSSFeedURL</label> <span class="text-danger">*</span>
+                                    <input type="text" class="form-control" id="RSSFeedURL" name="RSSFeedURL" data-role="tagsinput" />
+                                </div>*@
+
+                            @*<div class="form-group col-md-4">
+                                    <label class="control-label">@BCMStrategy.Resources.Resource.LblRSSFeedURL</label> <span class="text-danger"></span>
+                                    <div class="input-group">
+                                        <input type="text"  class="form-control" style="padding-top: 8px;">
+                                        <div  class="input-group-append" style="z-index:1">
+
+                                            <input class="input-group-text" id="btnAdd" type="button" value="+" onclick="AddTextBox()" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="TextBoxContainer">
+
+                                </div>*@
+
+                            @*style="display:none;"*@
+                            <div class="form-group col-md-4">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblIsActive</label>
+                                <div id="input-type" class="row">
+                                    <div class="col-md-3">
+                                        <label class="radio-inline">
+                                            <input name="isActive" id="isActiveTrue" checked value="true" type="radio">@BCMStrategy.Resources.Resource.LblYes
+                                        </label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="radio-inline">
+                                            <input name="isActive" id="isActiveFalse" value="false" type="radio">@BCMStrategy.Resources.Resource.LblNo
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-12" id="divRssUrl" style="display:none" >
+                               
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblRSSFeedURL</label>
+                                <input type="text" class="form-control" id="RSSFeedURL" name="RSSFeedURL" data-role="tagsinput" />
+                                
+                                
+                                 @*<label class="control-label">@BCMStrategy.Resources.Resource.LblRSSFeedURL</label> <span class="text-danger">*</span>
+                                <div class="list-group" id="rssFeedUrlList">*@
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-transparent pull-right">
+                        <a class="btn btn-dark-green" id="btnWebLinkSave">@BCMStrategy.Resources.Resource.LblSave</a>
+                        <a class="btn btn-blue-grey" id="btnWebLinkCancel">@BCMStrategy.Resources.Resource.LblCancel</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <input type="hidden" id="individualPersonNoResultFlag" value="" />
+        <input type="hidden" id="entityFullNameNoResultFlag" value="" />
+        <input type="hidden" id="pageTypeRegexPanelFlag" value="" />
+        <input type="hidden" id="entityFullNameHiddenVal" value="" />
+        <input type="hidden" id="webLinkHashHiddenVal" value="" />
+        <input type="hidden" id="selectedIndividualPersonHashIds" value="" />
+        <!-- / Collapsible element -->
+        <!-- Grid -->
+        <div class="card mt-4">
+            <div class="card-body">
+                <div id="gridWebLink"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div style="min-height:730px;" class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class=" modal-header">
+                    <h5 class="modal-title">@BCMStrategy.Resources.Resource.LblSelect @BCMStrategy.Resources.Resource.LblEntitysIndividualName</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="card-body">
+                        <div id="individualPersonGrid"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="modal-footer">
+                        <a style="margin-left:238px;margin-top:-7px;margin-bottom:-8px;" onclick="OnIndividualPersonModelSelectClick();" href="#" class="btn btn-dark-green waves-effect waves-light btn-md" data-toggle="collapse" aria-expanded="true" aria-controls="collapseExample">
+                            Select
+                        </a>
+                        <a onclick="ToggelPersonModel();" style="margin-top:-7px;margin-bottom:-8px;" class="btn btn-blue-grey waves-effect waves-light btn-md" data-toggle="collapse" href="#" aria-expanded="true" aria-controls="collapseExample">
+                            Cancel
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    @section scripts{
+        <script>
+            var countryName = '@BCMStrategy.Resources.Resource.LblCountryName';
+            var institutionType = '@BCMStrategy.Resources.Resource.LblInstitutionTypes';
+            var institution = '@BCMStrategy.Resources.Resource.LblInstitutions';
+            var noDataFound = '@BCMStrategy.Resources.Resource.LblNoDataFound';
+            var deletePopupHeader = "@BCMStrategy.Resources.Resource.LblDeleteConfirmation"
+            var deletePopupMessage = "@BCMStrategy.Resources.Resource.LblInstitutionDeleteConfirm"
+        </script>
+        @Scripts.Render("~/Scripts/JsAreas/WebLinkManagement.js", "~/Scripts/JsAreas/DropDownList.js");
+
+        <link href="~/Content/css/jquery-ui.css" rel="stylesheet" />
+        <script src="~/Scripts/js/jquery-ui.js"></script>
+        <link href="~/Content/css/fastselect.css" rel="stylesheet" />
+        <link href="~/Content/css/bootstrap-tagsinput.css" rel="stylesheet" />
+        <script src="~/Scripts/js/bootstrap-tagsinput.min.js"></script>
+        <script src="~/Scripts/js/fastselect.standalone.js"></script>
+    }
+</form>

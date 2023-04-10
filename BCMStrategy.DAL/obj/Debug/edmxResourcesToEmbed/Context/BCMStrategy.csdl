@@ -1,0 +1,3180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BCMStrategyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="activitytype">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ActivityName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Created" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Modified" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="IsFullSearchRequired" Type="Boolean" Nullable="false" />
+    <Property Name="ColorCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="metadataphrases" Relationship="Self.FK_MetaDataTags_ActivityTypeId" FromRole="activitytype" ToRole="metadataphrases" />
+    <NavigationProperty Name="relatedactivitytypes" Relationship="Self.FK_RelatedActivityTypes_ActivityTypeId" FromRole="activitytype" ToRole="relatedactivitytypes" />
+    <NavigationProperty Name="scrappedproprietorytagsmapping" Relationship="Self.FN_ScrappedProprietoryTagsMapping_ActivityTypeId" FromRole="activitytype" ToRole="scrappedproprietorytagsmapping" />
+    <NavigationProperty Name="metadatanounplusverb" Relationship="Self.metadatanounplusverb_ActivityTypeId" FromRole="activitytype" ToRole="metadatanounplusverb" />
+    <NavigationProperty Name="metadatavalue" Relationship="Self.metadatavalue_TypeId" FromRole="activitytype" ToRole="metadatavalue" />
+  </EntityType>
+  <EntityType Name="apiclient">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SecretHash" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ApplicationType" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="RefreshTokenLifeTime" Type="Int32" Nullable="false" />
+    <Property Name="AllowedOrigin" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="refreshtoken" Relationship="Self.FK_RefreshToken_ApiClient" FromRole="apiclient" ToRole="refreshtoken" />
+  </EntityType>
+  <EntityType Name="auditlog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AuditTableId" Type="Int32" Nullable="false" />
+    <Property Name="AuditTypeId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="BeforeValue" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="AfterValue" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="AuditDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="IPAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Created" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="audittables" Relationship="Self.auditlog_AuditTableId" FromRole="auditlog" ToRole="audittables" />
+    <NavigationProperty Name="audittype" Relationship="Self.auditlog_AuditTypeId" FromRole="auditlog" ToRole="audittype" />
+    <NavigationProperty Name="user" Relationship="Self.auditLog_UserId" FromRole="auditlog" ToRole="user" />
+  </EntityType>
+  <EntityType Name="audittables">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TableCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TableName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsCustomerTable" Type="Boolean" />
+    <NavigationProperty Name="auditlog" Relationship="Self.auditlog_AuditTableId" FromRole="audittables" ToRole="auditlog" />
+  </EntityType>
+  <EntityType Name="audittype">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StatusCode" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="auditlog" Relationship="Self.auditlog_AuditTypeId" FromRole="audittype" ToRole="auditlog" />
+  </EntityType>
+  <EntityType Name="category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="weblinks" Relationship="Self.WebSiteMst_CategoryId" FromRole="category" ToRole="weblinks" />
+  </EntityType>
+  <EntityType Name="client">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="ClientName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="globalconfiguration" Relationship="Self.globalconfiguration_clientId" FromRole="client" ToRole="globalconfiguration" />
+    <NavigationProperty Name="scraperenginesetup" Relationship="Self.ScraperEngineSetup_ClientId" FromRole="client" ToRole="scraperenginesetup" />
+  </EntityType>
+  <EntityType Name="committee">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CommitteeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="individuallegislatorscommittee" Relationship="Self.individuallegislatorscommittee_CommitteeId" FromRole="committee" ToRole="individuallegislatorscommittee" />
+  </EntityType>
+  <EntityType Name="contentloaderlog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProcessId" Type="Int32" Nullable="false" />
+    <Property Name="ProcessInstanceId" Type="Int32" Nullable="false" />
+    <Property Name="WebSiteId" Type="Int32" Nullable="false" />
+    <Property Name="SiteURL" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LinkLevel" Type="Int32" />
+    <Property Name="IsContentInserted" Type="Boolean" />
+    <Property Name="IsContentUpdated" Type="Boolean" />
+    <Property Name="Created" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="processevents" Relationship="Self.contentloaderlog_processId" FromRole="contentloaderlog" ToRole="processevents" />
+    <NavigationProperty Name="processinstances" Relationship="Self.contentloaderlog_ProcessInstanceId" FromRole="contentloaderlog" ToRole="processinstances" />
+    <NavigationProperty Name="weblinks" Relationship="Self.contentloaderlog_WebLinkId" FromRole="contentloaderlog" ToRole="weblinks" />
+  </EntityType>
+  <EntityType Name="country">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="individuallegislators" Relationship="Self.individuallegislators_CountryId" FromRole="country" ToRole="individuallegislators" />
+    <NavigationProperty Name="institution" Relationship="Self.institution_CountryId" FromRole="country" ToRole="institution" />
+    <NavigationProperty Name="policymakers" Relationship="Self.InstitutionNames_CountryId" FromRole="country" ToRole="policymakers" />
+    <NavigationProperty Name="scrapperstandardtags_entitytypes" Relationship="Self.ScrappedContentEntity_CountryId" FromRole="country" ToRole="scrapperstandardtags_entitytypes" />
+    <NavigationProperty Name="statehead" Relationship="Self.Statehead_CountryId" FromRole="country" ToRole="statehead" />
+    <NavigationProperty Name="user" Relationship="Self.user_CountryId" FromRole="country" ToRole="user" />
+    <NavigationProperty Name="weburlcategorymapping" Relationship="Self.WebSiteCategoryMapping_CategoryId" FromRole="country" ToRole="weburlcategorymapping" />
+    <NavigationProperty Name="weblinks" Relationship="Self.WebSiteMst_CountryId" FromRole="country" ToRole="weblinks" />
+  </EntityType>
+  <EntityType Name="dailyfrequency">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OccursOnceAt" Type="DateTime" />
+    <Property Name="OccursEveryHour" Type="Int32" />
+    <Property Name="OccursStartTime" Type="DateTime" />
+    <Property Name="OccursEndTime" Type="DateTime" />
+    <NavigationProperty Name="scraperenginesetup" Relationship="Self.ScraperEngineSetup_DailyFrequencyId" FromRole="dailyfrequency" ToRole="scraperenginesetup" />
+  </EntityType>
+  <EntityType Name="defaultlexiconterms">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="LexiconTypeId" Type="Int32" Nullable="false" />
+    <Property Name="LexiconIssuesId" Type="Int32" Nullable="false" />
+    <Property Name="Created" Type="DateTime" Nullable="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="lexiconissues" Relationship="Self.FK_DefaultLexiconTerms_LexiconIssuesId" FromRole="defaultlexiconterms" ToRole="lexiconissues" />
+    <NavigationProperty Name="lexicontype" Relationship="Self.FK_DefaultLexiconTerms_LexiconTypeId" FromRole="defaultlexiconterms" ToRole="lexicontype" />
+    <NavigationProperty Name="user" Relationship="Self.FK_DefaultLexiconTerms_UserId" FromRole="defaultlexiconterms" ToRole="user" />
+  </EntityType>
+  <EntityType Name="designation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Designation1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="internationalorganizations" Relationship="Self.Foregn_InternationOrg_DesignationId" FromRole="designation" ToRole="internationalorganizations" />
+    <NavigationProperty Name="individuallegislatorsdesignation" Relationship="Self.individuallegislatorsdesignation_DesignationId" FromRole="designation" ToRole="individuallegislatorsdesignation" />
+    <NavigationProperty Name="policymakers" Relationship="Self.PolicyMakers_DesignationId" FromRole="designation" ToRole="policymakers" />
+    <NavigationProperty Name="statehead" Relationship="Self.statehead_DesignationId" FromRole="designation" ToRole="statehead" />
+  </EntityType>
+  <EntityType Name="documentstorage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ScanningLinkDetailid" Type="Int32" Nullable="false" />
+    <Property Name="URL" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" />
+    <NavigationProperty Name="scanninglinkdetails" Relationship="Self.documentstorage_ScanningLinkDetailsId" FromRole="documentstorage" ToRole="scanninglinkdetails" />
+  </EntityType>
+  <EntityType Name="dynamictablesfieldsfornounplusverb">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DynamicTablesForNounPlusVerbId" Type="Int32" />
+    <Property Name="Fields" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="ReferenceTable" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PrimaryId" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ReferenceColumnId" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="dynamictablesfornounplusverb" Relationship="Self.FK_DynamicTablesFieldsForNounPlusVerb_DynamicTablesVerbId" FromRole="dynamictablesfieldsfornounplusverb" ToRole="dynamictablesfornounplusverb" />
+  </EntityType>
+  <EntityType Name="dynamictablesfornounplusverb">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DynamicType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="TableName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="dynamictablesfieldsfornounplusverb" Relationship="Self.FK_DynamicTablesFieldsForNounPlusVerb_DynamicTablesVerbId" FromRole="dynamictablesfornounplusverb" ToRole="dynamictablesfieldsfornounplusverb" />
+  </EntityType>
+  <EntityType Name="emailgenerationchartimage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GenerationDate" Type="DateTime" />
+    <Property Name="ChartImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="UpdationDate" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="emailgenerationstatus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="TemplateId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedAt" Type="DateTime" Nullable="false" />
+    <Property Name="SendAfterTime" Type="DateTime" Nullable="false" />
+    <Property Name="SendBeforeTime" Type="DateTime" Nullable="false" />
+    <Property Name="SendMoment" Type="DateTime" />
+    <Property Name="Status" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EmailBody" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="EmailSubject" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="ValidationKey" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="emailtemplate" Relationship="Self.FK_TemplateId_EmailGenerationStatus" FromRole="emailgenerationstatus" ToRole="emailtemplate" />
+    <NavigationProperty Name="user" Relationship="Self.FK_UserId_EmailGenerationStatus" FromRole="emailgenerationstatus" ToRole="user" />
+  </EntityType>
+  <EntityType Name="emailtemplate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Subject" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TemplateName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BodyHtml" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="IsTemplateActive" Type="Boolean" Nullable="false" />
+    <Property Name="Created" Type="DateTime" Nullable="false" />
+    <Property Name="Modified" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="emailgenerationstatus" Relationship="Self.FK_TemplateId_EmailGenerationStatus" FromRole="emailtemplate" ToRole="emailgenerationstatus" />
+  </EntityType>
+  <EntityType Name="euentities">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EntityName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="individuallegislators" Relationship="Self.individuallegislators_EntityId" FromRole="euentities" ToRole="individuallegislators" />
+  </EntityType>
+  <EntityType Name="eurpeanunionentities">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EntityName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Sector" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Individual" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+    <Property Name="Created" Type="DateTime" />
+    <Property Name="Modified" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="events">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProcessEventId" Type="Int32" Nullable="false" />
+    <Property Name="ProcessTypeId" Type="Int32" Nullable="false" />
+    <Property Name="ProcessInstanceId" Type="Int32" />
+    <Property Name="StartDateTime" Type="DateTime" Nullable="false" />
+    <Property Name="EndDateTime" Type="DateTime" />
+    <Property Name="TimeTaken" Type="Decimal" />
+    <Property Name="PagesProcessed" Type="Int32" />
+    <NavigationProperty Name="processevents" Relationship="Self.events_ProcessEventId" FromRole="events" ToRole="processevents" />
+    <NavigationProperty Name="processinstances" Relationship="Self.events_ProcessInstanceId" FromRole="events" ToRole="processinstances" />
+    <NavigationProperty Name="processtypes" Relationship="Self.events_ProcessTypeId" FromRole="events" ToRole="processtypes" />
+  </EntityType>
+  <EntityType Name="frequency">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Occurs" Type="Int32" />
+    <Property Name="RecursDaily" Type="Int32" />
+    <Property Name="RecursMonday" Type="Int32" />
+    <Property Name="RecursTuesday" Type="Int32" />
+    <Property Name="RecursWednesday" Type="Int32" />
+    <Property Name="RecursThursday" Type="Int32" />
+    <Property Name="RecursFriday" Type="Int32" />
+    <Property Name="RecursSaturday" Type="Int32" />
+    <Property Name="RecursSunday" Type="Int32" />
+    <NavigationProperty Name="scraperenginesetup" Relationship="Self.ScraperEngineSetup_FrequencyId" FromRole="frequency" ToRole="scraperenginesetup" />
+  </EntityType>
+  <EntityType Name="globalconfiguration">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Value" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ClientId" Type="Int32" Nullable="false" />
+    <Property Name="Created" Type="DateTime" Nullable="false" />
+    <Property Name="Modified" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="client" Relationship="Self.globalconfiguration_clientId" FromRole="globalconfiguration" ToRole="client" />
+  </EntityType>
+  <EntityType Name="individuallegislators">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EntityId" Type="Int32" />
+    <Property Name="SectorId" Type="Int32" />
+    <Property Name="CountryId" Type="Int32" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="Created" Type="DateTime" />
+    <Property Name="Modified" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="country" Relationship="Self.individuallegislators_CountryId" FromRole="individuallegislators" ToRole="country" />
+    <NavigationProperty Name="euentities" Relationship="Self.individuallegislators_EntityId" FromRole="individuallegislators" ToRole="euentities" />
+    <NavigationProperty Name="sector" Relationship="Self.individuallegislators_SectorId" FromRole="individuallegislators" ToRole="sector" />
+    <NavigationProperty Name="individuallegislatorscommittee" Relationship="Self.individuallegislatorscommittee_LegislatorsId" FromRole="individuallegislators" ToRole="individuallegislatorscommittee" />
+    <NavigationProperty Name="individuallegislatorsdesignation" Relationship="Self.individuallegislatorsdesignation_LegislatorsId" FromRole="individuallegislators" ToRole="individuallegislatorsdesignation" />
+  </EntityType>
+  <EntityType Name="individuallegislatorscommittee">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IndividualLegislatorsId" Type="Int32" Nullable="false" />
+    <Property Name="CommitteeId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="committee" Relationship="Self.individuallegislatorscommittee_CommitteeId" FromRole="individuallegislatorscommittee" ToRole="committee" />
+    <NavigationProperty Name="individuallegislators" Relationship="Self.individuallegislatorscommittee_LegislatorsId" FromRole="individuallegislatorscommittee" ToRole="individuallegislators" />
+  </EntityType>
+  <EntityType Name="individuallegislatorsdesignation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IndividualLegislatorsId" Type="Int32" Nullable="false" />
+    <Property Name="DesignationId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="designation" Relationship="Self.individuallegislatorsdesignation_DesignationId" FromRole="individuallegislatorsdesignation" ToRole="designation" />
+    <NavigationProperty Name="individuallegislators" Relationship="Self.individuallegislatorsdesignation_LegislatorsId" FromRole="individuallegislatorsdesignation" ToRole="individuallegislators" />
+  </EntityType>
+  <EntityType Name="instance">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstanceName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="institution">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CountryId" Type="Int32" />
+    <Property Name="InstitutionTypeId" Type="Int32" Nullable="false" />
+    <Property Name="InstitutionName" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="IsEuropean" Type="Boolean" Nullable="false" />
+    <Property Name="EntityName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Created" Type="DateTime" />
+    <Property Name="Modified" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="country" Relationship="Self.institution_CountryId" FromRole="institution" ToRole="country" />
+    <NavigationProperty Name="institutiontypes" Relationship="Self.institution_InstitutionTypeId" FromRole="institution" ToRole="institutiontypes" />
+    <NavigationProperty Name="scrapperstandardtags_entitytypes" Relationship="Self.ScrappedContentEntity_EntityId" FromRole="institution" ToRole="scrapperstandardtags_entitytypes" />
+    <NavigationProperty Name="weblinks" Relationship="Self.weblinks_EntityId" FromRole="institution" ToRole="weblinks" />
+  </EntityType>
+  <EntityType Name="institutiontypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstitutionType" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="Created" Type="DateTime" />
+    <Property Name="Modified" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="institution" Relationship="Self.institution_InstitutionTypeId" FromRole="institutiontypes" ToRole="institution" />
+    <NavigationProperty Name="policymakers" Relationship="Self.InstitutionNames_InstitutionId" FromRole="institutiontypes" ToRole="policymakers" />
+    <NavigationProperty Name="scrapperstandardtags_entitytypes" Relationship="Self.ScrappedContentEntity_EntityTypeId" FromRole="institutiontypes" ToRole="scrapperstandardtags_entitytypes" />
+    <NavigationProperty Name="weblinks" Relationship="Self.weblinks_InstitutionTypeId" FromRole="institutiontypes" ToRole="weblinks" />
+  </EntityType>
+  <EntityType Name="internationalorganizations">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrganizationName" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+    <Property Name="DesignationId" Type="Int32" />
+    <Property Name="LeaderFirstName" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+    <Property Name="LeaderLastName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EntityName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="IsMultiLateral" Type="Boolean" Nullable="false" />
+    <Property Name="Created" Type="DateTime" />
+    <Property Name="Modified" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="designation" Relationship="Self.Foregn_InternationOrg_DesignationId" FromRole="internationalorganizations" ToRole="designation" />
+  </EntityType>
+  <EntityType Name="lexiconissuelinker">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LexiconIssueId" Type="Int32" Nullable="false" />
+    <Property Name="Linkers" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="lexiconissues" Relationship="Self.LexiconIssueLinker_LexiconIssueId" FromRole="lexiconissuelinker" ToRole="lexiconissues" />
+  </EntityType>
+  <EntityType Name="lexiconissues">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LexiconTypeId" Type="Int32" Nullable="false" />
+    <Property Name="LexiconIssue" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CombinationValue" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IsNested" Type="Boolean" Nullable="false" />
+    <Property Name="Created" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Modified" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="defaultlexiconterms" Relationship="Self.FK_DefaultLexiconTerms_LexiconIssuesId" FromRole="lexiconissues" ToRole="defaultlexiconterms" />
+    <NavigationProperty Name="lexiconissuelinker" Relationship="Self.LexiconIssueLinker_LexiconIssueId" FromRole="lexiconissues" ToRole="lexiconissuelinker" />
+    <NavigationProperty Name="lexiconprivilege" Relationship="Self.fk_lexiconIssue_id" FromRole="lexiconissues" ToRole="lexiconprivilege" />
+    <NavigationProperty Name="lexicontype" Relationship="Self.LexiconIssue_LexiconTypeId" FromRole="lexiconissues" ToRole="lexicontype" />
+    <NavigationProperty Name="scrapedlexiconmapping" Relationship="Self.Scrapedlexiconmapping_LexiconId" FromRole="lexiconissues" ToRole="scrapedlexiconmapping" />
+  </EntityType>
+  <EntityType Name="lexiconprivilege">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="LexiconIssueId" Type="Int32" />
+    <Property Name="Created" Type="DateTime" />
+    <Property Name="Modified" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IsDeleted" Type="SByte" />
+    <NavigationProperty Name="lexiconissues" Relationship="Self.fk_lexiconIssue_id" FromRole="lexiconprivilege" ToRole="lexiconissues" />
+    <NavigationProperty Name="user" Relationship="Self.lexiconpriviledge_ibfk_1" FromRole="lexiconprivilege" ToRole="user" />
+  </EntityType>
+  <EntityType Name="lexicontype">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="defaultlexiconterms" Relationship="Self.FK_DefaultLexiconTerms_LexiconTypeId" FromRole="lexicontype" ToRole="defaultlexiconterms" />
+    <NavigationProperty Name="lexiconissues" Relationship="Self.LexiconIssue_LexiconTypeId" FromRole="lexicontype" ToRole="lexiconissues" />
+  </EntityType>
+  <EntityType Name="loadererrorlog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProcessId" Type="Int32" Nullable="false" />
+    <Property Name="ProcessIntanceId" Type="Int32" Nullable="false" />
+    <Property Name="WebSiteId" Type="Int32" Nullable="false" />
+    <Property Name="SiteURL" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ErrorDesc" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="Created" Type="DateTime" />
+    <NavigationProperty Name="processevents" Relationship="Self.loadererrorlog_ProcessEvents" FromRole="loadererrorlog" ToRole="processevents" />
+    <NavigationProperty Name="processinstances" Relationship="Self.loadererrorlog_ProcessInstances" FromRole="loadererrorlog" ToRole="processinstances" />
+    <NavigationProperty Name="weblinks" Relationship="Self.loadererrorlog_WebLinks" FromRole="loadererrorlog" ToRole="weblinks" />
+  </EntityType>
+  <EntityType Name="loaderlinkdocuments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProcessId" Type="Int32" Nullable="false" />
+    <Property Name="WebSiteId" Type="Int32" Nullable="false" />
+    <Property Name="DocumentName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DocumentURL" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Created" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Guid" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="processevents" Relationship="Self.loaderlinkdocuments_ProcessId" FromRole="loaderlinkdocuments" ToRole="processevents" />
+    <NavigationProperty Name="weblinks" Relationship="Self.loaderlinkdocuments_WebSiteId" FromRole="loaderlinkdocuments" ToRole="weblinks" />
+  </EntityType>
+  <EntityType Name="loaderlinklog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstanceName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="WebSiteId" Type="Int32" Nullable="false" />
+    <Property Name="SiteURL" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ProcessId" Type="Int32" Nullable="false" />
+    <Property Name="ProcessInstanceId" Type="Int32" Nullable="false" />
+    <Property Name="Guid" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="StatusId" Type="Int32" Nullable="false" />
+    <Property Name="LinkLevel" Type="Int32" />
+    <Property Name="IsSuccessful" Type="Boolean" />
+    <Property Name="WebLinkBytes" Type="Decimal" />
+    <Property Name="Created" Type="DateTime" />
+    <Property Name="Modified" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="LinkCreatedDate" Type="DateTime" />
+    <Property Name="NewProcessId" Type="Int32" />
+    <Property Name="LexiconCount" Type="Int32" />
+    <NavigationProperty Name="processevents" Relationship="Self.FK_LoaderLinkLog_NewProcessId" FromRole="loaderlinklog" ToRole="processevents" />
+    <NavigationProperty Name="processevents1" Relationship="Self.FK_LoaderLinkLog_ProcessId" FromRole="loaderlinklog" ToRole="processevents" />
+    <NavigationProperty Name="processinstances" Relationship="Self.FK_LoaderLinkLog_ProcessInstanceId" FromRole="loaderlinklog" ToRole="processinstances" />
+    <NavigationProperty Name="status" Relationship="Self.FK_LoaderLinkLog_StatusId" FromRole="loaderlinklog" ToRole="status" />
+    <NavigationProperty Name="weblinks" Relationship="Self.FK_LoaderLinkLog_WebSiteId" FromRole="loaderlinklog" ToRole="weblinks" />
+  </EntityType>
+  <EntityType Name="loaderlinkqueue">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProcessId" Type="Int32" Nullable="false" />
+    <Property Name="ProcessInstanceId" Type="Int32" Nullable="false" />
+    <Property Name="WebSiteId" Type="Int32" />
+    <Property Name="SiteURL" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="InstanceName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ReadTaken" Type="SByte" />
+    <Property Name="Guid" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="LinkLevel" Type="Int32" />
+    <Property Name="WebLinkBytes" Type="Decimal" />
+    <Property Name="Created" Type="DateTime" />
+    <Property Name="Modified" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="LinkCreatedDate" Type="DateTime" />
+    <NavigationProperty Name="processevents" Relationship="Self.LoaderLinkQueue_ProcessId" FromRole="loaderlinkqueue" ToRole="processevents" />
+    <NavigationProperty Name="processinstances" Relationship="Self.LoaderLinkQueue_ProcessInstanceId" FromRole="loaderlinkqueue" ToRole="processinstances" />
+    <NavigationProperty Name="weblinks" Relationship="Self.LoaderLinkQueue_WebSiteId" FromRole="loaderlinkqueue" ToRole="weblinks" />
+  </EntityType>
+  <EntityType Name="metadatanounplusverb">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MetaDataTypeId" Type="Int32" Nullable="false" />
+    <Property Name="Noun" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Verb" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsHardCoded" Type="Boolean" Nullable="false" />
+    <Property Name="Created" Type="DateTime" />
+    <Property Name="Modified" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="ActivityTypeId" Type="Int32" />
+    <NavigationProperty Name="activitytype" Relationship="Self.metadatanounplusverb_ActivityTypeId" FromRole="metadatanounplusverb" ToRole="activitytype" />
+    <NavigationProperty Name="metadatatypes" Relationship="Self.FK_NounPlusVerb_MetaDataTypeId" FromRole="metadatanounplusverb" ToRole="metadatatypes" />
+  </EntityType>
+  <EntityType Name="metadataphrases">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MetaDataTypeId" Type="Int32" Nullable="false" />
+    <Property Name="ActivityTypeId" Type="Int32" />
+    <Property Name="Phrases" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Created" Type="DateTime" />
+    <Property Name="Modified" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="activitytype" Relationship="Self.FK_MetaDataTags_ActivityTypeId" FromRole="metadataphrases" ToRole="activitytype" />
+    <NavigationProperty Name="metadatatypes" Relationship="Self.FK_MetaDataTags_MetaDataTypesId" FromRole="metadataphrases" ToRole="metadatatypes" />
+  </EntityType>
+  <EntityType Name="metadatatypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WebSiteTypeId" Type="Int32" Nullable="false" />
+    <Property Name="MetaData" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Value" Type="Decimal" />
+    <Property Name="IsActivityTypeExist" Type="Boolean" />
+    <Property Name="Created" Type="DateTime" />
+    <Property Name="Modified" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="metadatanounplusverb" Relationship="Self.FK_NounPlusVerb_MetaDataTypeId" FromRole="metadatatypes" ToRole="metadatanounplusverb" />
+    <NavigationProperty Name="metadataphrases" Relationship="Self.FK_MetaDataTags_MetaDataTypesId" FromRole="metadatatypes" ToRole="metadataphrases" />
+    <NavigationProperty Name="websitetypes" Relationship="Self.FK_MetaDataTypes_WebSiteTypeId" FromRole="metadatatypes" ToRole="websitetypes" />
+    <NavigationProperty Name="scrappedproprietorytagsmapping" Relationship="Self.FN_ScrappedProprietoryTagsMapping_MetaDataId" FromRole="metadatatypes" ToRole="scrappedproprietorytagsmapping" />
+    <NavigationProperty Name="metadatavalue" Relationship="Self.metadatavalue_TagId" FromRole="metadatatypes" ToRole="metadatavalue" />
+    <NavigationProperty Name="weblinkproprietarytags" Relationship="Self.weblinkproprietarytags_metadataTypeId" FromRole="metadatatypes" ToRole="weblinkproprietarytags" />
+  </EntityType>
+  <EntityType Name="metadatavalue">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MetaDataTypeId" Type="Int32" Nullable="false" />
+    <Property Name="ActivityTypeId" Type="Int32" />
+    <Property Name="ActivityValue" Type="Decimal" Nullable="false" />
+    <NavigationProperty Name="activitytype" Relationship="Self.metadatavalue_TypeId" FromRole="metadatavalue" ToRole="activitytype" />
+    <NavigationProperty Name="metadatatypes" Relationship="Self.metadatavalue_TagId" FromRole="metadatavalue" ToRole="metadatatypes" />
+    <NavigationProperty Name="weblinkactivitytype" Relationship="Self.weblinkactivitytype_MetaDataTypeId" FromRole="metadatavalue" ToRole="weblinkactivitytype" />
+  </EntityType>
+  <EntityType Name="modules">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ModuleCode" Type="Int32" Nullable="false" />
+    <Property Name="ModuleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="Created" Type="DateTime" />
+    <Property Name="Modified" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="rolemodulerights" Relationship="Self.RoleModuleRights_Modules" FromRole="modules" ToRole="rolemodulerights" />
+  </EntityType>
+  <EntityType Name="parentmenu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MenuName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Order" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="submenu" Relationship="Self.ParentMenu_ParentMenuId" FromRole="parentmenu" ToRole="submenu" />
+  </EntityType>
+  <EntityType Name="policymakers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CountryId" Type="Int32" />
+    <Property Name="DesignationId" Type="Int32" />
+    <Property Name="InstitutionId" Type="Int32" Nullable="false" />
+    <Property Name="PolicyFirstName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="PolicyLastName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="Created" Type="DateTime" />
+    <Property Name="Modified" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="country" Relationship="Self.InstitutionNames_CountryId" FromRole="policymakers" ToRole="country" />
+    <NavigationProperty Name="designation" Relationship="Self.PolicyMakers_DesignationId" FromRole="policymakers" ToRole="designation" />
+    <NavigationProperty Name="institutiontypes" Relationship="Self.InstitutionNames_InstitutionId" FromRole="policymakers" ToRole="institutiontypes" />
+    <NavigationProperty Name="weblinkpolicymaker" Relationship="Self.weblinkpolicymaker_PolicyMakerId" FromRole="policymakers" ToRole="weblinkpolicymaker" />
+  </EntityType>
+  <EntityType Name="processeventlog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProcessEventId" Type="Int32" Nullable="false" />
+    <Property Name="ProcessInstanceId" Type="Int32" Nullable="false" />
+    <Property Name="SiteUrl" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Created" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="processevents">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ScraperName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="StartDateTime" Type="DateTime" Nullable="false" />
+    <Property Name="EndDateTime" Type="DateTime" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="contentloaderlog" Relationship="Self.contentloaderlog_processId" FromRole="processevents" ToRole="contentloaderlog" />
+    <NavigationProperty Name="events" Relationship="Self.events_ProcessEventId" FromRole="processevents" ToRole="events" />
+    <NavigationProperty Name="loadererrorlog" Relationship="Self.loadererrorlog_ProcessEvents" FromRole="processevents" ToRole="loadererrorlog" />
+    <NavigationProperty Name="loaderlinkdocuments" Relationship="Self.loaderlinkdocuments_ProcessId" FromRole="processevents" ToRole="loaderlinkdocuments" />
+    <NavigationProperty Name="loaderlinklog" Relationship="Self.FK_LoaderLinkLog_NewProcessId" FromRole="processevents" ToRole="loaderlinklog" />
+    <NavigationProperty Name="loaderlinklog1" Relationship="Self.FK_LoaderLinkLog_ProcessId" FromRole="processevents" ToRole="loaderlinklog" />
+    <NavigationProperty Name="loaderlinkqueue" Relationship="Self.LoaderLinkQueue_ProcessId" FromRole="processevents" ToRole="loaderlinkqueue" />
+    <NavigationProperty Name="processinstances" Relationship="Self.processinstances_processId" FromRole="processevents" ToRole="processinstances" />
+    <NavigationProperty Name="scanninglinkdetails" Relationship="Self.scanninglinkdetails_ProcessId" FromRole="processevents" ToRole="scanninglinkdetails" />
+    <NavigationProperty Name="scanninglinkqueue" Relationship="Self.scanninglinkqueue_ProcessId" FromRole="processevents" ToRole="scanninglinkqueue" />
+  </EntityType>
+  <EntityType Name="processinstances">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProcessId" Type="Int32" Nullable="false" />
+    <Property Name="ProcessInstanceName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Created" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="contentloaderlog" Relationship="Self.contentloaderlog_ProcessInstanceId" FromRole="processinstances" ToRole="contentloaderlog" />
+    <NavigationProperty Name="events" Relationship="Self.events_ProcessInstanceId" FromRole="processinstances" ToRole="events" />
+    <NavigationProperty Name="loadererrorlog" Relationship="Self.loadererrorlog_ProcessInstances" FromRole="processinstances" ToRole="loadererrorlog" />
+    <NavigationProperty Name="loaderlinklog" Relationship="Self.FK_LoaderLinkLog_ProcessInstanceId" FromRole="processinstances" ToRole="loaderlinklog" />
+    <NavigationProperty Name="loaderlinkqueue" Relationship="Self.LoaderLinkQueue_ProcessInstanceId" FromRole="processinstances" ToRole="loaderlinkqueue" />
+    <NavigationProperty Name="processevents" Relationship="Self.processinstances_processId" FromRole="processinstances" ToRole="processevents" />
+    <NavigationProperty Name="scanninglinkdetails" Relationship="Self.scanninglinkdetails_InstanceId" FromRole="processinstances" ToRole="scanninglinkdetails" />
+  </EntityType>
+  <EntityType Name="processtypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="events" Relationship="Self.events_ProcessTypeId" FromRole="processtypes" ToRole="events" />
+  </EntityType>
+  <EntityType Name="refreshtoken">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ClientId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="IssuedDateTime" Type="DateTime" />
+    <Property Name="ExpiresDateTime" Type="DateTime" />
+    <Property Name="ProtectedKey" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="apiclient" Relationship="Self.FK_RefreshToken_ApiClient" FromRole="refreshtoken" ToRole="apiclient" />
+    <NavigationProperty Name="user" Relationship="Self.FK_RefreshToken_UserId" FromRole="refreshtoken" ToRole="user" />
+  </EntityType>
+  <EntityType Name="relatedactivitytypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ActivityTypeId" Type="Int32" />
+    <Property Name="RelatedActvity" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="activitytype" Relationship="Self.FK_RelatedActivityTypes_ActivityTypeId" FromRole="relatedactivitytypes" ToRole="activitytype" />
+  </EntityType>
+  <EntityType Name="role">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleCode" Type="Int32" Nullable="false" />
+    <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="rolemodulerights" Relationship="Self.RoleModuleRights_Role" FromRole="role" ToRole="rolemodulerights" />
+  </EntityType>
+  <EntityType Name="rolemodulerights">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ModuleId" Type="Int32" Nullable="false" />
+    <Property Name="RoleId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="Brexit" Type="Boolean" />
+    <Property Name="RegulatoryCapital" Type="Boolean" />
+    <Property Name="Trade" Type="Boolean" />
+    <Property Name="FinTech" Type="Boolean" />
+    <Property Name="Created" Type="DateTime" />
+    <Property Name="Modified" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="modules" Relationship="Self.RoleModuleRights_Modules" FromRole="rolemodulerights" ToRole="modules" />
+    <NavigationProperty Name="role" Relationship="Self.RoleModuleRights_Role" FromRole="rolemodulerights" ToRole="role" />
+    <NavigationProperty Name="user" Relationship="Self.RoleModuleRights_UserId" FromRole="rolemodulerights" ToRole="user" />
+  </EntityType>
+  <EntityType Name="scanninglinkdetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ScannerLinkId" Type="Int32" Nullable="false" />
+    <Property Name="WebSiteURL" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ProcessId" Type="Int32" />
+    <Property Name="ProcessInstanceId" Type="Int32" Nullable="false" />
+    <Property Name="Guid" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="StatusId" Type="Int32" Nullable="false" />
+    <Property Name="Created" Type="DateTime" />
+    <Property Name="Modified" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="PageType" Type="Int32" Nullable="false" />
+    <Property Name="PublishDate" Type="DateTime" />
+    <NavigationProperty Name="documentstorage" Relationship="Self.documentstorage_ScanningLinkDetailsId" FromRole="scanninglinkdetails" ToRole="documentstorage" />
+    <NavigationProperty Name="processevents" Relationship="Self.scanninglinkdetails_ProcessId" FromRole="scanninglinkdetails" ToRole="processevents" />
+    <NavigationProperty Name="processinstances" Relationship="Self.scanninglinkdetails_InstanceId" FromRole="scanninglinkdetails" ToRole="processinstances" />
+    <NavigationProperty Name="scanninglinkqueue" Relationship="Self.Fk_ScanningLinkQueue_ScannerLinkId" FromRole="scanninglinkdetails" ToRole="scanninglinkqueue" />
+    <NavigationProperty Name="status" Relationship="Self.FK_ScanningLinkQueue_StatusId" FromRole="scanninglinkdetails" ToRole="status" />
+    <NavigationProperty Name="scrappedstandardtags" Relationship="Self.FK_ScrappedStandarTags_ScanningLinkDetailsId" FromRole="scanninglinkdetails" ToRole="scrappedstandardtags" />
+    <NavigationProperty Name="scrapedcontents" Relationship="Self.ScrapedContents_ScanningLinkId" FromRole="scanninglinkdetails" ToRole="scrapedcontents" />
+    <NavigationProperty Name="scrappedproprietorytags" Relationship="Self.ScrappedProprietoryTags_ScrappedLinkDetailId" FromRole="scanninglinkdetails" ToRole="scrappedproprietorytags" />
+  </EntityType>
+  <EntityType Name="scanninglinkqueue">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WebSiteId" Type="Int32" Nullable="false" />
+    <Property Name="ReadTaken" Type="SByte" />
+    <Property Name="Guid" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ProcessId" Type="Int32" />
+    <Property Name="Created" Type="DateTime" />
+    <Property Name="Modified" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="processevents" Relationship="Self.scanninglinkqueue_ProcessId" FromRole="scanninglinkqueue" ToRole="processevents" />
+    <NavigationProperty Name="scanninglinkdetails" Relationship="Self.Fk_ScanningLinkQueue_ScannerLinkId" FromRole="scanninglinkqueue" ToRole="scanninglinkdetails" />
+    <NavigationProperty Name="weblinks" Relationship="Self.ScanningLinkQueue_WebSiteId" FromRole="scanninglinkqueue" ToRole="weblinks" />
+  </EntityType>
+  <EntityType Name="schedular">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FrequencyType" Type="Int32" Nullable="false" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" />
+    <Property Name="EndDate" Type="DateTime" />
+    <Property Name="StartTime" Type="Time" />
+    <Property Name="EndTime" Type="Time" />
+    <Property Name="IsEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="IsUpdated" Type="Boolean" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="Created" Type="DateTime" Nullable="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Modified" Type="DateTime" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="schedularfrequency" Relationship="Self.schedularfrequency_SchedularId" FromRole="schedular" ToRole="schedularfrequency" />
+  </EntityType>
+  <EntityType Name="schedularfrequency">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SchedularId" Type="Int32" Nullable="false" />
+    <Property Name="RecurEvery" Type="Int32" />
+    <Property Name="Sunday" Type="Boolean" Nullable="false" />
+    <Property Name="Monday" Type="Boolean" Nullable="false" />
+    <Property Name="Tuesday" Type="Boolean" Nullable="false" />
+    <Property Name="Wednesday" Type="Boolean" Nullable="false" />
+    <Property Name="Thursday" Type="Boolean" Nullable="false" />
+    <Property Name="Friday" Type="Boolean" Nullable="false" />
+    <Property Name="Saturday" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="schedular" Relationship="Self.schedularfrequency_SchedularId" FromRole="schedularfrequency" ToRole="schedular" />
+  </EntityType>
+  <EntityType Name="scrapedcontents">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ScanningLinkDetailId" Type="Int32" Nullable="false" />
+    <Property Name="Content" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Created" Type="DateTime" />
+    <Property Name="Modified" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="scanninglinkdetails" Relationship="Self.ScrapedContents_ScanningLinkId" FromRole="scrapedcontents" ToRole="scanninglinkdetails" />
+    <NavigationProperty Name="scrapeddocumentdetails" Relationship="Self.ScrapedDocumentDetails_ScrapedContentId" FromRole="scrapedcontents" ToRole="scrapeddocumentdetails" />
+    <NavigationProperty Name="scrapedlexiconmapping" Relationship="Self.Scrapedlexiconmapping_ScrapedContentId" FromRole="scrapedcontents" ToRole="scrapedlexiconmapping" />
+  </EntityType>
+  <EntityType Name="scrapeddocumentdetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ScrapedContentId" Type="Int32" Nullable="false" />
+    <Property Name="DocumentName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="DocumentURL" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Created" Type="DateTime" />
+    <Property Name="Modified" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="scrapedcontents" Relationship="Self.ScrapedDocumentDetails_ScrapedContentId" FromRole="scrapeddocumentdetails" ToRole="scrapedcontents" />
+  </EntityType>
+  <EntityType Name="scrapedlexiconmapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LexiconId" Type="Int32" Nullable="false" />
+    <Property Name="LexiconsTerms" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="ScrapedContentid" Type="Int32" Nullable="false" />
+    <Property Name="IssuesCount" Type="Int32" />
+    <Property Name="Created" Type="DateTime" />
+    <Property Name="Modified" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="lexiconissues" Relationship="Self.Scrapedlexiconmapping_LexiconId" FromRole="scrapedlexiconmapping" ToRole="lexiconissues" />
+    <NavigationProperty Name="scrapedcontents" Relationship="Self.Scrapedlexiconmapping_ScrapedContentId" FromRole="scrapedlexiconmapping" ToRole="scrapedcontents" />
+  </EntityType>
+  <EntityType Name="scraperengineconfiguration">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ThresholdValue" Type="Int32" />
+    <Property Name="TimeTaken" Type="Decimal" />
+    <Property Name="NoOfInstances" Type="Int32" />
+  </EntityType>
+  <EntityType Name="scraperenginesetup">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClientId" Type="Int32" Nullable="false" />
+    <Property Name="WebSiteId" Type="Int32" Nullable="false" />
+    <Property Name="EmailStatus" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FrequencyId" Type="Int32" Nullable="false" />
+    <Property Name="DailyFrequencyId" Type="Int32" Nullable="false" />
+    <Property Name="DurationStartDate" Type="DateTime" />
+    <Property Name="DurationEndDate" Type="DateTime" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="Created" Type="DateTime" />
+    <Property Name="Modified" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="client" Relationship="Self.ScraperEngineSetup_ClientId" FromRole="scraperenginesetup" ToRole="client" />
+    <NavigationProperty Name="dailyfrequency" Relationship="Self.ScraperEngineSetup_DailyFrequencyId" FromRole="scraperenginesetup" ToRole="dailyfrequency" />
+    <NavigationProperty Name="frequency" Relationship="Self.ScraperEngineSetup_FrequencyId" FromRole="scraperenginesetup" ToRole="frequency" />
+    <NavigationProperty Name="status1" Relationship="Self.ScraperEngineSetup_StatusId" FromRole="scraperenginesetup" ToRole="status" />
+    <NavigationProperty Name="weblinks" Relationship="Self.ScraperEngineSetup_WebSiteId" FromRole="scraperenginesetup" ToRole="weblinks" />
+  </EntityType>
+  <EntityType Name="scrappedproprietorytags">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ScanningLinkDetailId" Type="Int32" Nullable="false" />
+    <Property Name="Content" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Created" Type="DateTime" />
+    <NavigationProperty Name="scanninglinkdetails" Relationship="Self.ScrappedProprietoryTags_ScrappedLinkDetailId" FromRole="scrappedproprietorytags" ToRole="scanninglinkdetails" />
+    <NavigationProperty Name="scrappedproprietorytagsmapping" Relationship="Self.FN_ScrappedProprietoryTagsMapping_scrappedproprietorytagsMapping" FromRole="scrappedproprietorytags" ToRole="scrappedproprietorytagsmapping" />
+  </EntityType>
+  <EntityType Name="scrappedproprietorytagsmapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ScrappedProprietoryTagId" Type="Int32" Nullable="false" />
+    <Property Name="MetaDataTypeId" Type="Int32" />
+    <Property Name="SearchType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SearchTypeId" Type="Int32" />
+    <Property Name="SearchValue" Type="Decimal" />
+    <Property Name="SearchCounts" Type="Int32" />
+    <Property Name="Created" Type="DateTime" />
+    <Property Name="ActivityTypeId" Type="Int32" />
+    <NavigationProperty Name="activitytype" Relationship="Self.FN_ScrappedProprietoryTagsMapping_ActivityTypeId" FromRole="scrappedproprietorytagsmapping" ToRole="activitytype" />
+    <NavigationProperty Name="metadatatypes" Relationship="Self.FN_ScrappedProprietoryTagsMapping_MetaDataId" FromRole="scrappedproprietorytagsmapping" ToRole="metadatatypes" />
+    <NavigationProperty Name="scrappedproprietorytags" Relationship="Self.FN_ScrappedProprietoryTagsMapping_scrappedproprietorytagsMapping" FromRole="scrappedproprietorytagsmapping" ToRole="scrappedproprietorytags" />
+  </EntityType>
+  <EntityType Name="scrappedstandardtag_policymakers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ScrappedStandardTagsId" Type="Int32" />
+    <Property Name="PolicyMaker_Name" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="scrappedstandardtags" Relationship="Self.FK_scrappedstandardtag_policymakers_ScrappedStandardTagsId" FromRole="scrappedstandardtag_policymakers" ToRole="scrappedstandardtags" />
+  </EntityType>
+  <EntityType Name="scrappedstandardtags">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ScanningLinkDetailsId" Type="Int32" />
+    <Property Name="Content" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="DateOfIssue" Type="DateTime" />
+    <Property Name="Created" Type="DateTime" />
+    <Property Name="SearchType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="scanninglinkdetails" Relationship="Self.FK_ScrappedStandarTags_ScanningLinkDetailsId" FromRole="scrappedstandardtags" ToRole="scanninglinkdetails" />
+    <NavigationProperty Name="scrappedstandardtag_policymakers" Relationship="Self.FK_scrappedstandardtag_policymakers_ScrappedStandardTagsId" FromRole="scrappedstandardtags" ToRole="scrappedstandardtag_policymakers" />
+    <NavigationProperty Name="scrappedstandardtags_sectors" Relationship="Self.FK_ScrappedStandardtags_Sectors_ScrappedStandardTagsId" FromRole="scrappedstandardtags" ToRole="scrappedstandardtags_sectors" />
+    <NavigationProperty Name="scrapperstandardtags_entitytypes" Relationship="Self.ScrappedContentEntity_ScrappedStandardTagId" FromRole="scrappedstandardtags" ToRole="scrapperstandardtags_entitytypes" />
+  </EntityType>
+  <EntityType Name="scrappedstandardtags_sectors">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ScrappedStandardTagsId" Type="Int32" />
+    <Property Name="SectorId" Type="Int32" />
+    <NavigationProperty Name="scrappedstandardtags" Relationship="Self.FK_ScrappedStandardtags_Sectors_ScrappedStandardTagsId" FromRole="scrappedstandardtags_sectors" ToRole="scrappedstandardtags" />
+    <NavigationProperty Name="sector" Relationship="Self.FK_ScrappedStandardtags_Sectors_SectorId" FromRole="scrappedstandardtags_sectors" ToRole="sector" />
+  </EntityType>
+  <EntityType Name="scrapperstandardtags_entitytypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ScrappedStandardTagId" Type="Int32" Nullable="false" />
+    <Property Name="CountryId" Type="Int32" />
+    <Property Name="EntityId" Type="Int32" />
+    <Property Name="EntityTypeId" Type="Int32" />
+    <NavigationProperty Name="country" Relationship="Self.ScrappedContentEntity_CountryId" FromRole="scrapperstandardtags_entitytypes" ToRole="country" />
+    <NavigationProperty Name="institution" Relationship="Self.ScrappedContentEntity_EntityId" FromRole="scrapperstandardtags_entitytypes" ToRole="institution" />
+    <NavigationProperty Name="institutiontypes" Relationship="Self.ScrappedContentEntity_EntityTypeId" FromRole="scrapperstandardtags_entitytypes" ToRole="institutiontypes" />
+    <NavigationProperty Name="scrappedstandardtags" Relationship="Self.ScrappedContentEntity_ScrappedStandardTagId" FromRole="scrapperstandardtags_entitytypes" ToRole="scrappedstandardtags" />
+  </EntityType>
+  <EntityType Name="sector">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SectorName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IntOrgId" Type="Int32" />
+    <NavigationProperty Name="individuallegislators" Relationship="Self.individuallegislators_SectorId" FromRole="sector" ToRole="individuallegislators" />
+    <NavigationProperty Name="scrappedstandardtags_sectors" Relationship="Self.FK_ScrappedStandardtags_Sectors_SectorId" FromRole="sector" ToRole="scrappedstandardtags_sectors" />
+    <NavigationProperty Name="weblinksector" Relationship="Self.weblinksector_SectorId" FromRole="sector" ToRole="weblinksector" />
+  </EntityType>
+  <EntityType Name="statehead">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CountryId" Type="Int32" Nullable="false" />
+    <Property Name="DesignationId" Type="Int32" />
+    <Property Name="FirstName" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+    <Property Name="Created" Type="DateTime" />
+    <Property Name="Modified" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="country" Relationship="Self.Statehead_CountryId" FromRole="statehead" ToRole="country" />
+    <NavigationProperty Name="designation" Relationship="Self.statehead_DesignationId" FromRole="statehead" ToRole="designation" />
+  </EntityType>
+  <EntityType Name="status">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StatusCode" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="loaderlinklog" Relationship="Self.FK_LoaderLinkLog_StatusId" FromRole="status" ToRole="loaderlinklog" />
+    <NavigationProperty Name="scanninglinkdetails" Relationship="Self.FK_ScanningLinkQueue_StatusId" FromRole="status" ToRole="scanninglinkdetails" />
+    <NavigationProperty Name="scraperenginesetup" Relationship="Self.ScraperEngineSetup_StatusId" FromRole="status" ToRole="scraperenginesetup" />
+  </EntityType>
+  <EntityType Name="submenu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ParentMenuId" Type="Int32" Nullable="false" />
+    <Property Name="SubMenuName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Order" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="parentmenu" Relationship="Self.ParentMenu_ParentMenuId" FromRole="submenu" ToRole="parentmenu" />
+    <NavigationProperty Name="useraccessrights" Relationship="Self.FK_SubMenu_SubMenuId" FromRole="submenu" ToRole="useraccessrights" />
+  </EntityType>
+  <EntityType Name="topiccodes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TopicCode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Category" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="urlexclusionlist">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ExcludedURL" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmailAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UserType" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PasswordSalt" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="CountryId" Type="Int32" Nullable="false" />
+    <Property Name="State" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ZipCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Created" Type="DateTime" />
+    <Property Name="Modified" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="auditlog" Relationship="Self.auditLog_UserId" FromRole="user" ToRole="auditlog" />
+    <NavigationProperty Name="country" Relationship="Self.user_CountryId" FromRole="user" ToRole="country" />
+    <NavigationProperty Name="defaultlexiconterms" Relationship="Self.FK_DefaultLexiconTerms_UserId" FromRole="user" ToRole="defaultlexiconterms" />
+    <NavigationProperty Name="emailgenerationstatus" Relationship="Self.FK_UserId_EmailGenerationStatus" FromRole="user" ToRole="emailgenerationstatus" />
+    <NavigationProperty Name="lexiconprivilege" Relationship="Self.lexiconpriviledge_ibfk_1" FromRole="user" ToRole="lexiconprivilege" />
+    <NavigationProperty Name="refreshtoken" Relationship="Self.FK_RefreshToken_UserId" FromRole="user" ToRole="refreshtoken" />
+    <NavigationProperty Name="rolemodulerights" Relationship="Self.RoleModuleRights_UserId" FromRole="user" ToRole="rolemodulerights" />
+    <NavigationProperty Name="useraccessrights" Relationship="Self.FK_User_UserId" FromRole="user" ToRole="useraccessrights" />
+    <NavigationProperty Name="useractivationlink" Relationship="Self.FK_UserActivation_UserId" FromRole="user" ToRole="useractivationlink" />
+  </EntityType>
+  <EntityType Name="useraccessrights">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="SubMenuId" Type="Int32" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="Created" Type="DateTime" />
+    <Property Name="Modified" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="submenu" Relationship="Self.FK_SubMenu_SubMenuId" FromRole="useraccessrights" ToRole="submenu" />
+    <NavigationProperty Name="user" Relationship="Self.FK_User_UserId" FromRole="useraccessrights" ToRole="user" />
+  </EntityType>
+  <EntityType Name="useractivationlink">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="UserActivationCode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ForceReset" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ExpiredDateTime" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="user" Relationship="Self.FK_UserActivation_UserId" FromRole="useractivationlink" ToRole="user" />
+  </EntityType>
+  <EntityType Name="weblinkactivitytype">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WebLinkId" Type="Int32" Nullable="false" />
+    <Property Name="MetaDataTypeId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="metadatavalue" Relationship="Self.weblinkactivitytype_MetaDataTypeId" FromRole="weblinkactivitytype" ToRole="metadatavalue" />
+    <NavigationProperty Name="weblinks" Relationship="Self.weblinkactivitytype_webLinkId" FromRole="weblinkactivitytype" ToRole="weblinks" />
+  </EntityType>
+  <EntityType Name="weblinkpagecontentregex">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WebSiteId" Type="Int32" Nullable="false" />
+    <Property Name="PageContentRegEx" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="weblinks" Relationship="Self.weblinkPageContentRegEx_WebSiteId" FromRole="weblinkpagecontentregex" ToRole="weblinks" />
+  </EntityType>
+  <EntityType Name="weblinkpolicymaker">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WebLinkId" Type="Int32" Nullable="false" />
+    <Property Name="PolicyMakerId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="policymakers" Relationship="Self.weblinkpolicymaker_PolicyMakerId" FromRole="weblinkpolicymaker" ToRole="policymakers" />
+    <NavigationProperty Name="weblinks" Relationship="Self.weblinkpolicymaker_WebLinkId" FromRole="weblinkpolicymaker" ToRole="weblinks" />
+  </EntityType>
+  <EntityType Name="weblinkproprietarytags">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WeblinkId" Type="Int32" Nullable="false" />
+    <Property Name="MetaDataTypeId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="metadatatypes" Relationship="Self.weblinkproprietarytags_metadataTypeId" FromRole="weblinkproprietarytags" ToRole="metadatatypes" />
+    <NavigationProperty Name="weblinks" Relationship="Self.weblinkproprietarytags_weblinkid" FromRole="weblinkproprietarytags" ToRole="weblinks" />
+  </EntityType>
+  <EntityType Name="weblinkrss">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WebSiteId" Type="Int32" Nullable="false" />
+    <Property Name="RSSFeedClickRegEx" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="RSSFeedURL" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="weblinks" Relationship="Self.WebsiteConfiguration_WebsiteId" FromRole="weblinkrss" ToRole="weblinks" />
+  </EntityType>
+  <EntityType Name="weblinks">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WebSiteTypeId" Type="Int32" Nullable="false" />
+    <Property Name="WebLinkURL" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="MediaSource" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="CountryId" Type="Int32" />
+    <Property Name="CategoryId" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="EntityId" Type="Int32" />
+    <Property Name="InstitutionTypeId" Type="Int32" />
+    <Property Name="Created" Type="DateTime" />
+    <Property Name="Modified" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IsHardCoded" Type="Boolean" Nullable="false" />
+    <Property Name="AllHtmlLinksFetch" Type="Boolean" Nullable="false" />
+    <Property Name="RegEx" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="category" Relationship="Self.WebSiteMst_CategoryId" FromRole="weblinks" ToRole="category" />
+    <NavigationProperty Name="contentloaderlog" Relationship="Self.contentloaderlog_WebLinkId" FromRole="weblinks" ToRole="contentloaderlog" />
+    <NavigationProperty Name="country" Relationship="Self.WebSiteMst_CountryId" FromRole="weblinks" ToRole="country" />
+    <NavigationProperty Name="institution" Relationship="Self.weblinks_EntityId" FromRole="weblinks" ToRole="institution" />
+    <NavigationProperty Name="institutiontypes" Relationship="Self.weblinks_InstitutionTypeId" FromRole="weblinks" ToRole="institutiontypes" />
+    <NavigationProperty Name="loadererrorlog" Relationship="Self.loadererrorlog_WebLinks" FromRole="weblinks" ToRole="loadererrorlog" />
+    <NavigationProperty Name="loaderlinkdocuments" Relationship="Self.loaderlinkdocuments_WebSiteId" FromRole="weblinks" ToRole="loaderlinkdocuments" />
+    <NavigationProperty Name="loaderlinklog" Relationship="Self.FK_LoaderLinkLog_WebSiteId" FromRole="weblinks" ToRole="loaderlinklog" />
+    <NavigationProperty Name="loaderlinkqueue" Relationship="Self.LoaderLinkQueue_WebSiteId" FromRole="weblinks" ToRole="loaderlinkqueue" />
+    <NavigationProperty Name="scanninglinkqueue" Relationship="Self.ScanningLinkQueue_WebSiteId" FromRole="weblinks" ToRole="scanninglinkqueue" />
+    <NavigationProperty Name="scraperenginesetup" Relationship="Self.ScraperEngineSetup_WebSiteId" FromRole="weblinks" ToRole="scraperenginesetup" />
+    <NavigationProperty Name="weblinkactivitytype" Relationship="Self.weblinkactivitytype_webLinkId" FromRole="weblinks" ToRole="weblinkactivitytype" />
+    <NavigationProperty Name="weblinkpagecontentregex" Relationship="Self.weblinkPageContentRegEx_WebSiteId" FromRole="weblinks" ToRole="weblinkpagecontentregex" />
+    <NavigationProperty Name="weblinkpolicymaker" Relationship="Self.weblinkpolicymaker_WebLinkId" FromRole="weblinks" ToRole="weblinkpolicymaker" />
+    <NavigationProperty Name="weblinkproprietarytags" Relationship="Self.weblinkproprietarytags_weblinkid" FromRole="weblinks" ToRole="weblinkproprietarytags" />
+    <NavigationProperty Name="weblinkrss" Relationship="Self.WebsiteConfiguration_WebsiteId" FromRole="weblinks" ToRole="weblinkrss" />
+    <NavigationProperty Name="weblinksector" Relationship="Self.weblinksector_WebLinkId" FromRole="weblinks" ToRole="weblinksector" />
+    <NavigationProperty Name="weburlcategorymapping" Relationship="Self.WebSiteCategoryMapping_WebSiteId" FromRole="weblinks" ToRole="weburlcategorymapping" />
+    <NavigationProperty Name="websitetypes" Relationship="Self.WebSiteMst_LinkId" FromRole="weblinks" ToRole="websitetypes" />
+  </EntityType>
+  <EntityType Name="weblinksector">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WebLinkId" Type="Int32" Nullable="false" />
+    <Property Name="SectorId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="sector" Relationship="Self.weblinksector_SectorId" FromRole="weblinksector" ToRole="sector" />
+    <NavigationProperty Name="weblinks" Relationship="Self.weblinksector_WebLinkId" FromRole="weblinksector" ToRole="weblinks" />
+  </EntityType>
+  <EntityType Name="websitetypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeId" Type="Int32" />
+    <Property Name="TypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="metadatatypes" Relationship="Self.FK_MetaDataTypes_WebSiteTypeId" FromRole="websitetypes" ToRole="metadatatypes" />
+    <NavigationProperty Name="weblinks" Relationship="Self.WebSiteMst_LinkId" FromRole="websitetypes" ToRole="weblinks" />
+  </EntityType>
+  <EntityType Name="weburlcategorymapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WebSiteId" Type="Int32" Nullable="false" />
+    <Property Name="CategoryId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="country" Relationship="Self.WebSiteCategoryMapping_CategoryId" FromRole="weburlcategorymapping" ToRole="country" />
+    <NavigationProperty Name="weblinks" Relationship="Self.WebSiteCategoryMapping_WebSiteId" FromRole="weburlcategorymapping" ToRole="weblinks" />
+  </EntityType>
+  <EntityType Name="legislatorsview">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="FirstName" />
+      <PropertyRef Name="LastName" />
+      <PropertyRef Name="IsDeleted" />
+      <PropertyRef Name="Designation" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EntityId" Type="Int32" />
+    <Property Name="SectorId" Type="Int32" />
+    <Property Name="CountryId" Type="Int32" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="Created" Type="DateTime" />
+    <Property Name="Modified" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Designation" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="multilateralviewforscrapperactivity">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="IsDeleted" />
+      <PropertyRef Name="IsMultiLateral" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="OrganizationName" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+    <Property Name="DesignationId" Type="Int32" />
+    <Property Name="LeaderFirstName" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+    <Property Name="LeaderLastName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EntityName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="IsMultiLateral" Type="Boolean" Nullable="false" />
+    <Property Name="Created" Type="DateTime" />
+    <Property Name="Modified" Type="DateTime" />
+    <Property Name="CreatedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_MetaDataTags_ActivityTypeId">
+    <End Role="activitytype" Type="Self.activitytype" Multiplicity="0..1" />
+    <End Role="metadataphrases" Type="Self.metadataphrases" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="activitytype">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="metadataphrases">
+        <PropertyRef Name="ActivityTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RelatedActivityTypes_ActivityTypeId">
+    <End Role="activitytype" Type="Self.activitytype" Multiplicity="0..1" />
+    <End Role="relatedactivitytypes" Type="Self.relatedactivitytypes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="activitytype">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="relatedactivitytypes">
+        <PropertyRef Name="ActivityTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FN_ScrappedProprietoryTagsMapping_ActivityTypeId">
+    <End Role="activitytype" Type="Self.activitytype" Multiplicity="0..1" />
+    <End Role="scrappedproprietorytagsmapping" Type="Self.scrappedproprietorytagsmapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="activitytype">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="scrappedproprietorytagsmapping">
+        <PropertyRef Name="ActivityTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="metadatanounplusverb_ActivityTypeId">
+    <End Role="activitytype" Type="Self.activitytype" Multiplicity="0..1" />
+    <End Role="metadatanounplusverb" Type="Self.metadatanounplusverb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="activitytype">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="metadatanounplusverb">
+        <PropertyRef Name="ActivityTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="metadatavalue_TypeId">
+    <End Role="activitytype" Type="Self.activitytype" Multiplicity="0..1" />
+    <End Role="metadatavalue" Type="Self.metadatavalue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="activitytype">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="metadatavalue">
+        <PropertyRef Name="ActivityTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RefreshToken_ApiClient">
+    <End Role="apiclient" Type="Self.apiclient" Multiplicity="1" />
+    <End Role="refreshtoken" Type="Self.refreshtoken" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="apiclient">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="refreshtoken">
+        <PropertyRef Name="ClientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="auditlog_AuditTableId">
+    <End Role="audittables" Type="Self.audittables" Multiplicity="1" />
+    <End Role="auditlog" Type="Self.auditlog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="audittables">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="auditlog">
+        <PropertyRef Name="AuditTableId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="auditlog_AuditTypeId">
+    <End Role="audittype" Type="Self.audittype" Multiplicity="1" />
+    <End Role="auditlog" Type="Self.auditlog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="audittype">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="auditlog">
+        <PropertyRef Name="AuditTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="auditLog_UserId">
+    <End Role="user" Type="Self.user" Multiplicity="0..1" />
+    <End Role="auditlog" Type="Self.auditlog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="auditlog">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="WebSiteMst_CategoryId">
+    <End Role="category" Type="Self.category" Multiplicity="0..1" />
+    <End Role="weblinks" Type="Self.weblinks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="weblinks">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="globalconfiguration_clientId">
+    <End Role="client" Type="Self.client" Multiplicity="1" />
+    <End Role="globalconfiguration" Type="Self.globalconfiguration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="client">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="globalconfiguration">
+        <PropertyRef Name="ClientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ScraperEngineSetup_ClientId">
+    <End Role="client" Type="Self.client" Multiplicity="1" />
+    <End Role="scraperenginesetup" Type="Self.scraperenginesetup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="client">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="scraperenginesetup">
+        <PropertyRef Name="ClientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="individuallegislatorscommittee_CommitteeId">
+    <End Role="committee" Type="Self.committee" Multiplicity="1" />
+    <End Role="individuallegislatorscommittee" Type="Self.individuallegislatorscommittee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="committee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="individuallegislatorscommittee">
+        <PropertyRef Name="CommitteeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="contentloaderlog_processId">
+    <End Role="processevents" Type="Self.processevents" Multiplicity="1" />
+    <End Role="contentloaderlog" Type="Self.contentloaderlog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="processevents">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="contentloaderlog">
+        <PropertyRef Name="ProcessId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="contentloaderlog_ProcessInstanceId">
+    <End Role="processinstances" Type="Self.processinstances" Multiplicity="1" />
+    <End Role="contentloaderlog" Type="Self.contentloaderlog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="processinstances">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="contentloaderlog">
+        <PropertyRef Name="ProcessInstanceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="contentloaderlog_WebLinkId">
+    <End Role="weblinks" Type="Self.weblinks" Multiplicity="1" />
+    <End Role="contentloaderlog" Type="Self.contentloaderlog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="weblinks">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="contentloaderlog">
+        <PropertyRef Name="WebSiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="individuallegislators_CountryId">
+    <End Role="country" Type="Self.country" Multiplicity="0..1" />
+    <End Role="individuallegislators" Type="Self.individuallegislators" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="country">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="individuallegislators">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="institution_CountryId">
+    <End Role="country" Type="Self.country" Multiplicity="0..1" />
+    <End Role="institution" Type="Self.institution" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="country">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="institution">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="InstitutionNames_CountryId">
+    <End Role="country" Type="Self.country" Multiplicity="0..1" />
+    <End Role="policymakers" Type="Self.policymakers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="country">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="policymakers">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ScrappedContentEntity_CountryId">
+    <End Role="country" Type="Self.country" Multiplicity="0..1" />
+    <End Role="scrapperstandardtags_entitytypes" Type="Self.scrapperstandardtags_entitytypes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="country">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="scrapperstandardtags_entitytypes">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Statehead_CountryId">
+    <End Role="country" Type="Self.country" Multiplicity="1" />
+    <End Role="statehead" Type="Self.statehead" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="country">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="statehead">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="user_CountryId">
+    <End Role="country" Type="Self.country" Multiplicity="1" />
+    <End Role="user" Type="Self.user" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="country">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="user">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="WebSiteCategoryMapping_CategoryId">
+    <End Role="country" Type="Self.country" Multiplicity="1" />
+    <End Role="weburlcategorymapping" Type="Self.weburlcategorymapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="country">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="weburlcategorymapping">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="WebSiteMst_CountryId">
+    <End Role="country" Type="Self.country" Multiplicity="0..1" />
+    <End Role="weblinks" Type="Self.weblinks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="country">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="weblinks">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ScraperEngineSetup_DailyFrequencyId">
+    <End Role="dailyfrequency" Type="Self.dailyfrequency" Multiplicity="1" />
+    <End Role="scraperenginesetup" Type="Self.scraperenginesetup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="dailyfrequency">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="scraperenginesetup">
+        <PropertyRef Name="DailyFrequencyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DefaultLexiconTerms_LexiconIssuesId">
+    <End Role="lexiconissues" Type="Self.lexiconissues" Multiplicity="1" />
+    <End Role="defaultlexiconterms" Type="Self.defaultlexiconterms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lexiconissues">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="defaultlexiconterms">
+        <PropertyRef Name="LexiconIssuesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DefaultLexiconTerms_LexiconTypeId">
+    <End Role="lexicontype" Type="Self.lexicontype" Multiplicity="1" />
+    <End Role="defaultlexiconterms" Type="Self.defaultlexiconterms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lexicontype">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="defaultlexiconterms">
+        <PropertyRef Name="LexiconTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DefaultLexiconTerms_UserId">
+    <End Role="user" Type="Self.user" Multiplicity="1" />
+    <End Role="defaultlexiconterms" Type="Self.defaultlexiconterms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="defaultlexiconterms">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Foregn_InternationOrg_DesignationId">
+    <End Role="designation" Type="Self.designation" Multiplicity="0..1" />
+    <End Role="internationalorganizations" Type="Self.internationalorganizations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="designation">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="internationalorganizations">
+        <PropertyRef Name="DesignationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="individuallegislatorsdesignation_DesignationId">
+    <End Role="designation" Type="Self.designation" Multiplicity="1" />
+    <End Role="individuallegislatorsdesignation" Type="Self.individuallegislatorsdesignation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="designation">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="individuallegislatorsdesignation">
+        <PropertyRef Name="DesignationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PolicyMakers_DesignationId">
+    <End Role="designation" Type="Self.designation" Multiplicity="0..1" />
+    <End Role="policymakers" Type="Self.policymakers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="designation">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="policymakers">
+        <PropertyRef Name="DesignationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="statehead_DesignationId">
+    <End Role="designation" Type="Self.designation" Multiplicity="0..1" />
+    <End Role="statehead" Type="Self.statehead" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="designation">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="statehead">
+        <PropertyRef Name="DesignationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="documentstorage_ScanningLinkDetailsId">
+    <End Role="scanninglinkdetails" Type="Self.scanninglinkdetails" Multiplicity="1" />
+    <End Role="documentstorage" Type="Self.documentstorage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="scanninglinkdetails">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="documentstorage">
+        <PropertyRef Name="ScanningLinkDetailid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DynamicTablesFieldsForNounPlusVerb_DynamicTablesVerbId">
+    <End Role="dynamictablesfornounplusverb" Type="Self.dynamictablesfornounplusverb" Multiplicity="0..1" />
+    <End Role="dynamictablesfieldsfornounplusverb" Type="Self.dynamictablesfieldsfornounplusverb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="dynamictablesfornounplusverb">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="dynamictablesfieldsfornounplusverb">
+        <PropertyRef Name="DynamicTablesForNounPlusVerbId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TemplateId_EmailGenerationStatus">
+    <End Role="emailtemplate" Type="Self.emailtemplate" Multiplicity="1" />
+    <End Role="emailgenerationstatus" Type="Self.emailgenerationstatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="emailtemplate">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="emailgenerationstatus">
+        <PropertyRef Name="TemplateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserId_EmailGenerationStatus">
+    <End Role="user" Type="Self.user" Multiplicity="1" />
+    <End Role="emailgenerationstatus" Type="Self.emailgenerationstatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="emailgenerationstatus">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="individuallegislators_EntityId">
+    <End Role="euentities" Type="Self.euentities" Multiplicity="0..1" />
+    <End Role="individuallegislators" Type="Self.individuallegislators" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="euentities">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="individuallegislators">
+        <PropertyRef Name="EntityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="events_ProcessEventId">
+    <End Role="processevents" Type="Self.processevents" Multiplicity="1" />
+    <End Role="events" Type="Self.events" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="processevents">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="events">
+        <PropertyRef Name="ProcessEventId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="events_ProcessInstanceId">
+    <End Role="processinstances" Type="Self.processinstances" Multiplicity="0..1" />
+    <End Role="events" Type="Self.events" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="processinstances">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="events">
+        <PropertyRef Name="ProcessInstanceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="events_ProcessTypeId">
+    <End Role="processtypes" Type="Self.processtypes" Multiplicity="1" />
+    <End Role="events" Type="Self.events" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="processtypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="events">
+        <PropertyRef Name="ProcessTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ScraperEngineSetup_FrequencyId">
+    <End Role="frequency" Type="Self.frequency" Multiplicity="1" />
+    <End Role="scraperenginesetup" Type="Self.scraperenginesetup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="frequency">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="scraperenginesetup">
+        <PropertyRef Name="FrequencyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="individuallegislators_SectorId">
+    <End Role="sector" Type="Self.sector" Multiplicity="0..1" />
+    <End Role="individuallegislators" Type="Self.individuallegislators" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sector">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="individuallegislators">
+        <PropertyRef Name="SectorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="individuallegislatorscommittee_LegislatorsId">
+    <End Role="individuallegislators" Type="Self.individuallegislators" Multiplicity="1" />
+    <End Role="individuallegislatorscommittee" Type="Self.individuallegislatorscommittee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="individuallegislators">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="individuallegislatorscommittee">
+        <PropertyRef Name="IndividualLegislatorsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="individuallegislatorsdesignation_LegislatorsId">
+    <End Role="individuallegislators" Type="Self.individuallegislators" Multiplicity="1" />
+    <End Role="individuallegislatorsdesignation" Type="Self.individuallegislatorsdesignation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="individuallegislators">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="individuallegislatorsdesignation">
+        <PropertyRef Name="IndividualLegislatorsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="institution_InstitutionTypeId">
+    <End Role="institutiontypes" Type="Self.institutiontypes" Multiplicity="1" />
+    <End Role="institution" Type="Self.institution" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="institutiontypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="institution">
+        <PropertyRef Name="InstitutionTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ScrappedContentEntity_EntityId">
+    <End Role="institution" Type="Self.institution" Multiplicity="0..1" />
+    <End Role="scrapperstandardtags_entitytypes" Type="Self.scrapperstandardtags_entitytypes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="institution">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="scrapperstandardtags_entitytypes">
+        <PropertyRef Name="EntityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="weblinks_EntityId">
+    <End Role="institution" Type="Self.institution" Multiplicity="0..1" />
+    <End Role="weblinks" Type="Self.weblinks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="institution">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="weblinks">
+        <PropertyRef Name="EntityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="InstitutionNames_InstitutionId">
+    <End Role="institutiontypes" Type="Self.institutiontypes" Multiplicity="1" />
+    <End Role="policymakers" Type="Self.policymakers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="institutiontypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="policymakers">
+        <PropertyRef Name="InstitutionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ScrappedContentEntity_EntityTypeId">
+    <End Role="institutiontypes" Type="Self.institutiontypes" Multiplicity="0..1" />
+    <End Role="scrapperstandardtags_entitytypes" Type="Self.scrapperstandardtags_entitytypes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="institutiontypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="scrapperstandardtags_entitytypes">
+        <PropertyRef Name="EntityTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="weblinks_InstitutionTypeId">
+    <End Role="institutiontypes" Type="Self.institutiontypes" Multiplicity="0..1" />
+    <End Role="weblinks" Type="Self.weblinks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="institutiontypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="weblinks">
+        <PropertyRef Name="InstitutionTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LexiconIssueLinker_LexiconIssueId">
+    <End Role="lexiconissues" Type="Self.lexiconissues" Multiplicity="1" />
+    <End Role="lexiconissuelinker" Type="Self.lexiconissuelinker" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lexiconissues">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="lexiconissuelinker">
+        <PropertyRef Name="LexiconIssueId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_lexiconIssue_id">
+    <End Role="lexiconissues" Type="Self.lexiconissues" Multiplicity="0..1" />
+    <End Role="lexiconprivilege" Type="Self.lexiconprivilege" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lexiconissues">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="lexiconprivilege">
+        <PropertyRef Name="LexiconIssueId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LexiconIssue_LexiconTypeId">
+    <End Role="lexicontype" Type="Self.lexicontype" Multiplicity="1" />
+    <End Role="lexiconissues" Type="Self.lexiconissues" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lexicontype">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="lexiconissues">
+        <PropertyRef Name="LexiconTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Scrapedlexiconmapping_LexiconId">
+    <End Role="lexiconissues" Type="Self.lexiconissues" Multiplicity="1" />
+    <End Role="scrapedlexiconmapping" Type="Self.scrapedlexiconmapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lexiconissues">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="scrapedlexiconmapping">
+        <PropertyRef Name="LexiconId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="lexiconpriviledge_ibfk_1">
+    <End Role="user" Type="Self.user" Multiplicity="0..1" />
+    <End Role="lexiconprivilege" Type="Self.lexiconprivilege" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="lexiconprivilege">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="loadererrorlog_ProcessEvents">
+    <End Role="processevents" Type="Self.processevents" Multiplicity="1" />
+    <End Role="loadererrorlog" Type="Self.loadererrorlog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="processevents">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="loadererrorlog">
+        <PropertyRef Name="ProcessId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="loadererrorlog_ProcessInstances">
+    <End Role="processinstances" Type="Self.processinstances" Multiplicity="1" />
+    <End Role="loadererrorlog" Type="Self.loadererrorlog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="processinstances">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="loadererrorlog">
+        <PropertyRef Name="ProcessIntanceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="loadererrorlog_WebLinks">
+    <End Role="weblinks" Type="Self.weblinks" Multiplicity="1" />
+    <End Role="loadererrorlog" Type="Self.loadererrorlog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="weblinks">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="loadererrorlog">
+        <PropertyRef Name="WebSiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="loaderlinkdocuments_ProcessId">
+    <End Role="processevents" Type="Self.processevents" Multiplicity="1" />
+    <End Role="loaderlinkdocuments" Type="Self.loaderlinkdocuments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="processevents">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="loaderlinkdocuments">
+        <PropertyRef Name="ProcessId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="loaderlinkdocuments_WebSiteId">
+    <End Role="weblinks" Type="Self.weblinks" Multiplicity="1" />
+    <End Role="loaderlinkdocuments" Type="Self.loaderlinkdocuments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="weblinks">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="loaderlinkdocuments">
+        <PropertyRef Name="WebSiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LoaderLinkLog_NewProcessId">
+    <End Role="processevents" Type="Self.processevents" Multiplicity="0..1" />
+    <End Role="loaderlinklog" Type="Self.loaderlinklog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="processevents">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="loaderlinklog">
+        <PropertyRef Name="NewProcessId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LoaderLinkLog_ProcessId">
+    <End Role="processevents" Type="Self.processevents" Multiplicity="1" />
+    <End Role="loaderlinklog" Type="Self.loaderlinklog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="processevents">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="loaderlinklog">
+        <PropertyRef Name="ProcessId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LoaderLinkLog_ProcessInstanceId">
+    <End Role="processinstances" Type="Self.processinstances" Multiplicity="1" />
+    <End Role="loaderlinklog" Type="Self.loaderlinklog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="processinstances">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="loaderlinklog">
+        <PropertyRef Name="ProcessInstanceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LoaderLinkLog_StatusId">
+    <End Role="status" Type="Self.status" Multiplicity="1" />
+    <End Role="loaderlinklog" Type="Self.loaderlinklog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="status">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="loaderlinklog">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LoaderLinkLog_WebSiteId">
+    <End Role="weblinks" Type="Self.weblinks" Multiplicity="1" />
+    <End Role="loaderlinklog" Type="Self.loaderlinklog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="weblinks">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="loaderlinklog">
+        <PropertyRef Name="WebSiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LoaderLinkQueue_ProcessId">
+    <End Role="processevents" Type="Self.processevents" Multiplicity="1" />
+    <End Role="loaderlinkqueue" Type="Self.loaderlinkqueue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="processevents">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="loaderlinkqueue">
+        <PropertyRef Name="ProcessId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LoaderLinkQueue_ProcessInstanceId">
+    <End Role="processinstances" Type="Self.processinstances" Multiplicity="1" />
+    <End Role="loaderlinkqueue" Type="Self.loaderlinkqueue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="processinstances">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="loaderlinkqueue">
+        <PropertyRef Name="ProcessInstanceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LoaderLinkQueue_WebSiteId">
+    <End Role="weblinks" Type="Self.weblinks" Multiplicity="0..1" />
+    <End Role="loaderlinkqueue" Type="Self.loaderlinkqueue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="weblinks">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="loaderlinkqueue">
+        <PropertyRef Name="WebSiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NounPlusVerb_MetaDataTypeId">
+    <End Role="metadatatypes" Type="Self.metadatatypes" Multiplicity="1" />
+    <End Role="metadatanounplusverb" Type="Self.metadatanounplusverb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="metadatatypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="metadatanounplusverb">
+        <PropertyRef Name="MetaDataTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MetaDataTags_MetaDataTypesId">
+    <End Role="metadatatypes" Type="Self.metadatatypes" Multiplicity="1" />
+    <End Role="metadataphrases" Type="Self.metadataphrases" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="metadatatypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="metadataphrases">
+        <PropertyRef Name="MetaDataTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MetaDataTypes_WebSiteTypeId">
+    <End Role="websitetypes" Type="Self.websitetypes" Multiplicity="1" />
+    <End Role="metadatatypes" Type="Self.metadatatypes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="websitetypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="metadatatypes">
+        <PropertyRef Name="WebSiteTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FN_ScrappedProprietoryTagsMapping_MetaDataId">
+    <End Role="metadatatypes" Type="Self.metadatatypes" Multiplicity="0..1" />
+    <End Role="scrappedproprietorytagsmapping" Type="Self.scrappedproprietorytagsmapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="metadatatypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="scrappedproprietorytagsmapping">
+        <PropertyRef Name="MetaDataTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="metadatavalue_TagId">
+    <End Role="metadatatypes" Type="Self.metadatatypes" Multiplicity="1" />
+    <End Role="metadatavalue" Type="Self.metadatavalue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="metadatatypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="metadatavalue">
+        <PropertyRef Name="MetaDataTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="weblinkproprietarytags_metadataTypeId">
+    <End Role="metadatatypes" Type="Self.metadatatypes" Multiplicity="1" />
+    <End Role="weblinkproprietarytags" Type="Self.weblinkproprietarytags" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="metadatatypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="weblinkproprietarytags">
+        <PropertyRef Name="MetaDataTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="weblinkactivitytype_MetaDataTypeId">
+    <End Role="metadatavalue" Type="Self.metadatavalue" Multiplicity="1" />
+    <End Role="weblinkactivitytype" Type="Self.weblinkactivitytype" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="metadatavalue">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="weblinkactivitytype">
+        <PropertyRef Name="MetaDataTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RoleModuleRights_Modules">
+    <End Role="modules" Type="Self.modules" Multiplicity="1" />
+    <End Role="rolemodulerights" Type="Self.rolemodulerights" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="modules">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="rolemodulerights">
+        <PropertyRef Name="ModuleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ParentMenu_ParentMenuId">
+    <End Role="parentmenu" Type="Self.parentmenu" Multiplicity="1" />
+    <End Role="submenu" Type="Self.submenu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="parentmenu">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="submenu">
+        <PropertyRef Name="ParentMenuId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="weblinkpolicymaker_PolicyMakerId">
+    <End Role="policymakers" Type="Self.policymakers" Multiplicity="1" />
+    <End Role="weblinkpolicymaker" Type="Self.weblinkpolicymaker" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="policymakers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="weblinkpolicymaker">
+        <PropertyRef Name="PolicyMakerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="processinstances_processId">
+    <End Role="processevents" Type="Self.processevents" Multiplicity="1" />
+    <End Role="processinstances" Type="Self.processinstances" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="processevents">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="processinstances">
+        <PropertyRef Name="ProcessId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="scanninglinkdetails_ProcessId">
+    <End Role="processevents" Type="Self.processevents" Multiplicity="0..1" />
+    <End Role="scanninglinkdetails" Type="Self.scanninglinkdetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="processevents">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="scanninglinkdetails">
+        <PropertyRef Name="ProcessId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="scanninglinkqueue_ProcessId">
+    <End Role="processevents" Type="Self.processevents" Multiplicity="0..1" />
+    <End Role="scanninglinkqueue" Type="Self.scanninglinkqueue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="processevents">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="scanninglinkqueue">
+        <PropertyRef Name="ProcessId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="scanninglinkdetails_InstanceId">
+    <End Role="processinstances" Type="Self.processinstances" Multiplicity="1" />
+    <End Role="scanninglinkdetails" Type="Self.scanninglinkdetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="processinstances">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="scanninglinkdetails">
+        <PropertyRef Name="ProcessInstanceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RefreshToken_UserId">
+    <End Role="user" Type="Self.user" Multiplicity="1" />
+    <End Role="refreshtoken" Type="Self.refreshtoken" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="refreshtoken">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RoleModuleRights_Role">
+    <End Role="role" Type="Self.role" Multiplicity="1" />
+    <End Role="rolemodulerights" Type="Self.rolemodulerights" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="role">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="rolemodulerights">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RoleModuleRights_UserId">
+    <End Role="user" Type="Self.user" Multiplicity="1" />
+    <End Role="rolemodulerights" Type="Self.rolemodulerights" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="rolemodulerights">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_ScanningLinkQueue_ScannerLinkId">
+    <End Role="scanninglinkqueue" Type="Self.scanninglinkqueue" Multiplicity="1" />
+    <End Role="scanninglinkdetails" Type="Self.scanninglinkdetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="scanninglinkqueue">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="scanninglinkdetails">
+        <PropertyRef Name="ScannerLinkId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ScanningLinkQueue_StatusId">
+    <End Role="status" Type="Self.status" Multiplicity="1" />
+    <End Role="scanninglinkdetails" Type="Self.scanninglinkdetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="status">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="scanninglinkdetails">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ScrappedStandarTags_ScanningLinkDetailsId">
+    <End Role="scanninglinkdetails" Type="Self.scanninglinkdetails" Multiplicity="0..1" />
+    <End Role="scrappedstandardtags" Type="Self.scrappedstandardtags" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="scanninglinkdetails">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="scrappedstandardtags">
+        <PropertyRef Name="ScanningLinkDetailsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ScrapedContents_ScanningLinkId">
+    <End Role="scanninglinkdetails" Type="Self.scanninglinkdetails" Multiplicity="1" />
+    <End Role="scrapedcontents" Type="Self.scrapedcontents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="scanninglinkdetails">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="scrapedcontents">
+        <PropertyRef Name="ScanningLinkDetailId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ScrappedProprietoryTags_ScrappedLinkDetailId">
+    <End Role="scanninglinkdetails" Type="Self.scanninglinkdetails" Multiplicity="1" />
+    <End Role="scrappedproprietorytags" Type="Self.scrappedproprietorytags" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="scanninglinkdetails">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="scrappedproprietorytags">
+        <PropertyRef Name="ScanningLinkDetailId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ScanningLinkQueue_WebSiteId">
+    <End Role="weblinks" Type="Self.weblinks" Multiplicity="1" />
+    <End Role="scanninglinkqueue" Type="Self.scanninglinkqueue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="weblinks">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="scanninglinkqueue">
+        <PropertyRef Name="WebSiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="schedularfrequency_SchedularId">
+    <End Role="schedular" Type="Self.schedular" Multiplicity="1" />
+    <End Role="schedularfrequency" Type="Self.schedularfrequency" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="schedular">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="schedularfrequency">
+        <PropertyRef Name="SchedularId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ScrapedDocumentDetails_ScrapedContentId">
+    <End Role="scrapedcontents" Type="Self.scrapedcontents" Multiplicity="1" />
+    <End Role="scrapeddocumentdetails" Type="Self.scrapeddocumentdetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="scrapedcontents">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="scrapeddocumentdetails">
+        <PropertyRef Name="ScrapedContentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Scrapedlexiconmapping_ScrapedContentId">
+    <End Role="scrapedcontents" Type="Self.scrapedcontents" Multiplicity="1" />
+    <End Role="scrapedlexiconmapping" Type="Self.scrapedlexiconmapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="scrapedcontents">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="scrapedlexiconmapping">
+        <PropertyRef Name="ScrapedContentid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ScraperEngineSetup_StatusId">
+    <End Role="status" Type="Self.status" Multiplicity="1" />
+    <End Role="scraperenginesetup" Type="Self.scraperenginesetup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="status">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="scraperenginesetup">
+        <PropertyRef Name="Status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ScraperEngineSetup_WebSiteId">
+    <End Role="weblinks" Type="Self.weblinks" Multiplicity="1" />
+    <End Role="scraperenginesetup" Type="Self.scraperenginesetup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="weblinks">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="scraperenginesetup">
+        <PropertyRef Name="WebSiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FN_ScrappedProprietoryTagsMapping_scrappedproprietorytagsMapping">
+    <End Role="scrappedproprietorytags" Type="Self.scrappedproprietorytags" Multiplicity="1" />
+    <End Role="scrappedproprietorytagsmapping" Type="Self.scrappedproprietorytagsmapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="scrappedproprietorytags">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="scrappedproprietorytagsmapping">
+        <PropertyRef Name="ScrappedProprietoryTagId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_scrappedstandardtag_policymakers_ScrappedStandardTagsId">
+    <End Role="scrappedstandardtags" Type="Self.scrappedstandardtags" Multiplicity="0..1" />
+    <End Role="scrappedstandardtag_policymakers" Type="Self.scrappedstandardtag_policymakers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="scrappedstandardtags">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="scrappedstandardtag_policymakers">
+        <PropertyRef Name="ScrappedStandardTagsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ScrappedStandardtags_Sectors_ScrappedStandardTagsId">
+    <End Role="scrappedstandardtags" Type="Self.scrappedstandardtags" Multiplicity="0..1" />
+    <End Role="scrappedstandardtags_sectors" Type="Self.scrappedstandardtags_sectors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="scrappedstandardtags">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="scrappedstandardtags_sectors">
+        <PropertyRef Name="ScrappedStandardTagsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ScrappedContentEntity_ScrappedStandardTagId">
+    <End Role="scrappedstandardtags" Type="Self.scrappedstandardtags" Multiplicity="1" />
+    <End Role="scrapperstandardtags_entitytypes" Type="Self.scrapperstandardtags_entitytypes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="scrappedstandardtags">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="scrapperstandardtags_entitytypes">
+        <PropertyRef Name="ScrappedStandardTagId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ScrappedStandardtags_Sectors_SectorId">
+    <End Role="sector" Type="Self.sector" Multiplicity="0..1" />
+    <End Role="scrappedstandardtags_sectors" Type="Self.scrappedstandardtags_sectors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sector">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="scrappedstandardtags_sectors">
+        <PropertyRef Name="SectorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="weblinksector_SectorId">
+    <End Role="sector" Type="Self.sector" Multiplicity="1" />
+    <End Role="weblinksector" Type="Self.weblinksector" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sector">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="weblinksector">
+        <PropertyRef Name="SectorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubMenu_SubMenuId">
+    <End Role="submenu" Type="Self.submenu" Multiplicity="1" />
+    <End Role="useraccessrights" Type="Self.useraccessrights" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="submenu">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="useraccessrights">
+        <PropertyRef Name="SubMenuId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_UserId">
+    <End Role="user" Type="Self.user" Multiplicity="1" />
+    <End Role="useraccessrights" Type="Self.useraccessrights" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="useraccessrights">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserActivation_UserId">
+    <End Role="user" Type="Self.user" Multiplicity="1" />
+    <End Role="useractivationlink" Type="Self.useractivationlink" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="useractivationlink">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="weblinkactivitytype_webLinkId">
+    <End Role="weblinks" Type="Self.weblinks" Multiplicity="1" />
+    <End Role="weblinkactivitytype" Type="Self.weblinkactivitytype" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="weblinks">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="weblinkactivitytype">
+        <PropertyRef Name="WebLinkId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="weblinkPageContentRegEx_WebSiteId">
+    <End Role="weblinks" Type="Self.weblinks" Multiplicity="1" />
+    <End Role="weblinkpagecontentregex" Type="Self.weblinkpagecontentregex" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="weblinks">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="weblinkpagecontentregex">
+        <PropertyRef Name="WebSiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="weblinkpolicymaker_WebLinkId">
+    <End Role="weblinks" Type="Self.weblinks" Multiplicity="1" />
+    <End Role="weblinkpolicymaker" Type="Self.weblinkpolicymaker" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="weblinks">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="weblinkpolicymaker">
+        <PropertyRef Name="WebLinkId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="weblinkproprietarytags_weblinkid">
+    <End Role="weblinks" Type="Self.weblinks" Multiplicity="1" />
+    <End Role="weblinkproprietarytags" Type="Self.weblinkproprietarytags" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="weblinks">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="weblinkproprietarytags">
+        <PropertyRef Name="WeblinkId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="WebsiteConfiguration_WebsiteId">
+    <End Role="weblinks" Type="Self.weblinks" Multiplicity="1" />
+    <End Role="weblinkrss" Type="Self.weblinkrss" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="weblinks">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="weblinkrss">
+        <PropertyRef Name="WebSiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="weblinksector_WebLinkId">
+    <End Role="weblinks" Type="Self.weblinks" Multiplicity="1" />
+    <End Role="weblinksector" Type="Self.weblinksector" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="weblinks">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="weblinksector">
+        <PropertyRef Name="WebLinkId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="WebSiteCategoryMapping_WebSiteId">
+    <End Role="weblinks" Type="Self.weblinks" Multiplicity="1" />
+    <End Role="weburlcategorymapping" Type="Self.weburlcategorymapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="weblinks">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="weburlcategorymapping">
+        <PropertyRef Name="WebSiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="WebSiteMst_LinkId">
+    <End Role="websitetypes" Type="Self.websitetypes" Multiplicity="1" />
+    <End Role="weblinks" Type="Self.weblinks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="websitetypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="weblinks">
+        <PropertyRef Name="WebSiteTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="activitytype" EntityType="Self.activitytype" />
+    <EntitySet Name="apiclient" EntityType="Self.apiclient" />
+    <EntitySet Name="auditlog" EntityType="Self.auditlog" />
+    <EntitySet Name="audittables" EntityType="Self.audittables" />
+    <EntitySet Name="audittype" EntityType="Self.audittype" />
+    <EntitySet Name="category" EntityType="Self.category" />
+    <EntitySet Name="client" EntityType="Self.client" />
+    <EntitySet Name="committee" EntityType="Self.committee" />
+    <EntitySet Name="contentloaderlog" EntityType="Self.contentloaderlog" />
+    <EntitySet Name="country" EntityType="Self.country" />
+    <EntitySet Name="dailyfrequency" EntityType="Self.dailyfrequency" />
+    <EntitySet Name="defaultlexiconterms" EntityType="Self.defaultlexiconterms" />
+    <EntitySet Name="designation" EntityType="Self.designation" />
+    <EntitySet Name="documentstorage" EntityType="Self.documentstorage" />
+    <EntitySet Name="dynamictablesfieldsfornounplusverb" EntityType="Self.dynamictablesfieldsfornounplusverb" />
+    <EntitySet Name="dynamictablesfornounplusverb" EntityType="Self.dynamictablesfornounplusverb" />
+    <EntitySet Name="emailgenerationchartimage" EntityType="Self.emailgenerationchartimage" />
+    <EntitySet Name="emailgenerationstatus" EntityType="Self.emailgenerationstatus" />
+    <EntitySet Name="emailtemplate" EntityType="Self.emailtemplate" />
+    <EntitySet Name="euentities" EntityType="Self.euentities" />
+    <EntitySet Name="eurpeanunionentities" EntityType="Self.eurpeanunionentities" />
+    <EntitySet Name="events" EntityType="Self.events" />
+    <EntitySet Name="frequency" EntityType="Self.frequency" />
+    <EntitySet Name="globalconfiguration" EntityType="Self.globalconfiguration" />
+    <EntitySet Name="individuallegislators" EntityType="Self.individuallegislators" />
+    <EntitySet Name="individuallegislatorscommittee" EntityType="Self.individuallegislatorscommittee" />
+    <EntitySet Name="individuallegislatorsdesignation" EntityType="Self.individuallegislatorsdesignation" />
+    <EntitySet Name="instance" EntityType="Self.instance" />
+    <EntitySet Name="institution" EntityType="Self.institution" />
+    <EntitySet Name="institutiontypes" EntityType="Self.institutiontypes" />
+    <EntitySet Name="internationalorganizations" EntityType="Self.internationalorganizations" />
+    <EntitySet Name="lexiconissuelinker" EntityType="Self.lexiconissuelinker" />
+    <EntitySet Name="lexiconissues" EntityType="Self.lexiconissues" />
+    <EntitySet Name="lexiconprivilege" EntityType="Self.lexiconprivilege" />
+    <EntitySet Name="lexicontype" EntityType="Self.lexicontype" />
+    <EntitySet Name="loadererrorlog" EntityType="Self.loadererrorlog" />
+    <EntitySet Name="loaderlinkdocuments" EntityType="Self.loaderlinkdocuments" />
+    <EntitySet Name="loaderlinklog" EntityType="Self.loaderlinklog" />
+    <EntitySet Name="loaderlinkqueue" EntityType="Self.loaderlinkqueue" />
+    <EntitySet Name="metadatanounplusverb" EntityType="Self.metadatanounplusverb" />
+    <EntitySet Name="metadataphrases" EntityType="Self.metadataphrases" />
+    <EntitySet Name="metadatatypes" EntityType="Self.metadatatypes" />
+    <EntitySet Name="metadatavalue" EntityType="Self.metadatavalue" />
+    <EntitySet Name="modules" EntityType="Self.modules" />
+    <EntitySet Name="parentmenu" EntityType="Self.parentmenu" />
+    <EntitySet Name="policymakers" EntityType="Self.policymakers" />
+    <EntitySet Name="processeventlog" EntityType="Self.processeventlog" />
+    <EntitySet Name="processevents" EntityType="Self.processevents" />
+    <EntitySet Name="processinstances" EntityType="Self.processinstances" />
+    <EntitySet Name="processtypes" EntityType="Self.processtypes" />
+    <EntitySet Name="refreshtoken" EntityType="Self.refreshtoken" />
+    <EntitySet Name="relatedactivitytypes" EntityType="Self.relatedactivitytypes" />
+    <EntitySet Name="role" EntityType="Self.role" />
+    <EntitySet Name="rolemodulerights" EntityType="Self.rolemodulerights" />
+    <EntitySet Name="scanninglinkdetails" EntityType="Self.scanninglinkdetails" />
+    <EntitySet Name="scanninglinkqueue" EntityType="Self.scanninglinkqueue" />
+    <EntitySet Name="schedular" EntityType="Self.schedular" />
+    <EntitySet Name="schedularfrequency" EntityType="Self.schedularfrequency" />
+    <EntitySet Name="scrapedcontents" EntityType="Self.scrapedcontents" />
+    <EntitySet Name="scrapeddocumentdetails" EntityType="Self.scrapeddocumentdetails" />
+    <EntitySet Name="scrapedlexiconmapping" EntityType="Self.scrapedlexiconmapping" />
+    <EntitySet Name="scraperengineconfiguration" EntityType="Self.scraperengineconfiguration" />
+    <EntitySet Name="scraperenginesetup" EntityType="Self.scraperenginesetup" />
+    <EntitySet Name="scrappedproprietorytags" EntityType="Self.scrappedproprietorytags" />
+    <EntitySet Name="scrappedproprietorytagsmapping" EntityType="Self.scrappedproprietorytagsmapping" />
+    <EntitySet Name="scrappedstandardtag_policymakers" EntityType="Self.scrappedstandardtag_policymakers" />
+    <EntitySet Name="scrappedstandardtags" EntityType="Self.scrappedstandardtags" />
+    <EntitySet Name="scrappedstandardtags_sectors" EntityType="Self.scrappedstandardtags_sectors" />
+    <EntitySet Name="scrapperstandardtags_entitytypes" EntityType="Self.scrapperstandardtags_entitytypes" />
+    <EntitySet Name="sector" EntityType="Self.sector" />
+    <EntitySet Name="statehead" EntityType="Self.statehead" />
+    <EntitySet Name="status" EntityType="Self.status" />
+    <EntitySet Name="submenu" EntityType="Self.submenu" />
+    <EntitySet Name="topiccodes" EntityType="Self.topiccodes" />
+    <EntitySet Name="urlexclusionlist" EntityType="Self.urlexclusionlist" />
+    <EntitySet Name="user" EntityType="Self.user" />
+    <EntitySet Name="useraccessrights" EntityType="Self.useraccessrights" />
+    <EntitySet Name="useractivationlink" EntityType="Self.useractivationlink" />
+    <EntitySet Name="weblinkactivitytype" EntityType="Self.weblinkactivitytype" />
+    <EntitySet Name="weblinkpagecontentregex" EntityType="Self.weblinkpagecontentregex" />
+    <EntitySet Name="weblinkpolicymaker" EntityType="Self.weblinkpolicymaker" />
+    <EntitySet Name="weblinkproprietarytags" EntityType="Self.weblinkproprietarytags" />
+    <EntitySet Name="weblinkrss" EntityType="Self.weblinkrss" />
+    <EntitySet Name="weblinks" EntityType="Self.weblinks" />
+    <EntitySet Name="weblinksector" EntityType="Self.weblinksector" />
+    <EntitySet Name="websitetypes" EntityType="Self.websitetypes" />
+    <EntitySet Name="weburlcategorymapping" EntityType="Self.weburlcategorymapping" />
+    <EntitySet Name="legislatorsview" EntityType="Self.legislatorsview" />
+    <EntitySet Name="multilateralviewforscrapperactivity" EntityType="Self.multilateralviewforscrapperactivity" />
+    <AssociationSet Name="FK_MetaDataTags_ActivityTypeId" Association="Self.FK_MetaDataTags_ActivityTypeId">
+      <End Role="activitytype" EntitySet="activitytype" />
+      <End Role="metadataphrases" EntitySet="metadataphrases" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RelatedActivityTypes_ActivityTypeId" Association="Self.FK_RelatedActivityTypes_ActivityTypeId">
+      <End Role="activitytype" EntitySet="activitytype" />
+      <End Role="relatedactivitytypes" EntitySet="relatedactivitytypes" />
+    </AssociationSet>
+    <AssociationSet Name="FN_ScrappedProprietoryTagsMapping_ActivityTypeId" Association="Self.FN_ScrappedProprietoryTagsMapping_ActivityTypeId">
+      <End Role="activitytype" EntitySet="activitytype" />
+      <End Role="scrappedproprietorytagsmapping" EntitySet="scrappedproprietorytagsmapping" />
+    </AssociationSet>
+    <AssociationSet Name="metadatanounplusverb_ActivityTypeId" Association="Self.metadatanounplusverb_ActivityTypeId">
+      <End Role="activitytype" EntitySet="activitytype" />
+      <End Role="metadatanounplusverb" EntitySet="metadatanounplusverb" />
+    </AssociationSet>
+    <AssociationSet Name="metadatavalue_TypeId" Association="Self.metadatavalue_TypeId">
+      <End Role="activitytype" EntitySet="activitytype" />
+      <End Role="metadatavalue" EntitySet="metadatavalue" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RefreshToken_ApiClient" Association="Self.FK_RefreshToken_ApiClient">
+      <End Role="apiclient" EntitySet="apiclient" />
+      <End Role="refreshtoken" EntitySet="refreshtoken" />
+    </AssociationSet>
+    <AssociationSet Name="auditlog_AuditTableId" Association="Self.auditlog_AuditTableId">
+      <End Role="audittables" EntitySet="audittables" />
+      <End Role="auditlog" EntitySet="auditlog" />
+    </AssociationSet>
+    <AssociationSet Name="auditlog_AuditTypeId" Association="Self.auditlog_AuditTypeId">
+      <End Role="audittype" EntitySet="audittype" />
+      <End Role="auditlog" EntitySet="auditlog" />
+    </AssociationSet>
+    <AssociationSet Name="auditLog_UserId" Association="Self.auditLog_UserId">
+      <End Role="user" EntitySet="user" />
+      <End Role="auditlog" EntitySet="auditlog" />
+    </AssociationSet>
+    <AssociationSet Name="WebSiteMst_CategoryId" Association="Self.WebSiteMst_CategoryId">
+      <End Role="category" EntitySet="category" />
+      <End Role="weblinks" EntitySet="weblinks" />
+    </AssociationSet>
+    <AssociationSet Name="globalconfiguration_clientId" Association="Self.globalconfiguration_clientId">
+      <End Role="client" EntitySet="client" />
+      <End Role="globalconfiguration" EntitySet="globalconfiguration" />
+    </AssociationSet>
+    <AssociationSet Name="ScraperEngineSetup_ClientId" Association="Self.ScraperEngineSetup_ClientId">
+      <End Role="client" EntitySet="client" />
+      <End Role="scraperenginesetup" EntitySet="scraperenginesetup" />
+    </AssociationSet>
+    <AssociationSet Name="individuallegislatorscommittee_CommitteeId" Association="Self.individuallegislatorscommittee_CommitteeId">
+      <End Role="committee" EntitySet="committee" />
+      <End Role="individuallegislatorscommittee" EntitySet="individuallegislatorscommittee" />
+    </AssociationSet>
+    <AssociationSet Name="contentloaderlog_processId" Association="Self.contentloaderlog_processId">
+      <End Role="processevents" EntitySet="processevents" />
+      <End Role="contentloaderlog" EntitySet="contentloaderlog" />
+    </AssociationSet>
+    <AssociationSet Name="contentloaderlog_ProcessInstanceId" Association="Self.contentloaderlog_ProcessInstanceId">
+      <End Role="processinstances" EntitySet="processinstances" />
+      <End Role="contentloaderlog" EntitySet="contentloaderlog" />
+    </AssociationSet>
+    <AssociationSet Name="contentloaderlog_WebLinkId" Association="Self.contentloaderlog_WebLinkId">
+      <End Role="weblinks" EntitySet="weblinks" />
+      <End Role="contentloaderlog" EntitySet="contentloaderlog" />
+    </AssociationSet>
+    <AssociationSet Name="individuallegislators_CountryId" Association="Self.individuallegislators_CountryId">
+      <End Role="country" EntitySet="country" />
+      <End Role="individuallegislators" EntitySet="individuallegislators" />
+    </AssociationSet>
+    <AssociationSet Name="institution_CountryId" Association="Self.institution_CountryId">
+      <End Role="country" EntitySet="country" />
+      <End Role="institution" EntitySet="institution" />
+    </AssociationSet>
+    <AssociationSet Name="InstitutionNames_CountryId" Association="Self.InstitutionNames_CountryId">
+      <End Role="country" EntitySet="country" />
+      <End Role="policymakers" EntitySet="policymakers" />
+    </AssociationSet>
+    <AssociationSet Name="ScrappedContentEntity_CountryId" Association="Self.ScrappedContentEntity_CountryId">
+      <End Role="country" EntitySet="country" />
+      <End Role="scrapperstandardtags_entitytypes" EntitySet="scrapperstandardtags_entitytypes" />
+    </AssociationSet>
+    <AssociationSet Name="Statehead_CountryId" Association="Self.Statehead_CountryId">
+      <End Role="country" EntitySet="country" />
+      <End Role="statehead" EntitySet="statehead" />
+    </AssociationSet>
+    <AssociationSet Name="user_CountryId" Association="Self.user_CountryId">
+      <End Role="country" EntitySet="country" />
+      <End Role="user" EntitySet="user" />
+    </AssociationSet>
+    <AssociationSet Name="WebSiteCategoryMapping_CategoryId" Association="Self.WebSiteCategoryMapping_CategoryId">
+      <End Role="country" EntitySet="country" />
+      <End Role="weburlcategorymapping" EntitySet="weburlcategorymapping" />
+    </AssociationSet>
+    <AssociationSet Name="WebSiteMst_CountryId" Association="Self.WebSiteMst_CountryId">
+      <End Role="country" EntitySet="country" />
+      <End Role="weblinks" EntitySet="weblinks" />
+    </AssociationSet>
+    <AssociationSet Name="ScraperEngineSetup_DailyFrequencyId" Association="Self.ScraperEngineSetup_DailyFrequencyId">
+      <End Role="dailyfrequency" EntitySet="dailyfrequency" />
+      <End Role="scraperenginesetup" EntitySet="scraperenginesetup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DefaultLexiconTerms_LexiconIssuesId" Association="Self.FK_DefaultLexiconTerms_LexiconIssuesId">
+      <End Role="lexiconissues" EntitySet="lexiconissues" />
+      <End Role="defaultlexiconterms" EntitySet="defaultlexiconterms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DefaultLexiconTerms_LexiconTypeId" Association="Self.FK_DefaultLexiconTerms_LexiconTypeId">
+      <End Role="lexicontype" EntitySet="lexicontype" />
+      <End Role="defaultlexiconterms" EntitySet="defaultlexiconterms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DefaultLexiconTerms_UserId" Association="Self.FK_DefaultLexiconTerms_UserId">
+      <End Role="user" EntitySet="user" />
+      <End Role="defaultlexiconterms" EntitySet="defaultlexiconterms" />
+    </AssociationSet>
+    <AssociationSet Name="Foregn_InternationOrg_DesignationId" Association="Self.Foregn_InternationOrg_DesignationId">
+      <End Role="designation" EntitySet="designation" />
+      <End Role="internationalorganizations" EntitySet="internationalorganizations" />
+    </AssociationSet>
+    <AssociationSet Name="individuallegislatorsdesignation_DesignationId" Association="Self.individuallegislatorsdesignation_DesignationId">
+      <End Role="designation" EntitySet="designation" />
+      <End Role="individuallegislatorsdesignation" EntitySet="individuallegislatorsdesignation" />
+    </AssociationSet>
+    <AssociationSet Name="PolicyMakers_DesignationId" Association="Self.PolicyMakers_DesignationId">
+      <End Role="designation" EntitySet="designation" />
+      <End Role="policymakers" EntitySet="policymakers" />
+    </AssociationSet>
+    <AssociationSet Name="statehead_DesignationId" Association="Self.statehead_DesignationId">
+      <End Role="designation" EntitySet="designation" />
+      <End Role="statehead" EntitySet="statehead" />
+    </AssociationSet>
+    <AssociationSet Name="documentstorage_ScanningLinkDetailsId" Association="Self.documentstorage_ScanningLinkDetailsId">
+      <End Role="scanninglinkdetails" EntitySet="scanninglinkdetails" />
+      <End Role="documentstorage" EntitySet="documentstorage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DynamicTablesFieldsForNounPlusVerb_DynamicTablesVerbId" Association="Self.FK_DynamicTablesFieldsForNounPlusVerb_DynamicTablesVerbId">
+      <End Role="dynamictablesfornounplusverb" EntitySet="dynamictablesfornounplusverb" />
+      <End Role="dynamictablesfieldsfornounplusverb" EntitySet="dynamictablesfieldsfornounplusverb" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TemplateId_EmailGenerationStatus" Association="Self.FK_TemplateId_EmailGenerationStatus">
+      <End Role="emailtemplate" EntitySet="emailtemplate" />
+      <End Role="emailgenerationstatus" EntitySet="emailgenerationstatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserId_EmailGenerationStatus" Association="Self.FK_UserId_EmailGenerationStatus">
+      <End Role="user" EntitySet="user" />
+      <End Role="emailgenerationstatus" EntitySet="emailgenerationstatus" />
+    </AssociationSet>
+    <AssociationSet Name="individuallegislators_EntityId" Association="Self.individuallegislators_EntityId">
+      <End Role="euentities" EntitySet="euentities" />
+      <End Role="individuallegislators" EntitySet="individuallegislators" />
+    </AssociationSet>
+    <AssociationSet Name="events_ProcessEventId" Association="Self.events_ProcessEventId">
+      <End Role="processevents" EntitySet="processevents" />
+      <End Role="events" EntitySet="events" />
+    </AssociationSet>
+    <AssociationSet Name="events_ProcessInstanceId" Association="Self.events_ProcessInstanceId">
+      <End Role="processinstances" EntitySet="processinstances" />
+      <End Role="events" EntitySet="events" />
+    </AssociationSet>
+    <AssociationSet Name="events_ProcessTypeId" Association="Self.events_ProcessTypeId">
+      <End Role="processtypes" EntitySet="processtypes" />
+      <End Role="events" EntitySet="events" />
+    </AssociationSet>
+    <AssociationSet Name="ScraperEngineSetup_FrequencyId" Association="Self.ScraperEngineSetup_FrequencyId">
+      <End Role="frequency" EntitySet="frequency" />
+      <End Role="scraperenginesetup" EntitySet="scraperenginesetup" />
+    </AssociationSet>
+    <AssociationSet Name="individuallegislators_SectorId" Association="Self.individuallegislators_SectorId">
+      <End Role="sector" EntitySet="sector" />
+      <End Role="individuallegislators" EntitySet="individuallegislators" />
+    </AssociationSet>
+    <AssociationSet Name="individuallegislatorscommittee_LegislatorsId" Association="Self.individuallegislatorscommittee_LegislatorsId">
+      <End Role="individuallegislators" EntitySet="individuallegislators" />
+      <End Role="individuallegislatorscommittee" EntitySet="individuallegislatorscommittee" />
+    </AssociationSet>
+    <AssociationSet Name="individuallegislatorsdesignation_LegislatorsId" Association="Self.individuallegislatorsdesignation_LegislatorsId">
+      <End Role="individuallegislators" EntitySet="individuallegislators" />
+      <End Role="individuallegislatorsdesignation" EntitySet="individuallegislatorsdesignation" />
+    </AssociationSet>
+    <AssociationSet Name="institution_InstitutionTypeId" Association="Self.institution_InstitutionTypeId">
+      <End Role="institutiontypes" EntitySet="institutiontypes" />
+      <End Role="institution" EntitySet="institution" />
+    </AssociationSet>
+    <AssociationSet Name="ScrappedContentEntity_EntityId" Association="Self.ScrappedContentEntity_EntityId">
+      <End Role="institution" EntitySet="institution" />
+      <End Role="scrapperstandardtags_entitytypes" EntitySet="scrapperstandardtags_entitytypes" />
+    </AssociationSet>
+    <AssociationSet Name="weblinks_EntityId" Association="Self.weblinks_EntityId">
+      <End Role="institution" EntitySet="institution" />
+      <End Role="weblinks" EntitySet="weblinks" />
+    </AssociationSet>
+    <AssociationSet Name="InstitutionNames_InstitutionId" Association="Self.InstitutionNames_InstitutionId">
+      <End Role="institutiontypes" EntitySet="institutiontypes" />
+      <End Role="policymakers" EntitySet="policymakers" />
+    </AssociationSet>
+    <AssociationSet Name="ScrappedContentEntity_EntityTypeId" Association="Self.ScrappedContentEntity_EntityTypeId">
+      <End Role="institutiontypes" EntitySet="institutiontypes" />
+      <End Role="scrapperstandardtags_entitytypes" EntitySet="scrapperstandardtags_entitytypes" />
+    </AssociationSet>
+    <AssociationSet Name="weblinks_InstitutionTypeId" Association="Self.weblinks_InstitutionTypeId">
+      <End Role="institutiontypes" EntitySet="institutiontypes" />
+      <End Role="weblinks" EntitySet="weblinks" />
+    </AssociationSet>
+    <AssociationSet Name="LexiconIssueLinker_LexiconIssueId" Association="Self.LexiconIssueLinker_LexiconIssueId">
+      <End Role="lexiconissues" EntitySet="lexiconissues" />
+      <End Role="lexiconissuelinker" EntitySet="lexiconissuelinker" />
+    </AssociationSet>
+    <AssociationSet Name="fk_lexiconIssue_id" Association="Self.fk_lexiconIssue_id">
+      <End Role="lexiconissues" EntitySet="lexiconissues" />
+      <End Role="lexiconprivilege" EntitySet="lexiconprivilege" />
+    </AssociationSet>
+    <AssociationSet Name="LexiconIssue_LexiconTypeId" Association="Self.LexiconIssue_LexiconTypeId">
+      <End Role="lexicontype" EntitySet="lexicontype" />
+      <End Role="lexiconissues" EntitySet="lexiconissues" />
+    </AssociationSet>
+    <AssociationSet Name="Scrapedlexiconmapping_LexiconId" Association="Self.Scrapedlexiconmapping_LexiconId">
+      <End Role="lexiconissues" EntitySet="lexiconissues" />
+      <End Role="scrapedlexiconmapping" EntitySet="scrapedlexiconmapping" />
+    </AssociationSet>
+    <AssociationSet Name="lexiconpriviledge_ibfk_1" Association="Self.lexiconpriviledge_ibfk_1">
+      <End Role="user" EntitySet="user" />
+      <End Role="lexiconprivilege" EntitySet="lexiconprivilege" />
+    </AssociationSet>
+    <AssociationSet Name="loadererrorlog_ProcessEvents" Association="Self.loadererrorlog_ProcessEvents">
+      <End Role="processevents" EntitySet="processevents" />
+      <End Role="loadererrorlog" EntitySet="loadererrorlog" />
+    </AssociationSet>
+    <AssociationSet Name="loadererrorlog_ProcessInstances" Association="Self.loadererrorlog_ProcessInstances">
+      <End Role="processinstances" EntitySet="processinstances" />
+      <End Role="loadererrorlog" EntitySet="loadererrorlog" />
+    </AssociationSet>
+    <AssociationSet Name="loadererrorlog_WebLinks" Association="Self.loadererrorlog_WebLinks">
+      <End Role="weblinks" EntitySet="weblinks" />
+      <End Role="loadererrorlog" EntitySet="loadererrorlog" />
+    </AssociationSet>
+    <AssociationSet Name="loaderlinkdocuments_ProcessId" Association="Self.loaderlinkdocuments_ProcessId">
+      <End Role="processevents" EntitySet="processevents" />
+      <End Role="loaderlinkdocuments" EntitySet="loaderlinkdocuments" />
+    </AssociationSet>
+    <AssociationSet Name="loaderlinkdocuments_WebSiteId" Association="Self.loaderlinkdocuments_WebSiteId">
+      <End Role="weblinks" EntitySet="weblinks" />
+      <End Role="loaderlinkdocuments" EntitySet="loaderlinkdocuments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LoaderLinkLog_NewProcessId" Association="Self.FK_LoaderLinkLog_NewProcessId">
+      <End Role="processevents" EntitySet="processevents" />
+      <End Role="loaderlinklog" EntitySet="loaderlinklog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LoaderLinkLog_ProcessId" Association="Self.FK_LoaderLinkLog_ProcessId">
+      <End Role="processevents" EntitySet="processevents" />
+      <End Role="loaderlinklog" EntitySet="loaderlinklog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LoaderLinkLog_ProcessInstanceId" Association="Self.FK_LoaderLinkLog_ProcessInstanceId">
+      <End Role="processinstances" EntitySet="processinstances" />
+      <End Role="loaderlinklog" EntitySet="loaderlinklog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LoaderLinkLog_StatusId" Association="Self.FK_LoaderLinkLog_StatusId">
+      <End Role="status" EntitySet="status" />
+      <End Role="loaderlinklog" EntitySet="loaderlinklog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LoaderLinkLog_WebSiteId" Association="Self.FK_LoaderLinkLog_WebSiteId">
+      <End Role="weblinks" EntitySet="weblinks" />
+      <End Role="loaderlinklog" EntitySet="loaderlinklog" />
+    </AssociationSet>
+    <AssociationSet Name="LoaderLinkQueue_ProcessId" Association="Self.LoaderLinkQueue_ProcessId">
+      <End Role="processevents" EntitySet="processevents" />
+      <End Role="loaderlinkqueue" EntitySet="loaderlinkqueue" />
+    </AssociationSet>
+    <AssociationSet Name="LoaderLinkQueue_ProcessInstanceId" Association="Self.LoaderLinkQueue_ProcessInstanceId">
+      <End Role="processinstances" EntitySet="processinstances" />
+      <End Role="loaderlinkqueue" EntitySet="loaderlinkqueue" />
+    </AssociationSet>
+    <AssociationSet Name="LoaderLinkQueue_WebSiteId" Association="Self.LoaderLinkQueue_WebSiteId">
+      <End Role="weblinks" EntitySet="weblinks" />
+      <End Role="loaderlinkqueue" EntitySet="loaderlinkqueue" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NounPlusVerb_MetaDataTypeId" Association="Self.FK_NounPlusVerb_MetaDataTypeId">
+      <End Role="metadatatypes" EntitySet="metadatatypes" />
+      <End Role="metadatanounplusverb" EntitySet="metadatanounplusverb" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MetaDataTags_MetaDataTypesId" Association="Self.FK_MetaDataTags_MetaDataTypesId">
+      <End Role="metadatatypes" EntitySet="metadatatypes" />
+      <End Role="metadataphrases" EntitySet="metadataphrases" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MetaDataTypes_WebSiteTypeId" Association="Self.FK_MetaDataTypes_WebSiteTypeId">
+      <End Role="websitetypes" EntitySet="websitetypes" />
+      <End Role="metadatatypes" EntitySet="metadatatypes" />
+    </AssociationSet>
+    <AssociationSet Name="FN_ScrappedProprietoryTagsMapping_MetaDataId" Association="Self.FN_ScrappedProprietoryTagsMapping_MetaDataId">
+      <End Role="metadatatypes" EntitySet="metadatatypes" />
+      <End Role="scrappedproprietorytagsmapping" EntitySet="scrappedproprietorytagsmapping" />
+    </AssociationSet>
+    <AssociationSet Name="metadatavalue_TagId" Association="Self.metadatavalue_TagId">
+      <End Role="metadatatypes" EntitySet="metadatatypes" />
+      <End Role="metadatavalue" EntitySet="metadatavalue" />
+    </AssociationSet>
+    <AssociationSet Name="weblinkproprietarytags_metadataTypeId" Association="Self.weblinkproprietarytags_metadataTypeId">
+      <End Role="metadatatypes" EntitySet="metadatatypes" />
+      <End Role="weblinkproprietarytags" EntitySet="weblinkproprietarytags" />
+    </AssociationSet>
+    <AssociationSet Name="weblinkactivitytype_MetaDataTypeId" Association="Self.weblinkactivitytype_MetaDataTypeId">
+      <End Role="metadatavalue" EntitySet="metadatavalue" />
+      <End Role="weblinkactivitytype" EntitySet="weblinkactivitytype" />
+    </AssociationSet>
+    <AssociationSet Name="RoleModuleRights_Modules" Association="Self.RoleModuleRights_Modules">
+      <End Role="modules" EntitySet="modules" />
+      <End Role="rolemodulerights" EntitySet="rolemodulerights" />
+    </AssociationSet>
+    <AssociationSet Name="ParentMenu_ParentMenuId" Association="Self.ParentMenu_ParentMenuId">
+      <End Role="parentmenu" EntitySet="parentmenu" />
+      <End Role="submenu" EntitySet="submenu" />
+    </AssociationSet>
+    <AssociationSet Name="weblinkpolicymaker_PolicyMakerId" Association="Self.weblinkpolicymaker_PolicyMakerId">
+      <End Role="policymakers" EntitySet="policymakers" />
+      <End Role="weblinkpolicymaker" EntitySet="weblinkpolicymaker" />
+    </AssociationSet>
+    <AssociationSet Name="processinstances_processId" Association="Self.processinstances_processId">
+      <End Role="processevents" EntitySet="processevents" />
+      <End Role="processinstances" EntitySet="processinstances" />
+    </AssociationSet>
+    <AssociationSet Name="scanninglinkdetails_ProcessId" Association="Self.scanninglinkdetails_ProcessId">
+      <End Role="processevents" EntitySet="processevents" />
+      <End Role="scanninglinkdetails" EntitySet="scanninglinkdetails" />
+    </AssociationSet>
+    <AssociationSet Name="scanninglinkqueue_ProcessId" Association="Self.scanninglinkqueue_ProcessId">
+      <End Role="processevents" EntitySet="processevents" />
+      <End Role="scanninglinkqueue" EntitySet="scanninglinkqueue" />
+    </AssociationSet>
+    <AssociationSet Name="scanninglinkdetails_InstanceId" Association="Self.scanninglinkdetails_InstanceId">
+      <End Role="processinstances" EntitySet="processinstances" />
+      <End Role="scanninglinkdetails" EntitySet="scanninglinkdetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RefreshToken_UserId" Association="Self.FK_RefreshToken_UserId">
+      <End Role="user" EntitySet="user" />
+      <End Role="refreshtoken" EntitySet="refreshtoken" />
+    </AssociationSet>
+    <AssociationSet Name="RoleModuleRights_Role" Association="Self.RoleModuleRights_Role">
+      <End Role="role" EntitySet="role" />
+      <End Role="rolemodulerights" EntitySet="rolemodulerights" />
+    </AssociationSet>
+    <AssociationSet Name="RoleModuleRights_UserId" Association="Self.RoleModuleRights_UserId">
+      <End Role="user" EntitySet="user" />
+      <End Role="rolemodulerights" EntitySet="rolemodulerights" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_ScanningLinkQueue_ScannerLinkId" Association="Self.Fk_ScanningLinkQueue_ScannerLinkId">
+      <End Role="scanninglinkqueue" EntitySet="scanninglinkqueue" />
+      <End Role="scanninglinkdetails" EntitySet="scanninglinkdetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ScanningLinkQueue_StatusId" Association="Self.FK_ScanningLinkQueue_StatusId">
+      <End Role="status" EntitySet="status" />
+      <End Role="scanninglinkdetails" EntitySet="scanninglinkdetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ScrappedStandarTags_ScanningLinkDetailsId" Association="Self.FK_ScrappedStandarTags_ScanningLinkDetailsId">
+      <End Role="scanninglinkdetails" EntitySet="scanninglinkdetails" />
+      <End Role="scrappedstandardtags" EntitySet="scrappedstandardtags" />
+    </AssociationSet>
+    <AssociationSet Name="ScrapedContents_ScanningLinkId" Association="Self.ScrapedContents_ScanningLinkId">
+      <End Role="scanninglinkdetails" EntitySet="scanninglinkdetails" />
+      <End Role="scrapedcontents" EntitySet="scrapedcontents" />
+    </AssociationSet>
+    <AssociationSet Name="ScrappedProprietoryTags_ScrappedLinkDetailId" Association="Self.ScrappedProprietoryTags_ScrappedLinkDetailId">
+      <End Role="scanninglinkdetails" EntitySet="scanninglinkdetails" />
+      <End Role="scrappedproprietorytags" EntitySet="scrappedproprietorytags" />
+    </AssociationSet>
+    <AssociationSet Name="ScanningLinkQueue_WebSiteId" Association="Self.ScanningLinkQueue_WebSiteId">
+      <End Role="weblinks" EntitySet="weblinks" />
+      <End Role="scanninglinkqueue" EntitySet="scanninglinkqueue" />
+    </AssociationSet>
+    <AssociationSet Name="schedularfrequency_SchedularId" Association="Self.schedularfrequency_SchedularId">
+      <End Role="schedular" EntitySet="schedular" />
+      <End Role="schedularfrequency" EntitySet="schedularfrequency" />
+    </AssociationSet>
+    <AssociationSet Name="ScrapedDocumentDetails_ScrapedContentId" Association="Self.ScrapedDocumentDetails_ScrapedContentId">
+      <End Role="scrapedcontents" EntitySet="scrapedcontents" />
+      <End Role="scrapeddocumentdetails" EntitySet="scrapeddocumentdetails" />
+    </AssociationSet>
+    <AssociationSet Name="Scrapedlexiconmapping_ScrapedContentId" Association="Self.Scrapedlexiconmapping_ScrapedContentId">
+      <End Role="scrapedcontents" EntitySet="scrapedcontents" />
+      <End Role="scrapedlexiconmapping" EntitySet="scrapedlexiconmapping" />
+    </AssociationSet>
+    <AssociationSet Name="ScraperEngineSetup_StatusId" Association="Self.ScraperEngineSetup_StatusId">
+      <End Role="status" EntitySet="status" />
+      <End Role="scraperenginesetup" EntitySet="scraperenginesetup" />
+    </AssociationSet>
+    <AssociationSet Name="ScraperEngineSetup_WebSiteId" Association="Self.ScraperEngineSetup_WebSiteId">
+      <End Role="weblinks" EntitySet="weblinks" />
+      <End Role="scraperenginesetup" EntitySet="scraperenginesetup" />
+    </AssociationSet>
+    <AssociationSet Name="FN_ScrappedProprietoryTagsMapping_scrappedproprietorytagsMapping" Association="Self.FN_ScrappedProprietoryTagsMapping_scrappedproprietorytagsMapping">
+      <End Role="scrappedproprietorytags" EntitySet="scrappedproprietorytags" />
+      <End Role="scrappedproprietorytagsmapping" EntitySet="scrappedproprietorytagsmapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_scrappedstandardtag_policymakers_ScrappedStandardTagsId" Association="Self.FK_scrappedstandardtag_policymakers_ScrappedStandardTagsId">
+      <End Role="scrappedstandardtags" EntitySet="scrappedstandardtags" />
+      <End Role="scrappedstandardtag_policymakers" EntitySet="scrappedstandardtag_policymakers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ScrappedStandardtags_Sectors_ScrappedStandardTagsId" Association="Self.FK_ScrappedStandardtags_Sectors_ScrappedStandardTagsId">
+      <End Role="scrappedstandardtags" EntitySet="scrappedstandardtags" />
+      <End Role="scrappedstandardtags_sectors" EntitySet="scrappedstandardtags_sectors" />
+    </AssociationSet>
+    <AssociationSet Name="ScrappedContentEntity_ScrappedStandardTagId" Association="Self.ScrappedContentEntity_ScrappedStandardTagId">
+      <End Role="scrappedstandardtags" EntitySet="scrappedstandardtags" />
+      <End Role="scrapperstandardtags_entitytypes" EntitySet="scrapperstandardtags_entitytypes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ScrappedStandardtags_Sectors_SectorId" Association="Self.FK_ScrappedStandardtags_Sectors_SectorId">
+      <End Role="sector" EntitySet="sector" />
+      <End Role="scrappedstandardtags_sectors" EntitySet="scrappedstandardtags_sectors" />
+    </AssociationSet>
+    <AssociationSet Name="weblinksector_SectorId" Association="Self.weblinksector_SectorId">
+      <End Role="sector" EntitySet="sector" />
+      <End Role="weblinksector" EntitySet="weblinksector" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubMenu_SubMenuId" Association="Self.FK_SubMenu_SubMenuId">
+      <End Role="submenu" EntitySet="submenu" />
+      <End Role="useraccessrights" EntitySet="useraccessrights" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_UserId" Association="Self.FK_User_UserId">
+      <End Role="user" EntitySet="user" />
+      <End Role="useraccessrights" EntitySet="useraccessrights" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserActivation_UserId" Association="Self.FK_UserActivation_UserId">
+      <End Role="user" EntitySet="user" />
+      <End Role="useractivationlink" EntitySet="useractivationlink" />
+    </AssociationSet>
+    <AssociationSet Name="weblinkactivitytype_webLinkId" Association="Self.weblinkactivitytype_webLinkId">
+      <End Role="weblinks" EntitySet="weblinks" />
+      <End Role="weblinkactivitytype" EntitySet="weblinkactivitytype" />
+    </AssociationSet>
+    <AssociationSet Name="weblinkPageContentRegEx_WebSiteId" Association="Self.weblinkPageContentRegEx_WebSiteId">
+      <End Role="weblinks" EntitySet="weblinks" />
+      <End Role="weblinkpagecontentregex" EntitySet="weblinkpagecontentregex" />
+    </AssociationSet>
+    <AssociationSet Name="weblinkpolicymaker_WebLinkId" Association="Self.weblinkpolicymaker_WebLinkId">
+      <End Role="weblinks" EntitySet="weblinks" />
+      <End Role="weblinkpolicymaker" EntitySet="weblinkpolicymaker" />
+    </AssociationSet>
+    <AssociationSet Name="weblinkproprietarytags_weblinkid" Association="Self.weblinkproprietarytags_weblinkid">
+      <End Role="weblinks" EntitySet="weblinks" />
+      <End Role="weblinkproprietarytags" EntitySet="weblinkproprietarytags" />
+    </AssociationSet>
+    <AssociationSet Name="WebsiteConfiguration_WebsiteId" Association="Self.WebsiteConfiguration_WebsiteId">
+      <End Role="weblinks" EntitySet="weblinks" />
+      <End Role="weblinkrss" EntitySet="weblinkrss" />
+    </AssociationSet>
+    <AssociationSet Name="weblinksector_WebLinkId" Association="Self.weblinksector_WebLinkId">
+      <End Role="weblinks" EntitySet="weblinks" />
+      <End Role="weblinksector" EntitySet="weblinksector" />
+    </AssociationSet>
+    <AssociationSet Name="WebSiteCategoryMapping_WebSiteId" Association="Self.WebSiteCategoryMapping_WebSiteId">
+      <End Role="weblinks" EntitySet="weblinks" />
+      <End Role="weburlcategorymapping" EntitySet="weburlcategorymapping" />
+    </AssociationSet>
+    <AssociationSet Name="WebSiteMst_LinkId" Association="Self.WebSiteMst_LinkId">
+      <End Role="websitetypes" EntitySet="websitetypes" />
+      <End Role="weblinks" EntitySet="weblinks" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

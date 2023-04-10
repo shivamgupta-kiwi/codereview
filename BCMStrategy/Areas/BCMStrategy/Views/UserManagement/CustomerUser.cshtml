@@ -1,0 +1,141 @@
+﻿@{
+  Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+  .count-lexiconfollow {
+    background: #388e3c;
+    border-radius: 17%;
+    color: #fff !important;
+    padding: 5px;
+    font-size: 13px;
+  }
+</style>
+<form id="userManagementForm">
+  <div class="container-fluid">
+    <div>
+      <a class="btn blue" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        <i class="fa fa-plus"></i> @BCMStrategy.Resources.Resource.LblAddNew @ViewBag.UserType
+      </a>
+
+      <a class="btn btn-default" id="clearFilters">
+        @BCMStrategy.Resources.Resource.LblClearFilter
+      </a>
+    </div>
+    <div class="collapse" id="collapseExample">
+      <div class="mt-3">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="form-group col-md-4">
+                <label class="control-label">@BCMStrategy.Resources.Resource.LblTitle</label>
+                <input type="text" id="designation" maxlength="50" name="designation" class="form-control" data-bind="value: Designation">
+              </div>
+              <div class="form-group col-md-4">
+                <label class="control-label">@BCMStrategy.Resources.Resource.LblFirstName</label> <span class="text-danger">*</span>
+                <input type="text" maxlength="100" id="firstName" name="firstName" class="form-control" data-bind="value: FirstName" />
+              </div>
+              <div class="form-group col-md-4">
+                <label class="control-label">@BCMStrategy.Resources.Resource.LblMiddleName</label>
+                <input type="text" maxlength="100" id="middleName" name="middleName" class="form-control" data-bind="value: MiddleName">
+              </div>
+
+            </div>
+            <div class="row">
+              <div class="form-group col-md-4">
+                <label class="control-label">@BCMStrategy.Resources.Resource.LblLastName</label> <span class="text-danger">*</span>
+                <input type="text" maxlength="100" id="lastName" name="lastName" class="form-control" data-bind="value: LastName">
+              </div>
+              <div class="form-group col-md-4">
+                <label class="control-label">@BCMStrategy.Resources.Resource.LblEmailAddress</label> <span class="text-danger">*</span>
+                <input type="text" maxlength="100" id="emailAddress" name="emailAddress" class="form-control" data-bind="value: EmailAddress">
+              </div>
+              <div class="form-group col-md-4">
+                <label class="control-label">@BCMStrategy.Resources.Resource.LblAddress</label>
+                <input type="text" id="address" maxlength="500" name="address" class="form-control" data-bind="value: Address">
+              </div>
+
+            </div>
+            <div class="row">
+              <div class="form-group col-md-4">
+                <label class="control-label">@BCMStrategy.Resources.Resource.LblCountry</label> <span class="text-danger">*</span>
+                <select class="form-control" id="countryMasterHashId" name="countryMasterHashId" data-bind="value: CountryMasterHashId">
+                  <option selected="selected" value="">@BCMStrategy.Resources.Resource.SelectCountryName_String</option>
+                </select>
+              </div>
+              <div class="form-group col-md-4">
+                <label class="control-label">@BCMStrategy.Resources.Resource.LblState</label>
+                <input type="text" id="state" maxlength="100" name="state" class="form-control" data-bind="value: State">
+              </div>
+              <div class="form-group col-md-4">
+                <label class="control-label">@BCMStrategy.Resources.Resource.LblCity</label>
+                <input type="text" id="city" maxlength="100" name="city" class="form-control" data-bind="value: City">
+              </div>
+
+            </div>
+            <div class="row">
+              <div class="form-group col-md-4">
+                <label class="control-label">@BCMStrategy.Resources.Resource.LblZipCode</label>
+                <input type="text" id="zipCode" maxlength="50" name="zipCode" class="form-control" data-bind="value: ZipCode">
+              </div>
+              <div class="form-group col-md-4">
+                <label class="control-label">@BCMStrategy.Resources.Resource.LblCompanyName</label>
+                <input type="text" id="companyName" maxlength="50" name="companyName" class="form-control" data-bind="value: CompanyName">
+              </div>
+              <div class="form-group col-md-4" id="activeStatus">
+                <label class="control-label">@BCMStrategy.Resources.Resource.LblStatus</label>
+                <div class="clearfix"></div>
+                <div class="form-check form-check-inline">
+                  <input type="radio" name="activeStatus" id="active" data-bind="value: Status" />
+                  <label>@BCMStrategy.Resources.Resource.LblActive</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input type="radio" name="activeStatus" id="inactive" data-bind="value: Status">
+                  <label>@BCMStrategy.Resources.Resource.LblInactive</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer bg-transparent pull-right">
+            <a class="btn btn-dark-green" href="javascript:" id="btnUserManagementSave">@BCMStrategy.Resources.Resource.LblSave</a>
+            <a class="btn btn-blue-grey" id="btnUserManagementCancel" href="javascript:">@BCMStrategy.Resources.Resource.LblCancel</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- / Collapsible element -->
+    <!-- Grid -->
+    <div class="card mt-4">
+      <div class="card-body">
+        <div id="gridUserManagement"></div>
+      </div>
+    </div>
+    <a href="@Url.Action("DefaultLexicon", "UserManagement", new { area = "BCMStrategy"})" id="DefaultLexiconURL"></a>
+  </div>
+
+  @section scripts{
+    <script>
+      var UserMgmt = {
+        userType: '@ViewBag.UserType',
+        noDataFound: '@BCMStrategy.Resources.Resource.LblNoDataFound',
+        firstName: '@BCMStrategy.Resources.Resource.LblFirstName',
+        lastName: '@BCMStrategy.Resources.Resource.LblLastName',
+        emalId: '@BCMStrategy.Resources.Resource.LblEmailId',
+        address: '@BCMStrategy.Resources.Resource.LblAddress',
+        zipCode: '@BCMStrategy.Resources.Resource.LblZipCode',
+        status: '@BCMStrategy.Resources.Resource.LblStatus',
+        defaultLexicon: '@BCMStrategy.Resources.Resource.LblDefaultLexiconCount',
+        companyName: '@BCMStrategy.Resources.Resource.LblCompanyName',
+        designation: '@BCMStrategy.Resources.Resource.LblDesignation',
+        title: '@BCMStrategy.Resources.Resource.LblTitle',
+        active: '@BCMStrategy.Resources.Enums.Status.Active.ToString()',
+        inactive: '@BCMStrategy.Resources.Enums.Status.Inactive.ToString()',
+        deletePopupHeader: "@BCMStrategy.Resources.Resource.LblDeleteConfirmation",
+        deletePopupMessage: "@BCMStrategy.Resources.Resource.LblDeleteConfirmationMessage",
+        deleteCustomerMessage: "@BCMStrategy.Resources.Resource.LblCustomerDeleteConfirm",
+        deleteAdminMessage: "@BCMStrategy.Resources.Resource.LblAdminDeleteConfirm"
+      }
+    </script>
+
+    @Scripts.Render("~/Scripts/JsAreas/CustomerUserManagement.js", "~/Scripts/JsAreas/DropDownList.js")
+  }
+</form>

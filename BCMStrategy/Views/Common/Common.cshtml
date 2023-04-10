@@ -1,0 +1,17 @@
+﻿@{
+  ViewBag.Title = "Common";
+  Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+@section scripts{
+  <script type="text/javascript">
+    var activationCode = '@(Request.QueryString["activationLink"] != string.Empty ? Convert.ToString(Request.QueryString["activationLink"]) : string.Empty)';
+    var ExpiredLink = '@Url.Action("../../Common/LinkExpired")';
+    var SetPasswordLink = '@Url.Action("SetPassword", "Login", new { Area = "Account" })';
+    $(document).ready(function () {
+      CommonJS.SetPageLoader(PageLoaderActivity.SHOW);
+      Activation(activationCode);
+    });
+  </script>
+  @Scripts.Render("~/Scripts/JsAreas/SetPassword.js")
+}

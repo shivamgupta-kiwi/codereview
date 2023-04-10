@@ -1,0 +1,72 @@
+﻿
+@{
+	ViewBag.Title = BCMStrategy.Resources.Resource.LblMetadataPhrases;
+	ViewBag.ModuleName = BCMStrategy.Resources.Enums.ModuleName.METADATAPHRASES;
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<form id="metadataPhrasesForm">
+	<div class="container-fluid">
+		<!-- Collapse buttons -->
+		<div>
+			<a class="btn blue" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+				<i class="fa fa-plus"></i> @BCMStrategy.Resources.Resource.LblAddNew @BCMStrategy.Resources.Resource.LblMetadataPhrases
+			</a>
+			<a class="btn btn-default" id="clearFilters">
+				@BCMStrategy.Resources.Resource.LblClearFilter
+			</a>
+		</div>
+		<!-- / Collapse buttons -->
+		<!-- Collapsible element -->
+		<div class="collapse" id="collapseExample">
+			<div class="mt-3">
+				<div class="card">
+					<div class="card-body">
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label class="control-label">@BCMStrategy.Resources.Resource.LblMetadataTypes</label> <span class="text-danger">*</span>
+								<select class="form-control" id="metadataTypeMasterHashId" name="metadataTypeMasterHashId" data-bind="value: MetadataTypeMasterHashId">
+									<option selected="selected" value="">@BCMStrategy.Resources.Resource.LblSelect @BCMStrategy.Resources.Resource.LblMetadataTypes</option>
+								</select>
+							</div>
+							<div class="form-group col-md-4">
+								<label class="control-label">@BCMStrategy.Resources.Resource.LblActivityType</label>
+								<select class="form-control" id="activityTypeMasterHashId" name="activityTypeMasterHashId" data-bind="value: ActivityTypeMasterHashId">
+									<option selected="selected" value="">@BCMStrategy.Resources.Resource.LblSelect @BCMStrategy.Resources.Resource.LblActivityType</option>
+								</select>
+							</div>
+							<div class="form-group col-md-4">
+								<label class="control-label">@BCMStrategy.Resources.Resource.LblMetadataPhrases</label> <span class="text-danger">*</span>
+								<input type="text" maxlength="200" id="metadataPhrases" name="metadataPhrases" class="form-control" data-bind="value: MetadataPhrases" />
+							</div>
+						</div>
+					</div>
+					<div class="card-footer bg-transparent pull-right">
+						<a class="btn btn-dark-green" id="btnMetadataPhrasesSave">@BCMStrategy.Resources.Resource.LblSave</a>
+						<a class="btn btn-blue-grey" id="btnMetadataPhrasesCancel">@BCMStrategy.Resources.Resource.LblCancel</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- / Collapsible element -->
+		<!-- Grid -->
+		<div class="card mt-4">
+			<div class="card-body">
+				<div id="gridMetadataPhrases"></div>
+			</div>
+		</div>
+	</div>
+	@section scripts{
+		<script>
+			var websiteType = '@BCMStrategy.Resources.Resource.LblWebSiteType';
+			var metadataType = '@BCMStrategy.Resources.Resource.LblMetadataTypes';
+			var metadataPhrases = '@BCMStrategy.Resources.Resource.LblMetadataPhrases';
+			var noDataFound = '@BCMStrategy.Resources.Resource.LblNoDataFound';
+			var deletePopupHeader = "@BCMStrategy.Resources.Resource.LblDeleteConfirmation"
+			var deletePopupMessage = "@BCMStrategy.Resources.Resource.LblMetadataPhrasesDeleteConfirm"
+			var activityType = '@BCMStrategy.Resources.Resource.LblActivityType';
+			var activityValue = '@BCMStrategy.Resources.Resource.LblMetadataValue';
+		</script>
+		@Scripts.Render("~/Scripts/JsAreas/MetadataPhrases.js", "~/Scripts/JsAreas/DropDownList.js")
+	}
+</form>
+

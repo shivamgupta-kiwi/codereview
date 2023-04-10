@@ -1,0 +1,59 @@
+﻿@using BCMStrategy.Resources;
+@{
+  ViewBag.Title = Resource.LblImportHeadStateGovt;
+  ViewBag.ModuleName = @BCMStrategy.Resources.Enums.ModuleName.HEADSTATEGOVN;
+  Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<form id="ImportFileForm">
+  <div class="container-fluid">
+    <!-- Collapsible element -->
+    <div>
+      <div class="mt-3">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="demo-section form-group k-content">
+                  <input name="importFile" accept=".csv" class="form-control" id="importFile" type="file" aria-label="files" />
+                  <span id="errorMessage" aria-live="polite" class="red-text" name="loginError"></span>
+                  <div class="green-text">@Resource.LblNoteForImportFile</div>
+                </div>
+                <a href="~/UploadTemplates/Head of State and Govt Template.csv" download="Head of State and Govt Template.csv" target="_blank">@Resource.LblDownloadStateHeadTemplate</a>
+              </div>
+              <div class="col-md-6">
+                <a class="btn blue m375" style="display: none;" href="javascript:" id="btnValidateImportFile">@Resource.LblValidate</a>
+                <a class="btn btn-primary m375" style="display: none;" href="javascript:" id="btnImportFile">@Resource.LblImport</a>
+                <a class="btn btn-default  m375" style="cursor:pointer;" id="btnImportBack">@Resource.LblBack</a>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-8">
+                <span id="successMessage" style="color:green"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card mt-4" id="divImportBody">
+      <div class="card-body">
+        <div id="grid"></div>
+      </div>
+    </div>
+  </div>
+</form>
+
+@section scripts{
+  <script>
+    var countryName = "@Resource.LblCountryName";
+    var stateHeadName = "@Resource.LblStateHeadName";
+    var designationType = '@BCMStrategy.Resources.Resource.LblDesignationType';
+    var firstName = "@Resource.LblFirstName";
+    var lastName = "@Resource.LblLastName";
+    
+    var backURL = "@Url.Action("Index","StateHead", new { Area= "BCMStrategy" })";
+  </script>
+  @Scripts.Render("~/Scripts/JsAreas/HeadStateImportFile.js")
+
+}

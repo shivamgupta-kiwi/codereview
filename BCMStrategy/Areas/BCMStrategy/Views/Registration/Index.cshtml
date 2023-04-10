@@ -1,0 +1,80 @@
+﻿@using System.Web.Optimization;
+@{
+  ViewBag.Title = BCMStrategy.Resources.Resource.LblRegistrationPage;
+  Layout = "~/Views/Shared/_LayoutBeforeLogin.cshtml";
+}
+<form id="registrationForm">
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+					<div class="form-group col-md-4">
+						<label class="control-label">@BCMStrategy.Resources.Resource.LblTitle</label>
+						<input type="text" id="designation" maxlength="50" name="designation" class="form-control" data-bind="value: Designation">
+					</div>
+          <div class="form-group col-md-4">
+            <label class="control-label">@BCMStrategy.Resources.Resource.LblFirstName</label> <span class="text-danger">*</span>
+            <input type="text" maxlength="100" id="firstName" name="firstName" class="form-control" data-bind="value: FirstName" />
+          </div>
+          <div class="form-group col-md-4">
+            <label class="control-label">@BCMStrategy.Resources.Resource.LblMiddleName</label>
+            <input type="text" maxlength="100" id="middleName" name="middleName" class="form-control" data-bind="value: MiddleName">
+          </div>
+        </div>
+        <div class="row">
+					<div class="form-group col-md-4">
+						<label class="control-label">@BCMStrategy.Resources.Resource.LblLastName</label> <span class="text-danger">*</span>
+						<input type="text" maxlength="100" id="lastName" name="lastName" class="form-control" data-bind="value: LastName">
+					</div>
+          <div class="form-group col-md-4">
+            <label class="control-label">@BCMStrategy.Resources.Resource.LblEmailAddress</label> <span class="text-danger">*</span>
+            <input type="text" maxlength="100" id="emailAddress" name="emailAddress" class="form-control" data-bind="value: EmailAddress">
+          </div>
+          <div class="form-group col-md-4">
+            <label class="control-label">@BCMStrategy.Resources.Resource.LblAddress</label>
+            <input type="text" id="address" maxlength="500" name="address" class="form-control" data-bind="value: Address">
+          </div>
+        </div>
+        <div class="row">
+					<div class="form-group col-md-4">
+						<label class="control-label">@BCMStrategy.Resources.Resource.LblCountry</label> <span class="text-danger">*</span>
+						<select class="form-control" id="countryMasterHashId" name="countryMasterHashId" data-bind="value: CountryMasterHashId">
+							<option selected="selected" value="">@BCMStrategy.Resources.Resource.SelectCountryName_String</option>
+						</select>
+					</div>
+          <div class="form-group col-md-4">
+            <label class="control-label">@BCMStrategy.Resources.Resource.LblState</label>
+            <input type="text" id="state" maxlength="100" name="state" class="form-control" data-bind="value: State">
+          </div>
+          <div class="form-group col-md-4">
+            <label class="control-label">@BCMStrategy.Resources.Resource.LblCity</label>
+            <input type="text" id="city" maxlength="100" name="city" class="form-control" data-bind="value: City">
+          </div>
+        </div>
+				<div class="row">
+					<div class="form-group col-md-4">
+						<label class="control-label">@BCMStrategy.Resources.Resource.LblZipCode</label>
+						<input type="text" id="zipCode" maxlength="50" name="zipCode" class="form-control" data-bind="value: ZipCode">
+					</div>
+					<div class="form-group col-md-4">
+						<label class="control-label">@BCMStrategy.Resources.Resource.LblCompanyName</label>
+						<input type="text" id="companyName" maxlength="50" name="companyName" class="form-control" data-bind="value: CompanyName">
+					</div>
+				</div>
+      </div>
+      <div class="card-footer bg-transparent pull-right">
+        <a class="btn btn-dark-green" href="javascript:" id="btnSave">@BCMStrategy.Resources.Resource.LblRegistrationPage</a>
+        <a class="btn btn-blue-grey" id="btnCancel" href="javascript:">@BCMStrategy.Resources.Resource.LblCancel</a>
+      </div>
+    </div>
+  </div>
+  @section scripts{
+    <script>
+      var redirectHome = '@Url.Action("Index","Login", new { Area ="Account"})';
+      var userType = '@BCMStrategy.Resources.Enums.UserType.CUSTOMER.ToString()';
+      var redirect = '@Url.Action("Index","Login", new { Area ="Account"})';
+</script>
+    @Scripts.Render("~/Scripts/JsAreas/Registration.js", "~/Scripts/JsAreas/DropDownList.js")
+  }
+</form>
+

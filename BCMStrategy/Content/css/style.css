@@ -1,0 +1,468 @@
+@media (min-width: 1200px) {
+  .button-collapse {
+    display: none !important;
+  }
+
+  .fixed-sn section {
+    margin-left: 240px;
+    margin-top: 80px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .button-collapse {
+    display: block !important;
+    position: relative;
+    font-size: 1.4rem;
+    margin-top: 2px;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  .fixed-sn section {
+    margin-left: 0px;
+    margin-top: 80px;
+  }
+}
+
+section {
+  min-height: 611px;
+}
+
+.navbar-nav .nav-link {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+.form-control {
+  margin-bottom: 5px;
+}
+
+.breadcrumb-dn p {
+  font-weight: bold;
+}
+
+.side-nav .logo-wrapper img {
+  height: auto;
+  padding: 3% 25px;
+}
+
+@media (max-height: 992px) {
+  .side-nav .logo-wrapper img {
+    padding-top: 3%;
+    padding-bottom: 7%;
+  }
+
+  
+
+
+}
+
+.k-widget select {
+  display: none !important;
+}
+
+select {
+  display: block !important;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+.navy-blue-skin .side-nav .collapsible li .collapsible-body a.active {
+  color: #40c6c6;
+}
+
+/* loader */
+.loader-wrapper {
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  z-index: 9999;
+}
+
+.bg_load {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100% !important;
+  height: 100% !important;
+  background: rgba(0,0,0,0.2);
+  z-index: 99999;
+}
+
+.cssload-load {
+  position: absolute;
+  left: calc(50% - 41px);
+  width: 96px;
+  height: 96px;
+}
+
+.cssload-block {
+  position: relative;
+  height: 28px;
+  width: 28px;
+  display: inline-block;
+  background: rgb(60,25,255);
+  transition: all 0.8s;
+  -o-transition: all 0.8s;
+  -ms-transition: all 0.8s;
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  animation: cssload-rot 5s linear infinite;
+  -o-animation: cssload-rot 5s linear infinite;
+  -ms-animation: cssload-rot 5s linear infinite;
+  -webkit-animation: cssload-rot 5s linear infinite;
+  -moz-animation: cssload-rot 5s linear infinite;
+}
+
+  .cssload-block:nth-child(1) {
+    animation-delay: 3s;
+    -o-animation-delay: 3s;
+    -ms-animation-delay: 3s;
+    -webkit-animation-delay: 3s;
+    -moz-animation-delay: 3s;
+  }
+
+  .cssload-block:nth-child(2) {
+    animation-delay: 1.5s;
+    -o-animation-delay: 1.5s;
+    -ms-animation-delay: 1.5s;
+    -webkit-animation-delay: 1.5s;
+    -moz-animation-delay: 1.5s;
+    animation: cssload-rot 12s linear infinite;
+    -o-animation: cssload-rot 12s linear infinite;
+    -ms-animation: cssload-rot 12s linear infinite;
+    -webkit-animation: cssload-rot 12s linear infinite;
+    -moz-animation: cssload-rot 12s linear infinite;
+  }
+
+  .cssload-block:nth-child(3) {
+    animation-delay: 2s;
+    -o-animation-delay: 2s;
+    -ms-animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+    -moz-animation-delay: 2s;
+  }
+
+  .cssload-block:nth-child(4) {
+    animation-delay: 0.2s;
+    -o-animation-delay: 0.2s;
+    -ms-animation-delay: 0.2s;
+    -webkit-animation-delay: 0.2s;
+    -moz-animation-delay: 0.2s;
+  }
+
+  .cssload-block:nth-child(5) {
+    animation-delay: 4s;
+    -o-animation-delay: 4s;
+    -ms-animation-delay: 4s;
+    -webkit-animation-delay: 4s;
+    -moz-animation-delay: 4s;
+  }
+
+  .cssload-block:nth-child(6) {
+    animation-delay: 2s;
+    -o-animation-delay: 2s;
+    -ms-animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+    -moz-animation-delay: 2s;
+    animation: cssload-rot 7s linear infinite;
+    -o-animation: cssload-rot 7s linear infinite;
+    -ms-animation: cssload-rot 7s linear infinite;
+    -webkit-animation: cssload-rot 7s linear infinite;
+    -moz-animation: cssload-rot 7s linear infinite;
+  }
+
+  .cssload-block:nth-child(7) {
+    animation-delay: 0.4s;
+    -o-animation-delay: 0.4s;
+    -ms-animation-delay: 0.4s;
+    -webkit-animation-delay: 0.4s;
+    -moz-animation-delay: 0.4s;
+  }
+
+  .cssload-block:nth-child(8) {
+    animation-delay: 1.5s;
+    -o-animation-delay: 1.5s;
+    -ms-animation-delay: 1.5s;
+    -webkit-animation-delay: 1.5s;
+    -moz-animation-delay: 1.5s;
+    animation: cssload-rot 6s linear infinite;
+    -o-animation: cssload-rot 6s linear infinite;
+    -ms-animation: cssload-rot 6s linear infinite;
+    -webkit-animation: cssload-rot 6s linear infinite;
+    -moz-animation: cssload-rot 6s linear infinite;
+  }
+
+  .cssload-block:nth-child(9) {
+    animation-delay: 25s;
+    -o-animation-delay: 25s;
+    -ms-animation-delay: 25s;
+    -webkit-animation-delay: 25s;
+    -moz-animation-delay: 25s;
+    animation: cssload-rot 8s linear infinite;
+    -o-animation: cssload-rot 8s linear infinite;
+    -ms-animation: cssload-rot 8s linear infinite;
+    -webkit-animation: cssload-rot 8s linear infinite;
+    -moz-animation: cssload-rot 8s linear infinite;
+  }
+
+@keyframes cssload-rot {
+  0% {
+    transform: none;
+  }
+
+  20% {
+    transform: rotateZ(-90deg) rotateY(180deg);
+  }
+
+  40% {
+    background: rgb(0,237,8);
+    transform: none;
+  }
+
+  60% {
+    background: rgb(255,255,255);
+  }
+
+  80% {
+    background: rgb(100,149,237);
+  }
+
+  90% {
+    transform: none;
+    background: rgb(0,107,46);
+  }
+}
+
+@-o-keyframes cssload-rot {
+  0% {
+    -o-transform: none;
+  }
+
+  20% {
+    -o-transform: rotateZ(-90deg) rotateY(180deg);
+  }
+
+  40% {
+    background: rgb(0,237,8);
+    -o-transform: none;
+  }
+
+  60% {
+    background: rgb(255,255,255);
+  }
+
+  80% {
+    background: rgb(100,149,237);
+  }
+
+  90% {
+    -o-transform: none;
+    background: rgb(0,107,46);
+  }
+}
+
+@-ms-keyframes cssload-rot {
+  0% {
+    -ms-transform: none;
+  }
+
+  20% {
+    -ms-transform: rotateZ(-90deg) rotateY(180deg);
+  }
+
+  40% {
+    background: rgb(0,237,8);
+    -ms-transform: none;
+  }
+
+  60% {
+    background: rgb(255,255,255);
+  }
+
+  80% {
+    background: rgb(100,149,237);
+  }
+
+  90% {
+    -ms-transform: none;
+    background: rgb(0,107,46);
+  }
+}
+
+@-webkit-keyframes cssload-rot {
+  0% {
+    -webkit-transform: none;
+  }
+
+  20% {
+    -webkit-transform: rotateZ(-90deg) rotateY(180deg);
+  }
+
+  40% {
+    background: rgb(0,237,8);
+    -webkit-transform: none;
+  }
+
+  60% {
+    background: rgb(255,255,255);
+  }
+
+  80% {
+    background: rgb(100,149,237);
+  }
+
+  90% {
+    -webkit-transform: none;
+    background: rgb(0,107,46);
+  }
+}
+
+@-moz-keyframes cssload-rot {
+  0% {
+    -moz-transform: none;
+  }
+
+  20% {
+    -moz-transform: rotateZ(-90deg) rotateY(180deg);
+  }
+
+  40% {
+    background: rgb(0,237,8);
+    -moz-transform: none;
+  }
+
+  60% {
+    background: rgb(255,255,255);
+  }
+
+  80% {
+    background: rgb(100,149,237);
+  }
+
+  90% {
+    -moz-transform: none;
+    background: rgb(0,107,46);
+  }
+}
+
+.k-tooltip {
+  background-color: #388e3c !important;
+  line-height: 1.5rem;
+}
+
+  .k-tooltip ul {
+    padding: 0 0 0 17px;
+  }
+
+.k-callout-n {
+  border-bottom-color: #388e3c !important;
+}
+
+/* Sie bar scroll
+.side-nav .collapsible {
+    max-height: 520px;
+    overflow: auto;
+}
+*/
+
+/* */
+
+[type=radio] + label, [type=checkbox] + label {
+  padding-left: 5px !important;
+  margin-top: 8px;
+}
+
+  [type=radio] + label:after, [type=radio] + label:before {
+    visibility: hidden !important;
+  }
+
+[type=radio], [type=checkbox] {
+  position: relative !important;
+  left: 0 !important;
+  visibility: visible !important;
+}
+
+.m375 {
+  margin-top: -.075rem;
+}
+
+@media (max-width: 992px) {
+  .double-nav .breadcrumb-dn {
+    display: block !important;
+  }
+}
+
+.k-grid .k-button, .k-grid .k-button:hover {
+  background: transparent !important;
+  border-color: transparent !important;
+}
+
+.side-nav ul li {
+  padding: 0 !important;
+}
+
+@media (max-width: 768px) {
+  .fstMultipleMode .fstControls {
+    width: 16em !important;
+  }
+  .filter-btns a {    font-size: 12px;
+    width: 100%;
+    margin-bottom: 10px;
+    float:left;
+  }
+}
+
+input[type=radio], input[type=checkbox] {
+  margin-right: 5px;
+}
+
+.k-widget input.form-control {
+  margin-bottom: 0 !important;
+}
+
+.side-nav .collapsible ul {
+  list-style-type: none !important;
+  /*list-style-image: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7) !important;*/
+}
+
+  .side-nav .collapsible ul li {
+    float: left;
+    width: 100%;
+  }
+
+    .side-nav .collapsible ul li a {
+      float: left;
+      width: 100%;
+    }
+
+/*Kendo Grid Responsive Fix */
+
+@media (max-width: 768px) {
+  .k-pager-wrap .k-dropdown .k-dropdown-wrap, .k-pager-wrap .k-dropdowntree .k-dropdown-wrap {
+    display: none;
+  }
+
+  .k-pager-nav + .k-pager-numbers {
+    display: none;
+  }
+
+  .k-textbox {
+    visibility: visible;
+  }
+
+  .k-pager-wrap .k-label {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .k-pager-wrap .k-pager-input .k-textbox {
+    margin: 0 9ex;
+  }
+  .k-pager-refresh {
+    display:none !important;
+  }
+}

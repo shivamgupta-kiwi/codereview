@@ -1,0 +1,284 @@
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\BCMStrategy.API.dll.config
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\BCMStrategy.API.dll
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\BCMStrategy.API.pdb
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\Newtonsoft.Json.dll
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\System.Net.Http.Formatting.dll
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\System.Web.Http.dll
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\System.Web.Http.WebHost.dll
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\Newtonsoft.Json.xml
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\System.Net.Http.Formatting.xml
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\System.Web.Http.xml
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\System.Web.Http.WebHost.xml
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\obj\Debug\BCMStrategy.API.csprojResolveAssemblyReference.cache
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\obj\Debug\BCMStrategy.API.dll
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\obj\Debug\BCMStrategy.API.pdb
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\BCMStrategy.Logger.dll
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\log4net.dll
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\BCMStrategy.Logger.pdb
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\log4net.xml
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\CommonServiceLocator.dll
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\Unity.Abstractions.dll
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\Unity.Configuration.dll
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\Unity.Container.dll
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\Unity.Interception.Configuration.dll
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\Unity.Interception.dll
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\Unity.RegistrationByConvention.dll
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\Unity.ServiceLocation.dll
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\CommonServiceLocator.pdb
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\Unity.Abstractions.pdb
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\Unity.Configuration.pdb
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\Unity.Container.pdb
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\Unity.Interception.pdb
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\Unity.Interception.Configuration.pdb
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\Unity.RegistrationByConvention.pdb
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\Unity.ServiceLocation.pdb
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\Microsoft.AspNet.Identity.Core.dll
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\Microsoft.Owin.Cors.dll
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\Microsoft.Owin.dll
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\Microsoft.Owin.Security.Cookies.dll
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\Microsoft.Owin.Security.dll
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\Microsoft.Owin.Security.OAuth.dll
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\Owin.dll
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\System.Web.Cors.dll
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\Microsoft.AspNet.Identity.Core.xml
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\Microsoft.Owin.xml
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\Microsoft.Owin.Cors.xml
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\Microsoft.Owin.Security.xml
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\Microsoft.Owin.Security.Cookies.xml
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.API\bin\Microsoft.Owin.Security.OAuth.xml
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\BCMStrategy.API.dll.config
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\BCMStrategy.API.dll
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\BCMStrategy.API.pdb
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\BCMStrategy.Logger.dll
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\CommonServiceLocator.dll
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\Microsoft.AspNet.Identity.Core.dll
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\Microsoft.Owin.Cors.dll
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\Microsoft.Owin.dll
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\Microsoft.Owin.Security.Cookies.dll
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\Microsoft.Owin.Security.dll
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\Microsoft.Owin.Security.OAuth.dll
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\Newtonsoft.Json.dll
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\Owin.dll
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\System.Net.Http.Formatting.dll
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\System.Web.Cors.dll
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\System.Web.Http.dll
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\System.Web.Http.WebHost.dll
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\Unity.Abstractions.dll
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\Unity.Configuration.dll
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\Unity.Container.dll
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\Unity.Interception.Configuration.dll
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\Unity.Interception.dll
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\Unity.RegistrationByConvention.dll
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\Unity.ServiceLocation.dll
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\log4net.dll
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\BCMStrategy.Logger.pdb
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\CommonServiceLocator.pdb
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\Microsoft.AspNet.Identity.Core.xml
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\Microsoft.Owin.xml
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\Microsoft.Owin.Cors.xml
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\Microsoft.Owin.Security.xml
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\Microsoft.Owin.Security.Cookies.xml
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\Microsoft.Owin.Security.OAuth.xml
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\Unity.Abstractions.pdb
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\Unity.Configuration.pdb
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\Unity.Container.pdb
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\Unity.Interception.pdb
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\Unity.Interception.Configuration.pdb
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\Unity.RegistrationByConvention.pdb
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\Unity.ServiceLocation.pdb
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\Newtonsoft.Json.xml
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\System.Net.Http.Formatting.xml
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\System.Web.Http.xml
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\System.Web.Http.WebHost.xml
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\bin\log4net.xml
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\obj\Debug\BCMStrategy.API.csprojResolveAssemblyReference.cache
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\obj\Debug\BCMStrategy.API.dll
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.API\obj\Debug\BCMStrategy.API.pdb
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\BCMStrategy.API.dll.config
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\BCMStrategy.API.dll
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\BCMStrategy.API.pdb
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\BCMStrategy.Logger.dll
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\CommonServiceLocator.dll
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\Microsoft.AspNet.Identity.Core.dll
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\Microsoft.Owin.Cors.dll
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\Microsoft.Owin.dll
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\Microsoft.Owin.Security.Cookies.dll
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\Microsoft.Owin.Security.dll
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\Microsoft.Owin.Security.OAuth.dll
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\Newtonsoft.Json.dll
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\Owin.dll
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\System.Net.Http.Formatting.dll
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\System.Web.Cors.dll
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\System.Web.Http.dll
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\System.Web.Http.WebHost.dll
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\Unity.Abstractions.dll
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\Unity.Configuration.dll
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\Unity.Container.dll
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\Unity.Interception.Configuration.dll
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\Unity.Interception.dll
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\Unity.RegistrationByConvention.dll
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\Unity.ServiceLocation.dll
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\log4net.dll
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\BCMStrategy.Logger.pdb
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\CommonServiceLocator.pdb
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\Microsoft.AspNet.Identity.Core.xml
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\Microsoft.Owin.xml
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\Microsoft.Owin.Cors.xml
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\Microsoft.Owin.Security.xml
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\Microsoft.Owin.Security.Cookies.xml
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\Microsoft.Owin.Security.OAuth.xml
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\Unity.Abstractions.pdb
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\Unity.Configuration.pdb
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\Unity.Container.pdb
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\Unity.Interception.pdb
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\Unity.Interception.Configuration.pdb
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\Unity.RegistrationByConvention.pdb
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\Unity.ServiceLocation.pdb
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\Newtonsoft.Json.xml
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\System.Net.Http.Formatting.xml
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\System.Web.Http.xml
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\System.Web.Http.WebHost.xml
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\bin\log4net.xml
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\obj\Debug\BCMStrategy.API.csprojResolveAssemblyReference.cache
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\obj\Debug\BCMStrategy.API.dll
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.API\obj\Debug\BCMStrategy.API.pdb
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\BCMStrategy.API.dll
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\BCMStrategy.API.pdb
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\BCMStrategy.Logger.dll
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\CommonServiceLocator.dll
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\Microsoft.AspNet.Identity.Core.dll
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\Microsoft.Owin.Cors.dll
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\Microsoft.Owin.dll
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\Microsoft.Owin.Security.Cookies.dll
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\Microsoft.Owin.Security.dll
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\Microsoft.Owin.Security.OAuth.dll
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\Newtonsoft.Json.dll
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\Owin.dll
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\System.Net.Http.Formatting.dll
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\System.Web.Cors.dll
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\System.Web.Http.dll
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\System.Web.Http.WebHost.dll
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\Unity.Abstractions.dll
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\Unity.Configuration.dll
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\Unity.Container.dll
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\Unity.Interception.Configuration.dll
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\Unity.Interception.dll
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\Unity.RegistrationByConvention.dll
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\Unity.ServiceLocation.dll
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\log4net.dll
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\BCMStrategy.Logger.pdb
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\CommonServiceLocator.pdb
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\Microsoft.AspNet.Identity.Core.xml
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\Microsoft.Owin.xml
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\Microsoft.Owin.Cors.xml
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\Microsoft.Owin.Security.xml
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\Microsoft.Owin.Security.Cookies.xml
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\Microsoft.Owin.Security.OAuth.xml
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\Unity.Abstractions.pdb
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\Unity.Configuration.pdb
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\Unity.Container.pdb
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\Unity.Interception.pdb
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\Unity.Interception.Configuration.pdb
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\Unity.RegistrationByConvention.pdb
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\Unity.ServiceLocation.pdb
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\Newtonsoft.Json.xml
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\System.Net.Http.Formatting.xml
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\System.Web.Http.xml
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\System.Web.Http.WebHost.xml
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\bin\log4net.xml
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\obj\Debug\BCMStrategy.API.csprojResolveAssemblyReference.cache
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\obj\Debug\BCMStrategy.API.dll
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.API\obj\Debug\BCMStrategy.API.pdb
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\BCMStrategy.API.dll.config
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\BCMStrategy.API.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\BCMStrategy.API.pdb
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\AWSSDK.Core.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\AWSSDK.SQS.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\BCMStrategy.Common.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\BCMStrategy.DAL.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\BCMStrategy.Data.Abstract.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\BCMStrategy.Data.Repository.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\BCMStrategy.Logger.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\BCMStrategy.Resources.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\CommonServiceLocator.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\CommonServiceLocator.SolrNet.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\EntityFramework.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\EntityFramework.SqlServer.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\log4net.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\Microsoft.AspNet.Identity.Core.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\Microsoft.Owin.Cors.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\Microsoft.Owin.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\Microsoft.Owin.Security.Cookies.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\Microsoft.Owin.Security.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\Microsoft.Owin.Security.OAuth.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\MySql.Data.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\MySql.Data.Entity.EF6.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\Newtonsoft.Json.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\Ninject.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\Owin.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\SolrNet.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\SolrNet.DSL.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\System.Net.Http.Formatting.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\System.ValueTuple.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\System.Web.Cors.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\System.Web.Http.Cors.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\System.Web.Http.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\System.Web.Http.Owin.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\System.Web.Http.WebHost.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\Unity.Abstractions.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\Unity.Configuration.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\Unity.Container.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\Unity.Interception.Configuration.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\Unity.Interception.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\Unity.RegistrationByConvention.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\Unity.ServiceLocation.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\Unity.WebApi.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\HtmlAgilityPack.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\BCMStrategy.Email.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\BCMStrategy.Common.pdb
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\BCMStrategy.DAL.pdb
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\BCMStrategy.Data.Abstract.pdb
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\BCMStrategy.Data.Repository.pdb
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\BCMStrategy.Logger.pdb
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\BCMStrategy.Resources.pdb
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\AWSSDK.Core.pdb
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\AWSSDK.Core.xml
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\AWSSDK.SQS.pdb
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\AWSSDK.SQS.xml
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\EntityFramework.xml
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\EntityFramework.SqlServer.xml
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\log4net.xml
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\Microsoft.AspNet.Identity.Core.xml
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\Microsoft.Owin.xml
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\Microsoft.Owin.Cors.xml
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\Microsoft.Owin.Security.xml
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\Microsoft.Owin.Security.Cookies.xml
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\Microsoft.Owin.Security.OAuth.xml
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\MySql.Data.xml
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\MySql.Data.Entity.EF6.xml
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\Newtonsoft.Json.xml
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\Ninject.xml
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\SolrNet.xml
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\System.Net.Http.Formatting.xml
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\System.ValueTuple.xml
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\System.Web.Http.xml
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\System.Web.Http.Cors.xml
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\System.Web.Http.Owin.xml
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\System.Web.Http.WebHost.xml
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\HtmlAgilityPack.xml
+E:\BCMProject\BCMStrategy\BCMStrategy.API\bin\BCMStrategy.Email.pdb
+E:\BCMProject\BCMStrategy\BCMStrategy.API\obj\Debug\BCMStrategy.API.csprojResolveAssemblyReference.cache
+E:\BCMProject\BCMStrategy\BCMStrategy.API\obj\Debug\BCMStrategy.API.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.API\obj\Debug\BCMStrategy.API.pdb

@@ -1,0 +1,87 @@
+﻿
+@{
+	ViewBag.Title = BCMStrategy.Resources.Resource.LblActivityType;
+	ViewBag.ModuleName = BCMStrategy.Resources.Enums.ModuleName.ACTIVITYTYPE;
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<form id="activityTypeForm">
+	<div class="container-fluid">
+		<!-- Collapse buttons -->
+		<div>
+			<a class="btn blue" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+				<i class="fa fa-plus"></i> @BCMStrategy.Resources.Resource.LblAddNew @BCMStrategy.Resources.Resource.LblActivityType
+			</a>
+			<a class="btn btn-default" id="clearFilters">
+				@BCMStrategy.Resources.Resource.LblClearFilter
+			</a>
+		</div>
+		<!-- / Collapse buttons -->
+		<!-- Collapsible element -->
+		<div class="collapse" id="collapseExample">
+			<div class="mt-3">
+				<div class="card">
+					<div class="card-body">
+						<div class="row">
+							<div class="form-group col-md-3">
+								<label class="control-label">@BCMStrategy.Resources.Resource.LblMetadataTypes</label> <span class="text-danger">*</span>
+								<select class="form-control" id="metadataTypeMasterHashId" name="metadataTypeMasterHashId" data-bind="value: MetadataTypeMasterHashId">
+									<option selected="selected" value="">@BCMStrategy.Resources.Resource.LblSelect @BCMStrategy.Resources.Resource.LblMetadataTypes</option>
+								</select>
+							</div>
+							<div class="form-group col-md-3">
+								<label class="control-label">@BCMStrategy.Resources.Resource.LblActivityType</label> <span class="text-danger">*</span>
+								<input type="text" maxlength="50" id="activityName" name="activityName" class="form-control" data-bind="value: ActivityName" />
+							</div>
+							<div class="form-group col-md-3">
+								<label class="control-label">@BCMStrategy.Resources.Resource.LblActivityValue</label> <span class="text-danger">*</span>
+								<input type="text" maxlength="6" id="activityValue" name="activityValue" class="form-control" data-bind="value: ActivityValue" />
+							</div>
+							<div class="form-group col-md-3">
+								<label class="control-label">@BCMStrategy.Resources.Resource.LblColorCode</label><br/>
+								<input id="colorCode" name="colorCode" class="form-control" data-bind="value: ColorCode" />
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-6">
+								<label class="control-label">@BCMStrategy.Resources.Resource.LblRelatedActvityType</label>
+								<input type="text" data-role="tagsinput" id="relatedActvityType" name="relatedActvityType" class="form-control" data-bind="value: RelatedActvityType" />
+							</div>
+						</div>
+					</div>
+					<div class="card-footer bg-transparent pull-right">
+						<a class="btn btn-dark-green" id="btnActivityTypeSave">@BCMStrategy.Resources.Resource.LblSave</a>
+						<a class="btn btn-blue-grey" id="btnActivityTypeCancel">@BCMStrategy.Resources.Resource.LblCancel</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- / Collapsible element -->
+		<!-- Grid -->
+		<div class="card mt-4">
+			<div class="card-body">
+				<div id="gridActivityType"></div>
+			</div>
+		</div>
+	</div>
+	@section scripts{
+		<script>
+
+			var websiteType = '@BCMStrategy.Resources.Resource.LblWebSiteType';
+			var metadataType = '@BCMStrategy.Resources.Resource.LblMetadataTypes';
+			var activityType = '@BCMStrategy.Resources.Resource.LblActivityType';
+			var activityValue = '@BCMStrategy.Resources.Resource.LblActivityValue';
+			var noDataFound = '@BCMStrategy.Resources.Resource.LblNoDataFound';
+			var deletePopupHeader = "@BCMStrategy.Resources.Resource.LblDeleteConfirmation"
+			var deletePopupMessage = "@BCMStrategy.Resources.Resource.LblActivityTypeDeleteConfirm"
+			var relatedActvityType = '@BCMStrategy.Resources.Resource.LblRelatedActvityType'
+			var colorCode = '@BCMStrategy.Resources.Resource.LblColor'
+			$("#colorCode").kendoColorPicker({
+				value: "#ffffff",
+				buttons: false,
+				preview: true
+			});
+		</script>
+
+		@Scripts.Render("~/Scripts/JsAreas/ActivityType.js", "~/Scripts/JsAreas/DropDownList.js")
+	}
+</form>

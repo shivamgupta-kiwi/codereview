@@ -1,0 +1,58 @@
+﻿@using BCMStrategy.Resources;
+@{
+  ViewBag.Title = "BCM Strategy :: Login";
+  Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<form id="loginForm" class="login-form">
+    <!--Form-->
+    <div class="card wow fadeInRight" data-wow-delay="0.3s">
+        <div class="card-body">
+            <!--Header-->
+            <div class="text-center">
+                <h3 class="white-text">
+                    <!--<i class="fa fa-user white-text"></i> User--> @Resource.LblLogin
+                </h3>
+            </div>
+
+            <!--Body-->
+            <div class="md-form">
+                <i class="fa fa-user prefix white-text active"></i>
+                <input type="text" id="username" class="white-text form-control">
+                <label for="username" class="active">@Resource.LblEmailAddress</label>
+            </div>
+            <div class="md-form">
+                <i class="fa fa-lock prefix white-text active"></i>
+                <input type="password" id="password" class="white-text form-control">
+                <label for="password" >@Resource.LblPassword</label>
+            </div>
+            <span id="errorMessage" aria-live="polite" class="red-text" name="loginError"></span>
+            <div class="text-center mt-4">
+                <button class="btn btn-blue waves-effect waves-light" type="submit" id="btnLogin">@Resource.LblLogin</button>
+                <div class="inline-ul text-center d-flex justify-content-center fgp">
+                    <a class="p-2 m-2 li-ic" id="btnForgotPassword" href="@Url.Action("ForgotPassword", "Login")">
+                        @Resource.LblForgotPassword
+                    </a>
+                    <a class="p-2 m-2 li-ic" href="@Url.Action("Index", "Registration",new { Area = "BCMStrategy" })">
+                        @Resource.LblNewRegistration
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/.Form-->
+
+
+    @section scripts{
+        <script type="text/javascript">
+            var LoginUrl = "@Url.Content("~/Account/Login")";
+            var DashBoardUrl = '@Url.Action("Index", "Dashboard", new { Area = "BCMStrategy" })';
+            var returnURL = '@(string.IsNullOrEmpty(Request["ReturnUrl"])? Html.Raw(string.Empty): Html.Raw(Url.Content(Request["ReturnUrl"])))';
+            var just = decodeURIComponent(returnURL);
+          $(document).ready(function () {
+                $('#divPartialConent').load('@Url.Action("PartialLogin", "Login")');
+});
+        </script>
+        @Scripts.Render("~/Scripts/JsAreas/Login.js")
+    }
+</form>

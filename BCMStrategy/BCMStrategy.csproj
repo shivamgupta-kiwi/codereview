@@ -1,0 +1,553 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6F5ED565-A72F-4AE3-944D-2DEC3A7E3531}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BCMStrategy</RootNamespace>
+    <AssemblyName>BCMStrategy</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonServiceLocator, Version=2.0.3.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.6\lib\net45\CommonServiceLocator.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.0.0\lib\net451\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.0\lib\net451\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.0\lib\net451\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.0\lib\net451\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.0\lib\net451\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Unity.Abstractions, Version=3.3.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.6\lib\net45\Unity.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Unity.Configuration, Version=5.2.1.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.6\lib\net45\Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.8.6.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.6\lib\net45\Unity.Container.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Unity.Interception, Version=5.5.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.6\lib\net45\Unity.Interception.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Unity.Interception.Configuration, Version=5.1.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.6\lib\net45\Unity.Interception.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Unity.RegistrationByConvention, Version=2.1.5.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.6\lib\net45\Unity.RegistrationByConvention.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Unity.ServiceLocation, Version=2.1.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.6\lib\net45\Unity.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\img\email-logo.png" />
+    <Content Include="Scripts\JsAreas\ActivityType.js" />
+    <Content Include="Scripts\JsAreas\AdminUserManagement.js" />
+    <Content Include="Scripts\JsAreas\AuditLog.js" />
+    <Content Include="Scripts\JsAreas\CustomerAuditLog.js" />
+    <Content Include="Scripts\JsAreas\Dashboard.js" />
+    <Content Include="Scripts\JsAreas\CustomerUserManagement.js" />
+    <Content Include="Scripts\JsAreas\DefaultLexicon.js" />
+    <Content Include="Scripts\JsAreas\GlobalSetting.js" />
+    <Content Include="Scripts\JsAreas\LexiconImportFile.js" />
+    <Content Include="Scripts\JsAreas\LexiconPrivilegeCustomer.js" />
+    <Content Include="Scripts\JsAreas\MetadataNounplusVerb.js" />
+    <Content Include="Scripts\JsAreas\MetadataPhrases.js" />
+    <Content Include="Scripts\JsAreas\MetadataTypes.js" />
+    <Content Include="Content\css\bootstrap-tagsinput.css" />
+    <Content Include="Content\css\fastselect.css" />
+    <Content Include="Content\css\jquery-ui.css" />
+    <Content Include="Scripts\JsAreas\Legislator.js" />
+    <Content Include="Scripts\JsAreas\MetadataTypesImportFile.js" />
+    <Content Include="Scripts\JsAreas\ProcessDetail.js" />
+    <Content Include="Scripts\JsAreas\Scheduler.js" />
+    <Content Include="Scripts\JsAreas\Privilege.js" />
+    <Content Include="Scripts\JsAreas\ScrappingProcess.js" />
+    <Content Include="Content\css\bcm.all.css" />
+    <Content Include="Content\css\bootstrap-tagsinput.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\Bootstrap\editor.png" />
+    <Content Include="Content\css\Bootstrap\imagebrowser.png" />
+    <Content Include="Content\css\Bootstrap\indeterminate.gif" />
+    <Content Include="Content\css\Bootstrap\loading-image.gif" />
+    <Content Include="Content\css\Bootstrap\loading.gif" />
+    <Content Include="Content\css\Bootstrap\loading_2x.gif" />
+    <Content Include="Content\css\Bootstrap\markers.png" />
+    <Content Include="Content\css\Bootstrap\markers_2x.png" />
+    <Content Include="Content\css\Bootstrap\slider-h.gif" />
+    <Content Include="Content\css\Bootstrap\slider-v.gif" />
+    <Content Include="Content\css\Bootstrap\sprite.png" />
+    <Content Include="Content\css\Bootstrap\sprite_2x.png" />
+    <Content Include="Content\css\Bootstrap\sprite_kpi.png" />
+    <Content Include="Content\css\Bootstrap\sprite_kpi_2x.png" />
+    <Content Include="Content\css\fontawesome-all.min.css" />
+    <Content Include="Content\css\kendo.bootstrap-v4.min.css" />
+    <Content Include="Content\css\kendo.bootstrap.min.css" />
+    <Content Include="Content\css\kendo.bootstrap.mobile.min.css" />
+    <Content Include="Content\css\kendo.common-bootstrap.min.css" />
+    <Content Include="Content\css\kendo.common.min.css" />
+    <Content Include="Content\css\kendo.dataviz.bootstrap.min.css" />
+    <Content Include="Content\css\kendo.dataviz.min.css" />
+    <Content Include="Content\css\login.css" />
+    <Content Include="Content\css\mdb.css" />
+    <Content Include="Content\css\mdb.min.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\css\custom.css" />
+    <Content Include="Content\img\bg-login.jpg" />
+    <Content Include="Content\img\favicon.ico" />
+    <Content Include="Content\img\lightbox\default-skin.png" />
+    <Content Include="Content\img\lightbox\preloader.gif" />
+    <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\logo1.png" />
+    <Content Include="Content\img\overlays\01.png" />
+    <Content Include="Content\img\overlays\02.png" />
+    <Content Include="Content\img\overlays\03.png" />
+    <Content Include="Content\img\overlays\04.png" />
+    <Content Include="Content\img\overlays\05.png" />
+    <Content Include="Content\img\overlays\06.png" />
+    <Content Include="Content\img\overlays\07.png" />
+    <Content Include="Content\img\overlays\08.png" />
+    <Content Include="Content\img\overlays\09.png" />
+    <Content Include="Content\img\puzzle-piece.jpg" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\common\common.js" />
+    <Content Include="Scripts\common\formatDate.js" />
+    <Content Include="Scripts\JsAreas\ChangePassword.js" />
+    <Content Include="Scripts\JsAreas\DropDownList.js" />
+    <Content Include="Scripts\JsAreas\ForgotPassword.js" />
+    <Content Include="Scripts\JsAreas\HeadStateImportFile.js" />
+    <Content Include="Scripts\JsAreas\InstitutionTypes.js" />
+    <Content Include="Scripts\JsAreas\Institutions.js" />
+    <Content Include="Scripts\JsAreas\InstitutionsImportFile.js" />
+    <Content Include="Scripts\JsAreas\InstitutionTypes.js" />
+    <Content Include="Scripts\JsAreas\InstitutionTypesImportFile.js" />
+    <Content Include="Scripts\JsAreas\InternationalOrganization.js" />
+    <Content Include="Scripts\JsAreas\InternationalOrganizationImportFile.js" />
+    <Content Include="Scripts\JsAreas\Layout.js" />
+    <Content Include="Scripts\JsAreas\Lexicon.js" />
+    <Content Include="Scripts\JsAreas\Login.js" />
+    <Content Include="Scripts\JsAreas\PolicyMaker.js" />
+    <Content Include="Scripts\JsAreas\PolicyMakerImportFile.js" />
+    <Content Include="Scripts\JsAreas\Registration.js" />
+    <Content Include="Scripts\JsAreas\ScrappingProcess.js" />
+    <Content Include="Scripts\JsAreas\SearchablePDF.js" />
+    <Content Include="Scripts\JsAreas\SetPassword.js" />
+    <Content Include="Scripts\JsAreas\StateHead.js" />
+    <Content Include="Scripts\JsAreas\UserAccessRights.js" />
+    <Content Include="Scripts\JsAreas\UserProfile.js" />
+    <Content Include="Scripts\js\bootstrap-tagsinput.min.js" />
+    <Content Include="Scripts\JsAreas\WebLinkManagement.js" />
+    <Content Include="Scripts\js\bootstrap-tagsinput.min.js" />
+    <Content Include="Scripts\js\bootstrap.js" />
+    <Content Include="Scripts\js\bootstrap.min.js" />
+    <Content Include="Scripts\js\fastselect.js" />
+    <Content Include="Scripts\js\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\js\jquery-ui.js" />
+    <Content Include="Scripts\js\jquery.validate.js" />
+    <Content Include="Scripts\js\kendo.all.min.2015.js" />
+    <Content Include="Scripts\js\kendo.all.min.js" />
+    <Content Include="Scripts\js\mdb.min.js" />
+    <Content Include="Scripts\js\modules\chart.js" />
+    <Content Include="Scripts\js\modules\enhanced-modals.js" />
+    <Content Include="Scripts\js\modules\forms-free.js" />
+    <Content Include="Scripts\js\modules\jquery.easing.js" />
+    <Content Include="Scripts\js\modules\scrolling-navbar.js" />
+    <Content Include="Scripts\js\modules\velocity.min.js" />
+    <Content Include="Scripts\js\modules\waves.js" />
+    <Content Include="Scripts\js\modules\wow.js" />
+    <Content Include="Scripts\js\popper.min.js" />
+    <Content Include="Scripts\js\TypeAhead.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Account\AccountAreaRegistration.cs" />
+    <Compile Include="Areas\Account\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Account\Models\LoginModel.cs" />
+    <Compile Include="Areas\Account\Models\SignInResult.cs" />
+    <Compile Include="Areas\BCMStrategy\BMCStrategyAreaRegistration.cs" />
+    <Compile Include="Areas\BCMStrategy\Controllers\ActivityTypeController.cs" />
+    <Compile Include="Areas\BCMStrategy\Controllers\AuditLogController.cs" />
+    <Compile Include="Areas\BCMStrategy\Controllers\ChangePasswordController.cs" />
+    <Compile Include="Areas\BCMStrategy\Controllers\CustomerAuditLogController.cs" />
+    <Compile Include="Areas\BCMStrategy\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\BCMStrategy\Controllers\GlobalSettingsController.cs" />
+    <Compile Include="Areas\BCMStrategy\Controllers\InstitutionTypesController.cs" />
+    <Compile Include="Areas\BCMStrategy\Controllers\InstitutionsController.cs" />
+    <Compile Include="Areas\BCMStrategy\Controllers\InternationalOrganizationController.cs" />
+    <Compile Include="Areas\BCMStrategy\Controllers\LegislatorController.cs" />
+    <Compile Include="Areas\BCMStrategy\Controllers\LexiconController.cs" />
+    <Compile Include="Areas\BCMStrategy\Controllers\MetadataNounplusVerbController.cs" />
+    <Compile Include="Areas\BCMStrategy\Controllers\MetadataPhrasesController.cs" />
+    <Compile Include="Areas\BCMStrategy\Controllers\MetadataTypesController.cs" />
+    <Compile Include="Areas\BCMStrategy\Controllers\PolicyMakersController.cs" />
+    <Compile Include="Areas\BCMStrategy\Controllers\PrivilegeController.cs" />
+    <Compile Include="Areas\BCMStrategy\Controllers\RegistrationController.cs" />
+    <Compile Include="Areas\BCMStrategy\Controllers\SchedulerController.cs" />
+    <Compile Include="Areas\BCMStrategy\Controllers\ScrappingProcessController.cs" />
+    <Compile Include="Areas\BCMStrategy\Controllers\SearchablePDFController.cs" />
+    <Compile Include="Areas\BCMStrategy\Controllers\StateHeadController.cs" />
+    <Compile Include="Areas\BCMStrategy\Controllers\UserAccessRightsController.cs" />
+    <Compile Include="Areas\BCMStrategy\Controllers\UserManagementController.cs" />
+    <Compile Include="Areas\BCMStrategy\Controllers\WebLinkManagementController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\CommonController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\ApiException.cs" />
+    <Compile Include="Helpers\JsonBadRequest.cs" />
+    <Compile Include="Helpers\WebApiService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebStartup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="Areas\BCMStrategy\Views\web.config" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Shared\_NavigationSideBar.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Areas\BCMStrategy\Views\Registration\Index.cshtml" />
+    <Content Include="Content\css\Bootstrap\Thumbs.db" />
+    <Content Include="Content\font\roboto\Roboto-Bold.eot" />
+    <Content Include="Content\font\roboto\Roboto-Bold.ttf" />
+    <Content Include="Content\font\roboto\Roboto-Bold.woff" />
+    <Content Include="Content\font\roboto\Roboto-Bold.woff2" />
+    <Content Include="Content\font\roboto\Roboto-Light.eot" />
+    <Content Include="Content\font\roboto\Roboto-Light.ttf" />
+    <Content Include="Content\font\roboto\Roboto-Light.woff" />
+    <Content Include="Content\font\roboto\Roboto-Light.woff2" />
+    <Content Include="Content\font\roboto\Roboto-Medium.eot" />
+    <Content Include="Content\font\roboto\Roboto-Medium.ttf" />
+    <Content Include="Content\font\roboto\Roboto-Medium.woff" />
+    <Content Include="Content\font\roboto\Roboto-Medium.woff2" />
+    <Content Include="Content\font\roboto\Roboto-Regular.eot" />
+    <Content Include="Content\font\roboto\Roboto-Regular.ttf" />
+    <Content Include="Content\font\roboto\Roboto-Regular.woff" />
+    <Content Include="Content\font\roboto\Roboto-Regular.woff2" />
+    <Content Include="Content\font\roboto\Roboto-Thin.eot" />
+    <Content Include="Content\font\roboto\Roboto-Thin.ttf" />
+    <Content Include="Content\font\roboto\Roboto-Thin.woff" />
+    <Content Include="Content\font\roboto\Roboto-Thin.woff2" />
+    <Content Include="Content\img\lightbox\default-skin.svg" />
+    <Content Include="Content\img\svg\arrow_left.svg" />
+    <Content Include="Content\img\svg\arrow_right.svg" />
+    <Content Include="Content\scss\core\bootstrap\_functions.scss" />
+    <Content Include="Content\scss\core\bootstrap\_variables.scss" />
+    <Content Include="Content\scss\core\_colors.scss" />
+    <Content Include="Content\scss\core\_global.scss" />
+    <Content Include="Content\scss\core\_helpers.scss" />
+    <Content Include="Content\scss\core\_masks.scss" />
+    <Content Include="Content\scss\core\_mixins.scss" />
+    <Content Include="Content\scss\core\_typography.scss" />
+    <Content Include="Content\scss\core\_variables.scss" />
+    <Content Include="Content\scss\core\_waves.scss" />
+    <Content Include="Content\scss\free\_animations-basic.scss" />
+    <Content Include="Content\scss\free\_animations-extended.scss" />
+    <Content Include="Content\scss\free\_badges.scss" />
+    <Content Include="Content\scss\free\_buttons.scss" />
+    <Content Include="Content\scss\free\_cards.scss" />
+    <Content Include="Content\scss\free\_carousels.scss" />
+    <Content Include="Content\scss\free\_depreciated.scss" />
+    <Content Include="Content\scss\free\_dropdowns.scss" />
+    <Content Include="Content\scss\free\_footers.scss" />
+    <Content Include="Content\scss\free\_forms.scss" />
+    <Content Include="Content\scss\free\_input-group.scss" />
+    <Content Include="Content\scss\free\_list-group.scss" />
+    <Content Include="Content\scss\free\_modals.scss" />
+    <Content Include="Content\scss\free\_msc.scss" />
+    <Content Include="Content\scss\free\_navbars.scss" />
+    <Content Include="Content\scss\free\_pagination.scss" />
+    <Content Include="Content\scss\free\_tables.scss" />
+    <Content Include="Content\scss\mdb.scss" />
+    <Content Include="Content\scss\style.scss" />
+    <Content Include="Content\scss\_custom-styles.scss" />
+    <Content Include="Content\scss\_custom-variables.scss" />
+    <Content Include="Content\webfonts\fa-brands-400.eot" />
+    <Content Include="Content\webfonts\fa-brands-400.svg" />
+    <Content Include="Content\webfonts\fa-brands-400.ttf" />
+    <Content Include="Content\webfonts\fa-brands-400.woff" />
+    <Content Include="Content\webfonts\fa-brands-400.woff2" />
+    <Content Include="Content\webfonts\fa-regular-400.eot" />
+    <Content Include="Content\webfonts\fa-regular-400.svg" />
+    <Content Include="Content\webfonts\fa-regular-400.ttf" />
+    <Content Include="Content\webfonts\fa-regular-400.woff" />
+    <Content Include="Content\webfonts\fa-regular-400.woff2" />
+    <Content Include="Content\webfonts\fa-solid-900.eot" />
+    <Content Include="Content\webfonts\fa-solid-900.svg" />
+    <Content Include="Content\webfonts\fa-solid-900.ttf" />
+    <Content Include="Content\webfonts\fa-solid-900.woff" />
+    <Content Include="Content\webfonts\fa-solid-900.woff2" />
+    <Content Include="Areas\Account\Views\web.config" />
+    <Content Include="Views\Shared\_LayoutLogin.cshtml" />
+    <Content Include="Areas\Account\Views\Login\Index.cshtml" />
+    <Content Include="Areas\Account\Views\Login\ForgotPassword.cshtml" />
+    <Content Include="Areas\Account\Views\Login\SetPassword.cshtml" />
+    <Content Include="Views\Common\Common.cshtml" />
+    <Content Include="Views\Common\LinkExpired.cshtml" />
+    <Content Include="Areas\BCMStrategy\Views\Dashboard\Index.cshtml" />
+    <Content Include="Areas\BCMStrategy\Views\StateHead\Index.cshtml" />
+    <Content Include="Areas\BCMStrategy\Views\StateHead\ImportFile.cshtml" />
+    <Content Include="UploadTemplates\Head of State and Govt Template.csv" />
+    <Content Include="Content\css\images\kendoui.ttf" />
+    <Content Include="Content\css\images\kendoui.woff" />
+    <Content Include="Areas\BCMStrategy\Views\Registration\UserProfile.cshtml" />
+    <Content Include="Areas\BCMStrategy\Views\ChangePassword\Index.cshtml" />
+    <Content Include="Views\Error\Unauthorized.cshtml" />
+    <Content Include="Areas\BCMStrategy\Views\InstitutionTypes\Index.cshtml" />
+    <Content Include="Areas\BCMStrategy\Views\InstitutionTypes\ImportFile.cshtml" />
+    <Content Include="Areas\BCMStrategy\Views\Institutions\Index.cshtml" />
+    <Content Include="Areas\BCMStrategy\Views\Institutions\ImportInstitutions.cshtml" />
+    <Content Include="Areas\BCMStrategy\Views\PolicyMakers\Index.cshtml" />
+    <Content Include="Areas\BCMStrategy\Views\PolicyMakers\ImportPolicyMakers.cshtml" />
+    <Content Include="Areas\BCMStrategy\Views\InternationalOrganization\Index.cshtml" />
+    <Content Include="Areas\BCMStrategy\Views\InternationalOrganization\ImportInternationalOrganization.cshtml" />
+    <Content Include="Areas\BCMStrategy\Views\ScrappingProcess\OfficialSector.cshtml" />
+    <Content Include="Areas\BCMStrategy\Views\Lexicon\Index.cshtml" />
+    <Content Include="Areas\BCMStrategy\Views\WebLinkManagement\Index.cshtml" />
+    <Content Include="Areas\BCMStrategy\Views\Legislator\Index.cshtml" />
+    <Content Include="Areas\BCMStrategy\Views\AuditLog\Index.cshtml" />
+    <Content Include="Areas\BCMStrategy\Views\UserAccessRights\Index.cshtml" />
+    <Content Include="Areas\BCMStrategy\Views\Scheduler\Index.cshtml" />
+    <Content Include="Areas\BCMStrategy\Views\ScrappingProcess\Detail.cshtml" />
+    <Content Include="Areas\BCMStrategy\Views\Privilege\LexiconAccessManagement.cshtml" />
+    <Content Include="Areas\BCMStrategy\Views\Privilege\LexiconAccessCustomer.cshtml" />
+    <Content Include="Areas\BCMStrategy\Views\ScrappingProcess\MediaSector.cshtml" />
+    <Content Include="Areas\BCMStrategy\Views\Privilege\DetailChart.cshtml" />
+    <Content Include="Areas\BCMStrategy\Views\Privilege\Test.cshtml" />
+    <Content Include="Areas\BCMStrategy\Views\Dashboard\DetailChart.cshtml" />
+    <Content Include="Areas\BCMStrategy\Views\UserManagement\AdminUser.cshtml" />
+    <Content Include="Areas\BCMStrategy\Views\UserManagement\CustomerUser.cshtml" />
+    <Content Include="Areas\BCMStrategy\Views\Scheduler\ProcessDetail.cshtml" />
+    <Content Include="Areas\BCMStrategy\Views\SearchablePDF\Index.cshtml" />
+    <Content Include="Areas\BCMStrategy\Views\CustomerAuditLog\Index.cshtml" />
+    <Content Include="Areas\BCMStrategy\Views\GlobalSettings\Index.cshtml" />
+    <Content Include="Areas\BCMStrategy\Views\UserManagement\DefaultLexicon.cshtml" />
+    <None Include="Properties\PublishProfiles\BCM.pubxml" />
+    <Content Include="Areas\BCMStrategy\Views\Lexicon\ImportLexicon.cshtml" />
+    <Content Include="Areas\BCMStrategy\Views\MetadataTypes\Index.cshtml" />
+    <Content Include="Areas\BCMStrategy\Views\MetadataTypes\ImportMetadataTypes.cshtml" />
+    <Content Include="Areas\BCMStrategy\Views\ActivityType\Index.cshtml" />
+    <Content Include="Areas\BCMStrategy\Views\MetadataPhrases\Index.cshtml" />
+    <Content Include="Areas\BCMStrategy\Views\MetadataNounplusVerb\Index.cshtml" />
+    <Content Include="UploadTemplates\Institution Type Template.csv" />
+    <Content Include="UploadTemplates\Institution Template.csv" />
+    <Content Include="Views\Shared\_LayoutBeforeLogin.cshtml" />
+    <Content Include="UploadTemplates\Policy Makers Template.csv" />
+    <Content Include="UploadTemplates\International Organization Template.csv" />
+    <Content Include="Scripts\js\fastselect.standalone.js" />
+    <Content Include="UploadTemplates\Lexicon Template.csv" />
+    <Content Include="Views\Shared\_LayoutDashboard.cshtml" />
+    <None Include="Properties\PublishProfiles\Web.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Account\Views\Shared\" />
+    <Folder Include="Areas\BCMStrategy\Models\" />
+    <Folder Include="Areas\BCMStrategy\Views\Shared\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BCMStrategy.Common\BCMStrategy.Common.csproj">
+      <Project>{2aea55ed-f5ad-450a-9c9a-7420a1e3ff12}</Project>
+      <Name>BCMStrategy.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCMStrategy.Data.Abstract\BCMStrategy.Data.Abstract.csproj">
+      <Project>{C43243D5-ED0D-4BEC-B0D8-956BD45646CF}</Project>
+      <Name>BCMStrategy.Data.Abstract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCMStrategy.Data.Repository\BCMStrategy.Data.Repository.csproj">
+      <Project>{932888B8-4B5F-42FF-9050-44B477C134B2}</Project>
+      <Name>BCMStrategy.Data.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCMStrategy.Resources\BCMStrategy.Resources.csproj">
+      <Project>{a6de21f3-1730-4e4e-bcca-b24df4bbd894}</Project>
+      <Name>BCMStrategy.Resources</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52289</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:52289/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,126 @@
+﻿@{
+	ViewBag.Title = BCMStrategy.Resources.Resource.LblLexiconAccessCustomer;
+	ViewBag.ModuleName = BCMStrategy.Resources.Enums.ModuleName.LEXICONACCESSCUSTOMER;
+	Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+	//Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+	@*<base href="https://demos.telerik.com/kendo-ui/bar-charts/stacked-bar">*@
+	<style>
+		html {
+			font-size: 14px;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+
+		tr {
+			display: block;
+			line-height: 5px;
+		}
+
+		th, td {
+			width: 300px;
+		}
+
+		tbody {
+			display: block;
+			height: 500px;
+			overflow: auto;
+		}
+
+		.table-borderless td,
+		.table-borderless th {
+			border: 0;
+		}
+
+		.panel-heading {
+			border-bottom: 1px solid #ccc;
+			margin-bottom: 10px;
+			display: block;
+			/*background: #eee;*/
+			padding: 8px 0 0 5px;
+		}
+
+		.panel-body {
+			padding-left: 20px;
+			margin-bottom: 10px;
+		}
+	</style>
+	<title></title>
+
+	@*WorkingCode Kendo Chart*@
+	<link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.2.620/styles/kendo.common.min.css" />
+	<link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.2.620/styles/kendo.rtl.min.css" />
+	<link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.2.620/styles/kendo.silver.min.css" />
+	<link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.2.620/styles/kendo.mobile.all.min.css" />
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script src="https://kendo.cdn.telerik.com/2018.2.620/js/kendo.all.min.js"></script>
+</head>
+<body>
+	<form style="margin-left:1px" id="privilegeForm">
+		<div class="container-fluid">
+			<div class="card mt-4">
+				<div class="card-body">
+					@*<div class="row">
+						<div class="form-group col-md-4">
+							<input type='text' class="form-control" id="datetimepicker1" />
+							<span class="input-group-addon">
+								<span class="glyphicon glyphicon-calendar"></span>
+							</span>
+						</div>
+					</div>*@
+					<div class="row">
+						<div class="col-xs-6 col-sm-8">
+							<div class="row">
+								<div class="col-md-12">
+									<div id="lexiconTypechart"></div>
+								</div> 
+							</div>
+							<div class="clearfix"></div>
+							<div class="row">
+								<div class="col-md-12">
+									<div id="lexiconTermsChart"></div>
+								</div>
+							</div>
+						</div>
+						<div class="clearfix visible-xs"></div>
+						<div class="col-xs-6 col-sm-4">
+							<br />
+							<br />
+							<div class="panel-group" id="accordion1">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		@section scripts{
+			<script>
+				var firstName = '@BCMStrategy.Resources.Resource.LblFirstName';
+				var middleName = '@BCMStrategy.Resources.Resource.LblMiddleName';
+				var lastName = '@BCMStrategy.Resources.Resource.LblLastName';
+				var noDataFound = '@BCMStrategy.Resources.Resource.LblNoDataFound';
+			</script>
+			@Scripts.Render("~/Scripts/JsAreas/Dashboard.js");
+		}
+
+	</form>
+
+	<a href="@Url.Action("DetailChart", "Privilege", new { area = "BCMStrategy" })" id="chartDetailUrl" style="display:none;"></a>
+	<script>
+		function Test() {
+		}
+
+
+
+
+
+
+
+	</script>
+	@*</div>*@
+</body>
+</html>

@@ -1,0 +1,221 @@
+﻿@{
+  ViewBag.Title = BCMStrategy.Resources.Resource.LblDashboard;
+  ViewBag.ModuleName = BCMStrategy.Resources.Enums.ModuleName.DASHBOARD;
+  Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    tr {
+      display: block;
+      line-height: 5px;
+    }
+
+    th, td {
+      width: 300px;
+    }
+
+    tbody {
+      display: block;
+      /*height: 500px;*/
+      overflow: auto;
+    }
+
+    .table-borderless td,
+    .table-borderless th {
+      border: 0;
+    }
+
+    .panel-heading {
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 10px;
+      display: block;
+      /*background: #eee;*/
+      padding: 8px 0 0 5px;
+    }
+
+    .panel-body {
+      padding-left: 20px;
+      margin-bottom: 10px;
+    }
+
+    .k-chart {
+      font-family: 'Roboto';
+    }
+
+    .checkbox-container input:checked ~ .checkmark {
+      background-color: #0f88bf;
+    }
+
+      .checkbox-container input:checked ~ .checkmark:after {
+        display: block;
+      }
+
+    .checkbox-container .checkmark:after {
+      left: 7px;
+      top: 3px;
+      width: 7px;
+      height: 11px;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 20px;
+      width: 20px;
+      background-color: #eee;
+    }
+
+    .checkbox-container {
+      position: relative;
+      padding-left: 21px;
+    }
+
+      .checkbox-container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+      }
+
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+
+    label.checkbox-nan {
+      color: #44a048;
+    }
+
+    .panel.panel-default.filter-lexicons {
+      border: 1px solid #ccc;
+    }
+
+    .filter-lexicons-content.collapse.show {
+      padding: 0 9px;
+    }
+
+    .lexicons-note {
+      margin-top: 9px;
+    }
+  </style>
+  <title></title>
+</head>
+<body>
+  <form style="margin-left:1px" id="privilegeForm">
+    <div class="container-fluid">
+      <div class="card mt-4">
+        <div class="card-body">
+          <div class="row">
+            <div class="form-group col-md-3">
+              <label class="control-label">@BCMStrategy.Resources.Resource.LblScanDate</label>
+              <input id="txtDateTime" name="txtDateTime" class="form-control" data-bind="value: TxtDateTime" />
+            </div>
+            <div class="form-group col-md-3 bg-transparent pull-right" style="padding-top: 24px;">
+              <a class="btn btn-dark-green waves-effect waves-light btn-md" style="font-size: 12px;" id="btnSubmit">@BCMStrategy.Resources.Resource.lblSubmit</a>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-12 col-sm-12">
+              <div class="row">
+                <div class="col-md-12">
+                  <div id="lexiconTypechart"></div>
+                  <div id="noDataNotification" style="display: none;">@BCMStrategy.Resources.Resource.LblNoDataExists</div>
+                  <div id="InvalidUrlNotification" style="display: none;">@BCMStrategy.Resources.Resource.LblLinkIncorrectOrExpired</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="card mt-4" id="DivlexiconTermsChart">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12">
+              <div class="clearfix"></div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div id="lexiconTermsChart"></div>
+                </div>
+              </div>
+            </div>
+            @*<div class="clearfix visible-xs"></div>*@
+          </div>
+        </div>
+      </div>
+      <div class="card mt-4" id="DivlexiconTermsFilter" style="display:none">
+        <div class="card-body">
+          <div class="clearfix"></div>
+          <div class="float-left filter-btns">
+            <a class="btn btn-dark-green waves-effect waves-light btn-md" style="display:none;font-size: 12px;" id="btnFilter">@BCMStrategy.Resources.Resource.lblFilterGraph</a>
+            <a class="btn btn-dark-green waves-effect waves-light btn-md" style="display:none;font-size: 12px;" id="btnDefaultFilter">@BCMStrategy.Resources.Resource.LblLexiconDefaultFilter</a>
+          </div>
+          <div class="clearfix"></div>
+          <div class="row">
+            <div class="col-xs-6 col-sm-6">
+              <br />
+              <div class="panel-group" id="accordion1">
+              </div>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="demo-section form-group k-content lexicons-note">
+                <div class="green-text">@BCMStrategy.Resources.Resource.LblSelectedLexiconMessage</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <input type="hidden" id="selectedLexiconTypeHiddenVal" value="" />
+
+    @section scripts{
+      @Scripts.Render("~/Scripts/JsAreas/Dashboard.js");
+      <script>
+                ////var noDataFound = '@BCMStrategy.Resources.Resource.LblNoDataFound';
+        var validationLexiconTerm = '@BCMStrategy.Resources.Resource.ValidationSelectLexiconTerm';
+        var VirtualdashboardURL = "@Url.Action("VirtualDashboard", "Dashboard", new { Area= "BCMStrategy" })";
+        var numberOfColumns = "@Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings["NumberOfChartColumns"].ToString())";
+        var refHashId = '@ViewBag.refHashId';
+        var date = '@ViewBag.scanDate';
+        var key = '@ViewBag.key';
+        var isDirect = '@ViewBag.isDirect';
+        $(document).ready(function () {
+          $("#DivlexiconTermsChart").hide();
+          if (isDirect == "True") {
+            AuthenticateUserForDashboard(refHashId, date, key, isDirect);
+          }
+          else {
+            BindDashboard(refHashId, date, key, isDirect);
+          }
+        })
+
+      </script>
+
+    }
+
+  </form>
+
+  <a href="@Url.Action("DetailChart", "Dashboard", new { area = "BCMStrategy" })" id="chartDetailUrl" style="display:none;"></a>
+  <script>
+    function Test() {
+    }
+  </script>
+</body>
+</html>

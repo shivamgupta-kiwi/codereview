@@ -1,0 +1,83 @@
+﻿
+@{
+  ViewBag.Title = BCMStrategy.Resources.Resource.LblMetadataTypes;
+  ViewBag.ModuleName = BCMStrategy.Resources.Enums.ModuleName.METADATATYPES;
+  Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<form id="metadataTypesForm">
+    <div class="container-fluid">
+        <!-- Collapse buttons -->
+        <div>
+            <a class="btn blue" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                <i class="fa fa-plus"></i> @BCMStrategy.Resources.Resource.LblAddNew @BCMStrategy.Resources.Resource.LblMetadataTypes
+            </a>
+            <a class="btn btn-default" id="clearFilters">
+                @BCMStrategy.Resources.Resource.LblClearFilter
+            </a>
+        </div>
+        <!-- / Collapse buttons -->
+        <!-- Collapsible element -->
+        <div class="collapse" id="collapseExample">
+            <div class="mt-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblWebsiteTypes</label> <span class="text-danger">*</span>
+                                <select class="form-control" id="websiteTypeHashId" name="websiteTypeHashId" data-bind="value: WebsiteTypeHashId">
+                                    <option selected="selected" value="">@BCMStrategy.Resources.Resource.SelectWebsiteType_String</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblMetadata</label> <span class="text-danger">*</span>
+                                <input type="text" maxlength="50" id="metaData" name="metaData" class="form-control" data-bind="value: MetaData" />
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblIsActivityTypeExist</label> <span class="text-danger">*</span>
+                                <div class="clearfix"></div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" checked name="isExist" id="yes" data-bind="value: IsExist" />
+                                    <label>Yes</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="isExist" id="no" data-bind="value: IsExist">
+                                    <label>No</label>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-4" id="DivValue">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblMetadataValue</label> <span id="spanMetadataValue" class="text-danger">*</span>
+                                <input type="text" maxlength="6" id="metaDataValue" name="metaDataValue" class="form-control" data-bind="value: MetaDataValue" />
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="card-footer bg-transparent pull-right">
+                        <a class="btn btn-dark-green" id="btnMetadataTypesSave">@BCMStrategy.Resources.Resource.LblSave</a>
+                        <a class="btn btn-blue-grey" id="btnMetadataTypesCancel">@BCMStrategy.Resources.Resource.LblCancel</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- / Collapsible element -->
+        <!-- Grid -->
+        <div class="card mt-4">
+            <div class="card-body">
+                <div id="gridMetadataTypes"></div>
+            </div>
+        </div>
+    </div>
+    @section scripts{
+        <script>
+            var websiteType = '@BCMStrategy.Resources.Resource.LblWebsiteTypes';
+            var metadata = '@BCMStrategy.Resources.Resource.LblMetadata';
+            var metadataValue = '@BCMStrategy.Resources.Resource.LblMetadataValue';
+            var ActivityTypeExist = '@BCMStrategy.Resources.Resource.LblIsActivityTypeExist';
+            var noDataFound = '@BCMStrategy.Resources.Resource.LblNoDataFound';
+            var deletePopupHeader = "@BCMStrategy.Resources.Resource.LblDeleteConfirmation"
+            var deletePopupMessage = "@BCMStrategy.Resources.Resource.LblMetadataTypesDeleteConfirm"
+        </script>
+        @Scripts.Render("~/Scripts/JsAreas/MetadataTypes.js", "~/Scripts/JsAreas/DropDownList.js")
+    }
+</form>
+

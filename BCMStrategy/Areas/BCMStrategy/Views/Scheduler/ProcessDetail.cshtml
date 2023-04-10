@@ -1,0 +1,36 @@
+﻿
+@{
+  //ViewBag.Title = BCMStrategy.Resources.Resource.LblProcessDetail;
+  ViewBag.ModuleName = BCMStrategy.Resources.Enums.ModuleName.PROCESSDETAIL;
+  Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form id="processDetailForm">
+  <div class="container-fluid">
+    <!-- Collapse buttons -->
+      <a class="btn btn-default  m375" style="cursor:pointer;" id="btnSchedulerBack">@BCMStrategy.Resources.Resource.LblBack</a>
+    <!-- Grid -->
+    <div class="card mt-4">
+      <div class="card-body">
+        <div id="gridProcessDetail"></div>
+      </div>
+    </div>
+      <input type="hidden" value="" id="schedulerMasterHashId" />
+  </div>
+    <a href="@Url.Action("OfficialSector", "ScrappingProcess", new { area = "BCMStrategy"})" target="_blank" id="OfficialSectorUrl"></a>
+    <a href="@Url.Action("MediaSector", "ScrappingProcess", new { area = "BCMStrategy"})"  target="_blank" id="MediaSectorUrl"></a>
+
+  @section scripts{
+    <script>
+        var noDataFound = '@BCMStrategy.Resources.Resource.LblNoDataFound';
+        @*var viewDetail = '@BCMStrategy.Resources.Resource.LblViewdetail';
+        var processId = '@BCMStrategy.Resources.Resource.LblProcessId';
+        var startDate = '@BCMStrategy.Resources.Resource.LblStartDate';
+        var endDate = '@BCMStrategy.Resources.Resource.LblEndDate';
+        var status = '@BCMStrategy.Resources.Resource.LblStatus;
+        var timeTaken = '@BCMStrategy.Resources.Resource.LblTimeTaken';*@
+        var backURL = "@Url.Action("Index", "Scheduler", new { Area= "BCMStrategy" })";
+    </script>
+    @Scripts.Render("~/Scripts/JsAreas/ProcessDetail.js")
+  }
+</form>

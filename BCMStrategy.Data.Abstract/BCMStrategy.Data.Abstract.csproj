@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C43243D5-ED0D-4BEC-B0D8-956BD45646CF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BCMStrategy.Data.Abstract</RootNamespace>
+    <AssemblyName>BCMStrategy.Data.Abstract</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonServiceLocator, Version=2.0.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.2.0.2\lib\net45\CommonServiceLocator.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CommonServiceLocator.SolrNet, Version=1.0.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SolrNet.1.0.9\lib\net46\CommonServiceLocator.SolrNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.8.5.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.8.5\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SolrNet, Version=1.0.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SolrNet.Core.1.0.9\lib\net46\SolrNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SolrNet.DSL, Version=1.0.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SolrNet.DSL.1.0.9\lib\net46\SolrNet.DSL.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\IActivityType.cs" />
+    <Compile Include="Abstract\IAuditLog.cs" />
+    <Compile Include="Abstract\ICommonRepository.cs" />
+    <Compile Include="Abstract\ICountryMaster.cs" />
+    <Compile Include="Abstract\IDashboard.cs" />
+    <Compile Include="Abstract\IDocumentStorage.cs" />
+    <Compile Include="Abstract\IEmailGenerate.cs" />
+    <Compile Include="Abstract\IGlobalConfiguration.cs" />
+    <Compile Include="Abstract\IGlobalSetting.cs" />
+    <Compile Include="Abstract\IHeadStateRepository.cs" />
+    <Compile Include="Abstract\IInstitutions.cs" />
+    <Compile Include="Abstract\IInstitutionTypes.cs" />
+    <Compile Include="Abstract\IInternationalOrganization.cs" />
+    <Compile Include="Abstract\ILegislator.cs" />
+    <Compile Include="Abstract\ILexicon.cs" />
+    <Compile Include="Abstract\ILexiconType.cs" />
+    <Compile Include="Abstract\IMessageQueue.cs" />
+    <Compile Include="Abstract\IMetaData.cs" />
+    <Compile Include="Abstract\IMetadataNounplusVerb.cs" />
+    <Compile Include="Abstract\IMetadataPhrases.cs" />
+    <Compile Include="Abstract\IMetadataTypes.cs" />
+    <Compile Include="Abstract\IPolicyMaker.cs" />
+    <Compile Include="Abstract\IPrivilege.cs" />
+    <Compile Include="Abstract\IProcessEvents.cs" />
+    <Compile Include="Abstract\IScheduler.cs" />
+    <Compile Include="Abstract\IScrapperActivityRepository.cs" />
+    <Compile Include="Abstract\IScrappingProcess.cs" />
+    <Compile Include="Abstract\ISearchablePDF.cs" />
+    <Compile Include="Abstract\ISector.cs" />
+    <Compile Include="Abstract\ISolrPageDetail.cs" />
+    <Compile Include="Abstract\IUserAccessRights.cs" />
+    <Compile Include="Abstract\IUserMaster.cs" />
+    <Compile Include="Abstract\IWebDocument.cs" />
+    <Compile Include="Abstract\IWebLink.cs" />
+    <Compile Include="Abstract\IWebsiteTypes.cs" />
+    <Compile Include="CommonUtilities.cs" />
+    <Compile Include="CustomValidation\CustomValidation.cs" />
+    <Compile Include="DateTimeFormats.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Provider\IAuth.cs" />
+    <Compile Include="UserAccessHelper.cs" />
+    <Compile Include="ViewModels\ActionNounPlusVerbAuditViewModel.cs" />
+    <Compile Include="ViewModels\ActionTypeAuditViewModel.cs" />
+    <Compile Include="ViewModels\ActivityTypeAuditViewModel.cs" />
+    <Compile Include="ViewModels\ActivityTypeModel.cs" />
+    <Compile Include="ViewModels\AuditBaseModel.cs" />
+    <Compile Include="ViewModels\AuditLogModel.cs" />
+    <Compile Include="ViewModels\ContentLoaderLogViewModel.cs" />
+    <Compile Include="ViewModels\DefaultLexicon.cs" />
+    <Compile Include="ViewModels\EmailServiceModel.cs" />
+    <Compile Include="ViewModels\ExcludedWebLinks.cs" />
+    <Compile Include="ViewModels\GlobalSettingModel.cs" />
+    <Compile Include="ViewModels\HeadofStateAndGovernmentAuditViewModel.cs" />
+    <Compile Include="ViewModels\DashboardViewModel.cs" />
+    <Compile Include="ViewModels\IndividualLegislatorViewModel.cs" />
+    <Compile Include="ViewModels\InstitutionTypeViewModel.cs" />
+    <Compile Include="ViewModels\InstitutionViewModel.cs" />
+    <Compile Include="ViewModels\InternalOrgViewModel.cs" />
+    <Compile Include="ViewModels\LegislatorAuditViewModel.cs" />
+    <Compile Include="ViewModels\LexiconAccessManagementModel.cs" />
+    <Compile Include="ViewModels\LegislatorViewModel.cs" />
+    <Compile Include="ViewModels\LexiconSearchValueViewModel.cs" />
+    <Compile Include="ViewModels\LexiconTermViewModel.cs" />
+    <Compile Include="ViewModels\LoaderErrorLogViewModel.cs" />
+    <Compile Include="ViewModels\PageDetailHistory.cs" />
+    <Compile Include="ViewModels\MetadataNounplusVerbModel.cs" />
+    <Compile Include="ViewModels\MetadataPhrasesModel.cs" />
+    <Compile Include="ViewModels\MetadataTypesCsvImportModel.cs" />
+    <Compile Include="ViewModels\MetadataTypesModel.cs" />
+    <Compile Include="ViewModels\ParentMenuModel.cs" />
+    <Compile Include="ViewModels\PDFGeneratorModel.cs" />
+    <Compile Include="ViewModels\PhrasesAuditViewModel.cs" />
+    <Compile Include="ViewModels\ProcessDetailModel.cs" />
+    <Compile Include="ViewModels\PolicyMakerAuditModel.cs" />
+    <Compile Include="ViewModels\ReportViewModel.cs" />
+    <Compile Include="ViewModels\RSSFeedDetails.cs" />
+    <Compile Include="ViewModels\SchedulerModel.cs" />
+    <Compile Include="ViewModels\SearchablePDFParameters.cs" />
+    <Compile Include="ViewModels\SubMenuModel.cs" />
+    <Compile Include="ViewModels\ThomsonReutersViewModel.cs" />
+    <Compile Include="ViewModels\UserAccessRightsModel.cs" />
+    <Compile Include="ViewModels\UserManagementAuditViewModel.cs" />
+    <Compile Include="ViewModels\WebLinkAuditModel.cs" />
+    <Compile Include="ViewModels\WebLinkMetaDataModel.cs" />
+    <Compile Include="ViewModels\APIClient.cs" />
+    <Compile Include="ViewModels\APIOutput.cs" />
+    <Compile Include="ViewModels\ChangePasswordModel.cs" />
+    <Compile Include="ViewModels\DataTableRequest.cs" />
+    <Compile Include="ViewModels\DataTableResult.cs" />
+    <Compile Include="ViewModels\Events.cs" />
+    <Compile Include="ViewModels\ForgotPasswordModel.cs" />
+    <Compile Include="ViewModels\HeadStateImportModel.cs" />
+    <Compile Include="ViewModels\IndividualPersonViewModel.cs" />
+    <Compile Include="ViewModels\InstitutionImportModel.cs" />
+    <Compile Include="ViewModels\InstitutionTypesImportModel.cs" />
+    <Compile Include="ViewModels\InstitutionTypesModel.cs" />
+    <Compile Include="ViewModels\InstitutionModel.cs" />
+    <Compile Include="ViewModels\InternationalOrganizationImportModel.cs" />
+    <Compile Include="ViewModels\InternationalOrganizationModel.cs" />
+    <Compile Include="ViewModels\LexiconCsvImportModel.cs" />
+    <Compile Include="ViewModels\ScrappedContentMapping.cs" />
+    <Compile Include="ViewModels\LexiconModel.cs" />
+    <Compile Include="ViewModels\LexiconTypeModel.cs" />
+    <Compile Include="ViewModels\LoaderLinkQueue.cs" />
+    <Compile Include="ViewModels\DropdownMaster.cs" />
+    <Compile Include="ViewModels\GlobalConfigurationKeys.cs" />
+    <Compile Include="ViewModels\MessageQueue.cs" />
+    <Compile Include="ViewModels\PageDetails.cs" />
+    <Compile Include="ViewModels\PolicyMakerModel.cs" />
+    <Compile Include="ViewModels\PolicyMakersCSVImportModel.cs" />
+    <Compile Include="ViewModels\ProcessEventLog.cs" />
+    <Compile Include="ViewModels\ProcessEvents.cs" />
+    <Compile Include="ViewModels\ProcessInstances.cs" />
+    <Compile Include="ViewModels\RefreshToken.cs" />
+    <Compile Include="ViewModels\ScrappingProcessModel.cs" />
+    <Compile Include="ViewModels\SetPasswordModel.cs" />
+    <Compile Include="ViewModels\SolrSearchParameters.cs" />
+    <Compile Include="ViewModels\StateHeadModel.cs" />
+    <Compile Include="ViewModels\UserModel.cs" />
+    <Compile Include="ViewModels\WebLink.cs" />
+    <Compile Include="ViewModels\WebLinkConfiguration.cs" />
+    <Compile Include="ViewModels\WebLinkPageContentRegEx.cs" />
+    <Compile Include="ViewModels\WebLinkViewModel.cs" />
+    <Compile Include="ViewModels\WebPageRegExGroup.cs" />
+    <Compile Include="ViewModels\WebSiteLink.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BCMStrategy.Common\BCMStrategy.Common.csproj">
+      <Project>{2AEA55ED-F5AD-450A-9C9A-7420A1E3FF12}</Project>
+      <Name>BCMStrategy.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCMStrategy.DAL\BCMStrategy.DAL.csproj">
+      <Project>{e7003171-66e4-407e-8f4f-8d003a0f64f9}</Project>
+      <Name>BCMStrategy.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCMStrategy.Resources\BCMStrategy.Resources.csproj">
+      <Project>{a6de21f3-1730-4e4e-bcca-b24df4bbd894}</Project>
+      <Name>BCMStrategy.Resources</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

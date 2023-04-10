@@ -1,0 +1,18 @@
+﻿{
+  "FTQueryString": {
+    "queryContext": {
+      "curations": [
+        "ARTICLES",
+        "PAGES",
+        "BLOGS"
+      ]
+    }
+  },
+  "TRQueryString": {
+    "ValidateTokenURL": "{0}?token={1}",
+    "TokenURL": "{0}?username={1}&password={2}",
+    "ChannelURL": "{0}channels?token={1}",
+    "ItemsURL": "{0}search?q=topic:({1})&channel={2}&maxAge={3}h&token={4}",
+    "ItemURL": "{0}item?id={1}&token={2}"
+  }
+}

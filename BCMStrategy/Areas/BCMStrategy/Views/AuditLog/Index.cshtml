@@ -1,0 +1,65 @@
+﻿@{
+  ViewBag.Title = BCMStrategy.Resources.Resource.LblAdminAuditLog;
+	ViewBag.ModuleName = BCMStrategy.Resources.Enums.ModuleName.AUDITLOG;
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+	#grid .k-grid-toolbar {
+		padding: .6em 1.3em .6em .4em;
+	}
+
+	.category-label {
+		vertical-align: middle;
+		padding-right: .5em;
+	}
+
+	#category {
+		vertical-align: middle;
+	}
+
+	.toolbar {
+		float: left;
+	}
+</style>
+
+<form id="activityTypeForm">
+	<div class="container-fluid">
+		<!-- Grid -->
+		<div class="card mt-4">
+			<div class="card-body">
+				<div class="row">
+					<div class="form-group col-md-4">
+						<label class="control-label">@BCMStrategy.Resources.Resource.LblAuditPage</label> <span class="text-danger">*</span>
+						<select class="form-control" id="auditLog" name="auditLog">
+							<option selected="selected" value="">@BCMStrategy.Resources.Resource.LblSelectAuditPage</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-12">
+						<div id="grid" style="margin-left: 2px;"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	@section scripts{
+		<script>
+			var auditTable = '@BCMStrategy.Resources.Resource.LblAuditTable';
+			var auditType = '@BCMStrategy.Resources.Resource.LblAuditType';
+			var beforeValue = '@BCMStrategy.Resources.Resource.LblBeforeValue';
+			var afterValue = '@BCMStrategy.Resources.Resource.LblAfterValue';
+			var discription = '@BCMStrategy.Resources.Resource.LblAuditDescription';
+      var ipAddress = '@BCMStrategy.Resources.Resource.LblIpAddress';
+      var userName = '@BCMStrategy.Resources.Resource.LblUserName';
+      var dateField = '@BCMStrategy.Resources.Resource.LblAuditDate';
+      var insertUpdatedUser = '@BCMStrategy.Resources.Resource.LblInsertUpdatedUserName';
+			var noDataFound = '@BCMStrategy.Resources.Resource.LblNoDataFound';
+      var deletePopupHeader = "@BCMStrategy.Resources.Resource.LblDeleteConfirmation";
+      var deletePopupMessage = "mSG";
+
+		</script>
+		@Scripts.Render("~/Scripts/JsAreas/AuditLog.js", "~/Scripts/JsAreas/DropDownList.js")
+	}
+</form>

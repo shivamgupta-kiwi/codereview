@@ -1,0 +1,48 @@
+﻿
+@{
+  ViewBag.Title = "Unauthorized";
+  Layout = "~/Views/Shared/_LayoutBeforeLogin.cshtml";
+}
+<div class="container-fluid">
+  <div class="card">
+    <div class="card-body text-center">
+      <h2>Error!!!</h2>
+      <h1>403</h1>
+      <h5>@BCMStrategy.Resources.Resource.LblForbidonError</h5>
+
+    </div>
+    <div class="card-footer bg-transparent text-center">
+      <a class="btn blue darken-4" style="cursor:pointer" id="btnRedirectLogin">@BCMStrategy.Resources.Resource.LblLoginAgain</a>
+    </div>
+  </div>
+</div>
+@section scripts{
+  <script>
+
+    var LogoutURL = '@Url.Action("Logout", "Login", new { Area = "Account" })';
+    var LogoutSuccessURL = '@Url.Action("Index","Login", new { Area = "Account" })';
+    var UnauthorizedURL = '@Url.Content(@"~\Error\Unauthorized")';
+
+    var LayoutJS = {
+      logout: function () {
+        CommonJS.RemoveStorageItem('access_token');
+        CommonJS.RemoveStorageItem('refresh_token');
+        CommonJS.RemoveStorageItem('token_type');
+        CommonJS.RemoveStorageItem('userHashId');
+        CommonJS.RemoveStorageItem('userName');
+        CommonJS.RemoveStorageItem('expire_time');
+        CommonJS.RemoveStorageItem('userFullName');
+        $.ajax({
+          url: LogoutURL,
+          type: 'POST',
+          contentType: 'application/json;',
+          success: function (redirectUrl) {
+            window.location.href = LogoutSuccessURL;
+          }
+        });
+      }
+    }
+    $(document).ready(function () { $("#btnRedirectLogin").click(function () { LayoutJS.logout(); }); });
+
+  </script>
+}

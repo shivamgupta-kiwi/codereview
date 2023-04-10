@@ -1,0 +1,63 @@
+﻿@{
+  Layout = "~/Views/Shared/_Layout.cshtml";
+  
+  var userHashId = "";
+  var userType = "";
+  
+  if (Request.QueryString["userMasterHashId"] != null)
+  {
+    userHashId = Request.QueryString["userMasterHashId"].ToString();
+  }
+
+  if (Request.QueryString["userType"] != null)
+  {
+    userType = Request.QueryString["userType"].ToString();
+  }
+}
+
+<form id="defaultLexiconForm">
+  <div class="container-fluid">
+    <!-- Collapse buttons -->
+    <a class="btn btn-default  m375" style="cursor:pointer;" id="btnDefaultLexiconBack">@BCMStrategy.Resources.Resource.LblBack</a>
+    <!-- Grid -->
+    <div class="card mt-4">
+      <div class="card-body">
+        <div id="gridDefaultLexicon"></div>
+      </div>
+    </div>
+  </div>
+
+  @section scripts{
+    <script>
+  var noDataFound = '@BCMStrategy.Resources.Resource.LblNoDataFound';
+  var backURLAdmin = "@Url.Action("Index", "UserManagement", new { Area = "BCMStrategy" })";
+  var backURLCustomer = "@Url.Action("CustomerUser", "UserManagement", new { Area = "BCMStrategy" })";
+
+  var lexiconType = '@BCMStrategy.Resources.Resource.LblLexiconType';
+  var lexicon = '@BCMStrategy.Resources.Resource.LblLexicon';
+  var noDataFound = '@BCMStrategy.Resources.Resource.LblNoDataFound';
+  var LexiconType = "@BCMStrategy.Resources.Resource.LblLexiconType";
+  var LexiconTerm = "@BCMStrategy.Resources.Resource.LblLexicon";
+  var CombinationValue = "@BCMStrategy.Resources.Resource.LblCombinationValue";
+  var Nested = "@BCMStrategy.Resources.Resource.LblIsNested";
+  var LexiconLinker = "@BCMStrategy.Resources.Resource.LblLinker";
+
+  $(document).ready(function () {
+    loadKendoGrid('@userHashId');
+      });
+
+      $("#btnDefaultLexiconBack").click(function () {
+
+        if ('@userType' == "Customer") {
+          window.location.href = backURLCustomer;
+        }
+        else{
+          window.location.href = backURLAdmin;
+        }
+      })
+
+    </script>
+    @Scripts.Render("~/Scripts/JsAreas/DefaultLexicon.js")
+  }
+</form>
+

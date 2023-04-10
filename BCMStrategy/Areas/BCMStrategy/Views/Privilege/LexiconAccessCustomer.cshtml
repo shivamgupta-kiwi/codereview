@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = BCMStrategy.Resources.Resource.LblLexiconAccessCustomer;
+    ViewBag.ModuleName = BCMStrategy.Resources.Enums.ModuleName.LEXICONACCESSCUSTOMER;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .k-grid .k-grid-header .k-header .k-link {
+        height: auto;
+    }
+
+    .k-grid .k-grid-header .k-header {
+        white-space: normal;
+    }
+</style>
+
+<form style="margin-left:1px" id="privilegeForm">
+    <div class="container-fluid">
+        <div class="card mt-4">
+            <div class="card-body">
+                <div id="gridPrivilege"></div>
+            </div>
+        </div>
+    </div>
+    <a href="@Url.Action("LexiconAccessManagement", "Privilege", new { area = "BCMStrategy"})" id="lexiconAccessManagementUrl"></a>
+
+    @section scripts{
+        <script>
+            var firstName = '@BCMStrategy.Resources.Resource.LblFirstName';
+            var middleName = '@BCMStrategy.Resources.Resource.LblMiddleName';
+            var lastName = '@BCMStrategy.Resources.Resource.LblLastName';
+						var noDataFound = '@BCMStrategy.Resources.Resource.LblNoDataFound';
+						var companyName = '@BCMStrategy.Resources.Resource.LblCompanyName';
+						var designation = '@BCMStrategy.Resources.Resource.LblTitle';
+        </script>
+        @Scripts.Render("~/Scripts/JsAreas/LexiconPrivilegeCustomer.js");
+
+        <link href="~/Content/css/jquery-ui.css" rel="stylesheet" />
+        <script src="~/Scripts/js/jquery-ui.js"></script>
+    }
+</form>

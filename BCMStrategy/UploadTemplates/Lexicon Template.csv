@@ -1,0 +1,3 @@
+LexiconTerm,IsNested,CombinationValue,Linker
+sample,Yes,"sample1,sample2","sample1,sample2"
+sample2,No,,"sample1,sample2"

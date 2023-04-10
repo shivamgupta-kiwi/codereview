@@ -1,0 +1,38 @@
+﻿@{
+  ViewBag.Title = BCMStrategy.Resources.Resource.LblChangePassword;
+  ViewBag.ModuleName = BCMStrategy.Resources.Enums.ModuleName.CHANGEPASSWORD;
+  Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form id="changePasswordForm">
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="form-group col-md-4">
+            <label class="control-label">@BCMStrategy.Resources.Resource.LblOldPassword</label> <span class="text-danger">*</span>
+            <input type="password" id="oldPassword" name="oldPassword" class="form-control" data-bind="value: OldPassword" />
+          </div>
+          <div class="form-group col-md-4">
+            <label class="control-label">@BCMStrategy.Resources.Resource.LblNewPassword</label> <span class="text-danger">*</span>
+            <input type="password" id="newPassword" name="newPassword" class="form-control" data-bind="value: NewPassword" />
+          </div>
+          <div class="form-group col-md-4">
+            <label class="control-label">@BCMStrategy.Resources.Resource.LblConfirmPassword</label> <span class="text-danger">*</span>
+            <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" data-bind="value: ConfirmPassword" />
+          </div>
+        </div>
+      </div>
+      <div class="card-footer bg-transparent pull-right">
+        <a class="btn btn-dark-green" id="btnChangePasswordSave">@BCMStrategy.Resources.Resource.LblSave</a>
+        <a class="btn btn-blue-grey" id="btnChangePasswordCancel">@BCMStrategy.Resources.Resource.LblCancel</a>
+      </div>
+    </div>
+  </div>
+  @section scripts{
+    <script>
+  var redirectHome = '@Url.Action("Index", "Dashboard", new { Area = "BCMStrategy" })';
+    </script>
+    @Scripts.Render("~/Scripts/JsAreas/ChangePassword.js")
+  }
+</form>

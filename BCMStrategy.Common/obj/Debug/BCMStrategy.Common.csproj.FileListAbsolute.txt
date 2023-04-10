@@ -1,0 +1,93 @@
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.Common\bin\Debug\BCMStrategy.Common.dll
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.Common\bin\Debug\BCMStrategy.Common.pdb
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.Common\obj\Debug\BCMStrategy.Common.dll
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.Common\obj\Debug\BCMStrategy.Common.pdb
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.Common\bin\Debug\CommonServiceLocator.dll
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.Common\bin\Debug\Unity.Abstractions.dll
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.Common\bin\Debug\Unity.Configuration.dll
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.Common\bin\Debug\Unity.Container.dll
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.Common\bin\Debug\Unity.Interception.Configuration.dll
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.Common\bin\Debug\Unity.Interception.dll
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.Common\bin\Debug\Unity.RegistrationByConvention.dll
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.Common\bin\Debug\Unity.ServiceLocation.dll
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.Common\bin\Debug\Unity.Abstractions.pdb
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.Common\bin\Debug\Unity.Configuration.pdb
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.Common\bin\Debug\Unity.Container.pdb
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.Common\bin\Debug\Unity.Interception.pdb
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.Common\bin\Debug\Unity.Interception.Configuration.pdb
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.Common\bin\Debug\Unity.RegistrationByConvention.pdb
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.Common\bin\Debug\Unity.ServiceLocation.pdb
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.Common\bin\Debug\BCMStrategy.Common.dll
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.Common\bin\Debug\BCMStrategy.Common.pdb
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.Common\bin\Debug\CommonServiceLocator.dll
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.Common\bin\Debug\Unity.Abstractions.dll
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.Common\bin\Debug\Unity.Configuration.dll
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.Common\bin\Debug\Unity.Container.dll
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.Common\bin\Debug\Unity.Interception.Configuration.dll
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.Common\bin\Debug\Unity.Interception.dll
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.Common\bin\Debug\Unity.RegistrationByConvention.dll
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.Common\bin\Debug\Unity.ServiceLocation.dll
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.Common\bin\Debug\Unity.Abstractions.pdb
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.Common\bin\Debug\Unity.Configuration.pdb
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.Common\bin\Debug\Unity.Container.pdb
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.Common\bin\Debug\Unity.Interception.pdb
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.Common\bin\Debug\Unity.Interception.Configuration.pdb
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.Common\bin\Debug\Unity.RegistrationByConvention.pdb
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.Common\bin\Debug\Unity.ServiceLocation.pdb
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.Common\obj\Debug\BCMStrategy.Common.csprojResolveAssemblyReference.cache
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.Common\obj\Debug\BCMStrategy.Common.dll
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.Common\obj\Debug\BCMStrategy.Common.pdb
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.Common\bin\Debug\BCMStrategy.Common.dll
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.Common\bin\Debug\BCMStrategy.Common.pdb
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.Common\bin\Debug\CommonServiceLocator.dll
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.Common\bin\Debug\Unity.Abstractions.dll
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.Common\bin\Debug\Unity.Configuration.dll
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.Common\bin\Debug\Unity.Container.dll
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.Common\bin\Debug\Unity.Interception.Configuration.dll
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.Common\bin\Debug\Unity.Interception.dll
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.Common\bin\Debug\Unity.RegistrationByConvention.dll
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.Common\bin\Debug\Unity.ServiceLocation.dll
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.Common\bin\Debug\Unity.Abstractions.pdb
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.Common\bin\Debug\Unity.Configuration.pdb
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.Common\bin\Debug\Unity.Container.pdb
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.Common\bin\Debug\Unity.Interception.pdb
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.Common\bin\Debug\Unity.Interception.Configuration.pdb
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.Common\bin\Debug\Unity.RegistrationByConvention.pdb
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.Common\bin\Debug\Unity.ServiceLocation.pdb
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.Common\obj\Debug\BCMStrategy.Common.csprojResolveAssemblyReference.cache
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.Common\obj\Debug\BCMStrategy.Common.dll
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.Common\obj\Debug\BCMStrategy.Common.pdb
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.Common\bin\Debug\BCMStrategy.Common.dll
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.Common\bin\Debug\BCMStrategy.Common.pdb
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.Common\bin\Debug\CommonServiceLocator.dll
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.Common\bin\Debug\Unity.Abstractions.dll
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.Common\bin\Debug\Unity.Configuration.dll
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.Common\bin\Debug\Unity.Container.dll
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.Common\bin\Debug\Unity.Interception.Configuration.dll
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.Common\bin\Debug\Unity.Interception.dll
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.Common\bin\Debug\Unity.RegistrationByConvention.dll
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.Common\bin\Debug\Unity.ServiceLocation.dll
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.Common\bin\Debug\Unity.Abstractions.pdb
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.Common\bin\Debug\Unity.Configuration.pdb
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.Common\bin\Debug\Unity.Container.pdb
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.Common\bin\Debug\Unity.Interception.pdb
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.Common\bin\Debug\Unity.Interception.Configuration.pdb
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.Common\bin\Debug\Unity.RegistrationByConvention.pdb
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.Common\bin\Debug\Unity.ServiceLocation.pdb
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.Common\obj\Debug\BCMStrategy.Common.dll
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.Common\obj\Debug\BCMStrategy.Common.pdb
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.Common\obj\Debug\BCMStrategy.Common.csprojResolveAssemblyReference.cache
+E:\BCMProject\BCMStrategy\BCMStrategy.Common\bin\Debug\BCMStrategy.Common.dll.config
+E:\BCMProject\BCMStrategy\BCMStrategy.Common\bin\Debug\BCMStrategy.Common.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.Common\bin\Debug\BCMStrategy.Common.pdb
+E:\BCMProject\BCMStrategy\BCMStrategy.Common\bin\Debug\CommonServiceLocator.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.Common\bin\Debug\Unity.Abstractions.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.Common\bin\Debug\Unity.Configuration.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.Common\bin\Debug\Unity.Container.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.Common\bin\Debug\Unity.Interception.Configuration.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.Common\bin\Debug\Unity.Interception.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.Common\bin\Debug\Unity.RegistrationByConvention.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.Common\bin\Debug\Unity.ServiceLocation.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.Common\obj\Debug\BCMStrategy.Common.csprojResolveAssemblyReference.cache
+E:\BCMProject\BCMStrategy\BCMStrategy.Common\obj\Debug\BCMStrategy.Common.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.Common\obj\Debug\BCMStrategy.Common.pdb

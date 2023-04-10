@@ -1,0 +1,118 @@
+﻿@{
+	ViewBag.Title = "Test4";
+	ViewBag.ModuleName = BCMStrategy.Resources.Enums.ModuleName.LEXICONACCESSCUSTOMER;
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.2.620/styles/kendo.common.min.css" />
+	<link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.2.620/styles/kendo.rtl.min.css" />
+	<link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.2.620/styles/kendo.silver.min.css" />
+	<link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.2.620/styles/kendo.mobile.all.min.css" />
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script src="https://kendo.cdn.telerik.com/2018.2.620/js/kendo.all.min.js"></script>
+
+
+</head>
+<body>
+	<form style="margin-left:1px" id="privilegeForm">
+		<div class="container-fluid">
+			<div class="card mt-4">
+				<div class="card-body">
+					<div id="chart" style="background: center no-repeat url('../content/shared/styles/world-map.png');"></div>
+				</div>
+			</div>
+		</div>
+	</form>
+
+		<script>
+			function createChart() {
+				$("#chart").kendoChart({
+					title: {
+						position: "bottom",
+						text: "Share of Internet Population Growth, 2007 - 2012"
+					},
+					legend: {
+						position: "bottom"
+					},
+					chartArea: {
+						background: ""
+					},
+					seriesDefaults: {
+						labels: {
+							visible: true,
+							background: "transparent",
+							template: "#= category #: \n #= value#%",
+							//font: "12px sans-serif"
+						}
+					},
+					series: [{
+						type: "pie",
+						startAngle: 150,
+						data: pieChartArray
+					}],
+					tooltip: {
+						visible: true,
+						format: "{0}%"
+					}
+				});
+			}
+
+			$(document).ready(function () {
+				GetData();
+				createChart();
+			});
+			var colorArray = ['#0070C0', '#C00000', '#FFC000', '#00B050', '#7030A0', '#d2691e', '#ffb6c1', '#add8e6', '#708090', '#eee8dc', '#fffafa', '#b03060', '#F0E68C', '#8fbc8f', '#9932cc'];
+			var pieChartArray = [];
+			function GetData() {
+				var officialSectorId = '@ViewBag.officialSectorId';
+				var mediaSectorId = '@ViewBag.mediaSectorId';
+				var isEropionUnion = '@ViewBag.isEropionUnion';
+				var countryHashId = '@ViewBag.countryHashId';
+				var actionTypeHashId = '@ViewBag.actionTypeHashId';
+
+				$.ajax({
+					url: 'http://192.168.0.61/BCMAPI/api/Test/GetActivityTypeList?officialSectorId=' + officialSectorId + "&mediaSectorId=" + mediaSectorId + "&isEropionUnion=" + isEropionUnion + "&countryHashId=" + countryHashId + "&actionTypeHashId=" + actionTypeHashId,
+					dataType: "json",
+					contentType: 'application/json; charset=utf-8',
+					method: 'GET',
+					async: false,
+					processdata: true,
+					success: function (response) {
+						if (response) {
+							console.log(response);
+							GetPieChartData(response);
+						}
+					},
+					error: function (e) {
+						CommonJS.HandleErrorStatus(e.status);
+					}
+				});
+			}
+
+			function GetPieChartData(response) {
+				pieChartArray = response.map(function (element, index) {
+						
+					var json = {
+						category: element.name,
+						value: element.value,
+						color:colorArray[index]
+					};
+					return json;
+					});
+				return pieChartArray;
+			}
+
+			$(document).bind("kendo:skinChange", createChart);
+		</script>
+	
+
+
+</body>
+</html>
+
+
+

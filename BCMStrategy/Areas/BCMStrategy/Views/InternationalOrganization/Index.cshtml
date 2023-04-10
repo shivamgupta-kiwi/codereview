@@ -1,0 +1,100 @@
+﻿
+@{
+  ViewBag.Title = BCMStrategy.Resources.Resource.LblInternationalOrganizations;
+  ViewBag.ModuleName = BCMStrategy.Resources.Enums.ModuleName.INTERNATIONALORGANIZATION;
+  Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<form id="internationalOrganizationForm">
+  <div class="container-fluid">
+    <!-- Collapse buttons -->
+    <div>
+      <a class="btn blue" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        <i class="fa fa-plus"></i> @BCMStrategy.Resources.Resource.LblAddNew @BCMStrategy.Resources.Resource.LblInternationalOrganizations
+      </a>
+      <a class="btn btn-primary" href="@Url.Action("ImportInternationalOrganization","InternationalOrganization",new { Area = "BCMStrategy"})">
+        @BCMStrategy.Resources.Resource.LblImport @BCMStrategy.Resources.Resource.LblInternationalOrganizations
+      </a>
+      <a class="btn btn-default" id="clearInternationalOrgFilters">
+        @BCMStrategy.Resources.Resource.LblClearFilter
+      </a>
+    </div>
+    <!-- / Collapse buttons -->
+    <!-- Collapsible element -->
+    <div class="collapse" id="collapseExample">
+      <div class="mt-3">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="form-group col-md-4">
+                <label class="control-label">@BCMStrategy.Resources.Resource.LblOrganizationName</label> <span class="text-danger">*</span>
+                <input type="text" maxlength="400" id="organizationName" name="organizationName" class="form-control" data-bind="value: OrganizationName" />
+              </div>
+              <div class="form-group col-md-4">
+                <label class="control-label">@BCMStrategy.Resources.Resource.LblDesignationType</label>
+                <select class="form-control" id="designationOrganizationHashId" name="designationOrganizationHashId" data-bind="value: DesignationMasterHashId">
+                  <option selected="selected" value="">@BCMStrategy.Resources.Resource.LblSelect @BCMStrategy.Resources.Resource.LblDesignationType</option>
+                </select>
+              </div>
+              <div class="form-group col-md-4">
+                <label class="control-label">@BCMStrategy.Resources.Resource.LblFirstName</label>
+                <input type="text" maxlength="400" id="leaderFirstName" name="leaderFirstName" class="form-control" data-bind="value: LeaderFirstName" />
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              
+              <div class="form-group col-md-4">
+                <label class="control-label">@BCMStrategy.Resources.Resource.LblLastName</label> <span class="text-danger">*</span>
+                <input type="text" maxlength="100" id="leaderLastName" name="leaderLastName" class="form-control" data-bind="value: LeaderLastName" />
+              </div>
+              <div class="form-group col-md-4">
+                <label class="control-label">@BCMStrategy.Resources.Resource.LblEntityName</label> <span class="text-danger">*</span>
+                <input type="text" maxlength="100" id="entityName" name="entityName" class="form-control" data-bind="value: EntityName" />
+              </div>
+
+                <div class="form-group col-md-4">
+                    <label class="control-label">@BCMStrategy.Resources.Resource.LblIsMultiLateral</label> <span class="text-danger">*</span>
+                    <div class="clearfix"></div>
+                    <div class="form-check form-check-inline">
+                        <input type="radio" checked name="isMultiLateral" id="yes" data-bind="value: IsMultiLateral" />
+                        <label>Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="radio" name="isMultiLateral" id="no" data-bind="value: IsMultiLateral">
+                        <label>No</label>
+                    </div>
+                </div>
+
+            </div>
+          </div>
+          <div class="card-footer bg-transparent pull-right">
+            <a class="btn btn-dark-green" id="btnInternationalOrgSave">@BCMStrategy.Resources.Resource.LblSave</a>
+            <a class="btn btn-blue-grey" id="btnInternationalOrgCancel">@BCMStrategy.Resources.Resource.LblCancel</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- / Collapsible element -->
+    <!-- Grid -->
+    <div class="card mt-4">
+      <div class="card-body">
+        <div id="gridInternationalOrganization"></div>
+      </div>
+    </div>
+  </div>
+  @section scripts{
+    <script>
+
+        var organizationName = '@BCMStrategy.Resources.Resource.LblOrganizationName';
+        var designationName = '@BCMStrategy.Resources.Resource.LblDesignationType';
+        var leader = '@BCMStrategy.Resources.Resource.LblLeader';
+        var entityName = '@BCMStrategy.Resources.Resource.LblEntityName';
+        var MultiLateral = "@BCMStrategy.Resources.Resource.LblIsMultiLateral";
+        var noDataFound = '@BCMStrategy.Resources.Resource.LblNoDataFound';
+        var deletePopupHeader = "@BCMStrategy.Resources.Resource.LblDeleteConfirmation"
+        var deletePopupMessage = "@BCMStrategy.Resources.Resource.LblOrganizationDeleteConfirm"
+    </script>
+    @Scripts.Render("~/Scripts/JsAreas/InternationalOrganization.js", "~/Scripts/JsAreas/DropDownList.js")
+  }
+</form>

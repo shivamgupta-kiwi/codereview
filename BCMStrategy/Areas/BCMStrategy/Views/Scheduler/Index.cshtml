@@ -1,0 +1,133 @@
+﻿
+@{
+  ViewBag.Title = BCMStrategy.Resources.Resource.LblScheduler;
+  ViewBag.ModuleName = BCMStrategy.Resources.Enums.ModuleName.SCHEDULER;
+  Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<form id="schedulerForm">
+    <div class="container-fluid">
+        <!-- Collapse buttons -->
+        <div>
+            <a class="btn blue" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                <i class="fa fa-plus"></i> @BCMStrategy.Resources.Resource.LblAddNew @BCMStrategy.Resources.Resource.LblScheduler
+            </a>
+            <a class="btn btn-default" id="clearFilters">
+                @BCMStrategy.Resources.Resource.LblClearFilter
+            </a>
+        </div>
+        <!-- / Collapse buttons -->
+        <!-- Collapsible element -->
+        <div class="collapse" id="collapseExample">
+            <div class="mt-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="form-group col-md-3">
+                                @*<label class="control-label">@BCMStrategy.Resources.Resource.LblName</label> <span class="text-danger">*</span>
+                                <input type="text" maxlength="100" id="schedulerName" name="schedulerName" class="form-control" data-bind="value: SchedulerName" />*@
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblWebsiteTypes</label> <span class="text-danger">*</span>
+                                <select class="form-control" id="websiteType" name="websiteType" data-bind="value: WebsiteType">
+                                    <option selected="selected" value="">@BCMStrategy.Resources.Resource.SelectWebsiteType_String</option>
+                                </select>
+                            
+                             </div>
+
+                            <div class="form-group col-md-3">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblFrequencyType</label> <span class="text-danger">*</span>
+                                <select class="form-control" id="frequencyTypeMasterHashId" name="frequencyTypeMasterHashId" data-bind="value: FrequencyTypeMasterHashId">
+                                    <option selected="selected" value="">@BCMStrategy.Resources.Resource.LblSelect @BCMStrategy.Resources.Resource.LblFrequencyType</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-3">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblStartDate</label> <span class="text-danger">*</span>
+                                <input type="text" id="startDateFinal" name="startDateFinal" class="form-control" data-bind="value: StartDateFinal" />
+                            </div>
+
+                            <div class="form-group col-md-3">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblEndDate</label>
+                                <input type="text" id="endDateFinal" name="endDateFinal" class="form-control" data-bind="value: EndDateFinal" />
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="form-group col-md-3" id="DivstartTime">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblStartTime</label> <span class="text-danger">*</span>
+                                <input type="text" id="startTimeFinal" name="startTimeFinal" class="form-control" data-bind="value: StartTimeFinal" />
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblRepeatEvery</label> <span class="text-danger">*</span>
+                                <input type="text" maxlength="3" id="repeatEveryHour" name="repeatEveryHour" class="form-control" data-bind="value: RepeatEveryHour" />
+                            </div>
+
+                        </div>
+
+                        <div class="row" id="DivWeekDays">
+                            <div class="form-group form-check col-md-12" >
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblWeekdays</label> <span class="text-danger">*</span> </br>
+                                <label class="form-check-inline"><input type="checkbox" id="sunday" data-bind="value: Sunday">@BCMStrategy.Resources.Enums.WeekDays.Sunday</label>
+                                <label class="form-check-inline"><input type="checkbox" id="monday" data-bind="value: Monday">@BCMStrategy.Resources.Enums.WeekDays.Monday</label>
+                                <label class="form-check-inline"><input type="checkbox" id="tuesday" data-bind="value: Tuesday">@BCMStrategy.Resources.Enums.WeekDays.Tuesday</label>
+                                <label class="form-check-inline"><input type="checkbox" id="wednesday" data-bind="value: Wednesday">@BCMStrategy.Resources.Enums.WeekDays.Wednesday</label>
+                                <label class="form-check-inline"><input type="checkbox" id="thursday" data-bind="value: Thursday">@BCMStrategy.Resources.Enums.WeekDays.Thursday</label>
+                                <label class="form-check-inline"><input type="checkbox" id="friday" data-bind="value: Friday">@BCMStrategy.Resources.Enums.WeekDays.Friday</label>
+                                <label class="form-check-inline"><input type="checkbox" id="saturday" data-bind="value: Saturday">@BCMStrategy.Resources.Enums.WeekDays.Saturday</label> </br>
+                                <input type="hidden" id="weekdaysCheckbox" name="weekdaysCheckbox" class="form-control" data-bind="value: WeekdaysCheckbox" />
+                            </div>
+                            
+                        </div>
+
+                        <div class="row">
+
+                            <div class="form-group col-md-4">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblDescription</label>
+                                <textarea maxlength="1000" id="description" name="description" class="form-control" data-bind="value: Description" cols="40" rows="5"></textarea>
+                            </div>
+
+                            <div class="form-group col-md-3">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblIsEnabled</label> <span class="text-danger">*</span>
+                                <div class="clearfix"></div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" checked name="isEnabled" id="yes" data-bind="value: IsEnabled" />
+                                    <label>Yes</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="isEnabled" id="no" data-bind="value: IsEnabled">
+                                    <label>No</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-transparent pull-right">
+                        <a class="btn btn-dark-green" id="btnSchedulerSave">@BCMStrategy.Resources.Resource.LblSave</a>
+                        <a class="btn btn-blue-grey" id="btnSchedulerCancel">@BCMStrategy.Resources.Resource.LblCancel</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- / Collapsible element -->
+        <!-- Grid -->
+        <div class="card mt-4">
+            <div class="card-body">
+                <div id="gridScheduler"></div>
+            </div>
+        </div>
+    </div>
+    <a href="@Url.Action("ProcessDetail", "Scheduler", new { area = "BCMStrategy"})" id="ProcessDetailUrl"></a>
+
+    @section scripts{
+        <script>
+            var frequencyType = '@BCMStrategy.Resources.Resource.LblFrequencyType';
+            var websiteType = '@BCMStrategy.Resources.Resource.LblWebsiteTypes';
+            var description = '@BCMStrategy.Resources.Resource.LblDescription';
+            var enabled = '@BCMStrategy.Resources.Resource.LblIsEnabled';
+            var noDataFound = '@BCMStrategy.Resources.Resource.LblNoDataFound';
+            var deletePopupHeader = "@BCMStrategy.Resources.Resource.LblDeleteConfirmation"
+            var deletePopupMessage = "@BCMStrategy.Resources.Resource.LblSchedulerDeleteConfirm"
+        </script>
+        @Scripts.Render("~/Scripts/JsAreas/Scheduler.js", "~/Scripts/JsAreas/DropDownList.js")
+    }
+</form>
+

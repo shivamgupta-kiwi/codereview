@@ -1,0 +1,232 @@
+﻿@{
+	ViewBag.Title = BCMStrategy.Resources.Resource.LblDashboard;
+	ViewBag.ModuleName = BCMStrategy.Resources.Enums.ModuleName.DASHBOARD;
+	Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		table.table a {
+			color: #0275d8;
+		}
+
+		table.table td, table.table th {
+			padding: 0.65rem;
+		}
+	</style>
+</head>
+<body>
+	<form style="margin-left:1px" id="privilegeForm">
+		<div class="container-fluid">
+			<div class="card mt-4">
+				<div class="card-body" id="cardPieChart" style="width:100%;display:none;align-content:center;align-items:center;">
+					<div id="chart"></div>
+				</div>
+			</div>
+
+			<div class="card mt-1">
+				<div class="card-body">
+
+					<div>
+						<span id="spnTitleForUrlList" style="display:none"></span>
+					</div>
+					<div class="clearfix"></div>
+					<div class="table-responsive">
+						<table class="table table-bordered table-striped table-hover" style="display:none" id="tblUrlList">
+							<br>
+							<thead>
+								<tr class="card-header">
+									<th> </th>
+									<th style="text-align:center;font-weight: bold;width: 25%;">@BCMStrategy.Resources.Resource.LblActivityType</th>
+									<th style="text-align:center;font-weight: bold;">@BCMStrategy.Resources.Resource.LblExternalUrl</th>
+								</tr>
+							</thead>
+						</table>
+
+						<table class="table table-bordered table-striped table-hover" style="display:none" id="tblUrlWithoutActivity">
+							<thead>
+								<tr class="card-header">
+									<th> </th>
+									<th style="text-align:center;font-weight: bold;">@BCMStrategy.Resources.Resource.LblExternalUrl</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		@section scripts{
+			<script>
+				var title = "";
+
+				$(document).ready(function () {
+					$.when(CommonJS.SetPageLoader(PageLoaderActivity.SHOW))
+					.then(GetActivityTypeData())
+					.then(CommonJS.SetPageLoader(PageLoaderActivity.HIDE));
+				});
+				function createChart() {
+					$("#chart").kendoChart({
+						title: {
+							position: "top",
+							text: title,
+							margin: {
+								bottom: 25
+							},
+							padding: {
+								bottom: 20
+							},
+							font: "bold  15px sans-serif"
+						},
+						legend: {
+							visible: false,
+							position: "bottom"
+						},
+						chartArea: {
+							background: ""
+						},
+						seriesDefaults: {
+							labels: {
+								visible: true,
+								background: "transparent",
+								format: "{0}",
+								font: "12px Roboto"
+							}
+						},
+						series: [{
+							type: "pie",
+							startAngle: 150,
+							data: pieChartArray
+						}],
+						tooltip: {
+							visible: true,
+							format: "{0}"
+						},
+						render: function (e) {
+							var chart = e.sender;
+							var titleText = chart.options.title.text;
+							//var width = chart._plotArea.box.width();
+							var width = $("#cardPieChart").width();
+							var wordsPerLine = Math.round(width / 100) * 2;
+							var arr = titleText.split(" ");
+							var newTitle = "";
+							for (var i = 0; i < arr.length; i++) {
+								if ((i + 1) % wordsPerLine == 0) {
+									newTitle += arr[i].trim() + "\n";
+								} else {
+									newTitle += arr[i].trim() + " ";
+								}
+							}
+							if (width < 768) {
+								//chart.options.series[0].padding = 100
+								chart.options.tooltip.template = "#= category #: \n #= value#";
+								chart.options.seriesDefaults.labels.format = "{0}";
+								chart.options.seriesDefaults.labels.position = "center";
+							}
+							else {
+								chart.options.seriesDefaults.labels.template = "#= category #: \n #= value#"
+							}
+
+							ChartStyle.SetChartFonts(chart);
+							chart.options.title.text = newTitle;
+							chart.options.seriesDefaults.labels.font = "12px Roboto";
+
+							chart._events.render = null;
+							chart.refresh();
+						}
+					});
+				}
+
+				var colorArray = ['#0070C0', '#C00000', '#FFC000', '#00B050', '#7030A0', '#d2691e', '#ffb6c1', '#add8e6', '#708090', '#eee8dc', '#fffafa', '#b03060', '#F0E68C', '#8fbc8f', '#9932cc'];
+				var pieChartArray = [];
+				function GetActivityTypeData() {
+					CommonJS.SetPageLoader(PageLoaderActivity.SHOW)
+					var actionHashId = '@ViewBag.actionHashId';
+					var lexiconHashId = '@ViewBag.lexiconHashId';
+					var selectedDate = '@ViewBag.selectedDate';
+
+					$.ajax({
+						url: BCMConfig.API_GET_ACTIVITY_TYPE_LIST_URL + "?selectedDate=" + selectedDate + "&actionHashId=" + actionHashId + "&lexiconHashId=" + lexiconHashId,
+						beforeSend: CommonJS.BeforeSendAjaxCall,
+						dataType: "json",
+						contentType: 'application/json; charset=utf-8',
+						method: 'GET',
+						async: false,
+						processdata: true,
+						success: function (response) {
+							if (response) {
+								console.log(response);
+
+								if (response.Data.activityTypeList.length > 0) {
+									title = "Activity Type for " + response.Data.LexiconTerm + " Lexicon Term" + " [Date: " + response.Data.Date + "]";
+									GetPieChartData(response.Data.activityTypeList);
+									createChart();
+									$('#cardPieChart').show();
+								}
+								if (response.Data.websiteURL.length > 0) {
+									BindUrl(response);
+								}
+							}
+						},
+						complete: function (e) {
+							CommonJS.SetPageLoader(PageLoaderActivity.HIDE);
+						},
+						error: function (e) {
+							CommonJS.HandleErrorStatus(e.status);
+						}
+					});
+				}
+
+				function GetPieChartData(response) {
+					pieChartArray = (response).map(function (element, index) {
+						var json = {
+							category: element.Name,
+							value: element.SearchValue,
+							color: element.ColorCode
+							//color: colorArray[index]
+						};
+						return json;
+					});
+					return pieChartArray;
+				}
+
+				$(document).bind("kendo:skinChange", createChart);
+
+				function BindUrl(response) {
+					title = "External URLs for " + response.Data.ActivityTypeName + "-Lexicon Term: " + response.Data.LexiconTerm +
+							" [Date: " + response.Data.Date + "]";
+					var tableContent = "";
+					tableContent += "<tbody>";
+					if (response.Data.IsActivityTypeExists) {
+
+						$.each(response.Data.websiteURL, function (index, value) {
+							//tableContent += '<img src="/Content/img/favicon.ico" />  <a href= ' + value.Url + ' target="_blank">' + value.Url + '</a> </br>';
+							tableContent += '<tr> <td> <img src="../../Content/img/favicon.ico" /></td>  <td>' + value.ActivityType + '</td> <td> <a href= ' + value.Url + ' target="_blank">' + value.Url + '</a></td></tr>';
+						})
+						tableContent += "</tbody>";
+						$("#tblUrlList").append(tableContent);
+						$('#tblUrlList').show();
+						$('#spnTitleForUrlList').hide();
+
+					}
+					else {
+						$.each(response.Data.websiteURL, function (index, value) {
+							//tableContent += '<img src="/Content/img/favicon.ico" />  <a href= ' + value.Url + ' target="_blank">' + value.Url + '</a> </br>';
+							tableContent += '<tr> <td> <img src="../../Content/img/favicon.ico" /></td><td> <a href= ' + value.Url + ' target="_blank">' + value.Url + '</a></td></tr>';
+						})
+						tableContent += "</tbody>";
+						$("#tblUrlWithoutActivity").append(tableContent);
+						$('#tblUrlWithoutActivity').show();
+						$('#spnTitleForUrlList').text(title);
+						$('#spnTitleForUrlList').show();
+						$('#cardPieChart').hide();
+					}
+				}
+			</script>
+		}
+	</form>
+</body>
+</html>

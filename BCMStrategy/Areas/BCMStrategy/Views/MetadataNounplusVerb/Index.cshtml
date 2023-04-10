@@ -1,0 +1,99 @@
+﻿
+@{
+  ViewBag.Title = BCMStrategy.Resources.Resource.LblMetadataNounplusVerb;
+  ViewBag.ModuleName = BCMStrategy.Resources.Enums.ModuleName.METADATANOUNPLUSVERB;
+  Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<form id="metadataNounplusVerbForm">
+    <div class="container-fluid">
+        <!-- Collapse buttons -->
+        <div>
+            <a class="btn blue" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                <i class="fa fa-plus"></i> @BCMStrategy.Resources.Resource.LblAddNew @BCMStrategy.Resources.Resource.LblMetadataNounplusVerb
+            </a>
+            <a class="btn btn-default" id="clearFilters">
+                @BCMStrategy.Resources.Resource.LblClearFilter
+            </a>
+        </div>
+        <!-- / Collapse buttons -->
+        <!-- Collapsible element -->
+        <div class="collapse" id="collapseExample">
+            <div class="mt-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblMetadataTypes</label> <span class="text-danger">*</span>
+                                <select class="form-control" id="metadataTypeMasterHashId" name="metadataTypeMasterHashId" data-bind="value: MetadataTypeMasterHashId">
+                                    <option selected="selected" value="">@BCMStrategy.Resources.Resource.LblSelect @BCMStrategy.Resources.Resource.LblMetadataTypes</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblActivityType</label>
+                                <select class="form-control" id="activityTypeMasterHashId" name="activityTypeMasterHashId" data-bind="value: ActivityTypeMasterHashId">
+                                    <option selected="selected" value="">@BCMStrategy.Resources.Resource.LblSelect @BCMStrategy.Resources.Resource.LblActivityType</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblMetadataIsHardCoded</label> <span class="text-danger">*</span>
+                                <div class="clearfix"></div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" checked name="isHardCoded" id="yes" data-bind="value: IsHardCoded" />
+                                    <label>Yes</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="isHardCoded" id="no" data-bind="value: IsHardCoded">
+                                    <label>No</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-4" id="DivNoun">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblMetadataNoun</label> <span class="text-danger">*</span>
+                                <input type="text" maxlength="500" id="noun" name="noun" class="form-control" data-bind="value: Noun" />
+                            </div>
+
+                            <div class="form-group col-md-4" id="DivDynamicNoun">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblMetadataNoun</label> <span class="text-danger">*</span>
+                                <select class="form-control" id="metadataDynamicNounplusVerb" name="metadataDynamicNounplusVerb" data-bind="value: MetadataDynamicNounplusVerb">
+                                    <option selected="selected" value="">@BCMStrategy.Resources.Resource.LblSelect @BCMStrategy.Resources.Resource.LblMetadataNoun</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblMetadataVerb</label> <span class="text-danger">*</span>
+                                <input type="text" maxlength="500" id="verb" name="verb" class="form-control" data-bind="value: Verb" />
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="card-footer bg-transparent pull-right">
+                        <a class="btn btn-dark-green" id="btnMetadataNounplusVerbSave">@BCMStrategy.Resources.Resource.LblSave</a>
+                        <a class="btn btn-blue-grey" id="btnMetadataNounplusVerbCancel">@BCMStrategy.Resources.Resource.LblCancel</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- / Collapsible element -->
+        <!-- Grid -->
+        <div class="card mt-4">
+            <div class="card-body">
+                <div id="gridMetadataNounplusVerb"></div>
+            </div>
+        </div>
+    </div>
+    @section scripts{
+        <script>
+            var websiteType = '@BCMStrategy.Resources.Resource.LblWebSiteType';
+            var metadataType = '@BCMStrategy.Resources.Resource.LblMetadataTypes';
+            var metadataNoun = '@BCMStrategy.Resources.Resource.LblMetadataNoun';
+            var metadataVerb = '@BCMStrategy.Resources.Resource.LblMetadataVerb';
+            var metadataIsHardCoded = '@BCMStrategy.Resources.Resource.LblMetadataIsHardCoded';
+            var activityType = '@BCMStrategy.Resources.Resource.LblActivityType';
+            var activityValue = '@BCMStrategy.Resources.Resource.LblMetadataValue';
+            var noDataFound = '@BCMStrategy.Resources.Resource.LblNoDataFound';
+            var deletePopupHeader = "@BCMStrategy.Resources.Resource.LblDeleteConfirmation"
+            var deletePopupMessage = "@BCMStrategy.Resources.Resource.LblMetadataNounplusVerbDeleteConfirm"
+        </script>
+        @Scripts.Render("~/Scripts/JsAreas/MetadataNounplusVerb.js", "~/Scripts/JsAreas/DropDownList.js")
+    }
+</form>

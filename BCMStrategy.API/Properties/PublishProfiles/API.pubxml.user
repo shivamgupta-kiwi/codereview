@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\BCMStrategyPatch\API</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/AWSSDK.Core.dll">
+      <publishTime>07/23/2018 15:59:21</publishTime>
+    </File>
+    <File Include="bin/AWSSDK.SQS.dll">
+      <publishTime>07/23/2018 15:59:22</publishTime>
+    </File>
+    <File Include="bin/BCMStrategy.API.dll">
+      <publishTime>08/20/2018 21:48:27</publishTime>
+    </File>
+    <File Include="bin/BCMStrategy.Common.dll">
+      <publishTime>08/20/2018 21:48:20</publishTime>
+    </File>
+    <File Include="bin/BCMStrategy.DAL.dll">
+      <publishTime>08/20/2018 21:48:22</publishTime>
+    </File>
+    <File Include="bin/BCMStrategy.Data.Abstract.dll">
+      <publishTime>08/20/2018 21:48:23</publishTime>
+    </File>
+    <File Include="bin/BCMStrategy.Data.Repository.dll">
+      <publishTime>08/20/2018 21:48:25</publishTime>
+    </File>
+    <File Include="bin/BCMStrategy.Email.dll">
+      <publishTime>08/20/2018 21:48:22</publishTime>
+    </File>
+    <File Include="bin/BCMStrategy.Logger.dll">
+      <publishTime>08/20/2018 21:48:22</publishTime>
+    </File>
+    <File Include="bin/BCMStrategy.Resources.dll">
+      <publishTime>08/20/2018 21:48:04</publishTime>
+    </File>
+    <File Include="bin/CommonServiceLocator.dll">
+      <publishTime>07/23/2018 15:59:17</publishTime>
+    </File>
+    <File Include="bin/CommonServiceLocator.SolrNet.dll">
+      <publishTime>07/23/2018 15:59:30</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>07/23/2018 15:59:20</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>07/23/2018 15:59:20</publishTime>
+    </File>
+    <File Include="bin/log4net.dll">
+      <publishTime>07/23/2018 15:59:28</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
+      <publishTime>07/23/2018 15:59:28</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Owin.dll">
+      <publishTime>07/23/2018 15:59:20</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Cors.dll">
+      <publishTime>07/23/2018 15:59:29</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.dll">
+      <publishTime>07/23/2018 15:59:28</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Host.SystemWeb.dll">
+      <publishTime>07/23/2018 15:59:25</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Cookies.dll">
+      <publishTime>07/23/2018 15:59:28</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.dll">
+      <publishTime>07/23/2018 15:59:16</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.OAuth.dll">
+      <publishTime>07/23/2018 15:59:32</publishTime>
+    </File>
+    <File Include="bin/MySql.Data.dll">
+      <publishTime>07/23/2018 15:59:20</publishTime>
+    </File>
+    <File Include="bin/MySql.Data.Entity.EF6.dll">
+      <publishTime>07/23/2018 15:59:15</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>07/23/2018 15:59:30</publishTime>
+    </File>
+    <File Include="bin/Ninject.dll">
+      <publishTime>07/23/2018 15:59:17</publishTime>
+    </File>
+    <File Include="bin/Owin.dll">
+      <publishTime>07/23/2018 15:59:22</publishTime>
+    </File>
+    <File Include="bin/SolrNet.dll">
+      <publishTime>07/23/2018 15:59:28</publishTime>
+    </File>
+    <File Include="bin/SolrNet.DSL.dll">
+      <publishTime>07/23/2018 15:59:25</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>07/23/2018 15:59:30</publishTime>
+    </File>
+    <File Include="bin/System.ValueTuple.dll">
+      <publishTime>07/23/2018 15:59:26</publishTime>
+    </File>
+    <File Include="bin/System.Web.Cors.dll">
+      <publishTime>07/23/2018 15:59:24</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.Cors.dll">
+      <publishTime>07/23/2018 15:59:15</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>07/23/2018 15:59:32</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.Owin.dll">
+      <publishTime>07/23/2018 15:59:29</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>07/23/2018 15:59:29</publishTime>
+    </File>
+    <File Include="bin/Unity.Abstractions.dll">
+      <publishTime>07/23/2018 15:59:16</publishTime>
+    </File>
+    <File Include="bin/Unity.Configuration.dll">
+      <publishTime>07/23/2018 15:59:16</publishTime>
+    </File>
+    <File Include="bin/Unity.Container.dll">
+      <publishTime>07/23/2018 15:59:16</publishTime>
+    </File>
+    <File Include="bin/Unity.Interception.Configuration.dll">
+      <publishTime>07/23/2018 15:59:16</publishTime>
+    </File>
+    <File Include="bin/Unity.Interception.dll">
+      <publishTime>07/23/2018 15:59:16</publishTime>
+    </File>
+    <File Include="bin/Unity.RegistrationByConvention.dll">
+      <publishTime>07/23/2018 15:59:16</publishTime>
+    </File>
+    <File Include="bin/Unity.ServiceLocation.dll">
+      <publishTime>07/23/2018 15:59:16</publishTime>
+    </File>
+    <File Include="bin/Unity.WebApi.dll">
+      <publishTime>07/23/2018 15:59:28</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>07/23/2018 15:59:13</publishTime>
+    </File>
+    <File Include="unity.config">
+      <publishTime>08/10/2018 18:30:30</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>08/20/2018 21:48:27</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

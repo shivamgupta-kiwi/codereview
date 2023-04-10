@@ -1,0 +1,141 @@
+﻿@using BCMStrategy.Resources;
+<!-- Sidebar navigation -->
+<div id="slide-out" class="side-nav sn-bg-4 fixed sidenav">
+  <ul class="custom-scrollbar">
+    <!-- Logo -->
+    <li>
+      <div class="logo-wrapper waves-light">
+        @*<a href="#"><img src="img/logo.png" class="img-fluid flex-center"></a>*@
+        <a href="#"><img src="~/Content/img/logo1.png" class="img-fluid flex-center"></a>
+      </div>
+    </li>
+    @if (User.Identity.IsAuthenticated)
+    {
+      <li>
+        <ul class="collapsible collapsible-accordion">
+          <li>
+            <a href="@Url.Action("Index", "Dashboard", new { Area = "BCMStrategy" })" class="collapsible-header waves-effect arrow-r @Enums.ActiveParentNavigation(ViewBag.ModuleName, Resource.LblDashboard)"><i class="fa fa-tachometer-alt"></i>@Resource.LblDashboard</a>
+          </li>
+          <li>
+            <a href="@Url.Action("Index", "SearchablePDF", new { Area = "BCMStrategy" })" class="collapsible-header waves-effect arrow-r @Enums.ActiveParentNavigation(ViewBag.ModuleName, Resource.LblSearchablePDF)"><i class="fa fa-tachometer-alt"></i>@Resource.LblSearchablePDF</a>
+          </li>
+          @if (User.IsInRole(BCMStrategy.Resources.Enums.UserType.ADMIN.ToString()))
+          {
+            <li>
+              <a class="collapsible-header waves-effect arrow-r @Enums.ActiveParentNavigation(ViewBag.ModuleName, Resource.LblMenuMasterData)"><i class="fa fa-database"></i>@Resource.LblMenuMasterData<i class="fa fa-angle-down rotate-icon"></i></a>
+              <div class="collapsible-body">
+                <ul>
+                  <li>
+                    <a href="@Url.Action("Index", "InstitutionTypes", new { Area = "BCMStrategy" })" class="waves-effect @Enums.ActiveChildNavigation(ViewBag.ModuleName, Enums.ModuleName.INSTITTUTIONTYPE)">@Resource.LblInstitutionTypesHeader</a>
+                  </li>
+                  <li>
+                    <a href="@Url.Action("Index", "Institutions", new { Area = "BCMStrategy" })" class="waves-effect @Enums.ActiveChildNavigation(ViewBag.ModuleName, Enums.ModuleName.INSTITUTIONS)">@Resource.LblInstitutions</a>
+                  </li>
+                  <li>
+                    <a href="@Url.Action("Index", "PolicyMakers", new { Area = "BCMStrategy" })" class="waves-effect @Enums.ActiveChildNavigation(ViewBag.ModuleName, Enums.ModuleName.POLICYMAKER)">@Resource.LblPolicyMakers</a>
+                  </li>
+                  <li>
+                    <a href="@Url.Action("Index", "StateHead", new { Area = "BCMStrategy" })" class="waves-effect @Enums.ActiveChildNavigation(ViewBag.ModuleName, Enums.ModuleName.HEADSTATEGOVN)">@Resource.LblHeadStateGovn</a>
+                  </li>
+                  <li>
+                    <a href="@Url.Action("Index", "InternationalOrganization", new { Area = "BCMStrategy" })" class="waves-effect @Enums.ActiveChildNavigation(ViewBag.ModuleName, Enums.ModuleName.INTERNATIONALORGANIZATION)">@Resource.LblInternationalOrganizations</a>
+                  </li>
+
+                  <li>
+                    <a href="@Url.Action("Index", "WebLinkManagement", new { Area = "BCMStrategy" })" class="waves-effect  @Enums.ActiveChildNavigation(ViewBag.ModuleName, Enums.ModuleName.WEBLINKMANAGMENT)">@Resource.LblWebLinkManagement</a>
+                  </li>
+                  <li>
+                    <a href="@Url.Action("Index", "Lexicon", new { Area = "BCMStrategy" })" class="waves-effect @Enums.ActiveChildNavigation(ViewBag.ModuleName, Enums.ModuleName.LEXICON)">@Resource.LblLexicon</a>
+                  </li>
+                  <li>
+                    <a href="@Url.Action("Index", "Legislator", new { Area = "BCMStrategy" })" class="waves-effect @Enums.ActiveChildNavigation(ViewBag.ModuleName, Enums.ModuleName.LAGISLATORMANAGMENT)">@Resource.LblLagislatorManagement</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a class="collapsible-header waves-effect arrow-r @Enums.ActiveParentNavigation(ViewBag.ModuleName, Resource.LblMetaDataMgmt)"><i class="fa fa-tags"></i>@Resource.LblMetaDataMgmt<i class="fa fa-angle-down rotate-icon"></i></a>
+              <div class="collapsible-body">
+                <ul>
+                  <li>
+                    <a href="@Url.Action("Index", "MetadataTypes", new { Area = "BCMStrategy" })" class="waves-effect @Enums.ActiveChildNavigation(ViewBag.ModuleName, Enums.ModuleName.METADATATYPES)">@Resource.LblMetadataTypes</a>
+                  </li>
+                  <li>
+                    <a href="@Url.Action("Index", "ActivityType", new { Area = "BCMStrategy" })" class="waves-effect @Enums.ActiveChildNavigation(ViewBag.ModuleName, Enums.ModuleName.ACTIVITYTYPE)">@Resource.LblActivityType</a>
+                  </li>
+                  <li>
+                    <a href="@Url.Action("Index", "MetadataPhrases", new { Area = "BCMStrategy" })" class="waves-effect @Enums.ActiveChildNavigation(ViewBag.ModuleName, Enums.ModuleName.METADATAPHRASES)">@Resource.LblMetadataPhrases</a>
+                  </li>
+                  <li>
+                    <a href="@Url.Action("Index", "MetadataNounplusVerb", new { Area = "BCMStrategy" })" class="waves-effect @Enums.ActiveChildNavigation(ViewBag.ModuleName, Enums.ModuleName.METADATANOUNPLUSVERB)">@Resource.LblMetadataNounplusVerb</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a class="collapsible-header waves-effect arrow-r @Enums.ActiveParentNavigation(ViewBag.ModuleName, Resource.LblUserManagement)"><i class="fa fa-users"></i>@BCMStrategy.Resources.Resource.LblUserManagement<i class="fa fa-angle-down rotate-icon"></i></a>
+              <div class="collapsible-body">
+                <ul>
+                  <li>
+                    <a href="@Url.Action("Index", "UserManagement", new { Area = "BCMStrategy" })" class="waves-effect @Enums.ActiveChildNavigation(ViewBag.ModuleName, Enums.ModuleName.ADMINUSER)">@BCMStrategy.Resources.Resource.LblAdminUser</a>
+                  </li>
+                  <li>
+                    <a href="@Url.Action("CustomerUser", "UserManagement", new { Area = "BCMStrategy" })" class="waves-effect @Enums.ActiveChildNavigation(ViewBag.ModuleName, Enums.ModuleName.CUSTOMERUSER)">@BCMStrategy.Resources.Resource.LblCustomerUser</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a class="collapsible-header waves-effect arrow-r @Enums.ActiveParentNavigation(ViewBag.ModuleName, Resource.LblPrivileges)"><i class="fa fa-eye"></i> Privileges<i class="fa fa-angle-down rotate-icon"></i></a>
+              <div class="collapsible-body">
+                <ul>
+                  <li>
+                    <a href="@Url.Action("LexiconAccessManagement", "Privilege", new { area = "BCMStrategy" })" class="waves-effect @Enums.ActiveChildNavigation(ViewBag.ModuleName, Enums.ModuleName.LEXICONACCESSMANAGEMENT)">@BCMStrategy.Resources.Resource.LblLexiconAccessManagement</a>
+                  </li>
+                  <li>
+                    <a href="@Url.Action("LexiconAccessCustomer", "Privilege", new { area = "BCMStrategy" })" class="waves-effect @Enums.ActiveChildNavigation(ViewBag.ModuleName, Enums.ModuleName.LEXICONACCESSCUSTOMER)">@BCMStrategy.Resources.Resource.LblLexiconAccessCustomer</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a href="@Url.Action("Index", "scheduler", new { Area = "BCMStrategy" })" class="collapsible-header waves-effect arrow-r @Enums.ActiveParentNavigation(ViewBag.ModuleName, Resource.LblScheduler)"><i class="fa fa-tachometer-alt"></i>@Resource.LblScheduler</a>
+            </li>
+
+            <li>
+              <a class="collapsible-header waves-effect arrow-r @Enums.ActiveParentNavigation(ViewBag.ModuleName, Resource.LblAuditLog)"><i class="fa fa-tachometer-alt"></i> @Resource.LblAuditLog<i class="fa fa-angle-down rotate-icon"></i></a>
+              <div class="collapsible-body">
+                <ul>
+                  <li>
+                    <a href="@Url.Action("Index", "AuditLog", new { area = "BCMStrategy" })" class="waves-effect @Enums.ActiveChildNavigation(ViewBag.ModuleName, Enums.ModuleName.AUDITLOG)">@BCMStrategy.Resources.Resource.LblAdminAuditLog</a>
+                  </li>
+                  <li>
+                    <a href="@Url.Action("Index", "CustomerAuditLog", new { area = "BCMStrategy" })" class="waves-effect @Enums.ActiveChildNavigation(ViewBag.ModuleName, Enums.ModuleName.CUSTOMERAUDITLOG)">@BCMStrategy.Resources.Resource.LblCustomerAuditLog</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            
+            <li>
+              <a class="collapsible-header waves-effect arrow-r @Enums.ActiveParentNavigation(ViewBag.ModuleName, Resource.LblScrappingProcess)"><i class="fa fa-tags"></i>@Resource.LblScrappingProcess<i class="fa fa-angle-down rotate-icon"></i></a>
+              <div class="collapsible-body">
+                <ul>
+                  <li>
+                    <a href="@Url.Action("OfficialSector", "ScrappingProcess", new { Area = "BCMStrategy" })" class="waves-effect @Enums.ActiveChildNavigation(ViewBag.ModuleName, Enums.ModuleName.OFFICIAlSECTOR)">@BCMStrategy.Resources.Resource.LblOfficialSector</a>
+
+                  </li>
+                  <li>
+                    <a href="@Url.Action("MediaSector", "ScrappingProcess", new { Area = "BCMStrategy" })" class="waves-effect @Enums.ActiveChildNavigation(ViewBag.ModuleName, Enums.ModuleName.MEDIASECTOR)">@BCMStrategy.Resources.Resource.LblMediaSector</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          }
+        </ul>
+      </li>
+    }
+  </ul>
+  <div class="sidenav-bg mask-strong"></div>
+</div>
+
+<!--/. Sidebar navigation -->

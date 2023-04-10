@@ -1,0 +1,11 @@
+﻿ .k-grid-content > .k-loading-mask {
+    visibility: hidden;
+  }
+
+  .k-grid > .k-loading-mask {
+    z-index: 2;
+  }
+
+    .k-grid > .k-loading-mask > .k-loading-color {
+      opacity: .7;
+    }

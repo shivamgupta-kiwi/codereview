@@ -1,0 +1,27 @@
+﻿@using BCMStrategy.Resources;
+@{
+    ViewBag.Title = "LinkExpired";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<div class="card wow fadeInRight" data-wow-delay="0.3s">
+    <div class="card-body">
+        <!--Header-->
+        <div class="text-center">
+            <h3 class="white-text">
+                <!--<i class="fa fa-user white-text"></i> User-->@Resource.LblLinkExpired
+            </h3>
+
+        </div>
+        <!--Body-->
+        <div class="form-group md-form">
+            <p>
+                @Resource.LblLinkExpiredMessage
+               <a href="@Url.Action("Index", "Registration", new { Area = "BCMStrategy" })" style="color: blue; text-transform: lowercase;">@Resource.LblRegistrationPage</a>
+                 @Resource.LblOr 
+              <a href="@Url.Action("ForgotPassword", "Login")" style="color:blue">@Resource.LblRecoverPassword</a>
+            </p>
+        </div>
+    </div>
+</div>
+

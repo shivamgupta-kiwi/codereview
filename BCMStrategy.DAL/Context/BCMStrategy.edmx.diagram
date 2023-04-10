@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="82a1cab15f094010bf190138eedbd77c" Name="Diagram1" ZoomLevel="30">
+        <EntityTypeShape EntityType="BCMStrategyModel.activitytype" Width="1.5" PointX="24" PointY="76.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.apiclient" Width="1.5" PointX="3" PointY="89.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.auditlog" Width="1.5" PointX="5.25" PointY="79.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.audittables" Width="1.5" PointX="3" PointY="75.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.audittype" Width="1.5" PointX="3" PointY="86.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.category" Width="1.5" PointX="6" PointY="67.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.client" Width="1.5" PointX="14.25" PointY="56.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.committee" Width="1.5" PointX="6" PointY="58.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.contentloaderlog" Width="1.5" PointX="10.5" PointY="67.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.country" Width="1.5" PointX="0.75" PointY="61.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.dailyfrequency" Width="1.5" PointX="14.25" PointY="52.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.defaultlexiconterms" Width="1.5" PointX="8.25" PointY="80.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.designation" Width="1.5" PointX="0.75" PointY="55.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.documentstorage" Width="1.5" PointX="21" PointY="63.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.dynamictablesfieldsfornounplusverb" Width="1.5" PointX="8" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.dynamictablesfornounplusverb" Width="1.5" PointX="5.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.emailgenerationchartimage" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.emailgenerationstatus" Width="1.5" PointX="8.25" PointY="75.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.emailtemplate" Width="1.5" PointX="6" PointY="88" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.euentities" Width="1.5" PointX="0.75" PointY="59.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.eurpeanunionentities" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.events" Width="1.5" PointX="18.75" PointY="72.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.frequency" Width="1.5" PointX="14.25" PointY="77.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.globalconfiguration" Width="1.5" PointX="16.5" PointY="52.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.individuallegislators" Width="1.5" PointX="3" PointY="61.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.individuallegislatorscommittee" Width="1.5" PointX="8.25" PointY="62.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.individuallegislatorsdesignation" Width="1.5" PointX="8.25" PointY="59.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.instance" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.institution" Width="1.5" PointX="6" PointY="61.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.institutiontypes" Width="1.5" PointX="0.75" PointY="51.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.internationalorganizations" Width="1.5" PointX="3" PointY="51.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.lexiconissuelinker" Width="1.5" PointX="26.25" PointY="59.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.lexiconissues" Width="1.5" PointX="24" PointY="58.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.lexiconprivilege" Width="1.5" PointX="5.25" PointY="76.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.lexicontype" Width="1.5" PointX="21.75" PointY="59.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.loadererrorlog" Width="1.5" PointX="13.5" PointY="67.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.loaderlinkdocuments" Width="1.5" PointX="10.5" PointY="71.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.loaderlinklog" Width="1.5" PointX="13.5" PointY="61.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.loaderlinkqueue" Width="1.5" PointX="13.5" PointY="72.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.metadatanounplusverb" Width="1.5" PointX="26.25" PointY="79" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.metadataphrases" Width="1.5" PointX="29.25" PointY="79.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.metadatatypes" Width="1.5" PointX="24" PointY="80.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.metadatavalue" Width="1.5" PointX="14.25" PointY="82.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.modules" Width="1.5" PointX="6" PointY="95.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.parentmenu" Width="1.5" PointX="6.75" PointY="92.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.policymakers" Width="1.5" PointX="3" PointY="56.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.processeventlog" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.processevents" Width="1.5" PointX="16.5" PointY="56.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.processinstances" Width="1.5" PointX="16.5" PointY="79" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.processtypes" Width="1.5" PointX="16.5" PointY="86.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.refreshtoken" Width="1.5" PointX="5.25" PointY="84.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.relatedactivitytypes" Width="1.5" PointX="26.25" PointY="85.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.role" Width="1.5" PointX="6" PointY="99.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.rolemodulerights" Width="1.5" PointX="8.25" PointY="84.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.scanninglinkdetails" Width="1.5" PointX="18.75" PointY="66.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.scanninglinkqueue" Width="1.5" PointX="16.5" PointY="67.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.schedular" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.schedularfrequency" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.scrapedcontents" Width="1.5" PointX="21" PointY="66" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.scrapeddocumentdetails" Width="1.5" PointX="23.25" PointY="66" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.scrapedlexiconmapping" Width="1.5" PointX="26.25" PointY="65.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.scraperengineconfiguration" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.scraperenginesetup" Width="1.5" PointX="16.5" PointY="62" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.scrappedproprietorytags" Width="1.5" PointX="21" PointY="69.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.scrappedproprietorytagsmapping" Width="1.5" PointX="26.25" PointY="70.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.scrappedstandardtag_policymakers" Width="1.5" PointX="23.25" PointY="73.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.scrappedstandardtags" Width="1.5" PointX="21" PointY="72.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.scrappedstandardtags_sectors" Width="1.5" PointX="23.25" PointY="70" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.scrapperstandardtags_entitytypes" Width="1.5" PointX="11.25" PointY="62" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.sector" Width="1.5" PointX="0.75" PointY="66.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.statehead" Width="1.5" PointX="3" PointY="66.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.status" Width="1.5" PointX="16.5" PointY="83.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.submenu" Width="1.5" PointX="9" PointY="92.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.topiccodes" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.urlexclusionlist" Width="1.5" PointX="4.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.user" Width="1.5" PointX="3" PointY="78.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.useraccessrights" Width="1.5" PointX="11.25" PointY="80.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.useractivationlink" Width="1.5" PointX="5.25" PointY="107.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.weblinkactivitytype" Width="1.5" PointX="16.5" PointY="72.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.weblinkpagecontentregex" Width="1.5" PointX="10.5" PointY="102.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.weblinkpolicymaker" Width="1.5" PointX="10.5" PointY="58.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.weblinkproprietarytags" Width="1.5" PointX="16.5" PointY="75.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.weblinkrss" Width="1.5" PointX="10.5" PointY="110.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.weblinks" Width="1.5" PointX="8.25" PointY="65.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.weblinksector" Width="1.5" PointX="10.5" PointY="76.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.websitetypes" Width="1.5" PointX="6" PointY="69.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.weburlcategorymapping" Width="1.5" PointX="13.5" PointY="58.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.legislatorsview" Width="1.5" PointX="9.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCMStrategyModel.multilateralviewforscrapperactivity" Width="1.5" PointX="9.75" PointY="9.75" IsExpanded="true" />
+        <AssociationConnector Association="BCMStrategyModel.FK_MetaDataTags_ActivityTypeId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.FK_RelatedActivityTypes_ActivityTypeId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.FN_ScrappedProprietoryTagsMapping_ActivityTypeId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.metadatanounplusverb_ActivityTypeId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.metadatavalue_TypeId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.FK_RefreshToken_ApiClient" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.auditlog_AuditTableId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.auditlog_AuditTypeId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.auditLog_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.WebSiteMst_CategoryId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.globalconfiguration_clientId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.ScraperEngineSetup_ClientId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.individuallegislatorscommittee_CommitteeId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.contentloaderlog_processId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.contentloaderlog_ProcessInstanceId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.contentloaderlog_WebLinkId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.individuallegislators_CountryId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.institution_CountryId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.InstitutionNames_CountryId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.ScrappedContentEntity_CountryId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.Statehead_CountryId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.user_CountryId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.WebSiteCategoryMapping_CategoryId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.WebSiteMst_CountryId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.ScraperEngineSetup_DailyFrequencyId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.FK_DefaultLexiconTerms_LexiconIssuesId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.FK_DefaultLexiconTerms_LexiconTypeId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.FK_DefaultLexiconTerms_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.Foregn_InternationOrg_DesignationId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.individuallegislatorsdesignation_DesignationId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.PolicyMakers_DesignationId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.statehead_DesignationId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.documentstorage_ScanningLinkDetailsId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.FK_DynamicTablesFieldsForNounPlusVerb_DynamicTablesVerbId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.FK_TemplateId_EmailGenerationStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.FK_UserId_EmailGenerationStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.individuallegislators_EntityId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.events_ProcessEventId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.events_ProcessInstanceId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.events_ProcessTypeId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.ScraperEngineSetup_FrequencyId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.individuallegislators_SectorId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.individuallegislatorscommittee_LegislatorsId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.individuallegislatorsdesignation_LegislatorsId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.institution_InstitutionTypeId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.ScrappedContentEntity_EntityId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.weblinks_EntityId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.InstitutionNames_InstitutionId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.ScrappedContentEntity_EntityTypeId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.weblinks_InstitutionTypeId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.LexiconIssueLinker_LexiconIssueId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.fk_lexiconIssue_id" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.LexiconIssue_LexiconTypeId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.Scrapedlexiconmapping_LexiconId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.lexiconpriviledge_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.loadererrorlog_ProcessEvents" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.loadererrorlog_ProcessInstances" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.loadererrorlog_WebLinks" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.loaderlinkdocuments_ProcessId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.loaderlinkdocuments_WebSiteId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.FK_LoaderLinkLog_NewProcessId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.FK_LoaderLinkLog_ProcessId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.FK_LoaderLinkLog_ProcessInstanceId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.FK_LoaderLinkLog_StatusId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.FK_LoaderLinkLog_WebSiteId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.LoaderLinkQueue_ProcessId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.LoaderLinkQueue_ProcessInstanceId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.LoaderLinkQueue_WebSiteId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.FK_NounPlusVerb_MetaDataTypeId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.FK_MetaDataTags_MetaDataTypesId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.FK_MetaDataTypes_WebSiteTypeId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.FN_ScrappedProprietoryTagsMapping_MetaDataId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.metadatavalue_TagId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.weblinkproprietarytags_metadataTypeId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.weblinkactivitytype_MetaDataTypeId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.RoleModuleRights_Modules" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.ParentMenu_ParentMenuId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.weblinkpolicymaker_PolicyMakerId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.processinstances_processId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.scanninglinkdetails_ProcessId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.scanninglinkqueue_ProcessId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.scanninglinkdetails_InstanceId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.FK_RefreshToken_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.RoleModuleRights_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.RoleModuleRights_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.Fk_ScanningLinkQueue_ScannerLinkId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.FK_ScanningLinkQueue_StatusId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.FK_ScrappedStandarTags_ScanningLinkDetailsId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.ScrapedContents_ScanningLinkId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.ScrappedProprietoryTags_ScrappedLinkDetailId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.ScanningLinkQueue_WebSiteId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.schedularfrequency_SchedularId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.ScrapedDocumentDetails_ScrapedContentId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.Scrapedlexiconmapping_ScrapedContentId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.ScraperEngineSetup_StatusId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.ScraperEngineSetup_WebSiteId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.FN_ScrappedProprietoryTagsMapping_scrappedproprietorytagsMapping" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.FK_scrappedstandardtag_policymakers_ScrappedStandardTagsId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.FK_ScrappedStandardtags_Sectors_ScrappedStandardTagsId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.ScrappedContentEntity_ScrappedStandardTagId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.FK_ScrappedStandardtags_Sectors_SectorId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.weblinksector_SectorId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.FK_SubMenu_SubMenuId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.FK_User_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.FK_UserActivation_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.weblinkactivitytype_webLinkId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.weblinkPageContentRegEx_WebSiteId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.weblinkpolicymaker_WebLinkId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.weblinkproprietarytags_weblinkid" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.WebsiteConfiguration_WebsiteId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.weblinksector_WebLinkId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.WebSiteCategoryMapping_WebSiteId" ManuallyRouted="false" />
+        <AssociationConnector Association="BCMStrategyModel.WebSiteMst_LinkId" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

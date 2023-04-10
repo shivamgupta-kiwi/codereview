@@ -1,0 +1,63 @@
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.Email\bin\Debug\BCMStrategy.Email.dll
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.Email\bin\Debug\BCMStrategy.Email.pdb
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.Email\bin\Debug\BCMStrategy.Common.dll
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.Email\bin\Debug\BCMStrategy.Common.pdb
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.Email\obj\Debug\BCMStrategy.Email.csprojResolveAssemblyReference.cache
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.Email\obj\Debug\BCMStrategy.Email.dll
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.Email\obj\Debug\BCMStrategy.Email.pdb
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.Email\bin\Debug\Unity.Abstractions.dll
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.Email\bin\Debug\Unity.Container.dll
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.Email\bin\Debug\Unity.Configuration.dll
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.Email\bin\Debug\Unity.Abstractions.pdb
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.Email\bin\Debug\Unity.Container.pdb
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.Email\bin\Debug\Unity.Configuration.pdb
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.Email\bin\Debug\BCMStrategy.Email.dll
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.Email\bin\Debug\BCMStrategy.Email.pdb
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.Email\bin\Debug\BCMStrategy.Common.dll
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.Email\bin\Debug\Unity.Abstractions.dll
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.Email\bin\Debug\Unity.Container.dll
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.Email\bin\Debug\Unity.Configuration.dll
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.Email\bin\Debug\BCMStrategy.Common.pdb
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.Email\bin\Debug\Unity.Abstractions.pdb
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.Email\bin\Debug\Unity.Container.pdb
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.Email\bin\Debug\Unity.Configuration.pdb
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.Email\obj\Debug\BCMStrategy.Email.csprojResolveAssemblyReference.cache
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.Email\obj\Debug\BCMStrategy.Email.dll
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.Email\obj\Debug\BCMStrategy.Email.pdb
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.Email\bin\Debug\BCMStrategy.Email.dll
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.Email\bin\Debug\BCMStrategy.Email.pdb
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.Email\bin\Debug\BCMStrategy.Common.dll
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.Email\bin\Debug\Unity.Abstractions.dll
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.Email\bin\Debug\Unity.Container.dll
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.Email\bin\Debug\Unity.Configuration.dll
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.Email\bin\Debug\BCMStrategy.Common.pdb
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.Email\bin\Debug\Unity.Abstractions.pdb
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.Email\bin\Debug\Unity.Container.pdb
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.Email\bin\Debug\Unity.Configuration.pdb
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.Email\obj\Debug\BCMStrategy.Email.csprojResolveAssemblyReference.cache
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.Email\obj\Debug\BCMStrategy.Email.dll
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.Email\obj\Debug\BCMStrategy.Email.pdb
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.Email\bin\Debug\BCMStrategy.Email.dll
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.Email\bin\Debug\BCMStrategy.Email.pdb
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.Email\bin\Debug\BCMStrategy.Common.dll
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.Email\bin\Debug\Unity.Abstractions.dll
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.Email\bin\Debug\Unity.Container.dll
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.Email\bin\Debug\Unity.Configuration.dll
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.Email\bin\Debug\BCMStrategy.Common.pdb
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.Email\bin\Debug\Unity.Abstractions.pdb
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.Email\bin\Debug\Unity.Container.pdb
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.Email\bin\Debug\Unity.Configuration.pdb
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.Email\obj\Debug\BCMStrategy.Email.csprojResolveAssemblyReference.cache
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.Email\obj\Debug\BCMStrategy.Email.dll
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.Email\obj\Debug\BCMStrategy.Email.pdb
+E:\BCMProject\BCMStrategy\BCMStrategy.Email\bin\Debug\BCMStrategy.Email.dll.config
+E:\BCMProject\BCMStrategy\BCMStrategy.Email\bin\Debug\BCMStrategy.Email.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.Email\bin\Debug\BCMStrategy.Email.pdb
+E:\BCMProject\BCMStrategy\BCMStrategy.Email\bin\Debug\BCMStrategy.Common.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.Email\bin\Debug\Unity.Abstractions.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.Email\bin\Debug\Unity.Container.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.Email\bin\Debug\Unity.Configuration.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.Email\bin\Debug\BCMStrategy.Common.pdb
+E:\BCMProject\BCMStrategy\BCMStrategy.Email\obj\Debug\BCMStrategy.Email.csprojResolveAssemblyReference.cache
+E:\BCMProject\BCMStrategy\BCMStrategy.Email\obj\Debug\BCMStrategy.Email.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.Email\obj\Debug\BCMStrategy.Email.pdb

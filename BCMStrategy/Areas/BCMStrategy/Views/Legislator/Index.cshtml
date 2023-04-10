@@ -1,0 +1,144 @@
+﻿@{
+    ViewBag.Title = BCMStrategy.Resources.Resource.LblLagislatorManagement;
+    ViewBag.ModuleName = BCMStrategy.Resources.Enums.ModuleName.LAGISLATORMANAGMENT;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .ui-autocomplete li div {
+        word-wrap: break-word;
+    }
+
+    .k-grid .k-grid-header .k-header .k-link {
+        height: auto;
+    }
+
+    .k-grid .k-grid-header .k-header {
+        white-space: normal;
+    }
+
+    .error {
+        color: red;
+    }
+
+    .modal-800 {
+        width: 800px;
+        margin: 30px auto;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .input-group.input-group-unstyled input.form-control {
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+    }
+
+    .input-group-unstyled .input-group-addon {
+        border-radius: 4px;
+        border: 0px;
+        background-color: transparent;
+    }
+</style>
+
+
+
+<form id="legislatorForm">
+    <div class="container-fluid">
+        <!-- Collapse buttons -->
+        <div>
+            <a class="btn blue" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                <i class="fa fa-plus"></i> @BCMStrategy.Resources.Resource.LblAddNew @BCMStrategy.Resources.Resource.LblLagislatorManagement
+            </a>
+            
+            <a class="btn btn-default" id="clearFilters">
+                @BCMStrategy.Resources.Resource.LblClearFilter
+            </a>
+        </div>
+        <!-- / Collapse buttons -->
+        <!-- Collapsible element -->
+        <div class="collapse" id="collapseExample">
+            <div class="mt-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblFirstName</label> <span class="text-danger">*</span>
+                                <input maxlength="100" type="text" class="form-control" id="firstName" name="firstName" />
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblLastName</label> <span class="text-danger">*</span>
+                                <input maxlength="100" type="text" class="form-control" id="lastName" name="lastName" />
+                            </div>
+                            <div class="form-group col-md-4 DesignationDiv">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblDesignation</label> <span class="text-danger">*</span>
+                                <select class="form-control multipleSelect designationSelectList" multiple id="designation" name="designation"></select>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-4 CommiteeDiv">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblCommitee</label> <span class="text-danger"></span>
+                                <select class="form-control multipleSelect" multiple id="commitee" name="commitee"></select>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblEntity</label> <span class="text-danger"></span>
+                                <select class="form-control" id="entity" name="entity">
+                                    <option selected="selected" value="">@BCMStrategy.Resources.Resource.SelectEntity_String</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4 sectorDiv">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblSector</label> <span class="text-danger"></span>
+                                <select class="form-control" id="sector" name="sector">
+                                    <option selected="selected" value="">@BCMStrategy.Resources.Resource.SelectSector_String</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblCountry</label> <span class="text-danger"></span>
+                                <select class="form-control" id="countryMasterHashId" name="countryHashId">
+                                    <option selected="selected" value="">@BCMStrategy.Resources.Resource.SelectCountryName_String</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-transparent pull-right">
+                        <a class="btn btn-dark-green" id="btnLegislatorSave">@BCMStrategy.Resources.Resource.LblSave</a>
+                        <a class="btn btn-blue-grey" id="btnLegislatorCancel">@BCMStrategy.Resources.Resource.LblCancel</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- / Collapsible element -->
+        <!-- Grid -->
+        <div class="card mt-4">
+            <div class="card-body">
+                <div id="gridLegislator"></div>
+            </div>
+        </div>
+        <input type="hidden" id="legislatorHashHiddenVal" value="" />
+    </div>
+
+    @section scripts{
+        <script>
+            var countryName = '@BCMStrategy.Resources.Resource.LblCountryName';
+            var institutionType = '@BCMStrategy.Resources.Resource.LblInstitutionTypes';
+            var institution = '@BCMStrategy.Resources.Resource.LblInstitutions';
+            var noDataFound = '@BCMStrategy.Resources.Resource.LblNoDataFound';
+            var deletePopupHeader = "@BCMStrategy.Resources.Resource.LblDeleteConfirmation"
+            var deletePopupMessage = "@BCMStrategy.Resources.Resource.LblInstitutionDeleteConfirm"
+        </script>
+        @Scripts.Render("~/Scripts/JsAreas/Legislator.js", "~/Scripts/JsAreas/DropDownList.js");
+
+        <link href="~/Content/css/jquery-ui.css" rel="stylesheet" />
+        <script src="~/Scripts/js/jquery-ui.js"></script>
+        <link href="~/Content/css/fastselect.css" rel="stylesheet" />
+        <link href="~/Content/css/bootstrap-tagsinput.css" rel="stylesheet" />
+        <script src="~/Scripts/js/bootstrap-tagsinput.min.js"></script>
+        <script src="~/Scripts/js/fastselect.standalone.js"></script>
+    }
+</form>

@@ -1,0 +1,963 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BCMStrategyModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'def.bcmstrategy.apiclient' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="apiclient">
+          <Property Name="Id" Type="varchar" MaxLength="50" />
+          <Property Name="SecretHash" Type="varchar" MaxLength="500" />
+          <Property Name="Name" Type="varchar" MaxLength="100" />
+          <Property Name="ApplicationType" Type="varchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bool" />
+          <Property Name="RefreshTokenLifeTime" Type="int" />
+          <Property Name="AllowedOrigin" Type="varchar" MaxLength="100" />
+        </EntityType>-->
+  <EntityType Name="category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="country">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="dailyfrequency">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="OccursOnceAt" Type="datetime" Precision="0" />
+    <Property Name="OccursEveryHour" Type="int" />
+    <Property Name="OccursStartTime" Type="datetime" Precision="0" />
+    <Property Name="OccursEndTime" Type="datetime" Precision="0" />
+  </EntityType>
+  <EntityType Name="eurpeanunionentities">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="EntityName" Type="varchar" MaxLength="500" />
+    <Property Name="Sector" Type="varchar" MaxLength="200" />
+    <Property Name="Individual" Type="varchar" MaxLength="400" />
+  </EntityType>
+  <EntityType Name="frequency">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Occurs" Type="int" />
+    <Property Name="RecursDaily" Type="int" />
+    <Property Name="RecursMonday" Type="int" />
+    <Property Name="RecursTuesday" Type="int" />
+    <Property Name="RecursWednesday" Type="int" />
+    <Property Name="RecursThursday" Type="int" />
+    <Property Name="RecursFriday" Type="int" />
+    <Property Name="RecursSaturday" Type="int" />
+    <Property Name="RecursSunday" Type="int" />
+  </EntityType>
+  <EntityType Name="instance">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="InstanceName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="institution">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="CountryId" Type="int" />
+    <Property Name="CentralBank" Type="varchar" MaxLength="500" />
+    <Property Name="FinanceMinistry" Type="varchar" MaxLength="200" />
+    <Property Name="BankingRegulator" Type="varchar" MaxLength="300" />
+    <Property Name="SecuritiesRegulator" Type="varchar" MaxLength="500" />
+    <Property Name="InsuranceRegulator" Type="varchar" MaxLength="200" />
+    <Property Name="MacroPrudentialRegulator" Type="varchar" MaxLength="300" />
+    <Property Name="TradeRegulator" Type="varchar" MaxLength="200" />
+    <Property Name="AMLCFLRegulator" Type="varchar" MaxLength="300" />
+    <Property Name="DepositInsurance" Type="varchar" MaxLength="400" />
+    <Property Name="DataProtectionRegulator" Type="varchar" MaxLength="400" />
+    <Property Name="Created" Type="datetime" Precision="0" />
+    <Property Name="Modified" Type="datetime" Precision="0" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="100" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="institutionindividuals">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="CountryId" Type="int" Nullable="false" />
+    <Property Name="InstitutionId" Type="int" Nullable="false" />
+    <Property Name="CentralBank" Type="varchar" MaxLength="500" />
+    <Property Name="FinanceMinistry" Type="varchar" MaxLength="200" />
+    <Property Name="BankingRegulator" Type="varchar" MaxLength="300" />
+    <Property Name="SecuritiesRegulator" Type="varchar" MaxLength="500" />
+    <Property Name="InsuranceRegulator" Type="varchar" MaxLength="200" />
+    <Property Name="MacroPrudentialRegulator" Type="varchar" MaxLength="300" />
+    <Property Name="TradeRegulator" Type="varchar" MaxLength="200" />
+    <Property Name="AMLCFLRegulator" Type="varchar" MaxLength="300" />
+    <Property Name="DepositInsurance" Type="varchar" MaxLength="400" />
+    <Property Name="DataProtectionRegulator" Type="varchar" MaxLength="400" />
+    <Property Name="Created" Type="datetime" Precision="0" />
+    <Property Name="Modified" Type="datetime" Precision="0" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="100" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="internationalorganizations">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="OrganizationName" Type="varchar" MaxLength="400" />
+    <Property Name="Leader" Type="varchar" MaxLength="400" />
+    <Property Name="EntityName" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="loaderlinklog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="LoaderLinkId" Type="int" Nullable="false" />
+    <Property Name="InstanceId" Type="int" Nullable="false" />
+    <Property Name="Guid" Type="varchar" MaxLength="500" />
+    <Property Name="StatusId" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Precision="0" />
+  </EntityType>
+  <EntityType Name="loaderlinkqueue">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="WebSiteId" Type="int" />
+    <Property Name="SiteURL" Type="varchar" MaxLength="1000" />
+    <Property Name="InstanceName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="metadatatags">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="MetaDataTypeId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="200" />
+    <Property Name="Phrases" Type="varchar" MaxLength="200" />
+    <Property Name="Value" Type="decimal" Precision="5" Scale="2" />
+    <Property Name="Created" Type="datetime" Precision="0" />
+    <Property Name="Updated" Type="datetime" Precision="0" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="100" />
+    <Property Name="UpdatedBy" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="metadatatypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="WebSiteTypeId" Type="int" Nullable="false" />
+    <Property Name="MetaData" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="modules">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="ModuleCode" Type="int" Nullable="false" />
+    <Property Name="ModuleName" Type="varchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bool" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'def.bcmstrategy.refreshtoken' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="refreshtoken">
+    <Key>
+      <PropertyRef Name="ClientId" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="Id" Type="varchar" MaxLength="200" />
+    <Property Name="ClientId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="IssuedDateTime" Type="datetime" Precision="0" />
+    <Property Name="ExpiresDateTime" Type="datetime" Precision="0" />
+    <Property Name="ProtectedKey" Type="varchar" MaxLength="2000" />
+  </EntityType>
+  <EntityType Name="role">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="RoleCode" Type="int" Nullable="false" />
+    <Property Name="RoleName" Type="varchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bool" />
+  </EntityType>
+  <EntityType Name="rolemodulerights">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="ModuleId" Type="int" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="CanAdd" Type="bool" />
+    <Property Name="CanUpdate" Type="bool" />
+    <Property Name="CanView" Type="bool" />
+    <Property Name="Created" Type="datetime" Precision="0" />
+    <Property Name="Modified" Type="datetime" Precision="0" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="100" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="scanninglinkdetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="ScannerLinkId" Type="int" Nullable="false" />
+    <Property Name="InstanceId" Type="int" Nullable="false" />
+    <Property Name="Guid" Type="varchar" MaxLength="500" />
+    <Property Name="StatusId" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Precision="0" />
+  </EntityType>
+  <EntityType Name="scanninglinkqueue">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="WebSiteId" Type="int" Nullable="false" />
+    <Property Name="SiteURL" Type="varchar" MaxLength="1000" />
+    <Property Name="InstanceName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="scrapedcontents">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="ScanningLinkId" Type="int" Nullable="false" />
+    <Property Name="Content" Type="blob" />
+  </EntityType>
+  <EntityType Name="scrapeddocumentdetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="ScrapedContentId" Type="int" Nullable="false" />
+    <Property Name="DocumentName" Type="varchar" MaxLength="500" />
+    <Property Name="DocumentURL" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="scrapedmetadatamapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="MetaDataId" Type="int" Nullable="false" />
+    <Property Name="ScrapedContentId" Type="int" Nullable="false" />
+    <Property Name="Keywords" Type="varchar" MaxLength="100" />
+    <Property Name="Issues" Type="decimal" Precision="5" Scale="2" />
+  </EntityType>
+  <EntityType Name="scraperengineconfiguration">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="ThresholdValue" Type="int" />
+    <Property Name="TimeTaken" Type="decimal" Precision="5" Scale="2" />
+    <Property Name="NoOfInstances" Type="int" />
+  </EntityType>
+  <EntityType Name="scraperenginesetup">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="WebSiteId" Type="int" Nullable="false" />
+    <Property Name="EmailStatus" Type="varchar" MaxLength="100" />
+    <Property Name="FrequencyId" Type="int" Nullable="false" />
+    <Property Name="DailyFrequencyId" Type="int" Nullable="false" />
+    <Property Name="DurationStartDate" Type="datetime" Precision="0" />
+    <Property Name="DurationEndDate" Type="datetime" Precision="0" />
+    <Property Name="Description" Type="varchar" MaxLength="500" />
+    <Property Name="Status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sector">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="SectorName" Type="varchar" MaxLength="200" />
+    <Property Name="IntOrgId" Type="int" />
+  </EntityType>
+  <EntityType Name="statehead">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="CountryId" Type="int" Nullable="false" />
+    <Property Name="CountryHead" Type="varchar" MaxLength="400" />
+  </EntityType>
+  <EntityType Name="status">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="StatusCode" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="100" />
+    <Property Name="EmailAddress" Type="varchar" MaxLength="100" />
+    <Property Name="FirstName" Type="varchar" MaxLength="100" />
+    <Property Name="MiddleName" Type="varchar" MaxLength="100" />
+    <Property Name="LastName" Type="varchar" MaxLength="100" />
+    <Property Name="PasswordHash" Type="varchar" MaxLength="500" />
+    <Property Name="PasswordSalt" Type="varchar" MaxLength="500" />
+    <Property Name="IsActive" Type="bool" />
+    <Property Name="IsDeleted" Type="bool" />
+    <Property Name="Created" Type="datetime" Precision="0" />
+    <Property Name="Modified" Type="datetime" Precision="0" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="100" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="website">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="WebSiteTypeId" Type="int" Nullable="false" />
+    <Property Name="WebSiteURL" Type="varchar" MaxLength="1000" />
+    <Property Name="MediaSource" Type="varchar" MaxLength="500" />
+    <Property Name="SectorId" Type="int" />
+    <Property Name="CountryId" Type="int" />
+    <Property Name="EntityId" Type="int" />
+    <Property Name="CategoryId" Type="int" />
+    <Property Name="IsActive" Type="bool" />
+    <Property Name="IsDeleted" Type="bool" />
+  </EntityType>
+  <EntityType Name="websitecategorymapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="WebSiteId" Type="int" Nullable="false" />
+    <Property Name="CategoryId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="websiteconfiguration">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="WebSiteId" Type="int" Nullable="false" />
+    <Property Name="CategoryNavigated" Type="bool" />
+    <Property Name="CategoryRegEx" Type="varchar" MaxLength="500" />
+    <Property Name="LinkedClicked" Type="bool" />
+    <Property Name="LinkedRegEx" Type="varchar" MaxLength="500" />
+    <Property Name="IsSearchFunctionality" Type="bool" />
+    <Property Name="SearchKeyWord" Type="varchar" MaxLength="500" />
+    <Property Name="ContainsDocument" Type="bool" />
+    <Property Name="IsRSSFeedAvailable" Type="bool" />
+    <Property Name="RSSFeedClickRegEx" Type="varchar" MaxLength="500" />
+    <Property Name="RSSFeedURL" Type="varchar" MaxLength="500" />
+    <Property Name="DropDownSearchRegEx" Type="varchar" MaxLength="500" />
+    <Property Name="DateWiseRegEx" Type="varchar" MaxLength="500" />
+    <Property Name="HyperLinkClickRegEx" Type="varchar" MaxLength="500" />
+    <Property Name="HyperLinkDocumentRegEx" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="websitetypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="TypeId" Type="int" />
+    <Property Name="TypeName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_LoaderLinkLog_InstanceId">
+    <End Role="instance" Type="Self.instance" Multiplicity="1" />
+    <End Role="loaderlinklog" Type="Self.loaderlinklog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="instance">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="loaderlinklog">
+        <PropertyRef Name="InstanceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LoaderLinkLog_loaderlinkqueue">
+    <End Role="loaderlinkqueue" Type="Self.loaderlinkqueue" Multiplicity="1" />
+    <End Role="loaderlinklog" Type="Self.loaderlinklog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="loaderlinkqueue">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="loaderlinklog">
+        <PropertyRef Name="LoaderLinkId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LoaderLinkLog_StatusId">
+    <End Role="status" Type="Self.status" Multiplicity="1" />
+    <End Role="loaderlinklog" Type="Self.loaderlinklog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="status">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="loaderlinklog">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MetaDataTags_MetaDataTypesId">
+    <End Role="metadatatypes" Type="Self.metadatatypes" Multiplicity="1" />
+    <End Role="metadatatags" Type="Self.metadatatags" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="metadatatypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="metadatatags">
+        <PropertyRef Name="MetaDataTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MetaDataTypes_WebSiteTypeId">
+    <End Role="websitetypes" Type="Self.websitetypes" Multiplicity="1" />
+    <End Role="metadatatypes" Type="Self.metadatatypes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="websitetypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="metadatatypes">
+        <PropertyRef Name="WebSiteTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RefreshToken_UserId">
+    <End Role="user" Type="Self.user" Multiplicity="1" />
+    <End Role="refreshtoken" Type="Self.refreshtoken" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="refreshtoken">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ScanningLinkQueue_InstanceId">
+    <End Role="instance" Type="Self.instance" Multiplicity="1" />
+    <End Role="scanninglinkdetails" Type="Self.scanninglinkdetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="instance">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="scanninglinkdetails">
+        <PropertyRef Name="InstanceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_ScanningLinkQueue_ScannerLinkId">
+    <End Role="scanninglinkqueue" Type="Self.scanninglinkqueue" Multiplicity="1" />
+    <End Role="scanninglinkdetails" Type="Self.scanninglinkdetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="scanninglinkqueue">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="scanninglinkdetails">
+        <PropertyRef Name="ScannerLinkId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ScanningLinkQueue_StatusId">
+    <End Role="status" Type="Self.status" Multiplicity="1" />
+    <End Role="scanninglinkdetails" Type="Self.scanninglinkdetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="status">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="scanninglinkdetails">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="InstitutionMst_CountryId">
+    <End Role="country" Type="Self.country" Multiplicity="0..1" />
+    <End Role="institution" Type="Self.institution" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="country">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="institution">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="InstitutionNames_CountryId">
+    <End Role="country" Type="Self.country" Multiplicity="1" />
+    <End Role="institutionindividuals" Type="Self.institutionindividuals" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="country">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="institutionindividuals">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="InstitutionNames_InstitutionId">
+    <End Role="institution" Type="Self.institution" Multiplicity="1" />
+    <End Role="institutionindividuals" Type="Self.institutionindividuals" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="institution">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="institutionindividuals">
+        <PropertyRef Name="InstitutionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LoaderLinkQueue_WebSiteId">
+    <End Role="website" Type="Self.website" Multiplicity="0..1" />
+    <End Role="loaderlinkqueue" Type="Self.loaderlinkqueue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="website">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="loaderlinkqueue">
+        <PropertyRef Name="WebSiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RoleModuleRights_Modules">
+    <End Role="modules" Type="Self.modules" Multiplicity="1" />
+    <End Role="rolemodulerights" Type="Self.rolemodulerights" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="modules">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="rolemodulerights">
+        <PropertyRef Name="ModuleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RoleModuleRights_Role">
+    <End Role="role" Type="Self.role" Multiplicity="1" />
+    <End Role="rolemodulerights" Type="Self.rolemodulerights" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="role">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="rolemodulerights">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RoleModuleRights_UserId">
+    <End Role="user" Type="Self.user" Multiplicity="1" />
+    <End Role="rolemodulerights" Type="Self.rolemodulerights" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="rolemodulerights">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ScanningLinkQueue_WebSiteId">
+    <End Role="website" Type="Self.website" Multiplicity="1" />
+    <End Role="scanninglinkqueue" Type="Self.scanninglinkqueue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="website">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="scanninglinkqueue">
+        <PropertyRef Name="WebSiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ScrapedContents_ScanningLinkId">
+    <End Role="scanninglinkdetails" Type="Self.scanninglinkdetails" Multiplicity="1" />
+    <End Role="scrapedcontents" Type="Self.scrapedcontents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="scanninglinkdetails">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="scrapedcontents">
+        <PropertyRef Name="ScanningLinkId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ScrapedDocumentDetails_ScrapedContentId">
+    <End Role="scrapedcontents" Type="Self.scrapedcontents" Multiplicity="1" />
+    <End Role="scrapeddocumentdetails" Type="Self.scrapeddocumentdetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="scrapedcontents">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="scrapeddocumentdetails">
+        <PropertyRef Name="ScrapedContentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ScrapedMetaDataMapping_MetaDataId">
+    <End Role="metadatatags" Type="Self.metadatatags" Multiplicity="1" />
+    <End Role="scrapedmetadatamapping" Type="Self.scrapedmetadatamapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="metadatatags">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="scrapedmetadatamapping">
+        <PropertyRef Name="MetaDataId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ScrapedMetaDataMapping_ScrapedContentId">
+    <End Role="scrapedcontents" Type="Self.scrapedcontents" Multiplicity="1" />
+    <End Role="scrapedmetadatamapping" Type="Self.scrapedmetadatamapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="scrapedcontents">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="scrapedmetadatamapping">
+        <PropertyRef Name="ScrapedContentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ScraperEngineSetup_DailyFrequencyId">
+    <End Role="dailyfrequency" Type="Self.dailyfrequency" Multiplicity="1" />
+    <End Role="scraperenginesetup" Type="Self.scraperenginesetup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="dailyfrequency">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="scraperenginesetup">
+        <PropertyRef Name="DailyFrequencyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ScraperEngineSetup_FrequencyId">
+    <End Role="frequency" Type="Self.frequency" Multiplicity="1" />
+    <End Role="scraperenginesetup" Type="Self.scraperenginesetup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="frequency">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="scraperenginesetup">
+        <PropertyRef Name="FrequencyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ScraperEngineSetup_StatusId">
+    <End Role="status" Type="Self.status" Multiplicity="1" />
+    <End Role="scraperenginesetup" Type="Self.scraperenginesetup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="status">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="scraperenginesetup">
+        <PropertyRef Name="Status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ScraperEngineSetup_WebSiteId">
+    <End Role="website" Type="Self.website" Multiplicity="1" />
+    <End Role="scraperenginesetup" Type="Self.scraperenginesetup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="website">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="scraperenginesetup">
+        <PropertyRef Name="WebSiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SectorMst_IntOrgId">
+    <End Role="internationalorganizations" Type="Self.internationalorganizations" Multiplicity="0..1" />
+    <End Role="sector" Type="Self.sector" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="internationalorganizations">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="sector">
+        <PropertyRef Name="IntOrgId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Statehead_CountryId">
+    <End Role="country" Type="Self.country" Multiplicity="1" />
+    <End Role="statehead" Type="Self.statehead" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="country">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="statehead">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="WebSiteCategoryMapping_CategoryId">
+    <End Role="country" Type="Self.country" Multiplicity="1" />
+    <End Role="websitecategorymapping" Type="Self.websitecategorymapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="country">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="websitecategorymapping">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="WebSiteCategoryMapping_WebSiteId">
+    <End Role="website" Type="Self.website" Multiplicity="1" />
+    <End Role="websitecategorymapping" Type="Self.websitecategorymapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="website">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="websitecategorymapping">
+        <PropertyRef Name="WebSiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="WebsiteConfiguration_WebsiteId">
+    <End Role="website" Type="Self.website" Multiplicity="1" />
+    <End Role="websiteconfiguration" Type="Self.websiteconfiguration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="website">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="websiteconfiguration">
+        <PropertyRef Name="WebSiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="WebSiteMast_EntityId">
+    <End Role="internationalorganizations" Type="Self.internationalorganizations" Multiplicity="0..1" />
+    <End Role="website" Type="Self.website" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="internationalorganizations">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="website">
+        <PropertyRef Name="EntityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="WebSiteMst_CategoryId">
+    <End Role="category" Type="Self.category" Multiplicity="0..1" />
+    <End Role="website" Type="Self.website" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="website">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="WebSiteMst_CountryId">
+    <End Role="country" Type="Self.country" Multiplicity="0..1" />
+    <End Role="website" Type="Self.website" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="country">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="website">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="WebSiteMst_SectorId">
+    <End Role="sector" Type="Self.sector" Multiplicity="0..1" />
+    <End Role="website" Type="Self.website" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sector">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="website">
+        <PropertyRef Name="SectorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BCMStrategyModelStoreContainer">
+    <EntitySet Name="category" EntityType="Self.category" Schema="bcmstrategy" store:Type="Tables" />
+    <EntitySet Name="country" EntityType="Self.country" Schema="bcmstrategy" store:Type="Tables" />
+    <EntitySet Name="dailyfrequency" EntityType="Self.dailyfrequency" Schema="bcmstrategy" store:Type="Tables" />
+    <EntitySet Name="eurpeanunionentities" EntityType="Self.eurpeanunionentities" Schema="bcmstrategy" store:Type="Tables" />
+    <EntitySet Name="frequency" EntityType="Self.frequency" Schema="bcmstrategy" store:Type="Tables" />
+    <EntitySet Name="instance" EntityType="Self.instance" Schema="bcmstrategy" store:Type="Tables" />
+    <EntitySet Name="institution" EntityType="Self.institution" Schema="bcmstrategy" store:Type="Tables" />
+    <EntitySet Name="institutionindividuals" EntityType="Self.institutionindividuals" Schema="bcmstrategy" store:Type="Tables" />
+    <EntitySet Name="internationalorganizations" EntityType="Self.internationalorganizations" Schema="bcmstrategy" store:Type="Tables" />
+    <EntitySet Name="loaderlinklog" EntityType="Self.loaderlinklog" Schema="bcmstrategy" store:Type="Tables" />
+    <EntitySet Name="loaderlinkqueue" EntityType="Self.loaderlinkqueue" Schema="bcmstrategy" store:Type="Tables" />
+    <EntitySet Name="metadatatags" EntityType="Self.metadatatags" Schema="bcmstrategy" store:Type="Tables" />
+    <EntitySet Name="metadatatypes" EntityType="Self.metadatatypes" Schema="bcmstrategy" store:Type="Tables" />
+    <EntitySet Name="modules" EntityType="Self.modules" Schema="bcmstrategy" store:Type="Tables" />
+    <EntitySet Name="role" EntityType="Self.role" Schema="bcmstrategy" store:Type="Tables" />
+    <EntitySet Name="rolemodulerights" EntityType="Self.rolemodulerights" Schema="bcmstrategy" store:Type="Tables" />
+    <EntitySet Name="scanninglinkdetails" EntityType="Self.scanninglinkdetails" Schema="bcmstrategy" store:Type="Tables" />
+    <EntitySet Name="scanninglinkqueue" EntityType="Self.scanninglinkqueue" Schema="bcmstrategy" store:Type="Tables" />
+    <EntitySet Name="scrapedcontents" EntityType="Self.scrapedcontents" Schema="bcmstrategy" store:Type="Tables" />
+    <EntitySet Name="scrapeddocumentdetails" EntityType="Self.scrapeddocumentdetails" Schema="bcmstrategy" store:Type="Tables" />
+    <EntitySet Name="scrapedmetadatamapping" EntityType="Self.scrapedmetadatamapping" Schema="bcmstrategy" store:Type="Tables" />
+    <EntitySet Name="scraperengineconfiguration" EntityType="Self.scraperengineconfiguration" Schema="bcmstrategy" store:Type="Tables" />
+    <EntitySet Name="scraperenginesetup" EntityType="Self.scraperenginesetup" Schema="bcmstrategy" store:Type="Tables" />
+    <EntitySet Name="sector" EntityType="Self.sector" Schema="bcmstrategy" store:Type="Tables" />
+    <EntitySet Name="statehead" EntityType="Self.statehead" Schema="bcmstrategy" store:Type="Tables" />
+    <EntitySet Name="status" EntityType="Self.status" Schema="bcmstrategy" store:Type="Tables" />
+    <EntitySet Name="user" EntityType="Self.user" Schema="bcmstrategy" store:Type="Tables" />
+    <EntitySet Name="website" EntityType="Self.website" Schema="bcmstrategy" store:Type="Tables" />
+    <EntitySet Name="websitecategorymapping" EntityType="Self.websitecategorymapping" Schema="bcmstrategy" store:Type="Tables" />
+    <EntitySet Name="websiteconfiguration" EntityType="Self.websiteconfiguration" Schema="bcmstrategy" store:Type="Tables" />
+    <EntitySet Name="websitetypes" EntityType="Self.websitetypes" Schema="bcmstrategy" store:Type="Tables" />
+    <EntitySet Name="refreshtoken" EntityType="Self.refreshtoken" store:Type="Tables" store:Schema="bcmstrategy">
+      <DefiningQuery>SELECT
+`refreshtoken`.`Id`, 
+`refreshtoken`.`ClientId`, 
+`refreshtoken`.`UserId`, 
+`refreshtoken`.`IssuedDateTime`, 
+`refreshtoken`.`ExpiresDateTime`, 
+`refreshtoken`.`ProtectedKey`
+FROM `refreshtoken` AS `refreshtoken`</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_LoaderLinkLog_InstanceId" Association="Self.FK_LoaderLinkLog_InstanceId">
+      <End Role="instance" EntitySet="instance" />
+      <End Role="loaderlinklog" EntitySet="loaderlinklog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LoaderLinkLog_loaderlinkqueue" Association="Self.FK_LoaderLinkLog_loaderlinkqueue">
+      <End Role="loaderlinkqueue" EntitySet="loaderlinkqueue" />
+      <End Role="loaderlinklog" EntitySet="loaderlinklog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LoaderLinkLog_StatusId" Association="Self.FK_LoaderLinkLog_StatusId">
+      <End Role="status" EntitySet="status" />
+      <End Role="loaderlinklog" EntitySet="loaderlinklog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MetaDataTags_MetaDataTypesId" Association="Self.FK_MetaDataTags_MetaDataTypesId">
+      <End Role="metadatatypes" EntitySet="metadatatypes" />
+      <End Role="metadatatags" EntitySet="metadatatags" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MetaDataTypes_WebSiteTypeId" Association="Self.FK_MetaDataTypes_WebSiteTypeId">
+      <End Role="websitetypes" EntitySet="websitetypes" />
+      <End Role="metadatatypes" EntitySet="metadatatypes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RefreshToken_UserId" Association="Self.FK_RefreshToken_UserId">
+      <End Role="user" EntitySet="user" />
+      <End Role="refreshtoken" EntitySet="refreshtoken" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ScanningLinkQueue_InstanceId" Association="Self.FK_ScanningLinkQueue_InstanceId">
+      <End Role="instance" EntitySet="instance" />
+      <End Role="scanninglinkdetails" EntitySet="scanninglinkdetails" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_ScanningLinkQueue_ScannerLinkId" Association="Self.Fk_ScanningLinkQueue_ScannerLinkId">
+      <End Role="scanninglinkqueue" EntitySet="scanninglinkqueue" />
+      <End Role="scanninglinkdetails" EntitySet="scanninglinkdetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ScanningLinkQueue_StatusId" Association="Self.FK_ScanningLinkQueue_StatusId">
+      <End Role="status" EntitySet="status" />
+      <End Role="scanninglinkdetails" EntitySet="scanninglinkdetails" />
+    </AssociationSet>
+    <AssociationSet Name="InstitutionMst_CountryId" Association="Self.InstitutionMst_CountryId">
+      <End Role="country" EntitySet="country" />
+      <End Role="institution" EntitySet="institution" />
+    </AssociationSet>
+    <AssociationSet Name="InstitutionNames_CountryId" Association="Self.InstitutionNames_CountryId">
+      <End Role="country" EntitySet="country" />
+      <End Role="institutionindividuals" EntitySet="institutionindividuals" />
+    </AssociationSet>
+    <AssociationSet Name="InstitutionNames_InstitutionId" Association="Self.InstitutionNames_InstitutionId">
+      <End Role="institution" EntitySet="institution" />
+      <End Role="institutionindividuals" EntitySet="institutionindividuals" />
+    </AssociationSet>
+    <AssociationSet Name="LoaderLinkQueue_WebSiteId" Association="Self.LoaderLinkQueue_WebSiteId">
+      <End Role="website" EntitySet="website" />
+      <End Role="loaderlinkqueue" EntitySet="loaderlinkqueue" />
+    </AssociationSet>
+    <AssociationSet Name="RoleModuleRights_Modules" Association="Self.RoleModuleRights_Modules">
+      <End Role="modules" EntitySet="modules" />
+      <End Role="rolemodulerights" EntitySet="rolemodulerights" />
+    </AssociationSet>
+    <AssociationSet Name="RoleModuleRights_Role" Association="Self.RoleModuleRights_Role">
+      <End Role="role" EntitySet="role" />
+      <End Role="rolemodulerights" EntitySet="rolemodulerights" />
+    </AssociationSet>
+    <AssociationSet Name="RoleModuleRights_UserId" Association="Self.RoleModuleRights_UserId">
+      <End Role="user" EntitySet="user" />
+      <End Role="rolemodulerights" EntitySet="rolemodulerights" />
+    </AssociationSet>
+    <AssociationSet Name="ScanningLinkQueue_WebSiteId" Association="Self.ScanningLinkQueue_WebSiteId">
+      <End Role="website" EntitySet="website" />
+      <End Role="scanninglinkqueue" EntitySet="scanninglinkqueue" />
+    </AssociationSet>
+    <AssociationSet Name="ScrapedContents_ScanningLinkId" Association="Self.ScrapedContents_ScanningLinkId">
+      <End Role="scanninglinkdetails" EntitySet="scanninglinkdetails" />
+      <End Role="scrapedcontents" EntitySet="scrapedcontents" />
+    </AssociationSet>
+    <AssociationSet Name="ScrapedDocumentDetails_ScrapedContentId" Association="Self.ScrapedDocumentDetails_ScrapedContentId">
+      <End Role="scrapedcontents" EntitySet="scrapedcontents" />
+      <End Role="scrapeddocumentdetails" EntitySet="scrapeddocumentdetails" />
+    </AssociationSet>
+    <AssociationSet Name="ScrapedMetaDataMapping_MetaDataId" Association="Self.ScrapedMetaDataMapping_MetaDataId">
+      <End Role="metadatatags" EntitySet="metadatatags" />
+      <End Role="scrapedmetadatamapping" EntitySet="scrapedmetadatamapping" />
+    </AssociationSet>
+    <AssociationSet Name="ScrapedMetaDataMapping_ScrapedContentId" Association="Self.ScrapedMetaDataMapping_ScrapedContentId">
+      <End Role="scrapedcontents" EntitySet="scrapedcontents" />
+      <End Role="scrapedmetadatamapping" EntitySet="scrapedmetadatamapping" />
+    </AssociationSet>
+    <AssociationSet Name="ScraperEngineSetup_DailyFrequencyId" Association="Self.ScraperEngineSetup_DailyFrequencyId">
+      <End Role="dailyfrequency" EntitySet="dailyfrequency" />
+      <End Role="scraperenginesetup" EntitySet="scraperenginesetup" />
+    </AssociationSet>
+    <AssociationSet Name="ScraperEngineSetup_FrequencyId" Association="Self.ScraperEngineSetup_FrequencyId">
+      <End Role="frequency" EntitySet="frequency" />
+      <End Role="scraperenginesetup" EntitySet="scraperenginesetup" />
+    </AssociationSet>
+    <AssociationSet Name="ScraperEngineSetup_StatusId" Association="Self.ScraperEngineSetup_StatusId">
+      <End Role="status" EntitySet="status" />
+      <End Role="scraperenginesetup" EntitySet="scraperenginesetup" />
+    </AssociationSet>
+    <AssociationSet Name="ScraperEngineSetup_WebSiteId" Association="Self.ScraperEngineSetup_WebSiteId">
+      <End Role="website" EntitySet="website" />
+      <End Role="scraperenginesetup" EntitySet="scraperenginesetup" />
+    </AssociationSet>
+    <AssociationSet Name="SectorMst_IntOrgId" Association="Self.SectorMst_IntOrgId">
+      <End Role="internationalorganizations" EntitySet="internationalorganizations" />
+      <End Role="sector" EntitySet="sector" />
+    </AssociationSet>
+    <AssociationSet Name="Statehead_CountryId" Association="Self.Statehead_CountryId">
+      <End Role="country" EntitySet="country" />
+      <End Role="statehead" EntitySet="statehead" />
+    </AssociationSet>
+    <AssociationSet Name="WebSiteCategoryMapping_CategoryId" Association="Self.WebSiteCategoryMapping_CategoryId">
+      <End Role="country" EntitySet="country" />
+      <End Role="websitecategorymapping" EntitySet="websitecategorymapping" />
+    </AssociationSet>
+    <AssociationSet Name="WebSiteCategoryMapping_WebSiteId" Association="Self.WebSiteCategoryMapping_WebSiteId">
+      <End Role="website" EntitySet="website" />
+      <End Role="websitecategorymapping" EntitySet="websitecategorymapping" />
+    </AssociationSet>
+    <AssociationSet Name="WebsiteConfiguration_WebsiteId" Association="Self.WebsiteConfiguration_WebsiteId">
+      <End Role="website" EntitySet="website" />
+      <End Role="websiteconfiguration" EntitySet="websiteconfiguration" />
+    </AssociationSet>
+    <AssociationSet Name="WebSiteMast_EntityId" Association="Self.WebSiteMast_EntityId">
+      <End Role="internationalorganizations" EntitySet="internationalorganizations" />
+      <End Role="website" EntitySet="website" />
+    </AssociationSet>
+    <AssociationSet Name="WebSiteMst_CategoryId" Association="Self.WebSiteMst_CategoryId">
+      <End Role="category" EntitySet="category" />
+      <End Role="website" EntitySet="website" />
+    </AssociationSet>
+    <AssociationSet Name="WebSiteMst_CountryId" Association="Self.WebSiteMst_CountryId">
+      <End Role="country" EntitySet="country" />
+      <End Role="website" EntitySet="website" />
+    </AssociationSet>
+    <AssociationSet Name="WebSiteMst_SectorId" Association="Self.WebSiteMst_SectorId">
+      <End Role="sector" EntitySet="sector" />
+      <End Role="website" EntitySet="website" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="icon" href="~/Content/img/favicon.ico">
+  <title>@ViewBag.Title</title>
+  @Styles.Render("~/bundles/Content")
+  @Styles.Render("~/Content/Kendo/styles")
+  @Styles.Render("~/Content/bootstrapmobile")
+  @Styles.Render("~/Content/custom")
+</head>
+<body class="fixed-sn navy-blue-skin">
+
+  <header>
+    <!-- Sidebar navigation -->
+    <div id="slide-out" class="side-nav sn-bg-4 fixed sidenav">
+      <ul class="custom-scrollbar">
+        <!-- Logo -->
+        <li>
+          <div class="logo-wrapper waves-light">
+            <a href="#"><img src="~/Content/img/logo1.png" class="img-fluid flex-center"></a>
+          </div>
+        </li>
+        <li>
+        </li>
+      </ul>
+      <div class="sidenav-bg mask-strong"></div>
+    </div>
+    <!--/. Sidebar navigation -->
+    <!-- Navbar -->
+    <nav class="navbar fixed-top green darken-2 scrolling-navbar double-nav">
+      <!-- SideNav slide-out button -->
+      <div class="float-left">
+        <a href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-bars"></i></a>
+      </div>
+      <!-- Breadcrumb-->
+      <div class="breadcrumb-dn mr-auto">
+        <p><strong><span id="pageTitle">@ViewBag.Title</span></strong></p>
+      </div>
+    </nav>
+    <!-- /.Navbar -->
+  </header>
+
+  <section>
+    @RenderBody()
+  </section>
+  @Html.Partial("~/Views/Shared/_Footer.cshtml")
+
+  <div class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title"></h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dark-green model-ok" data-dismiss="modal">Ok</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+</body>
+@Scripts.Render("~/bundles/reqScripts")
+@Scripts.Render("~/bundles/KendoScript")
+@RenderSection("scripts", required: false)
+<script>
+  $(".button-collapse").sideNav();
+  $('.collapsible').collapsible();
+</script>
+</html>

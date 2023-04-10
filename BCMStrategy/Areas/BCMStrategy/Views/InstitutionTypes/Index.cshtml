@@ -1,0 +1,55 @@
+﻿@using BCMStrategy.Resources;
+@{
+    ViewBag.Title = Resource.LblInstitutionTypeTitle;
+    ViewBag.ModuleName = Enums.ModuleName.INSTITTUTIONTYPE;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<form id="institutionTypesForm">
+    <div class="container-fluid">
+        <div>
+            <a class="btn blue" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                <i class="fa fa-plus"></i> @BCMStrategy.Resources.Resource.LblAddInstitutionTypes
+            </a>
+            <a class="btn btn-primary" href="@Url.Action("ImportFile","InstitutionTypes",new { Area = "BCMStrategy"})">
+                @BCMStrategy.Resources.Resource.LblImportInstitutionTypes
+            </a>
+          <a class="btn btn-default" id="clearFilters">
+            @BCMStrategy.Resources.Resource.LblClearFilter
+          </a>
+        </div>
+        <div class="collapse" id="collapseExample">
+            <div class="mt-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label class="control-label">@Resource.LblInstitutionTypes</label> <span class="text-danger">*</span>
+                                <input type="text" maxlength="250" id="institutionTypesName" name="institutionTypesName" class="form-control" data-bind="value: InstitutionTypesName" />
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card-footer bg-transparent pull-right">
+                        <a class="btn btn-dark-green" id="btnInstTypesSave">@BCMStrategy.Resources.Resource.LblSave</a>
+                        <a class="btn btn-blue-grey" id="btnInstTypesCancel">@BCMStrategy.Resources.Resource.LblCancel</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card mt-4">
+            <div class="card-body">
+                <div id="gridInstTypes"></div>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section scripts{
+<script>
+    var institutionTypesName = "@Resource.LblInstitutionTypesHeader"
+    var deletePopupHeader = "@Resource.LblDeleteConfirmation"
+    var deletePopupMessage = "@Resource.LblInstitutionTypeDeleteConfirm"
+    var noDataFound = '@BCMStrategy.Resources.Resource.LblNoDataFound'
+</script>
+    @Scripts.Render("~/Scripts/JsAreas/InstitutionTypes.js")
+}

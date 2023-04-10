@@ -1,0 +1,64 @@
+﻿
+@{
+  ViewBag.Title = BCMStrategy.Resources.Resource.LblMetadataTypes;
+  ViewBag.ModuleName = BCMStrategy.Resources.Enums.ModuleName.METADATATYPES;
+  Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<form id="ImportMetadataTypes">
+    <div class="container-fluid">
+        <!-- Collapsible element -->
+        <div>
+            <div class="mt-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblWebsiteTypes</label> <span class="text-danger">*</span>
+                                <select class="form-control" id="websiteTypeHashId" name="websiteTypeHashId" data-bind="value: WebsiteTypeHashId">
+                                    <option selected="selected" value="">@BCMStrategy.Resources.Resource.SelectWebsiteType_String</option>
+                                </select>
+                                <span id="errorMessageMetadataType" aria-live="polite" class="red-text" name="loginError"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="demo-section form-group k-content">
+                                    <input name="importMetadataTypesFile" accept=".csv" class="form-control" id="importMetadataTypesFile" type="file" aria-label="files" />
+                                    <span id="errorMessage" aria-live="polite" class="red-text" name="loginError"></span>
+                                    <div class="green-text">@BCMStrategy.Resources.Resource.LblNoteForImportFile</div>
+                                </div>
+                                <a href="~/UploadTemplates/MetadataTypes Template.csv" download="MetadataTypes Template.csv" target="_blank">@BCMStrategy.Resources.Resource.LblDownloadMetadataTypesTemplate</a>
+                            </div>
+                            <div class="col-md-6">
+                                <a class="btn blue m375" style="display: none; cursor:pointer;" href="javascript:" id="btnValidateInstanceImportFile">@BCMStrategy.Resources.Resource.LblValidate</a>
+                                <a class="btn btn-primary m375" style="display: none; cursor:pointer;" href="javascript:" id="btnInstanceImportFile">@BCMStrategy.Resources.Resource.LblImport</a>
+                                <a class="btn btn-default  m375" style="cursor:pointer;" id="btnMetadataTypesImportBack">@BCMStrategy.Resources.Resource.LblBack</a>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-8">
+                                <span id="successMessage" style="color:green"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card mt-4" id="divImportBody">
+            <div class="card-body">
+                <div id="gridImportMetadataTypes"></div>
+            </div>
+        </div>
+    </div>
+    @section scripts{
+        <script>
+            var websiteTypes = "@BCMStrategy.Resources.Resource.LblWebsiteTypes"
+            var metaData = "@BCMStrategy.Resources.Resource.LblInstitutions"
+            var metadataValue = '@BCMStrategy.Resources.Resource.LblMetadataValue';
+            var ActivityTypeExist = '@BCMStrategy.Resources.Resource.LblIsActivityTypeExist';
+            var backURL = "@Url.Action("Index", "MetadataTypes", new { Area= "BCMStrategy" })";
+        </script>
+        @Scripts.Render("~/Scripts/JsAreas/MetadataTypesImportFile.js", "~/Scripts/JsAreas/DropDownList.js")
+    }
+</form>

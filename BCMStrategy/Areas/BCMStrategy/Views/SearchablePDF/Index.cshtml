@@ -1,0 +1,98 @@
+﻿
+@{
+	ViewBag.Title = BCMStrategy.Resources.Resource.LblSearchablePDF;
+	ViewBag.ModuleName = BCMStrategy.Resources.Enums.ModuleName.SEARCHABLEPDF;
+	Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+<style>
+	#noDataNotification {
+		text-align: center;
+		padding: 10px 0;
+		border: 1px solid #ddd;
+		margin-bottom: 10px;
+		background: antiquewhite;
+		font-size: 0.9rem;
+	}
+	  .ui-autocomplete {
+     max-height: 250px;
+     overflow-y: auto;
+     /* prevent horizontal scrollbar */
+     overflow-x: hidden;
+ }
+</style>
+
+<form style="margin-left:1px" id="searchablPDFForm">
+	<div class="container-fluid">
+		<div class="card mt-4">
+			<div class="card-body">
+				<div class="row">
+					<div class="form-group col-md-3">
+						<label class="control-label">@BCMStrategy.Resources.Resource.LblFrom</label><span class="text-danger">*</span>
+						<input id="txtFromDate"  name="fromDate" class="form-control" data-bind="value: FromDate" tabindex="0"/>
+					</div>
+					<div class="form-group col-md-3">
+						<label class="control-label">@BCMStrategy.Resources.Resource.LblTo</label><span class="text-danger">*</span>
+						<input id="txtToDate" name="toDate" class="form-control" data-bind="value: ToDate"  tabindex="1"/>
+					</div>
+					<div class="form-group col-md-3">
+						<label class="control-label">@BCMStrategy.Resources.Resource.LblLexicon</label><span class="text-danger">*</span>
+						<input id="txtLexicon" name="lexicon" class="form-control" tabindex="2"/>
+					</div>
+					<div class="form-group col-md-3 bg-transparent pull-right" style="padding-top: 24px;">
+						<a class="btn btn-dark-green waves-effect waves-light btn-md" style="font-size: 12px;" id="btnSearch"  tabindex="3">@BCMStrategy.Resources.Resource.LblSearch</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="card mt-4">
+			<div class="card-body">
+				<div id="lexiconTypechart"></div>
+				<div id="noDataNotification" style="display: none;">@BCMStrategy.Resources.Resource.LblNoDataExists</div>
+				@*<div class="green-text" id="note" style="display: none;">@Html.Raw(BCMStrategy.Resources.Resource.LblLexiconSearchableNote)</div>*@
+			</div>
+		</div>
+		<div class="card mt-4" id="parentDateChartSearchablePDF" style="display: none;">
+			<div class="card-body">
+				<div id="lexiconTypeDatechart"></div>
+				<div id="noDataDateNotification" style="display: none;">@BCMStrategy.Resources.Resource.LblNoDataExists</div>
+				@*<div class="green-text" id="note" style="display: none;">@Html.Raw(BCMStrategy.Resources.Resource.LblLexiconSearchableNote)</div>*@
+			</div>
+		</div>
+		<div class="card mt-4" id="parentGridSearchablePDF" style="display: none;">
+			<div class="card-body">
+				<div id="gridSearchablePDF"></div>
+			</div>
+		</div>
+		<input type="hidden" id="lexiconNoResultFlag" value="" />
+		<input type="hidden" id="lexiconHiddenVal" value="" />
+	</div>
+
+	@section scripts{
+		@Scripts.Render("~/Scripts/JsAreas/SearchablePDF.js");
+		<script>
+			var noDataFound = '@BCMStrategy.Resources.Resource.LblNoDataFound'
+			var CreateDate = '@BCMStrategy.Resources.Resource.LblCreatedDate'
+			var ActionType = '@BCMStrategy.Resources.Resource.LblActionType'
+
+			var numberOfColumns_Mobile = "@Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings["NumberOfLineChartColumns_Mobile"].ToString())";
+			var numberOfColumns_Web = "@Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings["NumberOfLineChartColumns_Web"].ToString())";
+			var PDFURL = '@BCMStrategy.Resources.Resource.LblPDFURL'
+			var WebSiteURL = '@BCMStrategy.Resources.Resource.LblWebSiteURL'
+			var isCustomer = '@User.IsInRole(BCMStrategy.Resources.Enums.UserType.CUSTOMER.ToString())'
+			$(document).ready(function () {
+				$("#parentGridSearchablePDF").hide();
+				$("#parentDateChartSearchablePDF").hide();
+				$.when(CommonJS.SetPageLoader(PageLoaderActivity.SHOW))
+					.then(function () {
+						ResetSearchablePDFForm();
+						BindLexiconAutoComplete();
+					}).then(CommonJS.SetPageLoader(PageLoaderActivity.HIDE));
+			})
+
+		</script>
+		<link href="~/Content/css/jquery-ui.css" rel="stylesheet" />
+		<script src="~/Scripts/js/jquery-ui.js"></script>
+	}
+
+</form>
+

@@ -1,0 +1,32 @@
+﻿
+@{
+	ViewBag.Title = BCMStrategy.Resources.Resource.LblGlobalSetting;
+	ViewBag.ModuleName = BCMStrategy.Resources.Enums.ModuleName.GLOBALSETTING;
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form id="globalSettingForm">
+	<div class="container-fluid">
+		<div class="card">
+			<div class="card-body">
+				<div class="row">
+					<div class="form-group col-md-4">
+						<label class="control-label">@BCMStrategy.Resources.Resource.LblSMTPDetails</label> <span class="text-danger">*</span>
+						<input type="text" maxlength="100" id="smtpDetails" name="smtpDetails" class="form-control" data-bind="value: SMTPDetails" />
+					</div>
+				</div>
+			</div>
+			<div class="card-footer bg-transparent pull-right">
+				<a class="btn btn-dark-green" href="javascript:" id="btnGlobalSettingSave">@BCMStrategy.Resources.Resource.LblSave</a>
+				<a class="btn btn-blue-grey" id="btnGlobalSettingCancel" href="javascript:">@BCMStrategy.Resources.Resource.LblCancel</a>
+			</div>
+		</div>
+	</div>
+	@section scripts{
+	<script>
+      var redirectHome = '@Url.Action("Index", "Dashboard", new { Area = "BCMStrategy" })';
+	</script>
+	@Scripts.Render("~/Scripts/JsAreas/GlobalSetting.js")
+	}
+</form>
+

@@ -1,0 +1,31 @@
+﻿
+@{
+  ViewBag.Title = BCMStrategy.Resources.Resource.LblInternalServerError;
+  Layout = "~/Views/Shared/_LayoutBeforeLogin.cshtml";
+}
+
+<div class="container-fluid">
+  <div class="card">
+    <div class="card-body text-center">
+      <h2>Error!!!</h2>
+      <h1>500</h1>
+      <h5>@BCMStrategy.Resources.Resource.LblInternalServerErrorMessage</h5>
+
+    </div>
+    <div class="card-footer bg-transparent text-center">
+      <a class="btn blue darken-4" style="cursor:pointer" id="btnRedirectHome">@BCMStrategy.Resources.Resource.LblHome</a>
+    </div>
+  </div>
+</div>
+@section scripts{
+  <script>
+
+    $(document).ready(function () {
+      $("#btnRedirectHome").click(function () {
+        window.location.href = "@Url.Action("Index", "Dashboard", new { Area = "BCMStrategy" })"
+      });
+    });
+
+  </script>
+}
+

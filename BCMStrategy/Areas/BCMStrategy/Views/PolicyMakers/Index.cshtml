@@ -1,0 +1,119 @@
+﻿@{
+  ViewBag.Title = BCMStrategy.Resources.Resource.LblPolicyMakers;
+  ViewBag.ModuleName = @BCMStrategy.Resources.Enums.ModuleName.POLICYMAKER;
+  Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form id="policyMakerForm">
+  <div class="container-fluid">
+    <!-- Collapse buttons -->
+    <div>
+      <a class="btn blue" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        <i class="fa fa-plus"></i> @BCMStrategy.Resources.Resource.LblAddNew @BCMStrategy.Resources.Resource.LblPolicyMakers
+      </a>
+      <a class="btn btn-primary" href="@Url.Action("ImportPolicyMakers", "PolicyMakers", new { Area = "BCMStrategy" })">
+        @BCMStrategy.Resources.Resource.LblImport @BCMStrategy.Resources.Resource.LblPolicyMakers
+      </a>
+      <a class="btn btn-default" id="clearFilters" >
+        @BCMStrategy.Resources.Resource.LblClearFilter
+      </a>
+    </div>
+    <!-- / Collapse buttons -->
+    <!-- Collapsible element -->
+    <div class="collapse" id="collapseExample">
+      <div class="mt-3">
+        <div class="card">
+          @*<div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <label class="control-label">@BCMStrategy.Resources.Resource.LblCountry</label> <span class="text-danger">*</span>
+                <select class="form-control" id="countryMasterHashId" name="countryMasterHashId" data-bind="value: CountryMasterHashId">
+                  <option selected="selected" value="">@BCMStrategy.Resources.Resource.SelectCountryName_String</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="control-label">@BCMStrategy.Resources.Resource.LblInstitutionTypes</label> <span class="text-danger">*</span>
+                <select class="form-control" id="institutionTypeHashId" name="institutionTypeHashId" data-bind="value: InstitutionTypeHashId">
+                  <option selected="selected" value="">@BCMStrategy.Resources.Resource.LblSelect @BCMStrategy.Resources.Resource.LblInstitutionTypes</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <label class="control-label">@BCMStrategy.Resources.Resource.LblDesignationType</label> <span class="text-danger">*</span>
+                <select class="form-control" id="designationHashId" name="designationHashId" data-bind="value: DesignationHashId">
+                  <option selected="selected" value="">@BCMStrategy.Resources.Resource.LblSelect @BCMStrategy.Resources.Resource.LblDesignationType</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="control-label">@BCMStrategy.Resources.Resource.LblPolicyMakerName</label> <span class="text-danger">*</span>
+                <input type="text" maxlength="500" id="policyMakerName" name="policyMakerName" class="form-control" data-bind="value: PolicyMakerName" />
+              </div>
+            </div>
+          </div>*@
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-4">
+                <label class="control-label">@BCMStrategy.Resources.Resource.LblCountry</label>
+                <select class="form-control" id="countryMasterHashId" name="countryMasterHashId" data-bind="value: CountryMasterHashId">
+                  <option selected="selected" value="">@BCMStrategy.Resources.Resource.SelectCountryName_String</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <label class="control-label">@BCMStrategy.Resources.Resource.LblInstitutionTypes</label> <span class="text-danger">*</span>
+                <select class="form-control" id="institutionTypeHashId" name="institutionTypeHashId" data-bind="value: InstitutionTypeHashId">
+                  <option selected="selected" value="">@BCMStrategy.Resources.Resource.LblSelect @BCMStrategy.Resources.Resource.LblInstitutionTypes</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <label class="control-label">@BCMStrategy.Resources.Resource.LblDesignationType</label> <span class="text-danger">*</span>
+                <select class="form-control" id="designationHashId" name="designationHashId" data-bind="value: DesignationHashId">
+                  <option selected="selected" value="">@BCMStrategy.Resources.Resource.LblSelect @BCMStrategy.Resources.Resource.LblDesignationType</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              
+              <div class="col-md-4">
+                <label class="control-label">@BCMStrategy.Resources.Resource.LblFirstName</label> 
+                <input type="text" maxlength="500" id="policyFirstName" name="policyFirstName" class="form-control" data-bind="value: PolicyFirstName" />
+              </div>
+              <div class="col-md-4">
+                <label class="control-label">@BCMStrategy.Resources.Resource.LblLastName</label> <span class="text-danger">*</span>
+                <input type="text" maxlength="500" id="policyLastName" name="policyLastName" class="form-control" data-bind="value: PolicyLastName" />
+              </div>
+            </div>
+          </div>
+          <div class="card-footer bg-transparent pull-right">
+            <a class="btn btn-dark-green" id="btnPolicyMakersSave">@BCMStrategy.Resources.Resource.LblSave</a>
+            <a class="btn btn-blue-grey" id="btnPolicyMakersCancel">@BCMStrategy.Resources.Resource.LblCancel</a>
+          </div>
+        </div>
+      </div>
+    </div>
+      <input type="hidden" id="policyMakerHashHiddenVal" value="" />
+    <!-- / Collapsible element -->
+    <!-- Grid -->
+    <div class="card mt-4">
+      <div class="card-body">
+        <div id="gridPolicyMakers"></div>
+      </div>
+    </div>
+  </div>
+  @section scripts{
+    <script>
+      var countryName = '@BCMStrategy.Resources.Resource.LblCountryName';
+      var institutionType = '@BCMStrategy.Resources.Resource.LblInstitutionTypes';
+      var designationType = '@BCMStrategy.Resources.Resource.LblDesignationType';
+      var policyMakerName = '@BCMStrategy.Resources.Resource.LblPolicyMakerName';
+      var noDataFound = '@BCMStrategy.Resources.Resource.LblNoDataFound';
+      var deletePopupHeader = "@BCMStrategy.Resources.Resource.LblDeleteConfirmation";
+      var deletePopupMessage = "@BCMStrategy.Resources.Resource.LblPolicyMakerDeleteConfirm";
+    </script>
+    @Scripts.Render("~/Scripts/JsAreas/PolicyMaker.js", "~/Scripts/JsAreas/DropDownList.js")
+  }
+</form>

@@ -1,0 +1,98 @@
+﻿
+@{
+  ViewBag.Title = BCMStrategy.Resources.Resource.LblLexicon;
+  ViewBag.ModuleName = BCMStrategy.Resources.Enums.ModuleName.LEXICON;
+  Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<form id="lexiconForm">
+    <div class="container-fluid">
+        <!-- Collapse buttons -->
+        <div>
+            <a class="btn blue" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                <i class="fa fa-plus"></i> @BCMStrategy.Resources.Resource.LblAddNew @BCMStrategy.Resources.Resource.LblLexicon
+            </a>
+            @*<a class="btn btn-primary" href="@Url.Action("ImportLexicon","Lexicon",new { Area = "BCMStrategy"})">@BCMStrategy.Resources.Resource.LblImport @BCMStrategy.Resources.Resource.LblLexicon</a>*@
+            <a class="btn btn-default" id="clearFilters">
+                @BCMStrategy.Resources.Resource.LblClearFilter
+            </a>
+        </div>
+        <!-- / Collapse buttons -->
+        <!-- Collapsible element -->
+        <div class="collapse" id="collapseExample">
+            <div class="mt-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblLexiconType</label> <span class="text-danger">*</span>
+                                <select class="form-control" id="lexiconeTypeMasterHashId" name="lexiconeTypeMasterHashId" data-bind="value: LexiconeTypeMasterHashId">
+                                    <option selected="selected" value="">@BCMStrategy.Resources.Resource.SelectLexiconType_String</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblLexicon</label> <span class="text-danger">*</span>
+                                <input type="text" maxlength="200" id="lexiconIssue" name="lexiconIssue" class="form-control" data-bind="value: LexiconIssue" />
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblIsNested</label> <span class="text-danger">*</span>
+                                <div class="clearfix"></div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" checked name="isNested" id="yes" data-bind="value: IsNested" />
+                                    <label>Yes</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="isNested" id="no" data-bind="value: IsNested">
+                                    <label>No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6" id="DivCombination">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblCombinationValue</label> <span class="text-danger">*</span> 
+                                <input type="text" data-role="tagsinput" id="combinationValue" name="combinationValue" class="form-control" data-bind="value: CombinationValue" />
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="control-label">@BCMStrategy.Resources.Resource.LblLinker</label> <span class="text-danger">*</span> 
+                                <input type="text" data-role="tagsinput" id="lexiconLinkers" name="lexiconLinkers" class="form-control" data-bind="value: LexiconLinkers" />
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="card-footer bg-transparent pull-right">
+                        <a class="btn btn-dark-green" id="btnLexiconSave">@BCMStrategy.Resources.Resource.LblSave</a>
+                        <a class="btn btn-blue-grey" id="btnLexiconCancel">@BCMStrategy.Resources.Resource.LblCancel</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- / Collapsible element -->
+        <!-- Grid -->
+
+        <div class="card mt-4">
+            <div class="card-body">
+                <div id="gridLexicon"></div>
+            </div>
+        </div>
+    </div>
+    @section scripts{
+
+        <script>
+            var lexiconType = '@BCMStrategy.Resources.Resource.LblLexiconType';
+            var lexicon = '@BCMStrategy.Resources.Resource.LblLexicon';
+            var noDataFound = '@BCMStrategy.Resources.Resource.LblNoDataFound';
+            var deletePopupHeader = "@BCMStrategy.Resources.Resource.LblDeleteConfirmation";
+            var deletePopupMessage = "@BCMStrategy.Resources.Resource.LblLexconDeleteConfirm";
+            var LexiconType = "@BCMStrategy.Resources.Resource.LblLexiconType";
+            var LexiconTerm = "@BCMStrategy.Resources.Resource.LblLexicon";
+            var CombinationValue = "@BCMStrategy.Resources.Resource.LblCombinationValue";
+            var Nested = "@BCMStrategy.Resources.Resource.LblIsNested";
+            var LexiconLinker = "@BCMStrategy.Resources.Resource.LblLinker";
+
+
+        </script>
+        @Scripts.Render("~/Scripts/JsAreas/Lexicon.js", "~/Scripts/JsAreas/DropDownList.js")
+    }
+</form>

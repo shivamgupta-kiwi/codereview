@@ -1,0 +1,34 @@
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.Logger\bin\Debug\BCMStrategy.Logger.dll
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.Logger\bin\Debug\BCMStrategy.Logger.pdb
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.Logger\bin\Debug\log4net.dll
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.Logger\bin\Debug\log4net.xml
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.Logger\obj\Debug\BCMStrategy.Logger.dll
+E:\BCM Scrapping\BCMStrategy\BCMStrategy.Logger\obj\Debug\BCMStrategy.Logger.pdb
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.Logger\bin\Debug\BCMStrategy.Logger.dll
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.Logger\bin\Debug\BCMStrategy.Logger.pdb
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.Logger\bin\Debug\log4net.dll
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.Logger\bin\Debug\log4net.xml
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.Logger\obj\Debug\BCMStrategy.Logger.csprojResolveAssemblyReference.cache
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.Logger\obj\Debug\BCMStrategy.Logger.dll
+E:\BCM Scrapping\BCMStrategy_Milestone#1\BCMStrategy.Logger\obj\Debug\BCMStrategy.Logger.pdb
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.Logger\bin\Debug\BCMStrategy.Logger.dll
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.Logger\bin\Debug\BCMStrategy.Logger.pdb
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.Logger\bin\Debug\log4net.dll
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.Logger\bin\Debug\log4net.xml
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.Logger\obj\Debug\BCMStrategy.Logger.csprojResolveAssemblyReference.cache
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.Logger\obj\Debug\BCMStrategy.Logger.dll
+E:\BCM Scrapping\BCMStrategy_1_0_0\BCMStrategy.Logger\obj\Debug\BCMStrategy.Logger.pdb
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.Logger\bin\Debug\BCMStrategy.Logger.dll
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.Logger\bin\Debug\BCMStrategy.Logger.pdb
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.Logger\bin\Debug\log4net.dll
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.Logger\bin\Debug\log4net.xml
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.Logger\obj\Debug\BCMStrategy.Logger.dll
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.Logger\obj\Debug\BCMStrategy.Logger.pdb
+E:\BCMProject\BCMStrategy_1_0_0\BCMStrategy.Logger\obj\Debug\BCMStrategy.Logger.csprojResolveAssemblyReference.cache
+E:\BCMProject\BCMStrategy\BCMStrategy.Logger\bin\Debug\BCMStrategy.Logger.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.Logger\bin\Debug\BCMStrategy.Logger.pdb
+E:\BCMProject\BCMStrategy\BCMStrategy.Logger\bin\Debug\log4net.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.Logger\bin\Debug\log4net.xml
+E:\BCMProject\BCMStrategy\BCMStrategy.Logger\obj\Debug\BCMStrategy.Logger.csprojResolveAssemblyReference.cache
+E:\BCMProject\BCMStrategy\BCMStrategy.Logger\obj\Debug\BCMStrategy.Logger.dll
+E:\BCMProject\BCMStrategy\BCMStrategy.Logger\obj\Debug\BCMStrategy.Logger.pdb

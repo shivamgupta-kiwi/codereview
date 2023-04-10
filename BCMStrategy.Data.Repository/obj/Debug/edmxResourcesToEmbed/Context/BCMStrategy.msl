@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BCMStrategyModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="category">
+      <EntityTypeMapping TypeName="BCMStrategyModel.category">
+        <MappingFragment StoreEntitySet="category">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="country">
+      <EntityTypeMapping TypeName="BCMStrategyModel.country">
+        <MappingFragment StoreEntitySet="country">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dailyfrequency">
+      <EntityTypeMapping TypeName="BCMStrategyModel.dailyfrequency">
+        <MappingFragment StoreEntitySet="dailyfrequency">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="OccursOnceAt" ColumnName="OccursOnceAt" />
+          <ScalarProperty Name="OccursEveryHour" ColumnName="OccursEveryHour" />
+          <ScalarProperty Name="OccursStartTime" ColumnName="OccursStartTime" />
+          <ScalarProperty Name="OccursEndTime" ColumnName="OccursEndTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="eurpeanunionentities">
+      <EntityTypeMapping TypeName="BCMStrategyModel.eurpeanunionentities">
+        <MappingFragment StoreEntitySet="eurpeanunionentities">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="EntityName" ColumnName="EntityName" />
+          <ScalarProperty Name="Sector" ColumnName="Sector" />
+          <ScalarProperty Name="Individual" ColumnName="Individual" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="frequency">
+      <EntityTypeMapping TypeName="BCMStrategyModel.frequency">
+        <MappingFragment StoreEntitySet="frequency">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Occurs" ColumnName="Occurs" />
+          <ScalarProperty Name="RecursDaily" ColumnName="RecursDaily" />
+          <ScalarProperty Name="RecursMonday" ColumnName="RecursMonday" />
+          <ScalarProperty Name="RecursTuesday" ColumnName="RecursTuesday" />
+          <ScalarProperty Name="RecursWednesday" ColumnName="RecursWednesday" />
+          <ScalarProperty Name="RecursThursday" ColumnName="RecursThursday" />
+          <ScalarProperty Name="RecursFriday" ColumnName="RecursFriday" />
+          <ScalarProperty Name="RecursSaturday" ColumnName="RecursSaturday" />
+          <ScalarProperty Name="RecursSunday" ColumnName="RecursSunday" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="instance">
+      <EntityTypeMapping TypeName="BCMStrategyModel.instance">
+        <MappingFragment StoreEntitySet="instance">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="InstanceName" ColumnName="InstanceName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="institution">
+      <EntityTypeMapping TypeName="BCMStrategyModel.institution">
+        <MappingFragment StoreEntitySet="institution">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="CentralBank" ColumnName="CentralBank" />
+          <ScalarProperty Name="FinanceMinistry" ColumnName="FinanceMinistry" />
+          <ScalarProperty Name="BankingRegulator" ColumnName="BankingRegulator" />
+          <ScalarProperty Name="SecuritiesRegulator" ColumnName="SecuritiesRegulator" />
+          <ScalarProperty Name="InsuranceRegulator" ColumnName="InsuranceRegulator" />
+          <ScalarProperty Name="MacroPrudentialRegulator" ColumnName="MacroPrudentialRegulator" />
+          <ScalarProperty Name="TradeRegulator" ColumnName="TradeRegulator" />
+          <ScalarProperty Name="AMLCFLRegulator" ColumnName="AMLCFLRegulator" />
+          <ScalarProperty Name="DepositInsurance" ColumnName="DepositInsurance" />
+          <ScalarProperty Name="DataProtectionRegulator" ColumnName="DataProtectionRegulator" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="institutionindividuals">
+      <EntityTypeMapping TypeName="BCMStrategyModel.institutionindividuals">
+        <MappingFragment StoreEntitySet="institutionindividuals">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="InstitutionId" ColumnName="InstitutionId" />
+          <ScalarProperty Name="CentralBank" ColumnName="CentralBank" />
+          <ScalarProperty Name="FinanceMinistry" ColumnName="FinanceMinistry" />
+          <ScalarProperty Name="BankingRegulator" ColumnName="BankingRegulator" />
+          <ScalarProperty Name="SecuritiesRegulator" ColumnName="SecuritiesRegulator" />
+          <ScalarProperty Name="InsuranceRegulator" ColumnName="InsuranceRegulator" />
+          <ScalarProperty Name="MacroPrudentialRegulator" ColumnName="MacroPrudentialRegulator" />
+          <ScalarProperty Name="TradeRegulator" ColumnName="TradeRegulator" />
+          <ScalarProperty Name="AMLCFLRegulator" ColumnName="AMLCFLRegulator" />
+          <ScalarProperty Name="DepositInsurance" ColumnName="DepositInsurance" />
+          <ScalarProperty Name="DataProtectionRegulator" ColumnName="DataProtectionRegulator" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="internationalorganizations">
+      <EntityTypeMapping TypeName="BCMStrategyModel.internationalorganizations">
+        <MappingFragment StoreEntitySet="internationalorganizations">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="OrganizationName" ColumnName="OrganizationName" />
+          <ScalarProperty Name="Leader" ColumnName="Leader" />
+          <ScalarProperty Name="EntityName" ColumnName="EntityName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="loaderlinklog">
+      <EntityTypeMapping TypeName="BCMStrategyModel.loaderlinklog">
+        <MappingFragment StoreEntitySet="loaderlinklog">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="LoaderLinkId" ColumnName="LoaderLinkId" />
+          <ScalarProperty Name="InstanceId" ColumnName="InstanceId" />
+          <ScalarProperty Name="Guid" ColumnName="Guid" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="loaderlinkqueue">
+      <EntityTypeMapping TypeName="BCMStrategyModel.loaderlinkqueue">
+        <MappingFragment StoreEntitySet="loaderlinkqueue">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="WebSiteId" ColumnName="WebSiteId" />
+          <ScalarProperty Name="SiteURL" ColumnName="SiteURL" />
+          <ScalarProperty Name="InstanceName" ColumnName="InstanceName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="metadatatags">
+      <EntityTypeMapping TypeName="BCMStrategyModel.metadatatags">
+        <MappingFragment StoreEntitySet="metadatatags">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MetaDataTypeId" ColumnName="MetaDataTypeId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Phrases" ColumnName="Phrases" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Updated" ColumnName="Updated" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="metadatatypes">
+      <EntityTypeMapping TypeName="BCMStrategyModel.metadatatypes">
+        <MappingFragment StoreEntitySet="metadatatypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="WebSiteTypeId" ColumnName="WebSiteTypeId" />
+          <ScalarProperty Name="MetaData" ColumnName="MetaData" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="modules">
+      <EntityTypeMapping TypeName="BCMStrategyModel.modules">
+        <MappingFragment StoreEntitySet="modules">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ModuleCode" ColumnName="ModuleCode" />
+          <ScalarProperty Name="ModuleName" ColumnName="ModuleName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="role">
+      <EntityTypeMapping TypeName="BCMStrategyModel.role">
+        <MappingFragment StoreEntitySet="role">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RoleCode" ColumnName="RoleCode" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rolemodulerights">
+      <EntityTypeMapping TypeName="BCMStrategyModel.rolemodulerights">
+        <MappingFragment StoreEntitySet="rolemodulerights">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CanAdd" ColumnName="CanAdd" />
+          <ScalarProperty Name="CanUpdate" ColumnName="CanUpdate" />
+          <ScalarProperty Name="CanView" ColumnName="CanView" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="scanninglinkdetails">
+      <EntityTypeMapping TypeName="BCMStrategyModel.scanninglinkdetails">
+        <MappingFragment StoreEntitySet="scanninglinkdetails">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ScannerLinkId" ColumnName="ScannerLinkId" />
+          <ScalarProperty Name="InstanceId" ColumnName="InstanceId" />
+          <ScalarProperty Name="Guid" ColumnName="Guid" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="scanninglinkqueue">
+      <EntityTypeMapping TypeName="BCMStrategyModel.scanninglinkqueue">
+        <MappingFragment StoreEntitySet="scanninglinkqueue">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="WebSiteId" ColumnName="WebSiteId" />
+          <ScalarProperty Name="SiteURL" ColumnName="SiteURL" />
+          <ScalarProperty Name="InstanceName" ColumnName="InstanceName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="scrapedcontents">
+      <EntityTypeMapping TypeName="BCMStrategyModel.scrapedcontents">
+        <MappingFragment StoreEntitySet="scrapedcontents">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ScanningLinkId" ColumnName="ScanningLinkId" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="scrapeddocumentdetails">
+      <EntityTypeMapping TypeName="BCMStrategyModel.scrapeddocumentdetails">
+        <MappingFragment StoreEntitySet="scrapeddocumentdetails">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ScrapedContentId" ColumnName="ScrapedContentId" />
+          <ScalarProperty Name="DocumentName" ColumnName="DocumentName" />
+          <ScalarProperty Name="DocumentURL" ColumnName="DocumentURL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="scrapedmetadatamapping">
+      <EntityTypeMapping TypeName="BCMStrategyModel.scrapedmetadatamapping">
+        <MappingFragment StoreEntitySet="scrapedmetadatamapping">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MetaDataId" ColumnName="MetaDataId" />
+          <ScalarProperty Name="ScrapedContentId" ColumnName="ScrapedContentId" />
+          <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+          <ScalarProperty Name="Issues" ColumnName="Issues" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="scraperengineconfiguration">
+      <EntityTypeMapping TypeName="BCMStrategyModel.scraperengineconfiguration">
+        <MappingFragment StoreEntitySet="scraperengineconfiguration">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ThresholdValue" ColumnName="ThresholdValue" />
+          <ScalarProperty Name="TimeTaken" ColumnName="TimeTaken" />
+          <ScalarProperty Name="NoOfInstances" ColumnName="NoOfInstances" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="scraperenginesetup">
+      <EntityTypeMapping TypeName="BCMStrategyModel.scraperenginesetup">
+        <MappingFragment StoreEntitySet="scraperenginesetup">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="WebSiteId" ColumnName="WebSiteId" />
+          <ScalarProperty Name="EmailStatus" ColumnName="EmailStatus" />
+          <ScalarProperty Name="FrequencyId" ColumnName="FrequencyId" />
+          <ScalarProperty Name="DailyFrequencyId" ColumnName="DailyFrequencyId" />
+          <ScalarProperty Name="DurationStartDate" ColumnName="DurationStartDate" />
+          <ScalarProperty Name="DurationEndDate" ColumnName="DurationEndDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sector">
+      <EntityTypeMapping TypeName="BCMStrategyModel.sector">
+        <MappingFragment StoreEntitySet="sector">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SectorName" ColumnName="SectorName" />
+          <ScalarProperty Name="IntOrgId" ColumnName="IntOrgId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="statehead">
+      <EntityTypeMapping TypeName="BCMStrategyModel.statehead">
+        <MappingFragment StoreEntitySet="statehead">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="CountryHead" ColumnName="CountryHead" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="status">
+      <EntityTypeMapping TypeName="BCMStrategyModel.status">
+        <MappingFragment StoreEntitySet="status">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="user">
+      <EntityTypeMapping TypeName="BCMStrategyModel.user">
+        <MappingFragment StoreEntitySet="user">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Modified" ColumnName="Modified" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="website">
+      <EntityTypeMapping TypeName="BCMStrategyModel.website">
+        <MappingFragment StoreEntitySet="website">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="WebSiteTypeId" ColumnName="WebSiteTypeId" />
+          <ScalarProperty Name="WebSiteURL" ColumnName="WebSiteURL" />
+          <ScalarProperty Name="MediaSource" ColumnName="MediaSource" />
+          <ScalarProperty Name="SectorId" ColumnName="SectorId" />
+          <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+          <ScalarProperty Name="EntityId" ColumnName="EntityId" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="websitecategorymapping">
+      <EntityTypeMapping TypeName="BCMStrategyModel.websitecategorymapping">
+        <MappingFragment StoreEntitySet="websitecategorymapping">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="WebSiteId" ColumnName="WebSiteId" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="websiteconfiguration">
+      <EntityTypeMapping TypeName="BCMStrategyModel.websiteconfiguration">
+        <MappingFragment StoreEntitySet="websiteconfiguration">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="WebSiteId" ColumnName="WebSiteId" />
+          <ScalarProperty Name="CategoryNavigated" ColumnName="CategoryNavigated" />
+          <ScalarProperty Name="CategoryRegEx" ColumnName="CategoryRegEx" />
+          <ScalarProperty Name="LinkedClicked" ColumnName="LinkedClicked" />
+          <ScalarProperty Name="LinkedRegEx" ColumnName="LinkedRegEx" />
+          <ScalarProperty Name="IsSearchFunctionality" ColumnName="IsSearchFunctionality" />
+          <ScalarProperty Name="SearchKeyWord" ColumnName="SearchKeyWord" />
+          <ScalarProperty Name="ContainsDocument" ColumnName="ContainsDocument" />
+          <ScalarProperty Name="IsRSSFeedAvailable" ColumnName="IsRSSFeedAvailable" />
+          <ScalarProperty Name="RSSFeedClickRegEx" ColumnName="RSSFeedClickRegEx" />
+          <ScalarProperty Name="RSSFeedURL" ColumnName="RSSFeedURL" />
+          <ScalarProperty Name="DropDownSearchRegEx" ColumnName="DropDownSearchRegEx" />
+          <ScalarProperty Name="DateWiseRegEx" ColumnName="DateWiseRegEx" />
+          <ScalarProperty Name="HyperLinkClickRegEx" ColumnName="HyperLinkClickRegEx" />
+          <ScalarProperty Name="HyperLinkDocumentRegEx" ColumnName="HyperLinkDocumentRegEx" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="websitetypes">
+      <EntityTypeMapping TypeName="BCMStrategyModel.websitetypes">
+        <MappingFragment StoreEntitySet="websitetypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="refreshtoken">
+      <EntityTypeMapping TypeName="BCMStrategyModel.refreshtoken">
+        <MappingFragment StoreEntitySet="refreshtoken">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="IssuedDateTime" ColumnName="IssuedDateTime" />
+          <ScalarProperty Name="ExpiresDateTime" ColumnName="ExpiresDateTime" />
+          <ScalarProperty Name="ProtectedKey" ColumnName="ProtectedKey" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

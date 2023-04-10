@@ -1,0 +1,41 @@
+E:/BCM Scrapping/BCMStrategy/BCMStrategy.Resources/bin/Debug/BCMStrategy.Resources.dll
+E:/BCM Scrapping/BCMStrategy/BCMStrategy.Resources/bin/Debug/BCMStrategy.Resources.pdb
+E:/BCM Scrapping/BCMStrategy/BCMStrategy.Resources/obj/Debug/BCMStrategy.Resources.dll
+E:/BCM Scrapping/BCMStrategy/BCMStrategy.Resources/obj/Debug/BCMStrategy.Resources.pdb
+E:/BCM Scrapping/BCMStrategy/BCMStrategy.Resources/obj/Debug/BCMStrategy.Resources.Resource.resources
+E:/BCM Scrapping/BCMStrategy/BCMStrategy.Resources/obj/Debug/BCMStrategy.Resources.csproj.GenerateResource.Cache
+E:/BCM Scrapping/BCMStrategy_Milestone#1/BCMStrategy.Resources/bin/Debug/BCMStrategy.Resources.dll
+E:/BCM Scrapping/BCMStrategy_Milestone#1/BCMStrategy.Resources/bin/Debug/BCMStrategy.Resources.pdb
+E:/BCM Scrapping/BCMStrategy_Milestone#1/BCMStrategy.Resources/obj/Debug/BCMStrategy.Resources.csprojResolveAssemblyReference.cache
+E:/BCM Scrapping/BCMStrategy_Milestone#1/BCMStrategy.Resources/obj/Debug/BCMStrategy.Resources.Resource.resources
+E:/BCM Scrapping/BCMStrategy_Milestone#1/BCMStrategy.Resources/obj/Debug/BCMStrategy.Resources.csproj.GenerateResource.Cache
+E:/BCM Scrapping/BCMStrategy_Milestone#1/BCMStrategy.Resources/obj/Debug/BCMStrategy.Resources.dll
+E:/BCM Scrapping/BCMStrategy_Milestone#1/BCMStrategy.Resources/obj/Debug/BCMStrategy.Resources.pdb
+E:/BCM Scrapping/BCMStrategy_1_0_0/BCMStrategy.Resources/bin/Debug/BCMStrategy.Resources.dll
+E:/BCM Scrapping/BCMStrategy_1_0_0/BCMStrategy.Resources/bin/Debug/BCMStrategy.Resources.pdb
+E:/BCM Scrapping/BCMStrategy_1_0_0/BCMStrategy.Resources/obj/Debug/BCMStrategy.Resources.csprojResolveAssemblyReference.cache
+E:/BCM Scrapping/BCMStrategy_1_0_0/BCMStrategy.Resources/obj/Debug/BCMStrategy.Resources.Resource.resources
+E:/BCM Scrapping/BCMStrategy_1_0_0/BCMStrategy.Resources/obj/Debug/BCMStrategy.Resources.csproj.GenerateResource.Cache
+E:/BCM Scrapping/BCMStrategy_1_0_0/BCMStrategy.Resources/obj/Debug/BCMStrategy.Resources.dll
+E:/BCM Scrapping/BCMStrategy_1_0_0/BCMStrategy.Resources/obj/Debug/BCMStrategy.Resources.pdb
+E:/BCMProject/BCMStrategy_1_0_0/BCMStrategy.Resources/bin/Debug/BCMStrategy.Resources.dll
+E:/BCMProject/BCMStrategy_1_0_0/BCMStrategy.Resources/bin/Debug/BCMStrategy.Resources.pdb
+E:/BCMProject/BCMStrategy_1_0_0/BCMStrategy.Resources/obj/Debug/BCMStrategy.Resources.Resource.resources
+E:/BCMProject/BCMStrategy_1_0_0/BCMStrategy.Resources/obj/Debug/BCMStrategy.Resources.csproj.GenerateResource.Cache
+E:/BCMProject/BCMStrategy_1_0_0/BCMStrategy.Resources/obj/Debug/BCMStrategy.Resources.dll
+E:/BCMProject/BCMStrategy_1_0_0/BCMStrategy.Resources/obj/Debug/BCMStrategy.Resources.pdb
+D:/BCMStrategy_#1/Milestone#2/BCMStrategy.Resources/bin/Debug/BCMStrategy.Resources.dll
+D:/BCMStrategy_#1/Milestone#2/BCMStrategy.Resources/bin/Debug/BCMStrategy.Resources.pdb
+D:/BCMStrategy_#1/Milestone#2/BCMStrategy.Resources/obj/Debug/BCMStrategy.Resources.Resource.resources
+D:/BCMStrategy_#1/Milestone#2/BCMStrategy.Resources/obj/Debug/BCMStrategy.Resources.csproj.GenerateResource.Cache
+D:/BCMStrategy_#1/Milestone#2/BCMStrategy.Resources/obj/Debug/BCMStrategy.Resources.dll
+D:/BCMStrategy_#1/Milestone#2/BCMStrategy.Resources/obj/Debug/BCMStrategy.Resources.pdb
+E:/BCMProject/BCMStrategy/BCMStrategy.Resources/bin/Debug/BCMStrategy.Resources.dll
+E:/BCMProject/BCMStrategy/BCMStrategy.Resources/bin/Debug/BCMStrategy.Resources.pdb
+E:/BCMProject/BCMStrategy/BCMStrategy.Resources/obj/Debug/BCMStrategy.Resources.csprojResolveAssemblyReference.cache
+E:/BCMProject/BCMStrategy/BCMStrategy.Resources/obj/Debug/BCMStrategy.Resources.Resource.resources
+E:/BCMProject/BCMStrategy/BCMStrategy.Resources/obj/Debug/BCMStrategy.Resources.csproj.GenerateResource.Cache
+E:/BCMProject/BCMStrategy/BCMStrategy.Resources/obj/Debug/BCMStrategy.Resources.dll
+E:/BCMProject/BCMStrategy/BCMStrategy.Resources/obj/Debug/BCMStrategy.Resources.pdb
+/Users/alexleone/repos/BCMStrategy/BCMStrategy.Resources/obj/Debug/BCMStrategy.Resources.dll
+/Users/alexleone/repos/BCMStrategy/BCMStrategy.Resources/obj/Debug/BCMStrategy.Resources.pdb

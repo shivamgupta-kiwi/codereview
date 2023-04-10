@@ -1,0 +1,1149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$USER_HOME$/Library/Caches/Rider2019.3/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2019.3/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_BCMStrategy.338085573.00" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeFlat">
+      <e p=".nuget" t="Include">
+        <e p="NuGet.Config" t="Include" />
+        <e p="NuGet.exe" t="Include" />
+        <e p="NuGet.targets" t="Include" />
+      </e>
+      <e p="BCMStrategy" t="IncludeRecursive">
+        <e p="App_Data" t="Include" />
+        <e p="App_Start" t="Include">
+          <e p="BundleConfig.cs" t="Include" />
+          <e p="RouteConfig.cs" t="Include" />
+          <e p="WebApiConfig.cs" t="Include" />
+        </e>
+        <e p="Areas" t="Include">
+          <e p="Account" t="Include">
+            <e p="AccountAreaRegistration.cs" t="Include" />
+            <e p="Controllers" t="Include">
+              <e p="LoginController.cs" t="Include" />
+            </e>
+            <e p="Models" t="Include">
+              <e p="LoginModel.cs" t="Include" />
+              <e p="SignInResult.cs" t="Include" />
+            </e>
+            <e p="Views" t="Include">
+              <e p="Login" t="Include">
+                <e p="ForgotPassword.cshtml" t="Include" />
+                <e p="Index.cshtml" t="Include" />
+                <e p="SetPassword.cshtml" t="Include" />
+              </e>
+              <e p="Shared" t="Include" />
+              <e p="web.config" t="Include" />
+            </e>
+          </e>
+          <e p="BCMStrategy" t="Include">
+            <e p="BMCStrategyAreaRegistration.cs" t="Include" />
+            <e p="Controllers" t="Include">
+              <e p="ActivityTypeController.cs" t="Include" />
+              <e p="AuditLogController.cs" t="Include" />
+              <e p="ChangePasswordController.cs" t="Include" />
+              <e p="CustomerAuditLogController.cs" t="Include" />
+              <e p="DashboardController.cs" t="Include" />
+              <e p="GlobalSettingsController.cs" t="Include" />
+              <e p="InstitutionsController.cs" t="Include" />
+              <e p="InstitutionTypesController.cs" t="Include" />
+              <e p="InternationalOrganizationController.cs" t="Include" />
+              <e p="LegislatorController.cs" t="Include" />
+              <e p="LexiconController.cs" t="Include" />
+              <e p="MetadataNounplusVerbController.cs" t="Include" />
+              <e p="MetadataPhrasesController.cs" t="Include" />
+              <e p="MetadataTypesController.cs" t="Include" />
+              <e p="PolicyMakersController.cs" t="Include" />
+              <e p="PrivilegeController.cs" t="Include" />
+              <e p="RegistrationController.cs" t="Include" />
+              <e p="SchedulerController.cs" t="Include" />
+              <e p="ScrappingProcessController.cs" t="Include" />
+              <e p="SearchablePDFController.cs" t="Include" />
+              <e p="StateHeadController.cs" t="Include" />
+              <e p="UserAccessRightsController.cs" t="Include" />
+              <e p="UserManagementController.cs" t="Include" />
+              <e p="WebLinkManagementController.cs" t="Include" />
+            </e>
+            <e p="Models" t="Include" />
+            <e p="Views" t="Include">
+              <e p="ActivityType" t="Include">
+                <e p="Index.cshtml" t="Include" />
+              </e>
+              <e p="AuditLog" t="Include">
+                <e p="Index.cshtml" t="Include" />
+              </e>
+              <e p="ChangePassword" t="Include">
+                <e p="Index.cshtml" t="Include" />
+              </e>
+              <e p="CustomerAuditLog" t="Include">
+                <e p="Index.cshtml" t="Include" />
+              </e>
+              <e p="Dashboard" t="Include">
+                <e p="DetailChart.cshtml" t="Include" />
+                <e p="Index.cshtml" t="Include" />
+              </e>
+              <e p="GlobalSettings" t="Include">
+                <e p="Index.cshtml" t="Include" />
+              </e>
+              <e p="Institutions" t="Include">
+                <e p="ImportInstitutions.cshtml" t="Include" />
+                <e p="Index.cshtml" t="Include" />
+              </e>
+              <e p="InstitutionTypes" t="Include">
+                <e p="ImportFile.cshtml" t="Include" />
+                <e p="Index.cshtml" t="Include" />
+              </e>
+              <e p="InternationalOrganization" t="Include">
+                <e p="ImportInternationalOrganization.cshtml" t="Include" />
+                <e p="Index.cshtml" t="Include" />
+              </e>
+              <e p="Legislator" t="Include">
+                <e p="Index.cshtml" t="Include" />
+              </e>
+              <e p="Lexicon" t="Include">
+                <e p="ImportLexicon.cshtml" t="Include" />
+                <e p="Index.cshtml" t="Include" />
+              </e>
+              <e p="MetadataNounplusVerb" t="Include">
+                <e p="Index.cshtml" t="Include" />
+              </e>
+              <e p="MetadataPhrases" t="Include">
+                <e p="Index.cshtml" t="Include" />
+              </e>
+              <e p="MetadataTypes" t="Include">
+                <e p="ImportMetadataTypes.cshtml" t="Include" />
+                <e p="Index.cshtml" t="Include" />
+              </e>
+              <e p="PolicyMakers" t="Include">
+                <e p="ImportPolicyMakers.cshtml" t="Include" />
+                <e p="Index.cshtml" t="Include" />
+              </e>
+              <e p="Privilege" t="Include">
+                <e p="DetailChart.cshtml" t="Include" />
+                <e p="LexiconAccessCustomer.cshtml" t="Include" />
+                <e p="LexiconAccessManagement.cshtml" t="Include" />
+                <e p="Test.cshtml" t="Include" />
+              </e>
+              <e p="Registration" t="Include">
+                <e p="Index.cshtml" t="Include" />
+                <e p="UserProfile.cshtml" t="Include" />
+              </e>
+              <e p="Scheduler" t="Include">
+                <e p="Index.cshtml" t="Include" />
+                <e p="ProcessDetail.cshtml" t="Include" />
+              </e>
+              <e p="ScrappingProcess" t="Include">
+                <e p="Detail.cshtml" t="Include" />
+                <e p="MediaSector.cshtml" t="Include" />
+                <e p="OfficialSector.cshtml" t="Include" />
+              </e>
+              <e p="SearchablePDF" t="Include">
+                <e p="Index.cshtml" t="Include" />
+              </e>
+              <e p="Shared" t="Include" />
+              <e p="StateHead" t="Include">
+                <e p="ImportFile.cshtml" t="Include" />
+                <e p="Index.cshtml" t="Include" />
+              </e>
+              <e p="UserAccessRights" t="Include">
+                <e p="Index.cshtml" t="Include" />
+              </e>
+              <e p="UserManagement" t="Include">
+                <e p="AdminUser.cshtml" t="Include" />
+                <e p="CustomerUser.cshtml" t="Include" />
+                <e p="DefaultLexicon.cshtml" t="Include" />
+              </e>
+              <e p="web.config" t="Include" />
+              <e p="WebLinkManagement" t="Include">
+                <e p="Index.cshtml" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
+        <e p="BCMStrategy.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Content" t="Include">
+          <e p="css" t="Include">
+            <e p="bcm.all.css" t="Include" />
+            <e p="Bootstrap" t="Include">
+              <e p="editor.png" t="Include" />
+              <e p="imagebrowser.png" t="Include" />
+              <e p="indeterminate.gif" t="Include" />
+              <e p="loading-image.gif" t="Include" />
+              <e p="loading.gif" t="Include" />
+              <e p="loading_2x.gif" t="Include" />
+              <e p="markers.png" t="Include" />
+              <e p="markers_2x.png" t="Include" />
+              <e p="slider-h.gif" t="Include" />
+              <e p="slider-v.gif" t="Include" />
+              <e p="sprite.png" t="Include" />
+              <e p="sprite_2x.png" t="Include" />
+              <e p="sprite_kpi.png" t="Include" />
+              <e p="sprite_kpi_2x.png" t="Include" />
+              <e p="Thumbs.db" t="Include" />
+            </e>
+            <e p="bootstrap-tagsinput.css" t="Include" />
+            <e p="bootstrap.css" t="Include" />
+            <e p="bootstrap.min.css" t="Include" />
+            <e p="custom.css" t="Include" />
+            <e p="fastselect.css" t="Include" />
+            <e p="fontawesome-all.min.css" t="Include" />
+            <e p="images" t="Include">
+              <e p="kendoui.ttf" t="Include" />
+              <e p="kendoui.woff" t="Include" />
+            </e>
+            <e p="jquery-ui.css" t="Include" />
+            <e p="kendo.bootstrap-v4.min.css" t="Include" />
+            <e p="kendo.bootstrap.min.css" t="Include" />
+            <e p="kendo.bootstrap.mobile.min.css" t="Include" />
+            <e p="kendo.common-bootstrap.min.css" t="Include" />
+            <e p="kendo.common.min.css" t="Include" />
+            <e p="kendo.dataviz.bootstrap.min.css" t="Include" />
+            <e p="kendo.dataviz.min.css" t="Include" />
+            <e p="login.css" t="Include" />
+            <e p="mdb.css" t="Include" />
+            <e p="mdb.min.css" t="Include" />
+            <e p="style.css" t="Include" />
+          </e>
+          <e p="font" t="Include">
+            <e p="roboto" t="Include">
+              <e p="Roboto-Bold.eot" t="Include" />
+              <e p="Roboto-Bold.ttf" t="Include" />
+              <e p="Roboto-Bold.woff" t="Include" />
+              <e p="Roboto-Bold.woff2" t="Include" />
+              <e p="Roboto-Light.eot" t="Include" />
+              <e p="Roboto-Light.ttf" t="Include" />
+              <e p="Roboto-Light.woff" t="Include" />
+              <e p="Roboto-Light.woff2" t="Include" />
+              <e p="Roboto-Medium.eot" t="Include" />
+              <e p="Roboto-Medium.ttf" t="Include" />
+              <e p="Roboto-Medium.woff" t="Include" />
+              <e p="Roboto-Medium.woff2" t="Include" />
+              <e p="Roboto-Regular.eot" t="Include" />
+              <e p="Roboto-Regular.ttf" t="Include" />
+              <e p="Roboto-Regular.woff" t="Include" />
+              <e p="Roboto-Regular.woff2" t="Include" />
+              <e p="Roboto-Thin.eot" t="Include" />
+              <e p="Roboto-Thin.ttf" t="Include" />
+              <e p="Roboto-Thin.woff" t="Include" />
+              <e p="Roboto-Thin.woff2" t="Include" />
+            </e>
+          </e>
+          <e p="img" t="Include">
+            <e p="bg-login.jpg" t="Include" />
+            <e p="email-logo.png" t="Include" />
+            <e p="favicon.ico" t="Include" />
+            <e p="lightbox" t="Include">
+              <e p="default-skin.png" t="Include" />
+              <e p="default-skin.svg" t="Include" />
+              <e p="preloader.gif" t="Include" />
+            </e>
+            <e p="logo.png" t="Include" />
+            <e p="logo1.png" t="Include" />
+            <e p="overlays" t="Include">
+              <e p="01.png" t="Include" />
+              <e p="02.png" t="Include" />
+              <e p="03.png" t="Include" />
+              <e p="04.png" t="Include" />
+              <e p="05.png" t="Include" />
+              <e p="06.png" t="Include" />
+              <e p="07.png" t="Include" />
+              <e p="08.png" t="Include" />
+              <e p="09.png" t="Include" />
+            </e>
+            <e p="puzzle-piece.jpg" t="Include" />
+            <e p="svg" t="Include">
+              <e p="arrow_left.svg" t="Include" />
+              <e p="arrow_right.svg" t="Include" />
+            </e>
+          </e>
+          <e p="scss" t="Include">
+            <e p="_custom-styles.scss" t="Include" />
+            <e p="_custom-variables.scss" t="Include" />
+            <e p="core" t="Include">
+              <e p="_colors.scss" t="Include" />
+              <e p="_global.scss" t="Include" />
+              <e p="_helpers.scss" t="Include" />
+              <e p="_masks.scss" t="Include" />
+              <e p="_mixins.scss" t="Include" />
+              <e p="_typography.scss" t="Include" />
+              <e p="_variables.scss" t="Include" />
+              <e p="_waves.scss" t="Include" />
+              <e p="Bootstrap" t="Include">
+                <e p="_functions.scss" t="Include" />
+                <e p="_variables.scss" t="Include" />
+              </e>
+            </e>
+            <e p="free" t="Include">
+              <e p="_animations-basic.scss" t="Include" />
+              <e p="_animations-extended.scss" t="Include" />
+              <e p="_badges.scss" t="Include" />
+              <e p="_buttons.scss" t="Include" />
+              <e p="_cards.scss" t="Include" />
+              <e p="_carousels.scss" t="Include" />
+              <e p="_depreciated.scss" t="Include" />
+              <e p="_dropdowns.scss" t="Include" />
+              <e p="_footers.scss" t="Include" />
+              <e p="_forms.scss" t="Include" />
+              <e p="_input-group.scss" t="Include" />
+              <e p="_list-group.scss" t="Include" />
+              <e p="_modals.scss" t="Include" />
+              <e p="_msc.scss" t="Include" />
+              <e p="_navbars.scss" t="Include" />
+              <e p="_pagination.scss" t="Include" />
+              <e p="_tables.scss" t="Include" />
+            </e>
+            <e p="mdb.scss" t="Include" />
+            <e p="style.scss" t="Include" />
+          </e>
+          <e p="webfonts" t="Include">
+            <e p="fa-brands-400.eot" t="Include" />
+            <e p="fa-brands-400.svg" t="Include" />
+            <e p="fa-brands-400.ttf" t="Include" />
+            <e p="fa-brands-400.woff" t="Include" />
+            <e p="fa-brands-400.woff2" t="Include" />
+            <e p="fa-regular-400.eot" t="Include" />
+            <e p="fa-regular-400.svg" t="Include" />
+            <e p="fa-regular-400.ttf" t="Include" />
+            <e p="fa-regular-400.woff" t="Include" />
+            <e p="fa-regular-400.woff2" t="Include" />
+            <e p="fa-solid-900.eot" t="Include" />
+            <e p="fa-solid-900.svg" t="Include" />
+            <e p="fa-solid-900.ttf" t="Include" />
+            <e p="fa-solid-900.woff" t="Include" />
+            <e p="fa-solid-900.woff2" t="Include" />
+          </e>
+        </e>
+        <e p="Controllers" t="Include">
+          <e p="BaseController.cs" t="Include" />
+          <e p="CommonController.cs" t="Include" />
+          <e p="ErrorController.cs" t="Include" />
+        </e>
+        <e p="Global.asax" t="Include" />
+        <e p="Global.asax.cs" t="Include" />
+        <e p="Helpers" t="Include">
+          <e p="ApiException.cs" t="Include" />
+          <e p="JsonBadRequest.cs" t="Include" />
+          <e p="WebApiService.cs" t="Include" />
+        </e>
+        <e p="Models" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+          <e p="PublishProfiles" t="Include">
+            <e p="BCM.pubxml" t="Include" />
+            <e p="Web.pubxml" t="Include" />
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="common" t="Include">
+            <e p="common.js" t="Include" />
+            <e p="formatDate.js" t="Include" />
+          </e>
+          <e p="js" t="Include">
+            <e p="bootstrap-tagsinput.min.js" t="Include" />
+            <e p="bootstrap.js" t="Include" />
+            <e p="bootstrap.min.js" t="Include" />
+            <e p="fastselect.js" t="Include" />
+            <e p="fastselect.standalone.js" t="Include" />
+            <e p="jquery-3.3.1.min.js" t="Include" />
+            <e p="jquery-ui.js" t="Include" />
+            <e p="jquery.validate.js" t="Include" />
+            <e p="kendo.all.min.2015.js" t="Include" />
+            <e p="kendo.all.min.js" t="Include" />
+            <e p="mdb.min.js" t="Include" />
+            <e p="modules" t="Include">
+              <e p="chart.js" t="Include" />
+              <e p="enhanced-modals.js" t="Include" />
+              <e p="forms-free.js" t="Include" />
+              <e p="jquery.easing.js" t="Include" />
+              <e p="scrolling-navbar.js" t="Include" />
+              <e p="velocity.min.js" t="Include" />
+              <e p="waves.js" t="Include" />
+              <e p="wow.js" t="Include" />
+            </e>
+            <e p="popper.min.js" t="Include" />
+            <e p="TypeAhead.js" t="Include" />
+          </e>
+          <e p="JsAreas" t="Include">
+            <e p="ActivityType.js" t="Include" />
+            <e p="AdminUserManagement.js" t="Include" />
+            <e p="AuditLog.js" t="Include" />
+            <e p="ChangePassword.js" t="Include" />
+            <e p="CustomerAuditLog.js" t="Include" />
+            <e p="CustomerUserManagement.js" t="Include" />
+            <e p="Dashboard.js" t="Include" />
+            <e p="DefaultLexicon.js" t="Include" />
+            <e p="DropDownList.js" t="Include" />
+            <e p="ForgotPassword.js" t="Include" />
+            <e p="GlobalSetting.js" t="Include" />
+            <e p="HeadStateImportFile.js" t="Include" />
+            <e p="Institutions.js" t="Include" />
+            <e p="InstitutionsImportFile.js" t="Include" />
+            <e p="InstitutionTypes.js" t="Include" />
+            <e p="InstitutionTypesImportFile.js" t="Include" />
+            <e p="InternationalOrganization.js" t="Include" />
+            <e p="InternationalOrganizationImportFile.js" t="Include" />
+            <e p="Layout.js" t="Include" />
+            <e p="Legislator.js" t="Include" />
+            <e p="Lexicon.js" t="Include" />
+            <e p="LexiconImportFile.js" t="Include" />
+            <e p="LexiconPrivilegeCustomer.js" t="Include" />
+            <e p="Login.js" t="Include" />
+            <e p="MetadataNounplusVerb.js" t="Include" />
+            <e p="MetadataPhrases.js" t="Include" />
+            <e p="MetadataTypes.js" t="Include" />
+            <e p="MetadataTypesImportFile.js" t="Include" />
+            <e p="PolicyMaker.js" t="Include" />
+            <e p="PolicyMakerImportFile.js" t="Include" />
+            <e p="Privilege.js" t="Include" />
+            <e p="ProcessDetail.js" t="Include" />
+            <e p="Registration.js" t="Include" />
+            <e p="Scheduler.js" t="Include" />
+            <e p="ScrappingProcess.js" t="Include" />
+            <e p="SearchablePDF.js" t="Include" />
+            <e p="SetPassword.js" t="Include" />
+            <e p="StateHead.js" t="Include" />
+            <e p="UserAccessRights.js" t="Include" />
+            <e p="UserProfile.js" t="Include" />
+            <e p="WebLinkManagement.js" t="Include" />
+          </e>
+        </e>
+        <e p="UploadTemplates" t="Include">
+          <e p="Head of State and Govt Template.csv" t="Include" />
+          <e p="Institution Template.csv" t="Include" />
+          <e p="Institution Type Template.csv" t="Include" />
+          <e p="International Organization Template.csv" t="Include" />
+          <e p="Lexicon Template.csv" t="Include" />
+          <e p="Policy Makers Template.csv" t="Include" />
+        </e>
+        <e p="Views" t="Include">
+          <e p="common" t="Include">
+            <e p="Common.cshtml" t="Include" />
+            <e p="LinkExpired.cshtml" t="Include" />
+          </e>
+          <e p="Error" t="Include">
+            <e p="Unauthorized.cshtml" t="Include" />
+          </e>
+          <e p="Shared" t="Include">
+            <e p="_Footer.cshtml" t="Include" />
+            <e p="_Header.cshtml" t="Include" />
+            <e p="_Layout.cshtml" t="Include" />
+            <e p="_LayoutBeforeLogin.cshtml" t="Include" />
+            <e p="_LayoutDashboard.cshtml" t="Include" />
+            <e p="_LayoutLogin.cshtml" t="Include" />
+            <e p="_NavigationSideBar.cshtml" t="Include" />
+          </e>
+          <e p="web.config" t="Include" />
+        </e>
+        <e p="web.config" t="Include" />
+        <e p="Web.Debug.config" t="Include" />
+        <e p="Web.Release.config" t="Include" />
+        <e p="WebStartup.cs" t="Include" />
+      </e>
+      <e p="BCMStrategy.API" t="IncludeRecursive">
+        <e p="App_Data" t="Include" />
+        <e p="App_Start" t="Include">
+          <e p="UnityConfig.cs" t="Include" />
+          <e p="WebApiConfig.cs" t="Include" />
+        </e>
+        <e p="AuditLog" t="Include">
+          <e p="AuditLogs.cs" t="Include" />
+        </e>
+        <e p="BCMStrategy.API.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="CommonUtilities.cs" t="Include" />
+        <e p="Controllers" t="Include">
+          <e p="ActivityTypeController.cs" t="Include" />
+          <e p="AuditLogController.cs" t="Include" />
+          <e p="BaseApiController.cs" t="Include" />
+          <e p="CountryAPIController.cs" t="Include" />
+          <e p="DashboardAPIController.cs" t="Include" />
+          <e p="ForgotPasswordController.cs" t="Include" />
+          <e p="GlobalSettingAPIController.cs" t="Include" />
+          <e p="InstitutionAPIController.cs" t="Include" />
+          <e p="InstitutionTypesAPIController.cs" t="Include" />
+          <e p="InternationalOrganizationAPIController.cs" t="Include" />
+          <e p="LegislatorApiController.cs" t="Include" />
+          <e p="LexiconController.cs" t="Include" />
+          <e p="LexiconTypeController.cs" t="Include" />
+          <e p="MessageQueueController.cs" t="Include" />
+          <e p="MetadataNounplusVerbController.cs" t="Include" />
+          <e p="MetadataPhrasesController.cs" t="Include" />
+          <e p="MetadataTypesController.cs" t="Include" />
+          <e p="PolicyMakersController.cs" t="Include" />
+          <e p="PrivilegeAPIController.cs" t="Include" />
+          <e p="ProcessEventsController.cs" t="Include" />
+          <e p="RefreshTokensController.cs" t="Include" />
+          <e p="RegistrationAPIController.cs" t="Include" />
+          <e p="SchedulerController.cs" t="Include" />
+          <e p="ScrappingProcessAPIController.cs" t="Include" />
+          <e p="SearchablePDFController.cs" t="Include" />
+          <e p="SolrController.cs" t="Include" />
+          <e p="StateHeadAPIController.cs" t="Include" />
+          <e p="UserAccessRightsController.cs" t="Include" />
+          <e p="UserManagementAPIController.cs" t="Include" />
+          <e p="UserProfileAPIController.cs" t="Include" />
+          <e p="WebDocumentController.cs" t="Include" />
+          <e p="WebLinkController.cs" t="Include" />
+          <e p="WebsiteTypesController.cs" t="Include" />
+        </e>
+        <e p="Enums" t="Include">
+          <e p="EnumHelper.cs" t="Include" />
+        </e>
+        <e p="Filter" t="Include">
+          <e p="AuthenticationAttribute.cs" t="Include" />
+          <e p="GlobalExceptionAttribute.cs" t="Include" />
+        </e>
+        <e p="Helpers" t="Include">
+          <e p="CsvParser.cs" t="Include" />
+        </e>
+        <e p="Models" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+          <e p="PublishProfiles" t="Include">
+            <e p="API.pubxml" t="Include" />
+          </e>
+        </e>
+        <e p="Provider" t="Include">
+          <e p="SimpleAuthorizationServerProvider.cs" t="Include" />
+          <e p="SimpleRefreshTokenProvider.cs" t="Include" />
+        </e>
+        <e p="Startup.cs" t="Include" />
+        <e p="unity.config" t="Include" />
+        <e p="web.config" t="Include" />
+        <e p="Web.Debug.config" t="Include" />
+        <e p="Web.Release.config" t="Include" />
+      </e>
+      <e p="BCMStrategy.ArchivalProcess" t="IncludeRecursive">
+        <e p="Abstract" t="Include">
+          <e p="IArchivalProcess.cs" t="Include" />
+        </e>
+        <e p="app.config" t="Include" />
+        <e p="ArchivalProcess.cs" t="Include" />
+        <e p="ArchivalProcess.Designer.cs" t="Include" />
+        <e p="BCMStrategy.ArchivalProcess.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="ProjectInstaller.cs" t="Include" />
+        <e p="ProjectInstaller.Designer.cs" t="Include" />
+        <e p="ProjectInstaller.resx" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Repository" t="Include">
+          <e p="ArchivalProcessRepository.cs" t="Include" />
+        </e>
+      </e>
+      <e p="BCMStrategy.Common" t="IncludeRecursive">
+        <e p="app.config" t="Include" />
+        <e p="App_Start" t="Include" />
+        <e p="AuditLog" t="Include">
+          <e p="AuditConstants.cs" t="Include" />
+          <e p="AuditType.cs" t="Include" />
+        </e>
+        <e p="BCMStrategy.Common.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Email" t="Include">
+          <e p="EmailAttachmentViewModel.cs" t="Include" />
+          <e p="EmailConfiguration.cs" t="Include" />
+          <e p="IEmailHelper.cs" t="Include" />
+        </e>
+        <e p="Kendo" t="Include">
+          <e p="GridFilter.cs" t="Include" />
+          <e p="GridParameters.cs" t="Include" />
+          <e p="GridSort.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Unity" t="Include">
+          <e p="UnityHelper.cs" t="Include" />
+        </e>
+      </e>
+      <e p="BCMStrategy.ContentLoader" t="IncludeRecursive">
+        <e p="API" t="Include">
+          <e p="WebApi.cs" t="Include" />
+        </e>
+        <e p="app.config" t="Include" />
+        <e p="BCMStrategy.ContentLoader.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="BCMStrategy.ContentLoader.Common" t="IncludeRecursive">
+        <e p="app.config" t="Include" />
+        <e p="BCMStrategy.ContentLoader.Common.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="CommonMethod.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="BCMStrategy.ContentLoader.Documents" t="IncludeRecursive">
+        <e p="API" t="Include">
+          <e p="WebApi.cs" t="Include" />
+        </e>
+        <e p="app.config" t="Include" />
+        <e p="BCMStrategy.ContentLoader.Documents.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="BCMStrategy.ContentLoader.DynamicContents" t="IncludeRecursive">
+        <e p="Abstract" t="Include">
+          <e p="IDynamicContent.cs" t="Include" />
+        </e>
+        <e p="app.config" t="Include" />
+        <e p="BCMStrategy.ContentLoader.DynamicContents.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Repository" t="Include">
+          <e p="DynamicContentRepository.cs" t="Include" />
+        </e>
+      </e>
+      <e p="BCMStrategy.ContentLoader.HtmlPages" t="IncludeRecursive">
+        <e p="Abstract" t="Include">
+          <e p="IContentLoader.cs" t="Include" />
+        </e>
+        <e p="API" t="Include">
+          <e p="WebApi.cs" t="Include" />
+        </e>
+        <e p="app.config" t="Include" />
+        <e p="App_Start" t="Include" />
+        <e p="BCMStrategy.ContentLoader.HtmlPages.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Repository" t="Include">
+          <e p="ContentLoaderRepository.cs" t="Include" />
+        </e>
+      </e>
+      <e p="BCMStrategy.ContentLoader.RSSFeeds" t="IncludeRecursive">
+        <e p="Abstract" t="Include">
+          <e p="IContentLoaderRSS.cs" t="Include" />
+        </e>
+        <e p="app.config" t="Include" />
+        <e p="BCMStrategy.ContentLoader.RSSFeeds.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Repository" t="Include">
+          <e p="ContentLoaderRSSRespository.cs" t="Include" />
+        </e>
+      </e>
+      <e p="BCMStrategy.CustomAPI" t="IncludeRecursive">
+        <e p="Abstract" t="Include">
+          <e p="IFTAPIOperation.cs" t="Include" />
+          <e p="IThomsonReutersOperation.cs" t="Include" />
+        </e>
+        <e p="app.config" t="Include" />
+        <e p="BCMStrategy.CustomAPI.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="common" t="Include">
+          <e p="jsonCollection.json" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Repository" t="Include">
+          <e p="FTOperationRepository.cs" t="Include" />
+          <e p="ThomsonReutersOperationRepository.cs" t="Include" />
+        </e>
+        <e p="ViewModel" t="Include">
+          <e p="HeadLineContentViewModel.cs" t="Include" />
+          <e p="HeadLineViewModel.cs" t="Include" />
+          <e p="ThomsonReutersOperationViewModel.cs" t="Include" />
+        </e>
+      </e>
+      <e p="BCMStrategy.DAL" t="IncludeRecursive">
+        <e p="app.config" t="Include" />
+        <e p="BCMStrategy.DAL.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Context" t="Include">
+          <e p="activitytype.cs" t="Include" />
+          <e p="APIClient.cs" t="Include" />
+          <e p="auditlog.cs" t="Include" />
+          <e p="audittables.cs" t="Include" />
+          <e p="AuditType.cs" t="Include" />
+          <e p="BCMStrategy.Context.cs" t="Include" />
+          <e p="BCMStrategy.Context.tt" t="Include" />
+          <e p="BCMStrategy.cs" t="Include" />
+          <e p="BCMStrategy.Designer.cs" t="Include" />
+          <e p="BCMStrategy.edmx" t="Include" />
+          <e p="BCMStrategy.edmx.diagram" t="Include" />
+          <e p="BCMStrategy.tt" t="Include" />
+          <e p="category.cs" t="Include" />
+          <e p="client.cs" t="Include" />
+          <e p="committee.cs" t="Include" />
+          <e p="contentloaderlog.cs" t="Include" />
+          <e p="country.cs" t="Include" />
+          <e p="dailyfrequency.cs" t="Include" />
+          <e p="defaultlexiconterms.cs" t="Include" />
+          <e p="designation.cs" t="Include" />
+          <e p="documentstorage.cs" t="Include" />
+          <e p="dynamictablesfieldsfornounplusverb.cs" t="Include" />
+          <e p="dynamictablesfornounplusverb.cs" t="Include" />
+          <e p="emailgenerationchartimage.cs" t="Include" />
+          <e p="emailgenerationstatus.cs" t="Include" />
+          <e p="emailtemplate.cs" t="Include" />
+          <e p="euentities.cs" t="Include" />
+          <e p="eurpeanunionentities.cs" t="Include" />
+          <e p="Events.cs" t="Include" />
+          <e p="frequency.cs" t="Include" />
+          <e p="globalconfiguration.cs" t="Include" />
+          <e p="individuallegislators.cs" t="Include" />
+          <e p="individuallegislatorscommittee.cs" t="Include" />
+          <e p="individuallegislatorsdesignation.cs" t="Include" />
+          <e p="instance.cs" t="Include" />
+          <e p="institution.cs" t="Include" />
+          <e p="institutiontypes.cs" t="Include" />
+          <e p="internationalorganizations.cs" t="Include" />
+          <e p="legislatorsview.cs" t="Include" />
+          <e p="lexiconissuelinker.cs" t="Include" />
+          <e p="lexiconissues.cs" t="Include" />
+          <e p="lexiconprivilege.cs" t="Include" />
+          <e p="lexicontype.cs" t="Include" />
+          <e p="loadererrorlog.cs" t="Include" />
+          <e p="loaderlinkdocuments.cs" t="Include" />
+          <e p="loaderlinklog.cs" t="Include" />
+          <e p="LoaderLinkQueue.cs" t="Include" />
+          <e p="metadatanounplusverb.cs" t="Include" />
+          <e p="metadataphrases.cs" t="Include" />
+          <e p="metadatatypes.cs" t="Include" />
+          <e p="metadatavalue.cs" t="Include" />
+          <e p="modules.cs" t="Include" />
+          <e p="multilateralviewforscrapperactivity.cs" t="Include" />
+          <e p="parentmenu.cs" t="Include" />
+          <e p="policymakers.cs" t="Include" />
+          <e p="ProcessEventLog.cs" t="Include" />
+          <e p="ProcessEvents.cs" t="Include" />
+          <e p="ProcessInstances.cs" t="Include" />
+          <e p="processtypes.cs" t="Include" />
+          <e p="RefreshToken.cs" t="Include" />
+          <e p="relatedactivitytypes.cs" t="Include" />
+          <e p="role.cs" t="Include" />
+          <e p="rolemodulerights.cs" t="Include" />
+          <e p="scanninglinkdetails.cs" t="Include" />
+          <e p="scanninglinkqueue.cs" t="Include" />
+          <e p="schedular.cs" t="Include" />
+          <e p="schedularfrequency.cs" t="Include" />
+          <e p="scrapedcontents.cs" t="Include" />
+          <e p="scrapeddocumentdetails.cs" t="Include" />
+          <e p="scrapedlexiconmapping.cs" t="Include" />
+          <e p="scraperengineconfiguration.cs" t="Include" />
+          <e p="scraperenginesetup.cs" t="Include" />
+          <e p="scrappedproprietorytags.cs" t="Include" />
+          <e p="scrappedproprietorytagsmapping.cs" t="Include" />
+          <e p="scrappedstandardtag_policymakers.cs" t="Include" />
+          <e p="scrappedstandardtags.cs" t="Include" />
+          <e p="scrappedstandardtags_sectors.cs" t="Include" />
+          <e p="scrapperstandardtags_entitytypes.cs" t="Include" />
+          <e p="sector.cs" t="Include" />
+          <e p="statehead.cs" t="Include" />
+          <e p="status.cs" t="Include" />
+          <e p="submenu.cs" t="Include" />
+          <e p="topiccodes.cs" t="Include" />
+          <e p="urlexclusionlist.cs" t="Include" />
+          <e p="user.cs" t="Include" />
+          <e p="useraccessrights.cs" t="Include" />
+          <e p="useractivationlink.cs" t="Include" />
+          <e p="weblinkactivitytype.cs" t="Include" />
+          <e p="WebLinkPageContentRegEx.cs" t="Include" />
+          <e p="weblinkpolicymaker.cs" t="Include" />
+          <e p="weblinkproprietarytags.cs" t="Include" />
+          <e p="weblinkrss.cs" t="Include" />
+          <e p="weblinks.cs" t="Include" />
+          <e p="weblinksector.cs" t="Include" />
+          <e p="websitetypes.cs" t="Include" />
+          <e p="weburlcategorymapping.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="BCMStrategy.Data.Abstract" t="IncludeRecursive">
+        <e p="Abstract" t="Include">
+          <e p="IActivityType.cs" t="Include" />
+          <e p="IAuditLog.cs" t="Include" />
+          <e p="ICommonRepository.cs" t="Include" />
+          <e p="ICountryMaster.cs" t="Include" />
+          <e p="IDashboard.cs" t="Include" />
+          <e p="IDocumentStorage.cs" t="Include" />
+          <e p="IEmailGenerate.cs" t="Include" />
+          <e p="IGlobalConfiguration.cs" t="Include" />
+          <e p="IGlobalSetting.cs" t="Include" />
+          <e p="IHeadStateRepository.cs" t="Include" />
+          <e p="IInstitutions.cs" t="Include" />
+          <e p="IInstitutionTypes.cs" t="Include" />
+          <e p="IInternationalOrganization.cs" t="Include" />
+          <e p="ILegislator.cs" t="Include" />
+          <e p="ILexicon.cs" t="Include" />
+          <e p="ILexiconType.cs" t="Include" />
+          <e p="IMessageQueue.cs" t="Include" />
+          <e p="IMetaData.cs" t="Include" />
+          <e p="IMetadataNounplusVerb.cs" t="Include" />
+          <e p="IMetadataPhrases.cs" t="Include" />
+          <e p="IMetadataTypes.cs" t="Include" />
+          <e p="IPolicyMaker.cs" t="Include" />
+          <e p="IPrivilege.cs" t="Include" />
+          <e p="IProcessEvents.cs" t="Include" />
+          <e p="IScheduler.cs" t="Include" />
+          <e p="IScrapperActivityRepository.cs" t="Include" />
+          <e p="IScrappingProcess.cs" t="Include" />
+          <e p="ISearchablePDF.cs" t="Include" />
+          <e p="ISector.cs" t="Include" />
+          <e p="ISolrPageDetail.cs" t="Include" />
+          <e p="IUserAccessRights.cs" t="Include" />
+          <e p="IUserMaster.cs" t="Include" />
+          <e p="IWebDocument.cs" t="Include" />
+          <e p="IWebLink.cs" t="Include" />
+          <e p="IWebsiteTypes.cs" t="Include" />
+        </e>
+        <e p="app.config" t="Include" />
+        <e p="BCMStrategy.Data.Abstract.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="CommonUtilities.cs" t="Include" />
+        <e p="CustomValidation" t="Include">
+          <e p="CustomValidation.cs" t="Include" />
+        </e>
+        <e p="DateTimeFormats.cs" t="Include" />
+        <e p="Helper.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Provider" t="Include">
+          <e p="IAuth.cs" t="Include" />
+        </e>
+        <e p="UserAccessHelper.cs" t="Include" />
+        <e p="ViewModels" t="Include">
+          <e p="ActionNounPlusVerbAuditViewModel.cs" t="Include" />
+          <e p="ActionTypeAuditViewModel.cs" t="Include" />
+          <e p="ActivityTypeAuditViewModel.cs" t="Include" />
+          <e p="ActivityTypeModel.cs" t="Include" />
+          <e p="APIClient.cs" t="Include" />
+          <e p="APIOutput.cs" t="Include" />
+          <e p="AuditBaseModel.cs" t="Include" />
+          <e p="AuditLogModel.cs" t="Include" />
+          <e p="ChangePasswordModel.cs" t="Include" />
+          <e p="ContentLoaderLogViewModel.cs" t="Include" />
+          <e p="DashboardViewModel.cs" t="Include" />
+          <e p="DataTableRequest.cs" t="Include" />
+          <e p="DataTableResult.cs" t="Include" />
+          <e p="DefaultLexicon.cs" t="Include" />
+          <e p="DropdownMaster.cs" t="Include" />
+          <e p="EmailServiceModel.cs" t="Include" />
+          <e p="Events.cs" t="Include" />
+          <e p="ExcludedWebLinks.cs" t="Include" />
+          <e p="ForgotPasswordModel.cs" t="Include" />
+          <e p="GlobalConfigurationKeys.cs" t="Include" />
+          <e p="GlobalSettingModel.cs" t="Include" />
+          <e p="HeadofStateAndGovernmentAuditViewModel.cs" t="Include" />
+          <e p="HeadStateImportModel.cs" t="Include" />
+          <e p="IndividualLegislatorViewModel.cs" t="Include" />
+          <e p="IndividualPersonViewModel.cs" t="Include" />
+          <e p="InstitutionImportModel.cs" t="Include" />
+          <e p="InstitutionModel.cs" t="Include" />
+          <e p="InstitutionTypesImportModel.cs" t="Include" />
+          <e p="InstitutionTypesModel.cs" t="Include" />
+          <e p="InstitutionTypeViewModel.cs" t="Include" />
+          <e p="InstitutionViewModel.cs" t="Include" />
+          <e p="InternalOrgViewModel.cs" t="Include" />
+          <e p="InternationalOrganizationImportModel.cs" t="Include" />
+          <e p="InternationalOrganizationModel.cs" t="Include" />
+          <e p="LegislatorAuditViewModel.cs" t="Include" />
+          <e p="LegislatorViewModel.cs" t="Include" />
+          <e p="LexiconAccessManagementModel.cs" t="Include" />
+          <e p="LexiconCsvImportModel.cs" t="Include" />
+          <e p="LexiconModel.cs" t="Include" />
+          <e p="LexiconSearchValueViewModel.cs" t="Include" />
+          <e p="LexiconTermViewModel.cs" t="Include" />
+          <e p="LexiconTypeModel.cs" t="Include" />
+          <e p="LoaderErrorLogViewModel.cs" t="Include" />
+          <e p="LoaderLinkQueue.cs" t="Include" />
+          <e p="MessageQueue.cs" t="Include" />
+          <e p="MetadataNounplusVerbModel.cs" t="Include" />
+          <e p="MetadataPhrasesModel.cs" t="Include" />
+          <e p="MetadataTypesCsvImportModel.cs" t="Include" />
+          <e p="MetadataTypesModel.cs" t="Include" />
+          <e p="PageDetailHistory.cs" t="Include" />
+          <e p="PageDetails.cs" t="Include" />
+          <e p="ParentMenuModel.cs" t="Include" />
+          <e p="PDFGeneratorModel.cs" t="Include" />
+          <e p="PhrasesAuditViewModel.cs" t="Include" />
+          <e p="PolicyMakerAuditModel.cs" t="Include" />
+          <e p="PolicyMakerModel.cs" t="Include" />
+          <e p="PolicyMakersCSVImportModel.cs" t="Include" />
+          <e p="ProcessDetailModel.cs" t="Include" />
+          <e p="ProcessEventLog.cs" t="Include" />
+          <e p="ProcessEvents.cs" t="Include" />
+          <e p="ProcessInstances.cs" t="Include" />
+          <e p="RefreshToken.cs" t="Include" />
+          <e p="ReportViewModel.cs" t="Include" />
+          <e p="RSSFeedDetails.cs" t="Include" />
+          <e p="SchedulerModel.cs" t="Include" />
+          <e p="ScrappedContentMapping.cs" t="Include" />
+          <e p="ScrappingProcessModel.cs" t="Include" />
+          <e p="SearchablePDFParameters.cs" t="Include" />
+          <e p="SetPasswordModel.cs" t="Include" />
+          <e p="SolrSearchParameters.cs" t="Include" />
+          <e p="StateHeadModel.cs" t="Include" />
+          <e p="SubMenuModel.cs" t="Include" />
+          <e p="ThomsonReutersViewModel.cs" t="Include" />
+          <e p="UserAccessRightsModel.cs" t="Include" />
+          <e p="UserManagementAuditViewModel.cs" t="Include" />
+          <e p="UserModel.cs" t="Include" />
+          <e p="WebLink.cs" t="Include" />
+          <e p="WebLinkAuditModel.cs" t="Include" />
+          <e p="WebLinkConfiguration.cs" t="Include" />
+          <e p="WebLinkMetaDataModel.cs" t="Include" />
+          <e p="WebLinkPageContentRegEx.cs" t="Include" />
+          <e p="WebLinkViewModel.cs" t="Include" />
+          <e p="WebPageRegExGroup.cs" t="Include" />
+          <e p="WebSiteLink.cs" t="Include" />
+        </e>
+      </e>
+      <e p="BCMStrategy.Data.Repository" t="IncludeRecursive">
+        <e p="app.config" t="Include" />
+        <e p="BCMStrategy.Data.Repository.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Concrete" t="Include">
+          <e p="ActivityTypeRepository.cs" t="Include" />
+          <e p="AuditLogRepository.cs" t="Include" />
+          <e p="CommonRepository.cs" t="Include" />
+          <e p="CountryMasterRepository.cs" t="Include" />
+          <e p="DashboardRepository.cs" t="Include" />
+          <e p="DocumentStorageRepository.cs" t="Include" />
+          <e p="EmailGenerateRepository.cs" t="Include" />
+          <e p="GlobalConfigurationRepository.cs" t="Include" />
+          <e p="GlobalSettingRepository.cs" t="Include" />
+          <e p="HeadStateRepository.cs" t="Include" />
+          <e p="InstitutionsRepository.cs" t="Include" />
+          <e p="InstitutionTypesRepository.cs" t="Include" />
+          <e p="InternationalOrganizationRepository.cs" t="Include" />
+          <e p="LegislatorRepository.cs" t="Include" />
+          <e p="LexiconRepository.cs" t="Include" />
+          <e p="LexiconTypeRepository.cs" t="Include" />
+          <e p="LoggingConnectionRepository.cs" t="Include" />
+          <e p="MessageQueueRepository.cs" t="Include" />
+          <e p="MetadataNounplusVerbRepository.cs" t="Include" />
+          <e p="MetadataPhrasesRepository.cs" t="Include" />
+          <e p="MetaDataRepository.cs" t="Include" />
+          <e p="MetadataTypesRepository.cs" t="Include" />
+          <e p="PolicyMakerRepository.cs" t="Include" />
+          <e p="PrivilegeRepository.cs" t="Include" />
+          <e p="ProcessEventsRepository.cs" t="Include" />
+          <e p="SchedulerRepository.cs" t="Include" />
+          <e p="ScrapperActivityRepository.cs" t="Include" />
+          <e p="ScrappingProcessRepository.cs" t="Include" />
+          <e p="SearchablePDFRepository.cs" t="Include" />
+          <e p="SectorRepository.cs" t="Include" />
+          <e p="SolrPageDetailRepository.cs" t="Include" />
+          <e p="UserAccessRightsRepository.cs" t="Include" />
+          <e p="UserMasterRepository.cs" t="Include" />
+          <e p="WebDocumentRepository.cs" t="Include" />
+          <e p="WebLinkRepository.cs" t="Include" />
+          <e p="WebsiteTypesRepository.cs" t="Include" />
+        </e>
+        <e p="Extension" t="Include">
+          <e p="WebExtensions.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Provider" t="Include">
+          <e p="AuthRepository.cs" t="Include" />
+        </e>
+      </e>
+      <e p="BCMStrategy.Email" t="IncludeRecursive">
+        <e p="app.config" t="Include" />
+        <e p="BCMStrategy.Email.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="EmailHelper.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="BCMStrategy.EmailGeneration" t="IncludeRecursive">
+        <e p="Abstract" t="Include">
+          <e p="IEmailGeneration.cs" t="Include" />
+        </e>
+        <e p="app.config" t="Include" />
+        <e p="BCMStrategy.EmailGeneration.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Repository" t="Include">
+          <e p="EmailGenerationRepository.cs" t="Include" />
+        </e>
+      </e>
+      <e p="BCMStrategy.EmailScheduler" t="IncludeRecursive">
+        <e p="Abstract" t="Include">
+          <e p="IEmailServiceScheduler.cs" t="Include" />
+        </e>
+        <e p="app.config" t="Include" />
+        <e p="BCMStrategy.EmailScheduler.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="EmailService.cs" t="Include" />
+        <e p="EmailService.Designer.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="ProjectInstaller.cs" t="Include" />
+        <e p="ProjectInstaller.Designer.cs" t="Include" />
+        <e p="ProjectInstaller.resx" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Repository" t="Include">
+          <e p="EmailServiceSchedulerRepository.cs" t="Include" />
+        </e>
+        <e p="ViewModel" t="Include">
+          <e p="EmailServiceSchedulerModel.cs" t="Include" />
+        </e>
+      </e>
+      <e p="BCMStrategy.Logger" t="IncludeRecursive">
+        <e p="BCMStrategy.Logger.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="EventLogger.cs" t="Include" />
+        <e p="IndentWriter.cs" t="Include" />
+        <e p="LogSerializer.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="BCMStrategy.PDFGenerator" t="IncludeRecursive">
+        <e p="Abstract" t="Include">
+          <e p="IPDFOperationRepository.cs" t="Include" />
+        </e>
+        <e p="app.config" t="Include" />
+        <e p="BCMStrategy.PDFGenerator.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="License" t="Include">
+          <e p="itextkey.xml" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Repository" t="Include">
+          <e p="PDFOperationRepository.cs" t="Include" />
+        </e>
+      </e>
+      <e p="BCMStrategy.Resources" t="IncludeRecursive">
+        <e p="BCMStrategy.Resources.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Enums.cs" t="Include" />
+        <e p="LanguageDetector.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Resource.Designer.cs" t="Include" />
+        <e p="Resource.resx" t="Include" />
+      </e>
+      <e p="BCMStrategy.Schedular" t="IncludeRecursive">
+        <e p="API" t="Include">
+          <e p="WebApi.cs" t="Include" />
+        </e>
+        <e p="app.config" t="Include" />
+        <e p="BCMStrategy.Schedular.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="BCMStrategy.ScrapperActivity" t="IncludeRecursive">
+        <e p="Abstract" t="Include">
+          <e p="IMetaTaggingAndQuantification.cs" t="Include" />
+          <e p="IScrapperActivityProcess.cs" t="Include" />
+          <e p="IStandardTagsAndQuantification.cs" t="Include" />
+        </e>
+        <e p="app.config" t="Include" />
+        <e p="BCMStrategy.ScrapperActivity.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Repository" t="Include">
+          <e p="MetaTaggingAndQuantification.cs" t="Include" />
+          <e p="ScrapperActivityProcessRepository.cs" t="Include" />
+          <e p="StandardTagsAndQuantification.cs" t="Include" />
+        </e>
+      </e>
+      <e p="BCMStrategy.ScrapperProcess" t="IncludeRecursive">
+        <e p="API" t="Include">
+          <e p="WebApi.cs" t="Include" />
+        </e>
+        <e p="app.config" t="Include" />
+        <e p="BCMStrategy.ScrapperProcess.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="BCMStrategy.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive">
+        <e p="TidyHtml5ManagedRepack.1.1.4/build/tidy.x64.dll" t="Include" />
+        <e p="TidyHtml5ManagedRepack.1.1.4/build/tidy.x86.dll" t="Include" />
+      </e>
+    </e>
+  </component>
+</project>
