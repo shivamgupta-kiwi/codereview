@@ -42,6 +42,7 @@ namespace BCMStrategy.API.Controllers
       try
       {
         bool isSave = false;
+        var test = false;
         if (!ModelState.IsValid)
         {
           return Ok(FormatResult(false, ModelState));
