@@ -21,7 +21,7 @@ namespace BCMStrategy.API.Enums
 
     public enum QueueType
     {
-      ContentLoader = 1,
+      ContentLoader = 0,
       Scraper = 2
     }
   }
