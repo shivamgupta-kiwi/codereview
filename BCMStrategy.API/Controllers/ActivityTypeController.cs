@@ -35,6 +35,9 @@ namespace BCMStrategy.API.Controllers
       }
     }
 
+
+    void myMethodA(){}
+    
     [Route("UpdateActivityType")]
     [HttpPost]
     public async Task<IHttpActionResult> UpdateActivityType(ActivityTypeModel activityTypeModel)
