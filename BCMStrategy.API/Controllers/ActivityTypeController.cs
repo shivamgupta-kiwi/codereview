@@ -38,6 +38,9 @@ namespace BCMStrategy.API.Controllers
 
     void myMethodA(){}
     
+     [Obsolete]
+      public static void ObseleteMethod() { }
+    
     [Route("UpdateActivityType")]
     [HttpPost]
     public async Task<IHttpActionResult> UpdateActivityType(ActivityTypeModel activityTypeModel)
