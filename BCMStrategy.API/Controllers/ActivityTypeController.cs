@@ -40,6 +40,9 @@ namespace BCMStrategy.API.Controllers
     
      [Obsolete]
       public static void ObseleteMethod() { }
+      
+       [Obsolete("This Method is Deprecated", true)]
+      public static void ObseleteMethodWithMessageAndFail() { }
     
     [Route("UpdateActivityType")]
     [HttpPost]
