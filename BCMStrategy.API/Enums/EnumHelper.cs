@@ -15,7 +15,7 @@ namespace BCMStrategy.API.Enums
 
     public enum ErrorType
     {
-      Exception = 10,
+      Exception = 0,
       ArgumentException = 20
     };
 

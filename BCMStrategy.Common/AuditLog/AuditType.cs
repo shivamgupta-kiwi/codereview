@@ -1,7 +1,7 @@
 ﻿namespace BCMStrategy.Common.AuditLog
 {
   /// <summary>
-  /// Enum For Audit Type
+  /// Enum For Audit Type 1
   /// </summary>
   public enum AuditType
   {

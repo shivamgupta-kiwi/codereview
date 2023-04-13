@@ -35,6 +35,18 @@ namespace BCMStrategy.API.Controllers
       }
     }
 
+
+    void myMethodA(){}
+    
+     [Obsolete]
+      public static void ObseleteMethod() { }
+      
+       [Obsolete("This Method is Deprecated", true)]
+      public static void ObseleteMethodWithMessageAndFail() { }
+      
+        [Obsolete("This Method is Deprecated", true)]
+      public static void ObseleteMethodWithMessageAndFail() { }
+    
     [Route("UpdateActivityType")]
     [HttpPost]
     public async Task<IHttpActionResult> UpdateActivityType(ActivityTypeModel activityTypeModel)
@@ -42,6 +54,7 @@ namespace BCMStrategy.API.Controllers
       try
       {
         bool isSave = false;
+        var test = false;
         if (!ModelState.IsValid)
         {
           return Ok(FormatResult(false, ModelState));
